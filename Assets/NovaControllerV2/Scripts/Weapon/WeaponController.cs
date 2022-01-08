@@ -77,7 +77,7 @@ public class WeaponController : MonoBehaviour
             
         }
 
-        Debug.Log(ammoPack.magazine_size - ammoPack.bullets_in_magazine + " " + (ammoPack.bullets_left >= (ammoPack.magazine_size - ammoPack.bullets_in_magazine)) + " " + !reloading);
+        //Debug.Log(ammoPack.magazine_size - ammoPack.bullets_in_magazine + " " + (ammoPack.bullets_left >= (ammoPack.magazine_size - ammoPack.bullets_in_magazine)) + " " + !reloading);
         
         if(reload && !reloading && ammoPack.bullets_left >= (ammoPack.magazine_size-ammoPack.bullets_in_magazine))
         {
