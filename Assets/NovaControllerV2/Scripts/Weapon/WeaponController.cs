@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 public class WeaponController : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class WeaponController : MonoBehaviour
     public GameObject weaponRenderer;
     
     public WeaponObject weapon;
+
+    public HitEvent[] hitEvents;
 
     [Space]
     private bool shoot;
@@ -31,7 +34,6 @@ public class WeaponController : MonoBehaviour
     private AudioSource audioSource;
 
     private bool readyToShoot = true;
-    [SerializeField]
     private bool shooting;
     private bool reloading;
 
@@ -99,7 +101,13 @@ public class WeaponController : MonoBehaviour
 
         if (Physics.Raycast(source.position, direction, out hit, weapon.range, weapon.whatCanIHit))
         {
-            Debug.Log(hit.collider.gameObject.name);
+            for (int i = 0; i < hitEvents.Length; i++)
+            {
+                if (hit.transform.gameObject.CompareTag(hitEvents[i].tag))
+                {
+                    hitEvents[i].events.Invoke();
+                }
+            }
         }
         else
         {
@@ -158,5 +166,10 @@ public class WeaponController : MonoBehaviour
     }
 
 
-
+    [System.Serializable]
+    public class HitEvent
+    {
+        public string tag;
+        public UnityEvent events;
+    }
 }

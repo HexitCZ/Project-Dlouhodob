@@ -66,6 +66,11 @@ public class AI_Base : MonoBehaviour
         navmesh.destination = destination.position;
     }
 
+    public virtual void GetHit()
+    {
+        Debug.Log(gameObject.name + " HIT");
+    }
+
     protected virtual bool CheckHealth()
     {
         throw new NotImplementedException();
