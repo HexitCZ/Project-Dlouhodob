@@ -5,11 +5,16 @@ using UnityEngine;
 public class AI_Leg_Controller : MonoBehaviour
 {
     [SerializeField]
-    private H_IK leg_ik;
+    private H_IK legIk;
     [SerializeField]
-    private Transform leg_target;
+    private Transform legTarget;
     [SerializeField]
-    private Transform leg_transform;
+    private Transform legTransform;
+
+    [HideInInspector]
+    public bool canWalk;
+    [HideInInspector]
+    public bool legUp;
 
     public float max_distance;
     public float leg_anim_speed;
@@ -20,8 +25,8 @@ public class AI_Leg_Controller : MonoBehaviour
 
     void Update()
     {
-        cur_distance = (leg_target.position - leg_transform.position).magnitude;
-        if(cur_distance > max_distance && !IsInvoking("Animate"))
+        cur_distance = (legTarget.position - legTransform.position).magnitude;
+        if(cur_distance > max_distance && !IsInvoking("Animate") && canWalk)
         {
 
             Debug.Log("leg_move");
@@ -37,11 +42,13 @@ public class AI_Leg_Controller : MonoBehaviour
         
         Debug.Log("leg_moved");
         Vector3 stepUp = Vector3.zero;
+        legUp = false;
         if(cur_distance > max_distance / 2)
         {
+            legUp = true;
             stepUp = Vector3.up;
         }
-        leg_transform.position = Vector3.MoveTowards(leg_transform.position, leg_target.position + stepUp, slerp_t);
+        legTransform.position = Vector3.MoveTowards(legTransform.position, legTarget.position + stepUp, slerp_t);
 
         if (cur_distance < min_distance)
         {
