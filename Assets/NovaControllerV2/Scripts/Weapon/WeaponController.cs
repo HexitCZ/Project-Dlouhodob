@@ -21,12 +21,10 @@ public class WeaponController : MonoBehaviour
     private RaycastHit hit;
     private Transform source;
 
-
     [Space]
     private bool reload;
     
     [Space]
-
     private AmmoData.AmmoPack ammoPack;
 
     private MeshFilter meshFilter;
@@ -87,7 +85,6 @@ public class WeaponController : MonoBehaviour
         }
         
     }
-
 
     private void Shoot()
     {
