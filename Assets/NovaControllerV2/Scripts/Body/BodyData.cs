@@ -74,6 +74,8 @@ public class BodyData : MonoBehaviour
     public enum EPhysicState
     {
         STANDING,
+        WALKING,
+        RUNNING,
         CROUCHING,
         LAYING,
         FALLING_SHORT,
@@ -89,6 +91,8 @@ public class BodyData : MonoBehaviour
         JUMP,
         CROUCHSPRINT
     }
+
+    
 
     public enum EDoubleJump
     {

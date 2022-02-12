@@ -196,6 +196,15 @@ public class BodyController : MonoBehaviour
         {
             timeToLongFall = bodyData.timeToFallAnim;
             bodyData.physicState = BodyData.EPhysicState.STANDING;
+
+            if (rb.velocity.magnitude > 1 && rb.velocity.magnitude < bodyData.sprintSpeed && bodyData.inputState != BodyData.EInputState.NULL)
+            {
+                bodyData.physicState = BodyData.EPhysicState.WALKING;
+            }
+            else if (rb.velocity.magnitude > bodyData.sprintSpeed)
+            {
+                bodyData.physicState = BodyData.EPhysicState.RUNNING;
+            }
             multiJump = 0;
             jumped = false;
             secondjumped = false;
