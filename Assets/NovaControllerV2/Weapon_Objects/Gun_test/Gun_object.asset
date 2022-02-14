@@ -22,7 +22,7 @@ MonoBehaviour:
   range: 100
   bulletSpread: 0
   bulletsPerTap: 0
-  timeBetweenShots: 0.1
+  timeBetweenShots: 0.3
   magazineSize: 20
   fullAuto: 0
   whatCanIHit:

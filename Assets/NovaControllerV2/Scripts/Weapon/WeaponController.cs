@@ -13,11 +13,21 @@ public class WeaponController : MonoBehaviour
     
     public WeaponObject weapon;
 
+    public bool animate;
+
+    private BodyData bodyData;
+
+    public AnimatorOverrideController animatorOverride;
+
     public HitEvent[] hitEvents;
+
+    
 
     [Space]
     private bool shoot;
     private double shoot_charge;
+    private bool shooting;
+    private bool reloading;
     private RaycastHit hit;
     private Transform source;
 
@@ -32,21 +42,30 @@ public class WeaponController : MonoBehaviour
     private AudioSource audioSource;
 
     private bool readyToShoot = true;
-    private bool shooting;
-    private bool reloading;
+    //private bool shooting;
 
     private void Awake()
     {
         animator = weaponRenderer.GetComponent<Animator>();
+        animator.runtimeAnimatorController = animatorOverride;
         meshFilter = weaponRenderer.GetComponent<MeshFilter>();
         audioSource = GetComponent<AudioSource>();
         source = weaponRenderer.transform.parent.transform;
         ammoPack = GetAmmoPack();
+
+        if (animate)
+        {
+            bodyData = GetComponent<BodyData>();
+        }
     }
 
     private void Update()
     {
         InputResolver();   
+        if (animate)
+        {
+            AnimationResolver();
+        }
     }
     public void SetWeaponObject(WeaponObject newWO)
     {
@@ -64,6 +83,7 @@ public class WeaponController : MonoBehaviour
         
         if (shoot && readyToShoot && ammoPack.bullets_in_magazine>0 && !reloading)
         {
+            shooting = true;
             if (weapon.fullAuto)
             {
                 Shoot();
@@ -86,6 +106,37 @@ public class WeaponController : MonoBehaviour
         
     }
 
+    private void AnimationResolver()
+    {
+        switch (bodyData.physicState)
+        {
+            case BodyData.EPhysicState.STANDING:        //IDLE
+            case BodyData.EPhysicState.FALLING_SHORT:
+            case BodyData.EPhysicState.FALLING_LONG:
+                animator.SetBool("Walk", false);
+                animator.SetBool("Run", false);
+                break;
+            case BodyData.EPhysicState.WALKING:         //WALK
+                animator.SetBool("Walk", true);
+                animator.SetBool("Run", false);
+                break;
+            case BodyData.EPhysicState.RUNNING:         //RUN
+                animator.SetBool("Run", true);
+                animator.SetBool("Walk", false);
+                break;
+            case BodyData.EPhysicState.CROUCHING:       //IDLE
+                animator.SetBool("Walk", false);
+                animator.SetBool("Run", false);
+                break;
+            case BodyData.EPhysicState.LAYING:
+                break;
+        }
+
+
+        animator.SetBool("Shoot", shooting);
+        animator.SetBool("Reload", reloading);
+
+    }
     private void Shoot()
     {
         readyToShoot = false;
@@ -117,6 +168,7 @@ public class WeaponController : MonoBehaviour
     private void ResetShot()
     {
         readyToShoot = true;
+        shooting = false;
         UpdateAmmoData();
     }
 
