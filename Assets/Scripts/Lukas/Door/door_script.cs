@@ -17,6 +17,8 @@ public class door_script : MonoBehaviour
     private bool broken;
     [SerializeField]
     private bool needsKey;
+    [SerializeField]
+    private bool inRange;
 
     [Space]
     [Header("Invokers")]
@@ -37,6 +39,7 @@ public class door_script : MonoBehaviour
     {
         
     }
+    
     public void OnInteract(InputAction.CallbackContext input)
     {
         if (input.started)
@@ -44,9 +47,16 @@ public class door_script : MonoBehaviour
             this.open = true;
         }
     }
+
     public void OnTriggerStay(Collider other)
     {
-        openInvoker.Invoke();
+
+        if (GetComponent<Renderer>().isVisible)
+        {
+
+            openInvoker.Invoke();
+
+        }
 
         if (needsKey)
         {
@@ -60,19 +70,20 @@ public class door_script : MonoBehaviour
             if (open)
             {
 
-                doorAnimator.SetBool("open", true);
+                doorAnimator.SetBool("open", true);                
 
             }
 
         }
+
     }
 
     public void OnTriggerExit(Collider other)
     {
 
         doorAnimator.SetBool("open", false);
-        closeInvoker.Invoke();
         open = false;
-                
+        closeInvoker.Invoke();
+
     }
 }
