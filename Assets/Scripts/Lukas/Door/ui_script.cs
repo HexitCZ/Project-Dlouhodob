@@ -29,4 +29,10 @@ public class ui_script : MonoBehaviour
     {
         pressText.text = "";
     }
+
+    public void view_broken()
+    {
+        pressText.text = "The door is broken";
+        pressText.color = Color.red;
+    }
 }

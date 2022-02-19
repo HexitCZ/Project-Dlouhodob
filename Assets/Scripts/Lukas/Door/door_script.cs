@@ -24,6 +24,7 @@ public class door_script : MonoBehaviour
     [Header("Invokers")]
     public UnityEvent openInvoker;
     public UnityEvent closeInvoker;
+    public UnityEvent brokenInvoker;
 
     [Space]
     [Header("Animator")]
@@ -33,6 +34,10 @@ public class door_script : MonoBehaviour
     {
         //openInvoker = new UnityEvent();
         //closeInvoker = new UnityEvent();
+        if (broken)
+        {
+            doorAnimator.SetBool("broken", true);
+        }
     }
 
     void Update()
@@ -50,8 +55,11 @@ public class door_script : MonoBehaviour
 
     public void OnTriggerStay(Collider other)
     {
-
-        if (GetComponent<Renderer>().isVisible)
+        if (broken)
+        {
+            brokenInvoker.Invoke();
+        }
+        else if (GetComponent<Renderer>().isVisible)
         {
 
             openInvoker.Invoke();
