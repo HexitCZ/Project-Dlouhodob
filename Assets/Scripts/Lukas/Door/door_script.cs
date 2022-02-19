@@ -55,14 +55,17 @@ public class door_script : MonoBehaviour
 
     public void OnTriggerStay(Collider other)
     {
-        if (broken)
-        {
-            brokenInvoker.Invoke();
-        }
-        else if (GetComponent<Renderer>().isVisible)
+        if (GetComponent<Renderer>().isVisible)
         {
 
-            openInvoker.Invoke();
+            if (broken)
+            {
+                brokenInvoker.Invoke();
+            }
+            else
+            {
+                openInvoker.Invoke();
+            }
 
         }
 
