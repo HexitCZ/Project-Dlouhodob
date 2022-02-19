@@ -1,32 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.InputSystem;
 using UnityEngine.Events;
 using UnityEngine;
 using System;
 
-[Serializable]
-public class Invoker : UnityEvent<string>
-{
-    
-}
-
 public class door_script : MonoBehaviour
 {
     private string press;
-    [Space]
-    [Header("Referenced scripts")]
-    public ui_script ui_s;
 
-    /*[Space]
+    [Space]
     [Header("Bools")]
+    [SerializeField]
     private bool open;
+    [SerializeField]
     private bool broken;
-    private bool needsKey;*/
+    [SerializeField]
+    private bool needsKey;
 
     [Space]
     [Header("Invokers")]
-    public Invoker openInvoker;
-    public Invoker closeInvoker;
+    public UnityEvent openInvoker;
+    public UnityEvent closeInvoker;
 
     [Space]
     [Header("Animator")]
@@ -34,26 +29,50 @@ public class door_script : MonoBehaviour
 
     void Start()
     {
-        openInvoker = new Invoker();
-        openInvoker.AddListener(ui_s.view_press);
+        //openInvoker = new UnityEvent();
+        //closeInvoker = new UnityEvent();
     }
 
     void Update()
     {
         
     }
-
-    public void OnTriggerEnter(Collider other)
+    public void OnInteract(InputAction.CallbackContext input)
     {
-        //invoker.AddListener()
-        //openInvoker.Invoke();
-        doorAnimator.SetBool("open", true);
-        openInvoker.Invoke("E");
+        if (input.started)
+        {
+            this.open = true;
+        }
+    }
+    public void OnTriggerStay(Collider other)
+    {
+        openInvoker.Invoke();
+
+        if (needsKey)
+        {
+
+            doorAnimator.SetBool("open", true);
+
+        }
+        else
+        {
+
+            if (open)
+            {
+
+                doorAnimator.SetBool("open", true);
+
+            }
+
+        }
     }
 
     public void OnTriggerExit(Collider other)
     {
-        //closeInvoker.Invoke();
+
         doorAnimator.SetBool("open", false);
+        closeInvoker.Invoke();
+        open = false;
+                
     }
 }

@@ -20,8 +20,13 @@ public class ui_script : MonoBehaviour
         
     }
     
-    public void view_press(string button)
+    public void view_press_e()
     {
-        pressText.text = "Press " + button;
+        pressText.text = "Press E";
+    }
+    
+    public void view_none()
+    {
+        pressText.text = "";
     }
 }
