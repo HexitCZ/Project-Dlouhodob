@@ -146,7 +146,7 @@ public class WeaponController : MonoBehaviour
         Vector3 direction = weaponRenderer.transform.forward;
         
 
-
+        
         if (Physics.Raycast(source.position, direction, out hit, weapon.range, weapon.whatCanIHit))
         {
             for (int i = 0; i < hitEvents.Length; i++)
