@@ -12,7 +12,7 @@ public class AI_Leg_Controller : MonoBehaviour
     private Transform legTransform;
 
     [HideInInspector]
-    public bool canWalk;
+    public bool canWalk = true;
     [HideInInspector]
     public bool legUp;
 
