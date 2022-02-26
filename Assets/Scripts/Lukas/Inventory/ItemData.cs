@@ -1,0 +1,21 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[CreateAssetMenu(menuName ="Item data")]
+public class ItemData : ScriptableObject
+{
+    public string id;
+    public string name;
+    public Sprite icon;
+    public GameObject model;
+    void Start()
+    {
+        
+    }
+
+    void Update()
+    {
+        
+    }
+}
