@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
+using UnityEngine.VFX;
 
 public class WeaponController : MonoBehaviour
 {
@@ -15,13 +16,16 @@ public class WeaponController : MonoBehaviour
 
     public bool animate;
 
+    public bool shootWhileRunning;
+    public bool reloadWhileRunning;
+
     private BodyData bodyData;
 
     public AnimatorOverrideController animatorOverride;
 
     public HitEvent[] hitEvents;
 
-    
+    public VisualEffect muzzleFlashObject;
 
     [Space]
     private bool shoot;
@@ -53,6 +57,8 @@ public class WeaponController : MonoBehaviour
         source = weaponRenderer.transform.parent.transform;
         ammoPack = GetAmmoPack();
 
+        muzzleFlashObject.visualEffectAsset = weapon.muzzleFlash;
+
         if (animate)
         {
             bodyData = GetComponent<BodyData>();
@@ -80,28 +86,34 @@ public class WeaponController : MonoBehaviour
 
     public void InputResolver()
     {
-        
-        if (shoot && readyToShoot && ammoPack.bullets_in_magazine>0 && !reloading)
+        if (bodyData.physicState != BodyData.EPhysicState.RUNNING ||
+            bodyData.physicState == BodyData.EPhysicState.RUNNING && shootWhileRunning)
         {
-            shooting = true;
-            if (weapon.fullAuto)
+            if (shoot && readyToShoot && ammoPack.bullets_in_magazine > 0 && !reloading)
             {
-                Shoot();
-            }
-            else
-            {
-                Shoot();
-                shoot = false;
+                shooting = true;
+                if (weapon.fullAuto)
+                {
+                    Shoot();
+                }
+                else
+                {
+                    Shoot();
+                    shoot = false;
+
+                }
 
             }
-            
         }
 
         //Debug.Log(ammoPack.magazine_size - ammoPack.bullets_in_magazine + " " + (ammoPack.bullets_left >= (ammoPack.magazine_size - ammoPack.bullets_in_magazine)) + " " + !reloading);
-        
-        if(reload && !reloading && ammoPack.bullets_left >= (ammoPack.magazine_size-ammoPack.bullets_in_magazine))
+        if (bodyData.physicState != BodyData.EPhysicState.RUNNING ||
+            bodyData.physicState == BodyData.EPhysicState.RUNNING && reloadWhileRunning)
         {
-            Reload();
+            if (reload && !reloading && ammoPack.bullets_left >= (ammoPack.magazine_size - ammoPack.bullets_in_magazine))
+            {
+                Reload();
+            }
         }
         
     }
@@ -123,6 +135,12 @@ public class WeaponController : MonoBehaviour
             case BodyData.EPhysicState.RUNNING:         //RUN
                 animator.SetBool("Run", true);
                 animator.SetBool("Walk", false);
+
+                if (!reloadWhileRunning)
+                {
+                    ReloadInterrupted();
+                }
+
                 break;
             case BodyData.EPhysicState.CROUCHING:       //IDLE
                 animator.SetBool("Walk", false);
@@ -133,7 +151,6 @@ public class WeaponController : MonoBehaviour
         }
 
 
-        animator.SetBool("Shoot", shooting);
         animator.SetBool("Reload", reloading);
 
     }
@@ -141,10 +158,13 @@ public class WeaponController : MonoBehaviour
     {
         readyToShoot = false;
 
-        Debug.Log("shoot");
+        //Debug.Log("shoot");
         
         Vector3 direction = weaponRenderer.transform.forward;
-        
+
+        muzzleFlashObject.Play();
+
+        animator.SetBool("Shoot", true);
 
 
         if (Physics.Raycast(source.position, direction, out hit, weapon.range, weapon.whatCanIHit))
@@ -154,8 +174,13 @@ public class WeaponController : MonoBehaviour
                 if (hit.transform.gameObject.CompareTag(hitEvents[i].tag))
                 {
                     hitEvents[i].events.Invoke();
+
                 }
             }
+            GameObject hitEffect = Instantiate(weapon.hitParticle, hit.point, Quaternion.LookRotation(hit.normal,transform.up));
+            hitEffect.GetComponent<VisualEffect>().Play();
+            hitEffect.transform.SetParent(hit.collider.transform);
+            Destroy(hitEffect, 10);
         }
         else
         {
@@ -169,25 +194,37 @@ public class WeaponController : MonoBehaviour
     {
         readyToShoot = true;
         shooting = false;
+        animator.SetBool("Shoot", false);
+
         UpdateAmmoData();
     }
 
     private void Reload()
     {
-        Debug.Log("Reloading");
+        //Debug.Log("Reloading");
         reloading = true;
 
-        ammoPack.bullets_left -= ammoPack.magazine_size - ammoPack.bullets_in_magazine;
-        ammoPack.bullets_in_magazine = ammoPack.magazine_size;
+        
         Invoke("ReloadFinished", weapon.reloadTime);
     }
 
     private void ReloadFinished()
     {
-        reloading = false;
-        Debug.Log("Reloading has been finished");
-        UpdateAmmoData();
+        if (reloading)
+        {
+            ammoPack.bullets_left -= ammoPack.magazine_size - ammoPack.bullets_in_magazine;
+            ammoPack.bullets_in_magazine = ammoPack.magazine_size;
 
+            UpdateAmmoData();
+        }
+        
+        reloading = false;
+
+    }
+
+    private void ReloadInterrupted()
+    {
+        reloading = false;
     }
 
 

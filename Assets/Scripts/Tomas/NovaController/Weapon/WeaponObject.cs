@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 [CreateAssetMenu(menuName = "Weapon object")]
 public class WeaponObject : ScriptableObject
@@ -30,6 +31,8 @@ public class WeaponObject : ScriptableObject
     public Mesh mesh;
     public Material[] materials;
     public AnimatorOverrideController weaponAnimator;
-    public ParticleSystem muzzleFlash;
-    public ParticleSystem hitParticle;
+    public VisualEffectAsset muzzleFlash;
+    [Tooltip("Prefab with VisualEffect component")]
+    public GameObject hitParticle;
+    
 }
