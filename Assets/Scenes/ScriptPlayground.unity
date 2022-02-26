@@ -384,6 +384,10 @@ PrefabInstance:
       propertyPath: animatorOverride
       value: 
       objectReference: {fileID: 22100000, guid: 0795d1d38d2d6a14cbd312d869f504e3, type: 2}
+    - target: {fileID: 4268357316164657253, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
+      propertyPath: muzzleFlashObject
+      value: 
+      objectReference: {fileID: 1930470942}
     - target: {fileID: 4268357316164657256, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2440,7 +2444,7 @@ GameObject:
   - component: {fileID: 1930470942}
   - component: {fileID: 1930470941}
   m_Layer: 0
-  m_Name: vfx_mz_red
+  m_Name: muzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2982,5 +2986,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: AI_Sample
       objectReference: {fileID: 0}
+    - target: {fileID: 6480114592625811712, guid: 0a93a9c629915014e8d0eac9c69a4d0a, type: 3}
+      propertyPath: <target>k__BackingField
+      value: 
+      objectReference: {fileID: 755320492}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a93a9c629915014e8d0eac9c69a4d0a, type: 3}

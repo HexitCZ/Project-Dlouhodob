@@ -22,9 +22,9 @@ MonoBehaviour:
   range: 100
   bulletSpread: 0
   bulletsPerTap: 0
-  timeBetweenShots: 0.3
+  timeBetweenShots: 0.1
   magazineSize: 20
-  fullAuto: 0
+  fullAuto: 1
   whatCanIHit:
     serializedVersion: 2
     m_Bits: 23
@@ -32,5 +32,5 @@ MonoBehaviour:
   mesh: {fileID: 4493585093827132993, guid: 32e59da773399444f90e2f88115360c2, type: 3}
   materials: []
   weaponAnimator: {fileID: 22100000, guid: 0795d1d38d2d6a14cbd312d869f504e3, type: 2}
-  muzzleFlash: {fileID: 0}
-  hitParticle: {fileID: 0}
+  muzzleFlash: {fileID: 8926484042661614526, guid: 13c988ff3f54e0248a3bd2d467405817, type: 3}
+  hitParticle: {fileID: 3742677473019854988, guid: 99dd5b734b04b9a4a8f458b48db7da3c, type: 3}
