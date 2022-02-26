@@ -20,7 +20,7 @@ public class WeaponController : MonoBehaviour
     public AnimatorOverrideController animatorOverride;
 
     public HitEvent[] hitEvents;
-
+    
     
 
     [Space]
