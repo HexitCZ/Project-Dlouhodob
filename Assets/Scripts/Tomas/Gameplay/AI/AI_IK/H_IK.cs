@@ -1,41 +1,25 @@
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
 using UnityEngine;
 
 
 public class H_IK : MonoBehaviour
 {
-    /// <summary>
-    /// Chain length of bones
-    /// </summary>
     public int ChainLength = 2;
 
-    /// <summary>
-    /// Target the chain should bent to
-    /// </summary>
     public Transform Target;
     public Transform Pole;
 
-    /// <summary>
-    /// Solver iterations per update
-    /// </summary>
+
     [Header("Solver Parameters")]
     public int Iterations = 10;
 
-    /// <summary>
-    /// Distance when the solver stops
-    /// </summary>
     public float Delta = 0.001f;
 
-    /// <summary>
-    /// Strength of going back to the start position.
-    /// </summary>
+
     [Range(0, 1)]
     public float SnapBackStrength = 1f;
 
 
-    protected float[] BonesLength; //Target to Origin
+    protected float[] BonesLength;
     protected float CompleteLength;
     protected Transform[] Bones;
     protected Vector3[] Positions;
@@ -45,7 +29,6 @@ public class H_IK : MonoBehaviour
     protected Transform Root;
 
 
-    // Start is called before the first frame update
     void Awake()
     {
         Init();
@@ -88,12 +71,12 @@ public class H_IK : MonoBehaviour
 
             if (i == Bones.Length - 1)
             {
-                //leaf
+                
                 StartDirectionSucc[i] = GetPositionRootSpace(Target) - GetPositionRootSpace(current);
             }
             else
             {
-                //mid bone
+                
                 StartDirectionSucc[i] = GetPositionRootSpace(Bones[i + 1]) - GetPositionRootSpace(current);
                 BonesLength[i] = StartDirectionSucc[i].magnitude;
                 CompleteLength += BonesLength[i];
@@ -226,10 +209,9 @@ public class H_IK : MonoBehaviour
         else
             current.rotation = Root.rotation * rotation;
     }
-
+    /*
     void OnDrawGizmos()
     {
-#if UNITY_EDITOR
         var current = this.transform;
         for (int i = 0; i < ChainLength && current != null && current.parent != null; i++)
         {
@@ -239,7 +221,7 @@ public class H_IK : MonoBehaviour
             Handles.DrawWireCube(Vector3.up * 0.5f, Vector3.one);
             current = current.parent;
         }
-#endif
-    }
 
+    }
+    */
 }
