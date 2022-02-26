@@ -7,7 +7,6 @@ public class ItemData : ScriptableObject
 {
     public string id;
     public string name;
-    public Sprite icon;
     public GameObject model;
     void Start()
     {
@@ -16,6 +15,6 @@ public class ItemData : ScriptableObject
 
     void Update()
     {
-        
+        model.transform.Rotate(0, 10, 0);
     }
 }
