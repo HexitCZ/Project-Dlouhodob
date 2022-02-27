@@ -28,7 +28,13 @@ public class AI_Base : MonoBehaviour
 
     protected void Start()
     {
-        navmesh = GetComponent<NavMeshAgent>();
+
+        navmesh = gameObject?.GetComponent<NavMeshAgent>();
+        if(navmesh == null)
+        {
+            Debug.Log("hatupat");
+            navmesh = gameObject.transform.GetChild(0).GetComponent<NavMeshAgent>();
+        }
     }
 
     protected void Update()

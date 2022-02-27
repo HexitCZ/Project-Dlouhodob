@@ -3,18 +3,23 @@ using UnityEngine;
 
 public class H_IK : MonoBehaviour
 {
-    public int ChainLength = 2;
-
+    [HideInInspector]
+    public int ChainLength;
+    [HideInInspector]
     public Transform Target;
+    [HideInInspector]
     public Transform Pole;
+    [HideInInspector]
+    public Transform Root;
+    
+    public Transform End;
 
-
-    [Header("Solver Parameters")]
+    [HideInInspector]
     public int Iterations = 10;
-
+    [HideInInspector]
     public float Delta = 0.001f;
 
-
+    [HideInInspector]
     [Range(0, 1)]
     public float SnapBackStrength = 1f;
 
@@ -26,10 +31,9 @@ public class H_IK : MonoBehaviour
     protected Vector3[] StartDirectionSucc;
     protected Quaternion[] StartRotationBone;
     protected Quaternion StartRotationTarget;
-    protected Transform Root;
 
 
-    void Awake()
+    void Start()
     {
         Init();
     }
@@ -43,14 +47,14 @@ public class H_IK : MonoBehaviour
         StartDirectionSucc = new Vector3[ChainLength + 1];
         StartRotationBone = new Quaternion[ChainLength + 1];
 
-        //find root
+        /*//find root
         Root = transform;
         for (var i = 0; i <= ChainLength; i++)
         {
             if (Root == null)
                 throw new UnityException("The chain value is longer than the ancestor chain!");
             Root = Root.parent;
-        }
+        }*/
 
         //init target
         if (Target == null)
@@ -62,7 +66,7 @@ public class H_IK : MonoBehaviour
 
 
         //init data
-        var current = transform;
+        var current = End.transform;
         CompleteLength = 0;
         for (var i = Bones.Length - 1; i >= 0; i--)
         {
@@ -132,8 +136,7 @@ public class H_IK : MonoBehaviour
 
             for (int iteration = 0; iteration < Iterations; iteration++)
             {
-                //https://www.youtube.com/watch?v=UNoX65PRehA
-                //back
+                
                 for (int i = Positions.Length - 1; i > 0; i--)
                 {
                     if (i == Positions.Length - 1)
