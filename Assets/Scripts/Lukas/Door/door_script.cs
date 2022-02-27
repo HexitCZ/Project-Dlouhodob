@@ -1,13 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.InputSystem;
-using UnityEngine.Events;
 using UnityEngine;
-using System;
+using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class door_script : MonoBehaviour
 {
-    private string press;
 
     [Space]
     [Header("Bools")]
@@ -21,6 +17,15 @@ public class door_script : MonoBehaviour
     private bool needsKey;
     [SerializeField]
     private bool inRange;
+    [SerializeField]
+    private KeycardScript key;
+
+    [Space]
+    [Header("UI inventory")]
+    [SerializeField]
+    private UI_inventory ui_inventory;
+
+    private Inventory inventory;
 
     [Space]
     [Header("Invokers")]
@@ -32,21 +37,44 @@ public class door_script : MonoBehaviour
     [Header("Animator")]
     public Animator doorAnimator;
 
-    void Start()
+    public Renderer doorRenderer;
+
+    public Renderer displayRenderer;
+
+    public Material[] displayMats;
+
+    public void Start()
     {
-        //openInvoker = new UnityEvent();
-        //closeInvoker = new UnityEvent();
+
+        inventory = ui_inventory.GetInventory();
+
+        openInvoker = new UnityEvent();
+        closeInvoker = new UnityEvent();
+
+        doorRenderer = GetComponent<Renderer>();
+        displayRenderer = GetComponent<Renderer>();
+
         if (broken)
         {
+
             doorAnimator.SetBool("broken", true);
+
+        }
+        else if (needsKey)
+        {
+
+            displayMats = displayRenderer.materials;
+            displayMats[1].color = inventory.GetColor(true);
+            displayRenderer.materials = displayMats;
+
         }
     }
 
-    void Update()
+    public void Update()
     {
-        
+
     }
-    
+
     public void OnInteract(InputAction.CallbackContext input)
     {
         if (input.started)
@@ -70,7 +98,7 @@ public class door_script : MonoBehaviour
         {
             doorAnimator.SetBool("open", true);
         }
-        else 
+        else
         {
             if (GetComponent<Renderer>().isVisible)
             {
@@ -84,25 +112,25 @@ public class door_script : MonoBehaviour
                     openInvoker.Invoke();
                 }
             }
-        
 
-        if (needsKey)
-        {
 
-            doorAnimator.SetBool("open", true);
-
-        }
-        else
-        {
-
-            if (open)
+            if (needsKey)
             {
 
-                doorAnimator.SetBool("open", true);                
+                doorAnimator.SetBool("open", true);
 
             }
+            else
+            {
 
-        }
+                if (open)
+                {
+
+                    doorAnimator.SetBool("open", true);
+
+                }
+
+            }
 
         }
 
