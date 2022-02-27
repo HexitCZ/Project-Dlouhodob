@@ -9,10 +9,14 @@ public class easterEggPlayerScript : MonoBehaviour
     [Header("Video Player")]
     [SerializeField]
     private VideoPlayer vp;
-
+    [Space]
+    [Header("Streaming Surface")]
+    [SerializeField]
+    private Renderer platnoRenderer;
     void Start()
     {
-        
+        platnoRenderer = GetComponent<Renderer>();
+        platnoRenderer.enabled = false;
     }
 
     void Update()
@@ -22,6 +26,13 @@ public class easterEggPlayerScript : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
+        platnoRenderer.enabled = true;
         vp.Play();
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        platnoRenderer.enabled = false;
+        vp.Stop();
     }
 }

@@ -17,7 +17,7 @@ public class Inventory : ScriptableObject
     {
 
         inventory_list = new List<Item>();
-        keyColors = new List<(Color, bool, bool)> { (Color.red, true, true), (Color.green, true, true), (Color.blue, true, true), (Color.yellow, true, true), (Color.magenta, true, true) };
+        keyColors = new List<(Color, bool, bool)> { (Color.red, false, false), (Color.green, false, false), (Color.blue, false, false), (Color.yellow, false, false), (Color.magenta, false, false) };
 
     }
 
@@ -52,26 +52,29 @@ public class Inventory : ScriptableObject
 
         if (colorCount < keyColors.Count)
         {
+            Debug.Log("bad");
 
 
-            if (!keyColors[colorCount].Item2)
+            if (!(keyColors[colorCount].Item2) && isDoor)
             {
+                Debug.Log("bada");
 
                 Color c = keyColors[colorCount].Item1;
                 keyColors[colorCount] = (keyColors[colorCount].Item1, true, keyColors[colorCount].Item3);
                 return c;
 
             }
-            else if (!keyColors[colorCount].Item3)
+            else if (!(keyColors[colorCount].Item3) && !isDoor)
             {
+                Debug.Log("badaa");
 
                 Color c = keyColors[colorCount].Item1;
-                keyColors[colorCount] = (keyColors[colorCount].Item1, true, keyColors[colorCount].Item3);
+                keyColors[colorCount] = (keyColors[colorCount].Item1, keyColors[colorCount].Item2, true);
                 return c;
 
             }
 
-            if (!isDoor && keyColors[colorCount].Item3)
+            if (isDoor && keyColors[colorCount].Item3)
             {
                 colorCount++;
             }
