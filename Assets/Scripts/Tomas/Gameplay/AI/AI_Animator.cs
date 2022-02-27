@@ -13,9 +13,9 @@ public class AI_Animator : MonoBehaviour
     void Update()
     {
         
-        int curLegsUp = 0;
+        //int curLegsUp = 0;
         
-        for (int i = 0; i < legs.Length; i++)
+       /* for (int i = 0; i < legs.Length; i++)
         {
             if (legs[i].legUp)
             {
@@ -35,6 +35,6 @@ public class AI_Animator : MonoBehaviour
 
             
             
-        }
+        }*/
     }
 }
