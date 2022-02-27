@@ -64,7 +64,7 @@ public class door_script : MonoBehaviour
         {
 
             displayMats = displayRenderer.materials;
-            displayMats[1].color = inventory.GetColor(true);
+            displayMats[0].color = inventory.GetColor(true);
             displayRenderer.materials = displayMats;
 
         }
@@ -117,7 +117,12 @@ public class door_script : MonoBehaviour
             if (needsKey)
             {
 
-                doorAnimator.SetBool("open", true);
+                if (inventory.CheckForKey(displayMats[0].color))
+                {
+
+                    doorAnimator.SetBool("open", true);
+
+                }
 
             }
             else

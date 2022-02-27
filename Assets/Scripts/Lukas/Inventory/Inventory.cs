@@ -94,4 +94,24 @@ public class Inventory : ScriptableObject
         colorCount = 0;
 
     }
+
+    public bool CheckForKey(Color color)
+    {
+
+        int index = inventory_list.FindIndex(item => item.GetColor() == color);
+
+        if (index > 0)
+        {
+
+            return true;
+
+        }
+        else
+        {
+
+            return false;
+
+        }
+    
+    }
 }
