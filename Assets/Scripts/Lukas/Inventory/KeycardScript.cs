@@ -39,11 +39,13 @@ public class KeycardScript : MonoBehaviour
     {
         Item keycard = (Item)ScriptableObject.CreateInstance("Item");
         inventory = ui_inventory.GetInventory();
-        keycard.SetColor(inventory.GetColor(false));
+        keycard.SetColor(inventory.GetKeyColor());
+
         keyRenderer = GetComponent<Renderer>();
         keyMats = keyRenderer.materials;
         keyMats[1].color = keycard.GetColor();
         keyRenderer.materials = keyMats;
+
         type = Item.Type.keycard;
         item_id = (int)type;
 
@@ -59,7 +61,7 @@ public class KeycardScript : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
 
-        inventory.AddItem(item, this);
+        inventory.AddItem(item);
         Destroy(gameObject);
 
     }

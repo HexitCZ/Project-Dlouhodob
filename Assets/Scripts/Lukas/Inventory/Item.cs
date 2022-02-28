@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName ="Item data")]
 public class Item : ScriptableObject
 {
+
     [SerializeField]
     [Header("Inventory reference")]
     private Inventory inventory;
@@ -14,8 +15,6 @@ public class Item : ScriptableObject
     [SerializeField]
     [Header("Item color")]
     private Type type;
-
-    
 
     public enum Type
     {
