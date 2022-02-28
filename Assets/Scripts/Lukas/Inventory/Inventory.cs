@@ -102,12 +102,17 @@ public class Inventory : ScriptableObject
 
     public bool CheckForKey(Color color)
     {
-        for (int x = 0; x >= 0; x++)
-        {
-            Debug.Log(inventory_list.Count);
-        }
+        
+        Debug.Log(inventory_list.Count);
+        int index = 0;
 
-        int index = inventory_list.FindIndex(item => item.GetColor() == color);
+        foreach(Item item in inventory_list)
+        {
+            if(item.GetType() == Item.Type.keycard && item.GetColor() == color)
+            {
+                index++;
+            }
+        }
 
         if (index > 0)
         {

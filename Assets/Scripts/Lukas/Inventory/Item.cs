@@ -11,7 +11,7 @@ public class Item : ScriptableObject
     private Inventory inventory;
     [SerializeField]
     [Header("Item color")]
-    private Color color;
+    public Color color;
     [SerializeField]
     [Header("Item color")]
     private Type type;
