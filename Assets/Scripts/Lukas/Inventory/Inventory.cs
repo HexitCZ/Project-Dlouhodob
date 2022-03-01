@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,16 +9,15 @@ public class Inventory : ScriptableObject
     [Header("Inventory reference")]
     [SerializeField]
     private List<Item> inventory_list;
-    private int keyColorCount = 0;
-    private int doorColorCount = 0;
+    private int colorCount = 0;
     private Inventory inventory;
-    public List<Color> Colors;
+    public List<(Color, bool, bool)> keyColors;
 
     public void Awake()
     {
 
         inventory_list = new List<Item>();
-        Colors = new List<Color> { Color.red, Color.green, Color.blue, Color.yellow, Color.magenta };
+        keyColors = new List<(Color, bool, bool)> { (Color.red, false, false), (Color.green, false, false), (Color.blue, false, false), (Color.yellow, false, false), (Color.magenta, false, false) };
 
     }
 
@@ -26,7 +26,7 @@ public class Inventory : ScriptableObject
 
     }
 
-    public void AddItem(Item item)
+    public void AddItem(Item item, KeycardScript keycardScript)
     {
 
         inventory_list.Add(item);
@@ -47,65 +47,59 @@ public class Inventory : ScriptableObject
 
     }
 
-    public Color GetDoorColor()
+    public Color GetColor(bool isDoor)
     {
 
-        if (doorColorCount < Colors.Count)
+        if (colorCount < keyColors.Count)
         {
+            Debug.Log("bad");
 
-            Color c = Colors[doorColorCount];
-            Colors[doorColorCount] = Colors[doorColorCount];
-            doorColorCount++;
 
-            return c;
+            if (!(keyColors[colorCount].Item2) && isDoor)
+            {
+                Debug.Log("bada");
+
+                Color c = keyColors[colorCount].Item1;
+                keyColors[colorCount] = (keyColors[colorCount].Item1, true, keyColors[colorCount].Item3);
+                return c;
+
+            }
+            else if (!(keyColors[colorCount].Item3) && !isDoor)
+            {
+                Debug.Log("badaa");
+
+                Color c = keyColors[colorCount].Item1;
+                keyColors[colorCount] = (keyColors[colorCount].Item1, keyColors[colorCount].Item2, true);
+                return c;
+
+            }
+
+            if (isDoor && keyColors[colorCount].Item3)
+            {
+                colorCount++;
+            }
 
         }
         else
         {
 
-            doorColorCount = ResetCounter();
+            ResetCounter();
 
         }
 
         return Color.gray;
 
     }
-    public Color GetKeyColor()
+
+    private void ResetCounter()
     {
 
-        if (keyColorCount < Colors.Count)
-        {
-
-            Color c = Colors[keyColorCount];
-            Colors[keyColorCount] = Colors[keyColorCount];
-            keyColorCount++;
-
-            return c;
-
-        }
-        else
-        {
-
-            keyColorCount = ResetCounter();
-
-        }
-
-        return Color.gray;
-
-    }
-    private int ResetCounter()
-    {
-
-        return 0;
+        colorCount = 0;
 
     }
 
     public bool CheckForKey(Color color)
     {
-        for (int x = 0; x >= 0; x++)
-        {
-            Debug.Log(inventory_list.Count);
-        }
 
         int index = inventory_list.FindIndex(item => item.GetColor() == color);
 
@@ -121,6 +115,6 @@ public class Inventory : ScriptableObject
             return false;
 
         }
-
+    
     }
 }
