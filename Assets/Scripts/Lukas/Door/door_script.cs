@@ -52,7 +52,7 @@ public class door_script : MonoBehaviour
         closeInvoker = new UnityEvent();
 
         doorRenderer = GetComponent<Renderer>();
-        displayRenderer = GetComponent<Renderer>();
+        
 
         if (broken)
         {
@@ -64,9 +64,8 @@ public class door_script : MonoBehaviour
         {
 
             displayMats = displayRenderer.materials;
-            displayMats[0].color = inventory.GetColor(true);
+            displayMats[0].color = inventory.GetDoorColor();
             displayRenderer.materials = displayMats;
-
         }
     }
 
@@ -114,7 +113,7 @@ public class door_script : MonoBehaviour
             }
 
 
-            if (needsKey)
+            if (needsKey && open)
             {
 
                 if (inventory.CheckForKey(displayMats[0].color))
