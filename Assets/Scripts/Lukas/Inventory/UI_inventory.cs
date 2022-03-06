@@ -61,7 +61,7 @@ public class UI_inventory : MonoBehaviour
                 {
                     if (inventory.GetItem(x) != null)
                     {
-                        Instantiate(item_model);
+                        Instantiate(item_model[x]);
                     }
                 }
             }
