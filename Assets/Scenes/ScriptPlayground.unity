@@ -1314,14 +1314,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4268357316164657258, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: doubleJump
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268357316164657258, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: multiJumpAmount
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4268357316164657263, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
       propertyPath: m_Name
       value: NovaController
@@ -7247,8 +7239,8 @@ MonoBehaviour:
   iterations: 10
   max_distance_value: 4
   min_distance_value: 1
-  leg_anim_speed_value: 0.1
-  slerp_t_value: 0.01
+  leg_anim_speed_value: 0.01
+  slerp_t_value: 0.2
   stepUpAmount: 1
   legs:
   - name: RF
