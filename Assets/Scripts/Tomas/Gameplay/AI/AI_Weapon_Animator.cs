@@ -14,11 +14,11 @@ public class AI_Weapon_Animator : MonoBehaviour
 
     void Update()
     {
-        Vector3 playerDirection = (target.transform.position - this.transform.position).normalized;
-        Quaternion lookRot = Quaternion.LookRotation(playerDirection, Vector3.up);
-        yRot = lookRot;
-        xRot = lookRot;
-        //Y.transform.rotation = Quaternion.Slerp(Y.transform.rotation, yRot, 0.025f);
+        Vector3 playerDirection = (X.transform.position - target.transform.position).normalized;
+        Quaternion lookRot = Quaternion.LookRotation(playerDirection, transform.up);
+        yRot = (Quaternion.Euler(Vector3.Scale(Ymask, lookRot.eulerAngles)));
+        xRot = (Quaternion.Euler(Vector3.Scale(Xmask, lookRot.eulerAngles)));
+        Y.transform.rotation = Quaternion.Slerp(Y.transform.rotation, yRot, 0.025f);
         X.transform.rotation = Quaternion.Slerp(X.transform.rotation, xRot, 0.025f);
         
         
