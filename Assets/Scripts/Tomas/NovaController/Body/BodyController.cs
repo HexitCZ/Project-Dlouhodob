@@ -172,7 +172,7 @@ public class BodyController : MonoBehaviour
         {
             bodyData.inputState = BodyData.EInputState.WALK;
 
-            if (bodyData.onGround || bodyData.airControl == BodyData.EAirControl.CROUCH_AIR_CONTROL && !bodyData.onGround)
+            if (bodyData.onGround && bodyData.inputState == BodyData.EInputState.CROUCH || bodyData.airControl == BodyData.EAirControl.CROUCH_AIR_CONTROL && !bodyData.onGround)
             {
                 curSpeed = bodyData.crouchSpeed;
             }

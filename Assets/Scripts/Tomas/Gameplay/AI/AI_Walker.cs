@@ -4,27 +4,23 @@ using UnityEngine;
 
 public class AI_Walker : AI_Base
 {
-    public bool removeHealth;
+    
     public float slowDownSpeed;
     public float slowDownLength;
     private float startSpeed;
     private bool isSlowed;
-
+    public float distanceTreshold;
+    private WeaponController playerWeapon;
     private new void Start()
     {
+        playerWeapon = WeaponController.instance;
+
         base.Start();
-        preUpdateAction += RemoveHealth;
+        
         startSpeed = navmesh.speed;
     }
 
-    private void RemoveHealth()
-    {
-        if (removeHealth)
-        {
-            health--;
-            removeHealth = !removeHealth;
-        }
-    }
+    
 
     protected override void SetDestination(Transform destination)
     {
@@ -33,7 +29,7 @@ public class AI_Walker : AI_Base
 
     protected override bool CheckHealth()
     {
-        Debug.Log("CheckHealth");
+        
 
         if (health > 0)
         {
@@ -48,14 +44,17 @@ public class AI_Walker : AI_Base
 
     public override void GetHit()
     {
-        base.GetHit();
+        Debug.Log("enemy hit " + gameObject.name);
+        health -= playerWeapon.weapon.damage;
         TrySlowDown();
     }
 
     private void TrySlowDown()
     {
+        
         if (!isSlowed)
         {
+            CancelInvoke("ResetSpeed");
             isSlowed = true;
             Invoke("ResetSpeed", slowDownLength);
             navmesh.speed = slowDownSpeed;
@@ -72,19 +71,33 @@ public class AI_Walker : AI_Base
 
     protected override bool CheckVisibility()
     {
-        //Debug.Log("CheckVisibility");
-        return true;
+        if (Physics.Raycast(gameObject.transform.position, targetDirection, out RaycastHit hit, range))
+        {
+            if (hit.collider.CompareTag("Player"))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     protected override bool CheckRange()
     {
-        //Debug.Log("CheckRange");
-        return true;
+        if(targetDistance < range)
+        {
+            
+            return true;
+
+        }
+        else
+        {
+            return false;
+        }
     }
 
     protected override void Attack()
     {
-        //Debug.Log("Attack");
+        weapon.Shoot(targetDirection);
     }
 
     protected override void Death()

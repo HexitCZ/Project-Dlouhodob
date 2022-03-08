@@ -48,15 +48,22 @@ public class WeaponController : MonoBehaviour
     private bool readyToShoot = true;
     //private bool shooting;
 
+
+    #region Singleton
+    public static WeaponController instance;
+    #endregion
+
+
     private void Awake()
     {
+        instance = this;
+
         animator = weaponRenderer.GetComponent<Animator>();
         animator.runtimeAnimatorController = animatorOverride;
         meshFilter = weaponRenderer.GetComponent<MeshFilter>();
         audioSource = GetComponent<AudioSource>();
         source = weaponRenderer.transform.parent.transform;
         ammoPack = GetAmmoPack();
-
         muzzleFlashObject.visualEffectAsset = weapon.muzzleFlash;
 
         if (animate)
@@ -169,12 +176,19 @@ public class WeaponController : MonoBehaviour
 
         if (Physics.Raycast(source.position, direction, out hit, weapon.range, weapon.whatCanIHit))
         {
-            for (int i = 0; i < hitEvents.Length; i++)
+            IHittable ihit = hit.collider.gameObject.GetComponent<IHittable>();
+            Debug.Log(hit.transform.gameObject.tag + " ass " + ihit == null);
+            if (ihit != null)
             {
-                if (hit.transform.gameObject.CompareTag(hitEvents[i].tag))
+                for (int i = 0; i < hitEvents.Length; i++)
                 {
-                    hitEvents[i].events.Invoke();
+                    if (hit.transform.gameObject.CompareTag(hitEvents[i].tag))
+                    {
+                        print("trying to hit " + hit.collider.gameObject.name);
+                        ihit.GetHit();
+                        hitEvents[i].events.Invoke();
 
+                    }
                 }
             }
             GameObject hitEffect = Instantiate(weapon.hitParticle, hit.point, Quaternion.LookRotation(hit.normal,transform.up));
