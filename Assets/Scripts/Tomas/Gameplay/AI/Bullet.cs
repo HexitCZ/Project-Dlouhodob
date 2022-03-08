@@ -36,8 +36,10 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //play hit vfx
-        //deal damage
+        if (other.CompareTag("Player"))
+        {
+            PlayerHealthController.instance.GetHit(damage);
+        }
         Destroy(gameObject);
     }
 
