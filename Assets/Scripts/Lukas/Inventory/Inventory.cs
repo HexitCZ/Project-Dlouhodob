@@ -1,8 +1,19 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : ScriptableObject
 {
+
+    [Space]
+    [Header("Inventory reference")]
+    [SerializeField]
+    private UI_inventory ui_inv;
+
+    [Space]
+    [Header("Item assigner reference")]
+    [SerializeField]
+    private ItemAssigner item_assigner;
 
     [Space]
     [Header("Inventory reference")]
@@ -28,7 +39,16 @@ public class Inventory : ScriptableObject
 
     public void AddItem(Item item)
     {
+        Image image = null;
+        Color item_color = new();
 
+        if (item.GetType() == Item.Type.keycard)
+        {
+            item_color = item.GetColor();
+        }
+
+        image = item_assigner.GetItemImage(item);
+        ui_inv.SetItemImage(item, image);
         inventory_list.Add(item);
 
     }
@@ -114,14 +134,12 @@ public class Inventory : ScriptableObject
 
     public bool CheckForKey(Color color)
     {
-        for (int x = 0; x >= 0; x++)
-        {
-            Debug.Log(inventory_list.Count);
-        }
+        
+        Debug.Log(inventory_list.Count);
 
         int index = inventory_list.FindIndex(item => item.GetColor() == color);
 
-        if (index > 0)
+        if (index > -1)
         {
 
             return true;
