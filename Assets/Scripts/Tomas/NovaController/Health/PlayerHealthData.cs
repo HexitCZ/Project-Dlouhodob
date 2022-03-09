@@ -13,4 +13,5 @@ public class PlayerHealthData : MonoBehaviour
 
     [Tooltip("0 -> No regen, higher value, higher regeneration")]
     public float regenerationSpeed;
+
 }

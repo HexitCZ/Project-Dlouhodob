@@ -410,6 +410,11 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 0.046636555, z: 0.000018177088}
     m_Extent: {x: 0.0062709395, y: 0.04663823, z: 0.004326252}
   m_DirtyAABB: 0
+--- !u!1 &124436347 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4268357316164657263, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
+  m_PrefabInstance: {fileID: 427001097}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &132819008
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,6 +685,102 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4268357316164657256, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
   m_PrefabInstance: {fileID: 427001097}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &187186449
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124436347}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 7afc9c89a28d9434cb2aef90a5de56f7, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.506
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &259111516
 GameObject:
   m_ObjectHideFlags: 0
@@ -1433,7 +1534,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4268357316164657258, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
       propertyPath: airControl
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4268357316164657258, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
       propertyPath: crouchInAir
@@ -1484,12 +1585,16 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5331213129978645332, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 187186449}
+    - target: {fileID: 5331213129978645332, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
       propertyPath: canBeDamaged
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5331213129978645332, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
       propertyPath: visibleHealth
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5331213129978645332, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
       propertyPath: visibleHealth_
