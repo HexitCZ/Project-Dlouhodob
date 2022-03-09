@@ -118,8 +118,7 @@ public class UI_inventory : MonoBehaviour
                     }
                     catch
                     {
-
-
+                   
                     }
                 }
 

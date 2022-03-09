@@ -46,7 +46,7 @@ public class AI_Test_Script : AI_Base
 
     }
 
-    public override void GetHit()
+    public void GetHit()
     {
         base.GetHit();
         TrySlowDown();

@@ -22,8 +22,10 @@ public class AI_Leg_Controller : MonoBehaviour
     private float min_distance;
 
     private float stepUpAmount;
-
+    [SerializeField]
     private float cur_distance;
+    [SerializeField]
+    private float local_cur_distance;
 
     private void Awake()
     {
@@ -50,12 +52,14 @@ public class AI_Leg_Controller : MonoBehaviour
     {
         //Debug.Log(cur_distance);
         cur_distance = (ikdata.legs[ikindex].legTarget.position - ikdata.legs[ikindex].legTransform.position).magnitude;
+        local_cur_distance = (ikdata.legs[ikindex].legTarget.localPosition - transform.InverseTransformVector(ikdata.legs[ikindex].legTransform.position)).magnitude;
         if(cur_distance > max_distance)
         {
 
             //Debug.Log("leg_move");
             InvokeRepeating("Animate", 0, leg_anim_speed);
         }
+        legTransform.position = legTransform.position;
     }
 
     void Animate()
@@ -69,11 +73,7 @@ public class AI_Leg_Controller : MonoBehaviour
             legUp = true;
             stepUp = Vector3.up * stepUpAmount;
         }
-        legTransform.position = 
-            Vector3.MoveTowards(
-            legTransform.position, 
-            legTarget.position + 
-            stepUp, slerp_t);
+        legTransform.position = Vector3.MoveTowards(legTransform.position, legTarget.position + stepUp, slerp_t);
 
         if (cur_distance < min_distance)
         {
