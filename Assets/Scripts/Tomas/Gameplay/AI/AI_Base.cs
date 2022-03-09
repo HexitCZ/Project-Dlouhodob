@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AI_Base : MonoBehaviour
+public class AI_Base : MonoBehaviour, IHittable
 {
     [field: SerializeField] protected Transform target { get; set; }
+    [field: SerializeField] protected bool dynamic { get; set; }
+    [field: SerializeField] protected AI_Projectile_Weapon weapon { get; set; }
 
     [SerializeField] protected bool isAlive { get { return CheckHealth(); } }
     [SerializeField] protected bool isVisible { get { return CheckVisibility(); } }
@@ -14,6 +16,8 @@ public class AI_Base : MonoBehaviour
     
     [field: SerializeField] protected int health { get; set; }
     [field: SerializeField] protected int range { get; set; }
+    [field: SerializeField] protected float targetDistance { get; set; }
+    [field: SerializeField] protected Vector3 targetDirection { get; set; }
 
     [field: SerializeField] protected Action preUpdateAction { get; set; }
     [field: SerializeField] protected Action postUpdateAction { get; set; }
@@ -28,12 +32,13 @@ public class AI_Base : MonoBehaviour
 
     protected void Start()
     {
-
-        navmesh = gameObject?.GetComponent<NavMeshAgent>();
-        if(navmesh == null)
+        if (dynamic)
         {
-            Debug.Log("hatupat");
-            navmesh = gameObject.transform.GetChild(0).GetComponent<NavMeshAgent>();
+            navmesh = gameObject?.GetComponent<NavMeshAgent>();
+            if (navmesh == null)
+            {
+                navmesh = gameObject.transform.GetChild(0).GetComponent<NavMeshAgent>();
+            }
         }
     }
 
@@ -43,16 +48,21 @@ public class AI_Base : MonoBehaviour
 
         if (isAlive)
         {
-            SetDestination(target);
+            if (dynamic)
+            {
+                SetDestination(target);
+            }
 
+            targetDistance = Vector3.Distance(target.position, this.transform.position);
+            targetDirection = (target.position - this.transform.position).normalized;
             if (isVisible)
             {
                 visibleAction?.Invoke();
-
+                
                 if (inRange)
                 {
                     inRangeAction?.Invoke();
-                
+                    
                     Attack();
                 }
             }
@@ -68,10 +78,10 @@ public class AI_Base : MonoBehaviour
 
     protected virtual void SetDestination(Transform destination)
     {
-        print("setDestination");
+        ///print("setDestination");
         navmesh.destination = destination.position;
+        
     }
-
     public virtual void GetHit()
     {
         Debug.Log(gameObject.name + " HIT");

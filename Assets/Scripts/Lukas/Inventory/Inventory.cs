@@ -100,6 +100,18 @@ public class Inventory : ScriptableObject
 
     }
 
+    public Item GetItem(int index)
+    {
+        if(index < inventory_list.Count)
+        {
+            return inventory_list[index];
+        }
+        else
+        {
+            return null;
+        }
+    }
+
     public bool CheckForKey(Color color)
     {
         

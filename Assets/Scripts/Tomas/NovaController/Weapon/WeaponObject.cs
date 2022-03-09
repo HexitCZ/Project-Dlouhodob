@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
 
-[CreateAssetMenu(menuName = "Weapon object")]
+[CreateAssetMenu(menuName = "Scriptables/Weapon object")]
 public class WeaponObject : ScriptableObject
 {
     [Header("Properties")]
@@ -34,5 +34,5 @@ public class WeaponObject : ScriptableObject
     public VisualEffectAsset muzzleFlash;
     [Tooltip("Prefab with VisualEffect component")]
     public GameObject hitParticle;
-    
+
 }

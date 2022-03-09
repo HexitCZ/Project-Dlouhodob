@@ -13,11 +13,18 @@ public class UI_inventory : MonoBehaviour
     [Header("Object image")]
     [SerializeField]
     private Image image;
+    
+    [Space]
+    [Header("Holder reference")]
+    [SerializeField]
+    private Image image_holder;
+
+    private List<Image> item_model;
 
     public void Awake()
     {
         inventory = (Inventory)ScriptableObject.CreateInstance("Inventory");
-    }
+    }   
 
     public void Start()
     {
@@ -27,12 +34,10 @@ public class UI_inventory : MonoBehaviour
 
     }
 
+
     void Update()
     {
-        for(int x = 0;  x < inventory.GetCount(); x++)
-        {
-            
-        }
+        
     }
 
     public Inventory GetInventory()
@@ -49,7 +54,17 @@ public class UI_inventory : MonoBehaviour
         {
 
             image.enabled = !image.enabled;
-
+            Time.timeScale = image.enabled ? 0f : 1f;
+            if(Time.timeScale == 0f)
+            {
+                for (int x = 0; x < inventory.GetCount(); x++)
+                {
+                    if (inventory.GetItem(x) != null)
+                    {
+                        Instantiate(item_model[x]);
+                    }
+                }
+            }
         }
 
     }
