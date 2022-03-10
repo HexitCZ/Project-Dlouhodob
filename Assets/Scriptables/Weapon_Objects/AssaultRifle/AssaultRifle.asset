@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d77f9da4d39f9144fb5794810dc5a300, type: 3}
+  m_Name: AssaultRifle
+  m_EditorClassIdentifier: 
+  gunName: Pif
+  description: Pif jk zbran
+  position: {x: 0, y: 0, z: 0}
+  rotation: {x: 0, y: 0, z: 0}
+  scale: {x: 1, y: 1, z: 1}
+  ammoIndex: 0
+  damage: 5
+  range: 100
+  bulletSpread: 0
+  bulletsPerTap: 0
+  timeBetweenShots: 0.2
+  fullAuto: 1
+  whatCanIHit:
+    serializedVersion: 2
+    m_Bits: 23
+  reloadTime: 2
+  mesh: {fileID: 6947591015609394669, guid: b6ee760b60f979e4cb8b3f4d2c7570ef, type: 3}
+  materials:
+  - {fileID: 2100000, guid: db45e92b76c2f8e4780896c5b048f888, type: 2}
+  - {fileID: 2100000, guid: 44def252cdba42248be8e6800b625ce6, type: 2}
+  weaponAnimator: {fileID: 22100000, guid: 0795d1d38d2d6a14cbd312d869f504e3, type: 2}
+  muzzleFlash: {fileID: 8926484042661614526, guid: 13c988ff3f54e0248a3bd2d467405817, type: 3}
+  hitParticle: {fileID: 3742677473019854988, guid: 99dd5b734b04b9a4a8f458b48db7da3c, type: 3}

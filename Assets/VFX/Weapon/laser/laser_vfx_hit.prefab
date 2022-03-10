@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3742677473019854993}
   - component: {fileID: 3742677473019854990}
   m_Layer: 0
-  m_Name: vfx_hit
+  m_Name: laser_vfx_hit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

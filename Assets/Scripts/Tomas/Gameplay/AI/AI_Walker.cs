@@ -45,7 +45,7 @@ public class AI_Walker : AI_Base
     public override void GetHit()
     {
         //Debug.Log("enemy hit " + gameObject.name);
-        health -= playerWeapon.weapon.damage;
+        health -= playerWeapon.currentWeapon.damage;
         TrySlowDown();
     }
 

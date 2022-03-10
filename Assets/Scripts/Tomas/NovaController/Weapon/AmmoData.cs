@@ -7,6 +7,7 @@ public class AmmoData : MonoBehaviour
     [System.Serializable]
     public class AmmoPack
     {
+        public string weapon;
         [Tooltip("Bullets currently in a magazine")]
         public int bullets_in_magazine;
         [Tooltip("How many bullets can a magazine handle.")]

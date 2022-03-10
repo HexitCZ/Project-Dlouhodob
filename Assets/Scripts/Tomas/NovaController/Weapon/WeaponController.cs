@@ -11,8 +11,9 @@ public class WeaponController : MonoBehaviour
     public AmmoData ammoData;
 
     public GameObject weaponRenderer;
-    
-    public WeaponObject weapon;
+
+    public WeaponObject currentWeapon;
+    public WeaponObject[] weapons;
 
     public bool animate;
 
@@ -20,8 +21,6 @@ public class WeaponController : MonoBehaviour
     public bool reloadWhileRunning;
 
     private BodyData bodyData;
-
-    public AnimatorOverrideController animatorOverride;
 
     public HitEvent[] hitEvents;
 
@@ -34,20 +33,20 @@ public class WeaponController : MonoBehaviour
     private bool reloading;
     private RaycastHit hit;
     private Transform source;
-
+    private int ammoIndex;
     [Space]
     private bool reload;
-    
+
     [Space]
     private AmmoData.AmmoPack ammoPack;
 
     private MeshFilter meshFilter;
+    private MeshRenderer meshRenderer;
     private Animator animator;
+    private AnimatorOverrideController animatorOverride;
     private AudioSource audioSource;
 
     private bool readyToShoot = true;
-    //private bool shooting;
-
 
     #region Singleton
     public static WeaponController instance;
@@ -59,37 +58,56 @@ public class WeaponController : MonoBehaviour
         instance = this;
 
         animator = weaponRenderer.GetComponent<Animator>();
-        animator.runtimeAnimatorController = animatorOverride;
         meshFilter = weaponRenderer.GetComponent<MeshFilter>();
+        meshRenderer = weaponRenderer.GetComponent<MeshRenderer>();
         audioSource = GetComponent<AudioSource>();
         source = weaponRenderer.transform.parent.transform;
-        ammoPack = GetAmmoPack();
-        muzzleFlashObject.visualEffectAsset = weapon.muzzleFlash;
+
+
+        SetWeaponObject(currentWeapon);
 
         if (animate)
         {
             bodyData = GetComponent<BodyData>();
         }
+
     }
 
     private void Update()
     {
-        InputResolver();   
+
+        InputResolver();
         if (animate)
         {
             AnimationResolver();
         }
     }
+
+    private void FixedUpdate()
+    {
+        if (ammoIndex != currentWeapon.ammoIndex) //PLACEHOLDER, MUST CHANGE <------------------------------------------------------
+        {
+            Debug.LogWarning(":O weapon has CHANGED");
+            SetWeaponObject(currentWeapon);
+
+        }
+    }
+
     public void SetWeaponObject(WeaponObject newWO)
     {
-        weapon = newWO;
+        currentWeapon = newWO;
+        meshFilter.mesh = currentWeapon.mesh;
+        animator.runtimeAnimatorController = currentWeapon.weaponAnimator;
+        meshRenderer.materials = currentWeapon.materials;
+        muzzleFlashObject.visualEffectAsset = currentWeapon.muzzleFlash;
+        ammoIndex = currentWeapon.ammoIndex;
+        ammoPack = GetAmmoPack();
     }
 
     private AmmoData.AmmoPack GetAmmoPack()
     {
-        return ammoData.GetAmmoPack(weapon.ammoIndex);
+        return ammoData.GetAmmoPack(ammoIndex);
     }
-
 
     public void InputResolver()
     {
@@ -99,7 +117,7 @@ public class WeaponController : MonoBehaviour
             if (shoot && readyToShoot && ammoPack.bullets_in_magazine > 0 && !reloading)
             {
                 shooting = true;
-                if (weapon.fullAuto)
+                if (currentWeapon.fullAuto)
                 {
                     Shoot();
                 }
@@ -122,7 +140,7 @@ public class WeaponController : MonoBehaviour
                 Reload();
             }
         }
-        
+
     }
 
     private void AnimationResolver()
@@ -161,12 +179,13 @@ public class WeaponController : MonoBehaviour
         animator.SetBool("Reload", reloading);
 
     }
+
     private void Shoot()
     {
         readyToShoot = false;
 
         //Debug.Log("shoot");
-        
+
         Vector3 direction = weaponRenderer.transform.forward;
 
         muzzleFlashObject.Play();
@@ -174,7 +193,7 @@ public class WeaponController : MonoBehaviour
         animator.SetBool("Shoot", true);
 
 
-        if (Physics.Raycast(source.position, direction, out hit, weapon.range, weapon.whatCanIHit))
+        if (Physics.Raycast(source.position, direction, out hit, currentWeapon.range, currentWeapon.whatCanIHit))
         {
             IHittable ihit = hit.collider.gameObject.GetComponent<IHittable>();
             Debug.Log(hit.transform.gameObject.tag + " ass " + ihit == null);
@@ -191,7 +210,7 @@ public class WeaponController : MonoBehaviour
                     }
                 }
             }
-            GameObject hitEffect = Instantiate(weapon.hitParticle, hit.point, Quaternion.LookRotation(hit.normal,transform.up));
+            GameObject hitEffect = Instantiate(currentWeapon.hitParticle, hit.point, Quaternion.LookRotation(hit.normal, transform.up));
             hitEffect.GetComponent<VisualEffect>().Play();
             hitEffect.transform.SetParent(hit.collider.transform);
             Destroy(hitEffect, 10);
@@ -201,7 +220,7 @@ public class WeaponController : MonoBehaviour
             direction.Scale(Vector3.one * 10);
         }
         ammoPack.bullets_in_magazine--;
-        Invoke("ResetShot", weapon.timeBetweenShots);
+        Invoke("ResetShot", currentWeapon.timeBetweenShots);
     }
 
     private void ResetShot()
@@ -218,8 +237,8 @@ public class WeaponController : MonoBehaviour
         //Debug.Log("Reloading");
         reloading = true;
 
-        
-        Invoke("ReloadFinished", weapon.reloadTime);
+
+        Invoke("ReloadFinished", currentWeapon.reloadTime);
     }
 
     private void ReloadFinished()
@@ -231,7 +250,7 @@ public class WeaponController : MonoBehaviour
 
             UpdateAmmoData();
         }
-        
+
         reloading = false;
 
     }
@@ -241,10 +260,9 @@ public class WeaponController : MonoBehaviour
         reloading = false;
     }
 
-
     private void UpdateAmmoData()
     {
-        ammoData.SetAmmoPack(weapon.ammoIndex, ammoPack);
+        ammoData.SetAmmoPack(ammoIndex, ammoPack);
     }
 
     public void OnShoot(InputAction.CallbackContext press)
@@ -264,7 +282,6 @@ public class WeaponController : MonoBehaviour
     {
         reload = press.performed;
     }
-
 
     [System.Serializable]
     public class HitEvent
