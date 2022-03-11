@@ -42,8 +42,8 @@ VisualEffect:
   m_GameObject: {fileID: 1930470940}
   m_Enabled: 1
   m_Asset: {fileID: 8926484042661614526, guid: 13c988ff3f54e0248a3bd2d467405817, type: 3}
-  m_InitialEventName: OnPlay
-  m_InitialEventNameOverriden: 0
+  m_InitialEventName: 
+  m_InitialEventNameOverriden: 1
   m_StartSeed: 0
   m_ResetSeedOnPlay: 1
   m_ResourceVersion: 1
@@ -666,7 +666,7 @@ MonoBehaviour:
   sprintSpeed: 7
   accelerationSpeed: 40
   deaccelerationSpeed: 0.2
-  crouchDeaccelerationSpeed: 0.02
+  crouchDeaccelerationSpeed: 0.01
   deaccelerationSpeedInAir: 1000
   jumpForce: 400
   timeToFallAnim: 5
