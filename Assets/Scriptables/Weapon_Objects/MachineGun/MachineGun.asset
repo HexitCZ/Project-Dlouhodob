@@ -34,6 +34,7 @@ MonoBehaviour:
   mesh: {fileID: 6947591015609394669, guid: b6ee760b60f979e4cb8b3f4d2c7570ef, type: 3}
   materials:
   - {fileID: -6652209265254514547, guid: 157fbc3311e27a34cadb4b82d12c6980, type: 3}
+  - {fileID: 2100000, guid: 907978b2eb50e7c479d321eb31cc542c, type: 2}
   weaponAnimator: {fileID: 22100000, guid: 0795d1d38d2d6a14cbd312d869f504e3, type: 2}
   muzzleFlash: {fileID: 8926484042661614526, guid: 13c988ff3f54e0248a3bd2d467405817, type: 3}
   hitParticle: {fileID: 3742677473019854988, guid: 99dd5b734b04b9a4a8f458b48db7da3c, type: 3}
