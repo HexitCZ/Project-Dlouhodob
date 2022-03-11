@@ -12,6 +12,8 @@ public class WeaponSelector : MonoBehaviour
     private int scrollIndex;
     private int maxScrollIndex;
     private int changingWeapon;
+    private int lastScrollFrame; 
+
 
     private Quaternion baseRotation = Quaternion.Euler(0, 0, 0);
     private Quaternion changeRotation = Quaternion.Euler(30, -43, 1);
@@ -41,8 +43,8 @@ public class WeaponSelector : MonoBehaviour
     }
     private void CheckWithProgress(bool add)
     {
-        bool mg = GameProgressManager.instance.GetEventProgress("WeaponUnlocks", "UnlockMG");
         bool ar = GameProgressManager.instance.GetEventProgress("WeaponUnlocks", "UnlockAR");
+        bool mg = GameProgressManager.instance.GetEventProgress("WeaponUnlocks", "UnlockMG");
         bool sp = GameProgressManager.instance.GetEventProgress("WeaponUnlocks", "UnlockSP");
         
         switch (scrollIndex)
@@ -50,26 +52,29 @@ public class WeaponSelector : MonoBehaviour
             case 0:
                 if (ar)
                 {
-                    Debug.Log("ar");
+                  //  Debug.Log("ar true");
                     return;
                 }
+                //Debug.Log("ar false");
                 break;
             case 1:
                 if (mg)
                 {
-                    Debug.Log("mg");
+                  //  Debug.Log("mg true");
                     return;
                 }
+                //Debug.Log("mg false");
                 break;
             case 2:
                 if (sp)
                 {
-                    Debug.Log("sp");
+                  //  Debug.Log("sp true");
                     return;
                 }
+                //Debug.Log("sp false");
                 break;
         }
-        Debug.Log(scrollIndex + " " + ar + mg + sp);
+        //Debug.Log(scrollIndex + " AR " + ar + "   MG " + mg + "   SP " + sp);
         UpdateScrollIndex(add);
     }
 
@@ -112,15 +117,21 @@ public class WeaponSelector : MonoBehaviour
     public void OnScroll(InputAction.CallbackContext scroll)
     {
         float s = scroll.ReadValue<float>();
-        if (s > 0)
+        Debug.Log(s);
+        if (lastScrollFrame != Time.frameCount)
         {
-            UpdateScrollIndex(true);
-            s = 0;
-        }
-        else if (s < 0)
-        {
-            UpdateScrollIndex(false);
-            s = 0;
+            if (s > 0)
+            {
+                UpdateScrollIndex(true);
+                s = 0;
+            }
+            else if (s < 0)
+            {
+                UpdateScrollIndex(false);
+                s = 0;
+            }
+
+            lastScrollFrame = Time.frameCount;
         }
     }
 

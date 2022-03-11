@@ -114,7 +114,7 @@ public class WeaponController : MonoBehaviour
         if (bodyData.physicState != BodyData.EPhysicState.RUNNING ||
             bodyData.physicState == BodyData.EPhysicState.RUNNING && shootWhileRunning)
         {
-            if (shoot && readyToShoot && ammoPack.bullets_in_magazine > 0 && !reloading)
+            if (shoot && readyToShoot && /*COMMENT FOR RELOADING > */ ammoPack.bullets_left > 0) //ammoPack.bullets_in_magazine > 0 && !reloading) RELOADING
             {
                 shooting = true;
                 if (currentWeapon.fullAuto)
@@ -131,7 +131,7 @@ public class WeaponController : MonoBehaviour
             }
         }
 
-        //Debug.Log(ammoPack.magazine_size - ammoPack.bullets_in_magazine + " " + (ammoPack.bullets_left >= (ammoPack.magazine_size - ammoPack.bullets_in_magazine)) + " " + !reloading);
+        /*      //UNCOMMENT FOR RELOADING--------------------------------------------------------------
         if (bodyData.physicState != BodyData.EPhysicState.RUNNING ||
             bodyData.physicState == BodyData.EPhysicState.RUNNING && reloadWhileRunning)
         {
@@ -139,7 +139,7 @@ public class WeaponController : MonoBehaviour
             {
                 Reload();
             }
-        }
+        }*/
 
     }
 
@@ -163,7 +163,7 @@ public class WeaponController : MonoBehaviour
 
                 if (!reloadWhileRunning)
                 {
-                    ReloadInterrupted();
+                    //ReloadInterrupted();                              UNCOMMENT FOR RELOADING
                 }
 
                 break;
@@ -196,7 +196,7 @@ public class WeaponController : MonoBehaviour
         if (Physics.Raycast(source.position, direction, out hit, currentWeapon.range, currentWeapon.whatCanIHit))
         {
             IHittable ihit = hit.collider.gameObject.GetComponent<IHittable>();
-            Debug.Log(hit.transform.gameObject.tag + " ass " + ihit == null);
+            
             if (ihit != null)
             {
                 for (int i = 0; i < hitEvents.Length; i++)
@@ -219,7 +219,8 @@ public class WeaponController : MonoBehaviour
         {
             direction.Scale(Vector3.one * 10);
         }
-        ammoPack.bullets_in_magazine--;
+        //ammoPack.bullets_in_magazine--;                       UNCOMMENT FOR RELOADING ----------
+        ammoPack.bullets_left--;                                //COMMENT FOR RELOADING ----------
         Invoke("ResetShot", currentWeapon.timeBetweenShots);
     }
 
@@ -231,7 +232,7 @@ public class WeaponController : MonoBehaviour
 
         UpdateAmmoData();
     }
-
+    /*                          UNCOMMENT FOR RELOADING <--------------
     private void Reload()
     {
         //Debug.Log("Reloading");
@@ -258,7 +259,7 @@ public class WeaponController : MonoBehaviour
     private void ReloadInterrupted()
     {
         reloading = false;
-    }
+    }*/
 
     private void UpdateAmmoData()
     {
@@ -277,10 +278,10 @@ public class WeaponController : MonoBehaviour
             shoot_charge = press.duration;
         }
     }
-
+    
     public void OnReload(InputAction.CallbackContext press)
     {
-        reload = press.performed;
+        //reload = press.performed;                     UNCOMMENT FOR RELOADING -------
     }
 
     [System.Serializable]

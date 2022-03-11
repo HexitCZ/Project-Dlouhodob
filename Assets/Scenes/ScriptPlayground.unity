@@ -410,11 +410,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 0.046636555, z: 0.000018177088}
     m_Extent: {x: 0.0062709395, y: 0.04663823, z: 0.004326252}
   m_DirtyAABB: 0
---- !u!1 &124436347 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4268357316164657263, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-  m_PrefabInstance: {fileID: 427001097}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &132819008
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,20 +680,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4268357316164657256, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
   m_PrefabInstance: {fileID: 427001097}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &187186456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 124436347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dcf05799156117418a51b6be7e8b3fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponChangeSpeed: 0.2
-  weaponHolder: {fileID: 778105750}
 --- !u!1 &259111516
 GameObject:
   m_ObjectHideFlags: 0
@@ -1294,26 +1275,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1726510189}
     m_Modifications:
-    - target: {fileID: 4268357316164657253, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: currentWeapon
+    - target: {fileID: 1930470942, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
+      propertyPath: m_InitialEventName
       value: 
-      objectReference: {fileID: 11400000, guid: 882aadd48cde4c149881571ebf02cda0, type: 2}
-    - target: {fileID: 4268357316164657253, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: weapons.Array.size
-      value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 4268357316164657253, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: weapons.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 882aadd48cde4c149881571ebf02cda0, type: 2}
-    - target: {fileID: 4268357316164657253, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: weapons.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 093f6d638e7dba340b944a029060f82d, type: 2}
-    - target: {fileID: 4268357316164657253, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: weapons.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: c3d0ce3e675778e4182ab3b6384e8b2d, type: 2}
+    - target: {fileID: 1930470942, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
+      propertyPath: m_InitialEventNameOverriden
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4268357316164657256, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1358,77 +1327,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4268357316164657257, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_ActionEvents.Array.size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268357316164657257, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_ActionEvents.Array.data[9].m_ActionId
-      value: 37a15952-80f9-4b25-a9dc-223cdd52c003
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268357316164657257, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_ActionEvents.Array.data[9].m_ActionName
-      value: PlayerControls/WeaponScroll[/Mouse/scroll/y]
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268357316164657257, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_ActionEvents.Array.data[9].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268357316164657257, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_ActionEvents.Array.data[9].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268357316164657257, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_ActionEvents.Array.data[9].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 187186456}
-    - target: {fileID: 4268357316164657257, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_ActionEvents.Array.data[9].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268357316164657257, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_ActionEvents.Array.data[9].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnScroll
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268357316164657257, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_ActionEvents.Array.data[9].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: WeaponSelector, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268357316164657257, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_ActionEvents.Array.data[9].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+    - target: {fileID: 4268357316164657258, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
+      propertyPath: crouchDeaccelerationSpeed
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 4268357316164657263, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
       propertyPath: m_Name
       value: NovaController
-      objectReference: {fileID: 0}
-    - target: {fileID: 7675345616810282759, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7675345616810282759, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7675345616810282759, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7675345616810282759, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7675345616810282759, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7675345616810282759, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7675345616810282759, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
@@ -2526,11 +2431,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 777175534}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &778105750 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3278468842605151046, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-  m_PrefabInstance: {fileID: 427001097}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &809811227
 GameObject:
   m_ObjectHideFlags: 0
@@ -6261,7 +6161,7 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls: []
     - name: UnlockMG
-      finished: 0
+      finished: 1
       OnFinished:
         m_PersistentCalls:
           m_Calls: []

@@ -19,6 +19,9 @@ public class BodyData : MonoBehaviour
     
     [Tooltip("How fast will body deaccelerate.")]
     public float deaccelerationSpeed;
+
+    [Tooltip("How fast will body deaccelerate while couching. Can be used for crouch sliding.")]
+    public float crouchDeaccelerationSpeed;
     public EDeaccelerationSpeedInAir deaccelerationSpeedInAir;
     
     [Tooltip("Force of jump")]
