@@ -7,7 +7,7 @@ public class Inventory : ScriptableObject
     [Space]
     [Header("Inventory reference")]
     [SerializeField]
-    private List<Item> inventory_list;
+    private List<(Item, Color)> inventory_list;
     private int keyColorCount = 0;
     private int doorColorCount = 0;
     private Inventory inventory;
@@ -16,7 +16,7 @@ public class Inventory : ScriptableObject
     public void Awake()
     {
 
-        inventory_list = new List<Item>();
+        inventory_list = new List<(Item, Color)>();
         Colors = new List<Color> { Color.red, Color.green, Color.blue, Color.yellow, Color.magenta };
 
     }
@@ -26,17 +26,17 @@ public class Inventory : ScriptableObject
 
     }
 
-    public void AddItem(Item item)
+    public void AddItem(Item item, Color color)
     {
 
-        inventory_list.Add(item);
+        inventory_list.Add((item, color));
 
     }
 
-    public void UseItemConsumable(Item item)
+    public void UseItemConsumable(Item item, Color color)
     {
 
-        inventory_list.Remove(item);
+        inventory_list.Remove((item, color));
 
     }
 
@@ -104,7 +104,7 @@ public class Inventory : ScriptableObject
     {
         if(index < inventory_list.Count)
         {
-            return inventory_list[index];
+            return inventory_list[index].Item1;
         }
         else
         {
@@ -114,13 +114,12 @@ public class Inventory : ScriptableObject
 
     public bool CheckForKey(Color color)
     {
-        
-        Debug.Log(inventory_list.Count);
+
         int index = 0;
 
-        foreach(Item item in inventory_list)
+        foreach((Item, Color) item in inventory_list)
         {
-            if(item.GetType() == Item.Type.keycard && item.GetColor() == color)
+            if(item.Item1.GetType() == Item.Type.keycard && item.Item2 == color)
             {
                 index++;
             }

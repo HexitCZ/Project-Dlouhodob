@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ui_script : MonoBehaviour
 {
@@ -10,14 +11,16 @@ public class ui_script : MonoBehaviour
     [Header("Canvas")]
     public Text pressText;
 
+    private bool open; 
+
     void Start()
     {
-       
+        open = false;  
     }
 
     void Update()
     {
-        
+       
     }
     
     public void view_press_e()
@@ -35,4 +38,26 @@ public class ui_script : MonoBehaviour
         pressText.text = "The door is broken";
         pressText.color = Color.red;
     }
+
+    public bool GetInput()
+    {
+        return open;
+    }
+
+    public void OnInteract(InputAction.CallbackContext input)
+    {
+        if (input.started)
+        {
+
+            open = true;
+
+        }
+
+    }
+
+    public void ResetOpen()
+    {
+        open = false;
+    }
+    
 }

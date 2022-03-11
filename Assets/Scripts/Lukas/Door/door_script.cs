@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.InputSystem;
 
 public class door_script : MonoBehaviour
 {
@@ -17,13 +16,16 @@ public class door_script : MonoBehaviour
     private bool needsKey;
     [SerializeField]
     private bool inRange;
-    [SerializeField]
-    private KeycardScript key;
 
     [Space]
     [Header("UI inventory")]
     [SerializeField]
     private UI_inventory ui_inventory;
+
+    [Space]
+    [Header("UI script")]
+    [SerializeField]
+    private ui_script ui_script;
 
     private Inventory inventory;
 
@@ -43,6 +45,8 @@ public class door_script : MonoBehaviour
 
     public Material[] displayMats;
 
+    private Color displayColor;
+
     public void Start()
     {
 
@@ -52,7 +56,9 @@ public class door_script : MonoBehaviour
         closeInvoker = new UnityEvent();
 
         doorRenderer = GetComponent<Renderer>();
-        
+        displayMats = displayRenderer.materials;
+        displayColor = displayMats[0].color;
+
 
         if (broken)
         {
@@ -60,26 +66,14 @@ public class door_script : MonoBehaviour
             doorAnimator.SetBool("broken", true);
 
         }
-        else if (needsKey)
-        {
 
-            displayMats = displayRenderer.materials;
-            displayMats[0].color = inventory.GetDoorColor();
-            displayRenderer.materials = displayMats;
-        }
     }
 
     public void Update()
     {
 
-    }
 
-    public void OnInteract(InputAction.CallbackContext input)
-    {
-        if (input.started)
-        {
-            this.open = true;
-        }
+
     }
 
     public void OnTriggerEnter(Collider other)
@@ -93,6 +87,8 @@ public class door_script : MonoBehaviour
     }
     public void OnTriggerStay(Collider other)
     {
+        open = ui_script.GetInput();
+
         if (automatic)
         {
             doorAnimator.SetBool("open", true);
@@ -116,7 +112,7 @@ public class door_script : MonoBehaviour
             if (needsKey && open)
             {
 
-                if (inventory.CheckForKey(displayMats[0].color))
+                if (inventory.CheckForKey(displayColor))
                 {
 
                     doorAnimator.SetBool("open", true);
@@ -144,7 +140,8 @@ public class door_script : MonoBehaviour
     {
 
         doorAnimator.SetBool("open", false);
-        open = false;
+        ui_script.ResetOpen();
+        open = ui_script.GetInput();
         closeInvoker.Invoke();
 
     }
