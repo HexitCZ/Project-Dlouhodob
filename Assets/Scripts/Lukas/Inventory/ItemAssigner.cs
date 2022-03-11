@@ -8,26 +8,28 @@ public class ItemAssigner : ScriptableObject
     [Space]
     [Header("Ammo")]
     [SerializeField]
-    private Image ammo_image;
+    private Sprite ammo_image;
     
     [Space]
     [Header("Exp")]
     [SerializeField]
-    private Image exp_image;
+    private Sprite exp_image;
 
     [Space]
     [Header("Health")]
     [SerializeField]
-    private Image health_image;
+    private Sprite health_image;
 
     [Space]
     [Header("Keycard")]
     [SerializeField]
-    private Image key_image;
+    private Sprite key_image;
 
-    void Start()
+    void Awake()
     {
         
+        key_image = Resources.Load<Sprite>("keycard_image_no_color");
+        Debug.Log(key_image.name);
     }
 
     void Update()
@@ -35,27 +37,27 @@ public class ItemAssigner : ScriptableObject
         
     }
 
-    public Image GetItemImage(Item item)
+    public Sprite GetItemImage(Item item)
     {
-        Image image = null;
+        Sprite sprite = null;
 
         if(item.GetType() == Item.Type.ammo)
         {
-            image = ammo_image;
+            sprite = ammo_image;
         }
         else if (item.GetType() == Item.Type.exp)
         {
-            image = exp_image;
+            sprite = exp_image;
         }
         else if (item.GetType() == Item.Type.health)
         {
-            image = health_image;
+            sprite = health_image;
         }
         else if (item.GetType() == Item.Type.keycard)
         {
-            image = key_image;
+            sprite = key_image;
         }
 
-        return image;
+        return sprite;
     }
 }

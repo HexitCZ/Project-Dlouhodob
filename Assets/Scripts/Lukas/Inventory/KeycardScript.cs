@@ -16,7 +16,6 @@ public class KeycardScript : MonoBehaviour
 
     [Space]
     [Header("Key Item")]
-    [SerializeField]
     private Item item;
 
     [Space]
@@ -39,8 +38,9 @@ public class KeycardScript : MonoBehaviour
 
     public Material[] displayMats;
 
-    public Renderer displayRenderer;
-
+    [Space]
+    [Header("Keycard")]
+    [SerializeField]
     private Item keycard;
     
     public void Start()
@@ -50,6 +50,7 @@ public class KeycardScript : MonoBehaviour
         keyColor = keyMats[1].color;
 
         keycard = (Item)ScriptableObject.CreateInstance("Item");
+        keycard.SetType(Item.Type.keycard);
         inventory = ui_inventory.GetInventory();
         //keycard.SetColor(inventory.GetKeyColor());
         

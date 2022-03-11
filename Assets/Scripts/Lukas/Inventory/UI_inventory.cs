@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -8,12 +7,12 @@ public class UI_inventory : MonoBehaviour
 {
 
     private Inventory inventory;
-    
+
     [Space]
     [Header("Object image")]
     [SerializeField]
     private Image image;
-    
+
     [Space]
     [Header("Holder reference")]
     [SerializeField]
@@ -38,13 +37,18 @@ public class UI_inventory : MonoBehaviour
     [Header("UI inventory item container")]
     [SerializeField]
     private Transform item_container;
+    
+    [Space]
+    [Header("Default image")]
+    [SerializeField]
+    private Sprite default_image;
 
     private List<Image> item_model;
 
     public void Awake()
     {
         inventory = (Inventory)ScriptableObject.CreateInstance("Inventory");
-    }   
+    }
 
     public void Start()
     {
@@ -57,7 +61,7 @@ public class UI_inventory : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
     private void SwitchInventory()
@@ -75,7 +79,7 @@ public class UI_inventory : MonoBehaviour
             }
         }
     }
- 
+
     public Inventory GetInventory()
     {
 
@@ -83,46 +87,55 @@ public class UI_inventory : MonoBehaviour
 
     }
 
-    public void SetColor(Transform setObject, Color color)
+    private void SetColor(Transform setObject, Color color)
     {
         setObject.GetComponent<Image>().color = color;
     }
+    private void SetItem(Transform setObject, Sprite sprite)
+    {
+        
+        setObject.GetComponent<Image>().sprite = sprite;
 
-    public void SetItemImage(Item item, Image image)
+    }
+
+    public void SetItemImage(Item item, Color color, Sprite sprite)
     {
         bool isSet = false;
+        bool isAvailable = false;
+        Transform setObject = null;
 
         foreach (Transform child in transform)
         {
-            if (child.name.Contains("inventory_item_slot")  && !isSet)
-            { 
-                foreach (Transform grandchild in child.transform)
+            isAvailable = false;
+            Transform item_color = child.GetChild(0);
+            Transform item_sprite = child.GetChild(1);
+            Debug.Log(item_color.name);
+            Debug.Log(item_sprite.GetComponent<Image>().sprite.name);
+            Debug.Log(item.GetType() == Item.Type.keycard);
+            SetColor(item_color, color);
+        
+            SetItem(item_sprite, sprite);
+        /*if (!isSet)
+            {
+
+                if (item_sprite.GetComponent<Image>().sprite == default_image)
                 {
-                    try
-                    {
-                        if (grandchild.GetComponent<Image>().name != "Image")
-                        {
-                            if (grandchild.GetComponent<Image>().sprite.name == "default_image")
-                            {
-                                grandchild.GetComponent<Image>().sprite = image.sprite;
-                                isSet = true;
 
-                                if(item.GetType() == Item.Type.keycard)
-                                {
-                                    Transform setObject = grandchild;
-                                    SetColor(setObject, item.GetColor());
-                                }
-                            }
-                        }
+                    isAvailable = true;
 
-                    }
-                    catch
-                    {
-                   
-                    }
                 }
 
-            }
+                if (isAvailable)
+                {
+                    if(item.GetType() == Item.Type.keycard)
+                    {
+                        SetColor(item_color, color);
+                    }
+                    SetItem(item_sprite, sprite);
+                    isSet = true;
+                }
+            }*/
+
         }
     }
 
@@ -135,7 +148,7 @@ public class UI_inventory : MonoBehaviour
             SwitchInventory();
 
             Time.timeScale = image.enabled ? 0f : 1f;
-         
+
         }
 
     }
