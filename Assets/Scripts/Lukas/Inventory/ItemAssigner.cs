@@ -29,7 +29,6 @@ public class ItemAssigner : ScriptableObject
     {
         
         key_image = Resources.Load<Sprite>("keycard_image_no_color");
-        Debug.Log(key_image.name);
     }
 
     void Update()

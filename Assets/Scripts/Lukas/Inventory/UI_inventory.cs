@@ -112,10 +112,8 @@ public class UI_inventory : MonoBehaviour
             Debug.Log(item_color.name);
             Debug.Log(item_sprite.GetComponent<Image>().sprite.name);
             Debug.Log(item.GetType() == Item.Type.keycard);
-            SetColor(item_color, color);
-        
-            SetItem(item_sprite, sprite);
-        /*if (!isSet)
+            
+        if (!isSet)
             {
 
                 if (item_sprite.GetComponent<Image>().sprite == default_image)
@@ -134,7 +132,7 @@ public class UI_inventory : MonoBehaviour
                     SetItem(item_sprite, sprite);
                     isSet = true;
                 }
-            }*/
+            }
 
         }
     }
