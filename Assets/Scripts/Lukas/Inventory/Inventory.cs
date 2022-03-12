@@ -13,9 +13,20 @@ public class Inventory : ScriptableObject
     private Inventory inventory;
     public List<Color> Colors;
 
+    [Space]
+    [Header("UI inventory reference")]
+    [SerializeField]
+    private UI_inventory ui_Inventory;
+
+    [Space]
+    [Header("Item assigner reference")]
+    [SerializeField]
+    private ItemAssigner itemAssigner;
+
     public void Awake()
     {
-
+        ui_Inventory = GameObject.Find("inventory_container").GetComponent<UI_inventory>();
+        itemAssigner = (ItemAssigner)ScriptableObject.CreateInstance("ItemAssigner");
         inventory_list = new List<(Item, Color)>();
         Colors = new List<Color> { Color.red, Color.green, Color.blue, Color.yellow, Color.magenta };
 
@@ -28,7 +39,9 @@ public class Inventory : ScriptableObject
 
     public void AddItem(Item item, Color color)
     {
-
+        Sprite sprite = itemAssigner.GetItemImage(item);
+        Debug.Log(sprite.name);
+        ui_Inventory.SetItemImage(item, color, sprite);
         inventory_list.Add((item, color));
 
     }
