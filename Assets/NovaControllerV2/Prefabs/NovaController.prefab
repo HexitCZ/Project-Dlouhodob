@@ -436,6 +436,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4268357316164657256}
   - component: {fileID: 4268357316164657257}
+  - component: {fileID: 3850686933629851942}
   - component: {fileID: 5331213129978645332}
   - component: {fileID: 4268357316164657258}
   - component: {fileID: 4268357316164657259}
@@ -632,6 +633,23 @@ MonoBehaviour:
   m_DefaultActionMap: PlayerControls
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &3850686933629851942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4268357316164657263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ef438117aaa4ba4c96927512d2f7256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionComponents:
+  - {fileID: 4268357316164657253}
+  - {fileID: 187186456}
+  - {fileID: 4268357316270209817}
+  - {fileID: 4268357315555254833}
 --- !u!114 &5331213129978645332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -748,11 +766,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoList:
   - weapon: Assault rifle
-    bullets_left: 60
+    bullets_left: 1000
   - weapon: Machine gun
-    bullets_left: 200
+    bullets_left: 1000
   - weapon: Sniper
-    bullets_left: 3
+    bullets_left: 1000
 --- !u!114 &187186456
 MonoBehaviour:
   m_ObjectHideFlags: 0
