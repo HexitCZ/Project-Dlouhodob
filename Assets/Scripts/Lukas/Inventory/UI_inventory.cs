@@ -144,8 +144,18 @@ public class UI_inventory : MonoBehaviour
         {
 
             SwitchInventory();
-
-            Time.timeScale = image.enabled ? 0f : 1f;
+            if(image.enabled)
+            {
+                Cursor.lockState = CursorLockMode.Confined;
+                
+                Time.timeScale = 0f;
+            } 
+            else
+            {
+                Time.timeScale = 1f;
+            
+                Cursor.lockState = CursorLockMode.Locked;
+            }
 
         }
 
