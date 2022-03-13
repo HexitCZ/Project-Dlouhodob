@@ -650,6 +650,11 @@ MonoBehaviour:
   - {fileID: 187186456}
   - {fileID: 4268357316270209817}
   - {fileID: 4268357315555254833}
+  weaponComponents:
+  - {fileID: 4268357316164657253}
+  - {fileID: 187186456}
+  - {fileID: 4268357316164657252}
+  - {fileID: 4268357316164657252}
 --- !u!114 &5331213129978645332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -739,10 +744,17 @@ MonoBehaviour:
   ammoData: {fileID: 4268357316164657252}
   weaponRenderer: {fileID: 4268357315631991373}
   currentWeapon: {fileID: 11400000, guid: 882aadd48cde4c149881571ebf02cda0, type: 2}
+  currentBullet: {fileID: 11400000, guid: f5f631b56a70ff24fbace672f02dad43, type: 2}
   weapons:
   - {fileID: 11400000, guid: 882aadd48cde4c149881571ebf02cda0, type: 2}
   - {fileID: 11400000, guid: 093f6d638e7dba340b944a029060f82d, type: 2}
   - {fileID: 11400000, guid: c3d0ce3e675778e4182ab3b6384e8b2d, type: 2}
+  - {fileID: 11400000, guid: 58dff297fa43ee744a1017d665fd6481, type: 2}
+  bullets:
+  - {fileID: 11400000, guid: f5f631b56a70ff24fbace672f02dad43, type: 2}
+  - {fileID: 11400000, guid: 7071a83f01651584989ad52e2f01d708, type: 2}
+  - {fileID: 11400000, guid: 8c0dd0ac8dd66624c9249e0b44a99d0d, type: 2}
+  - {fileID: 11400000, guid: f5f631b56a70ff24fbace672f02dad43, type: 2}
   animate: 1
   shootWhileRunning: 1
   reloadWhileRunning: 1

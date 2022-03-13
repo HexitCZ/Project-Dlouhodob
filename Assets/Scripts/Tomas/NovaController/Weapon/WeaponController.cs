@@ -13,7 +13,9 @@ public class WeaponController : MonoBehaviour
     public GameObject weaponRenderer;
 
     public WeaponObject currentWeapon;
+    public PlayerProjectileObject currentBullet;
     public WeaponObject[] weapons;
+    public PlayerProjectileObject[] bullets;
 
     public bool animate;
 
@@ -99,7 +101,7 @@ public class WeaponController : MonoBehaviour
         meshFilter.mesh = currentWeapon.mesh;
         animator.runtimeAnimatorController = currentWeapon.weaponAnimator;
         meshRenderer.materials = currentWeapon.materials;
-        muzzleFlashObject.visualEffectAsset = currentWeapon.muzzleFlash;
+        muzzleFlashObject.visualEffectAsset = currentBullet.muzzleFlashEffect;
         ammoIndex = currentWeapon.ammoIndex;
         ammoPack = GetAmmoPack();
     }
@@ -210,7 +212,7 @@ public class WeaponController : MonoBehaviour
                     }
                 }
             }
-            GameObject hitEffect = Instantiate(currentWeapon.hitParticle, hit.point, Quaternion.LookRotation(hit.normal, transform.up));
+            GameObject hitEffect = Instantiate(currentBullet.hitEffect, hit.point, Quaternion.LookRotation(hit.normal, transform.up));
             hitEffect.GetComponent<VisualEffect>().Play();
             hitEffect.transform.SetParent(hit.collider.transform);
             Destroy(hitEffect, 10);

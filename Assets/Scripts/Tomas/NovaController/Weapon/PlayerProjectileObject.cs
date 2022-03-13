@@ -8,7 +8,7 @@ public class PlayerProjectileObject : ScriptableObject
 {
     [Header("Visual properties")]
     public VisualEffectAsset muzzleFlashEffect;
-    public VisualEffectAsset hitEffect;
+    public GameObject hitEffect;
     [Space]
     [Header("Gameplay properties")]
     [Tooltip("Damage that affects shields the most")]

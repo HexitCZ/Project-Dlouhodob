@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Electrical
   m_EditorClassIdentifier: 
   muzzleFlashEffect: {fileID: 8926484042661614526, guid: 0bb95396babba54459589e5c4ef7d00d, type: 3}
-  hitEffect: {fileID: 8926484042661614526, guid: 779c17dbe0fd80547b7f64d0d81cfb2a, type: 3}
+  hitEffect: {fileID: 3742677473019854988, guid: c66d13ef820e2164d869f46cd3071db3, type: 3}
   shieldDamageMultiplier: 1.5
   heatDamageMultiplier: 0.6
   physicalDamageMultiplier: 0.4

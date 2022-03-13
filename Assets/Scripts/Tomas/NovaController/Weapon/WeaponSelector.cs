@@ -47,6 +47,7 @@ public class WeaponSelector : MonoBehaviour
         bool mg = GameProgressManager.instance.GetEventProgress("WeaponUnlocks", "UnlockMG");
         bool sp = GameProgressManager.instance.GetEventProgress("WeaponUnlocks", "UnlockSP");
         
+        
         switch (scrollIndex)
         {
             case 0:
@@ -73,6 +74,8 @@ public class WeaponSelector : MonoBehaviour
                 }
                 //Debug.Log("sp false");
                 break;
+            case 3: //          pistol is always enabled
+                return;
         }
         //Debug.Log(scrollIndex + " AR " + ar + "   MG " + mg + "   SP " + sp);
         UpdateScrollIndex(add);
@@ -112,6 +115,7 @@ public class WeaponSelector : MonoBehaviour
             return;
         }
         weaponController.currentWeapon = weaponController.weapons[index];
+        weaponController.currentBullet = weaponController.bullets[index];
     }
 
     public void OnScroll(InputAction.CallbackContext scroll)

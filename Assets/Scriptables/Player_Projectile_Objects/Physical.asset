@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6507a233be7c6944984d43afe89c3fe4, type: 3}
   m_Name: Physical
   m_EditorClassIdentifier: 
-  muzzleFlashEffect: {fileID: 8926484042661614526, guid: 13c988ff3f54e0248a3bd2d467405817, type: 3}
-  hitEffect: {fileID: 8926484042661614526, guid: e2bb87597ffea28489b29ab57c640a79, type: 3}
+  muzzleFlashEffect: {fileID: 8926484042661614526, guid: 879dc9ba0af0304468b8f6cdf6b0bce6, type: 3}
+  hitEffect: {fileID: 3742677473019854988, guid: 8baeb5d3942908d4e9e6c11de925b890, type: 3}
   shieldDamageMultiplier: 0.8
   heatDamageMultiplier: 0.2
   physicalDamageMultiplier: 1
