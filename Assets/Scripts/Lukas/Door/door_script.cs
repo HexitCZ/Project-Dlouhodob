@@ -111,7 +111,8 @@ public class door_script : MonoBehaviour
 
             if (needsKey && open)
             {
-
+                
+                
                 if (inventory.CheckForKey(displayColor))
                 {
 

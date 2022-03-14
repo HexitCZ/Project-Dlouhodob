@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Inventory : ScriptableObject
 {
-
     [Space]
     [Header("Inventory reference")]
     [SerializeField]
@@ -29,7 +28,6 @@ public class Inventory : ScriptableObject
         itemAssigner = (ItemAssigner)ScriptableObject.CreateInstance("ItemAssigner");
         inventory_list = new List<(Item, Color)>();
         Colors = new List<Color> { Color.red, Color.green, Color.blue, Color.yellow, Color.magenta };
-
     }
 
     public void Update()

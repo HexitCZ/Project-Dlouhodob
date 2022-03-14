@@ -45,9 +45,14 @@ public class UI_inventory : MonoBehaviour
 
     private List<Image> item_model;
 
+    private Image itemImage;
+
+    public Vector2 mouse_position;
+
     public void Awake()
     {
         inventory = (Inventory)ScriptableObject.CreateInstance("Inventory");
+        GetComponent<GameObject>();
     }
 
     public void Start()
@@ -55,13 +60,17 @@ public class UI_inventory : MonoBehaviour
 
         inventory = (Inventory)ScriptableObject.CreateInstance("Inventory");
         SwitchInventory();
-
+        GetComponent<Image>();
+        itemImage = GetComponent<Image>();
+        
     }
 
 
     void Update()
     {
 
+        mouse_position = Mouse.current.position.ReadValue();
+        
     }
 
     private void SwitchInventory()
