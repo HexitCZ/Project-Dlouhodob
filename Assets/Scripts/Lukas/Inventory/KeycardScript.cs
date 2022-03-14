@@ -16,7 +16,6 @@ public class KeycardScript : MonoBehaviour
 
     [Space]
     [Header("Key Item")]
-    [SerializeField]
     private Item item;
 
     [Space]
@@ -35,20 +34,29 @@ public class KeycardScript : MonoBehaviour
 
     public Material[] keyMats;
 
+    private Color keyColor;
+
+    public Material[] displayMats;
+
+    [Space]
+    [Header("Keycard")]
+    [SerializeField]
+    private Item keycard;
+    
     public void Start()
     {
-        Item keycard = (Item)ScriptableObject.CreateInstance("Item");
-        inventory = ui_inventory.GetInventory();
-        keycard.SetColor(inventory.GetKeyColor());
-
         keyRenderer = GetComponent<Renderer>();
         keyMats = keyRenderer.materials;
-        keyMats[1].color = keycard.GetColor();
-        keyRenderer.materials = keyMats;
+        keyColor = keyMats[1].color;
 
+        keycard = (Item)ScriptableObject.CreateInstance("Item");
+        keycard.SetType(Item.Type.keycard);
+        inventory = ui_inventory.GetInventory();
+        //keycard.SetColor(inventory.GetKeyColor());
+        
+        keyRenderer = GetComponent<Renderer>();
         type = Item.Type.keycard;
-        item_id = (int)type;
-
+        item_id = (int)type;     
     }
 
     public void Update()
@@ -61,7 +69,7 @@ public class KeycardScript : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
 
-        inventory.AddItem(item);
+        inventory.AddItem(keycard, keyColor);
         Destroy(gameObject);
 
     }

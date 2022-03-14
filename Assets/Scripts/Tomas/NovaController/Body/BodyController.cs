@@ -95,7 +95,16 @@ public class BodyController : MonoBehaviour
         {
             if (bodyData.onGround)
             {
-                rb.velocity = Vector3.Lerp(rb.velocity, new Vector3(0, rb.velocity.y, 0), bodyData.deaccelerationSpeed);
+                if (bodyData.inputState == BodyData.EInputState.CROUCH)
+                {
+                    rb.velocity = Vector3.Lerp(rb.velocity, new Vector3(0, rb.velocity.y, 0), bodyData.crouchDeaccelerationSpeed);
+
+                }
+                else
+                {
+                    rb.velocity = Vector3.Lerp(rb.velocity, new Vector3(0, rb.velocity.y, 0), bodyData.deaccelerationSpeed);
+
+                }
             }
             else
             {

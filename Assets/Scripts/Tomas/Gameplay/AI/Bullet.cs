@@ -7,8 +7,8 @@ public class Bullet : MonoBehaviour
 {
     public BulletObject bulletObject;
     [Header("Visual properties")]
-    public VisualEffect projectileEffect;
-    public VisualEffect hitEffect;
+    public VisualEffectAsset projectileEffect;
+    public VisualEffectAsset hitEffect;
     public float speed;
     public Vector3 direction;
     [Space]

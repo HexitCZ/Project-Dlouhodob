@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1930470941}
   m_Layer: 0
   m_Name: muzzleFlash
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,8 +42,8 @@ VisualEffect:
   m_GameObject: {fileID: 1930470940}
   m_Enabled: 1
   m_Asset: {fileID: 8926484042661614526, guid: 13c988ff3f54e0248a3bd2d467405817, type: 3}
-  m_InitialEventName: OnPlay
-  m_InitialEventNameOverriden: 0
+  m_InitialEventName: 
+  m_InitialEventNameOverriden: 1
   m_StartSeed: 0
   m_ResetSeedOnPlay: 1
   m_ResourceVersion: 1
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 7675345616810282759}
   m_Layer: 6
   m_Name: WeaponHolder
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 4268357315555254833}
   m_Layer: 6
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -289,7 +289,7 @@ GameObject:
   - component: {fileID: 4268357315631991369}
   m_Layer: 6
   m_Name: WeaponRender
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -302,7 +302,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4268357315631991373}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.37001866, y: -0.350003, z: 0.5899874}
+  m_LocalPosition: {x: 0.3700187, y: -0.350003, z: 0.5899874}
   m_LocalScale: {x: 0.49, y: 0.49, z: 0.49}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -393,7 +393,7 @@ GameObject:
   - component: {fileID: 4268357315924633766}
   m_Layer: 6
   m_Name: Head
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -436,14 +436,16 @@ GameObject:
   m_Component:
   - component: {fileID: 4268357316164657256}
   - component: {fileID: 4268357316164657257}
+  - component: {fileID: 3850686933629851942}
   - component: {fileID: 5331213129978645332}
   - component: {fileID: 4268357316164657258}
   - component: {fileID: 4268357316164657259}
   - component: {fileID: 4268357316164657253}
   - component: {fileID: 4268357316164657252}
+  - component: {fileID: 187186456}
   m_Layer: 6
   m_Name: NovaController
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -602,11 +604,57 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 25c2be88-4b9e-4d61-b5d1-73a63be837ec
     m_ActionName: PlayerControls/Reload[/Keyboard/r]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 12c78e3a-12d6-4645-bf40-5e0df2e750b1
+    m_ActionName: PlayerControls/Interact[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e11355ea-fc8c-46eb-8c56-e7bb9b3aa52a
+    m_ActionName: PlayerControls/Inventory[/Keyboard/i]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 187186456}
+        m_TargetAssemblyTypeName: WeaponSelector, Assembly-CSharp
+        m_MethodName: OnScroll
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 37a15952-80f9-4b25-a9dc-223cdd52c003
+    m_ActionName: PlayerControls/WeaponScroll[/Mouse/scroll/y]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerControls
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &3850686933629851942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4268357316164657263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ef438117aaa4ba4c96927512d2f7256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionComponents:
+  - {fileID: 4268357316164657253}
+  - {fileID: 187186456}
+  - {fileID: 4268357316270209817}
+  - {fileID: 4268357315555254833}
+  weaponComponents:
+  - {fileID: 4268357316164657253}
+  - {fileID: 187186456}
+  - {fileID: 4268357316164657252}
+  - {fileID: 4268357316164657252}
 --- !u!114 &5331213129978645332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -619,7 +667,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faa1409fc2ffad74cb647128e8ba4069, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBeDamaged: 0
+  canBeDamaged: 1
+  visibleHealth: 10
+  actualHealth: 0
   regenerationSpeed: 0
 --- !u!114 &4268357316164657258
 MonoBehaviour:
@@ -635,12 +685,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   yRotation: 0
   speed: 7
-  crouchSpeed: 2.5
-  sprintSpeed: 10
-  accelerationSpeed: 20
-  deaccelerationSpeed: 0.1
+  crouchSpeed: 7
+  sprintSpeed: 7
+  accelerationSpeed: 40
+  deaccelerationSpeed: 0.2
+  crouchDeaccelerationSpeed: 0.01
   deaccelerationSpeedInAir: 1000
-  jumpForce: 350
+  jumpForce: 400
   timeToFallAnim: 5
   ground:
     serializedVersion: 2
@@ -652,12 +703,12 @@ MonoBehaviour:
   head: {fileID: 0}
   onGround: 0
   belowCeil: 0
-  crouchSprint: 0
+  crouchSprint: 1
   crouchJump: 1
-  crouchInAir: 0
+  crouchInAir: 1
   doubleJump: 2
   multiJumpAmount: 0
-  airControl: 0
+  airControl: 2
   physicState: 0
   inputState: 0
   showChecks: 1
@@ -675,7 +726,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxX: 70
   minX: -70
-  sensitivity: 0.1
+  sensitivity: 0.05
   effectAmount: 0
   cameraEffect: 0
 --- !u!114 &4268357316164657253
@@ -692,12 +743,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoData: {fileID: 4268357316164657252}
   weaponRenderer: {fileID: 4268357315631991373}
-  weapon: {fileID: 11400000, guid: 882aadd48cde4c149881571ebf02cda0, type: 2}
+  currentWeapon: {fileID: 11400000, guid: 882aadd48cde4c149881571ebf02cda0, type: 2}
+  currentBullet: {fileID: 11400000, guid: f5f631b56a70ff24fbace672f02dad43, type: 2}
+  weapons:
+  - {fileID: 11400000, guid: 882aadd48cde4c149881571ebf02cda0, type: 2}
+  - {fileID: 11400000, guid: 093f6d638e7dba340b944a029060f82d, type: 2}
+  - {fileID: 11400000, guid: c3d0ce3e675778e4182ab3b6384e8b2d, type: 2}
+  - {fileID: 11400000, guid: 58dff297fa43ee744a1017d665fd6481, type: 2}
+  bullets:
+  - {fileID: 11400000, guid: f5f631b56a70ff24fbace672f02dad43, type: 2}
+  - {fileID: 11400000, guid: 7071a83f01651584989ad52e2f01d708, type: 2}
+  - {fileID: 11400000, guid: 8c0dd0ac8dd66624c9249e0b44a99d0d, type: 2}
+  - {fileID: 11400000, guid: f5f631b56a70ff24fbace672f02dad43, type: 2}
   animate: 1
-  shootWhileRunning: 0
-  reloadWhileRunning: 0
-  animatorOverride: {fileID: 22100000, guid: 0795d1d38d2d6a14cbd312d869f504e3, type: 2}
-  hitEvents: []
+  shootWhileRunning: 1
+  reloadWhileRunning: 1
+  hitEvents:
+  - tag: AI
+    events:
+      m_PersistentCalls:
+        m_Calls: []
   muzzleFlashObject: {fileID: 1930470942}
 --- !u!114 &4268357316164657252
 MonoBehaviour:
@@ -712,9 +777,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoList:
-  - bullets_in_magazine: 15
-    magazine_size: 30
-    bullets_left: 400
+  - weapon: Assault rifle
+    bullets_left: 1000
+  - weapon: Machine gun
+    bullets_left: 1000
+  - weapon: Sniper
+    bullets_left: 1000
+--- !u!114 &187186456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4268357316164657263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dcf05799156117418a51b6be7e8b3fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponChangeSpeed: 0.2
+  weaponHolder: {fileID: 3278468842605151046}
 --- !u!1 &4268357316270209821
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,9 +810,11 @@ GameObject:
   - component: {fileID: 4268357316270209823}
   - component: {fileID: 4268357316270209817}
   - component: {fileID: 4268357316270209818}
+  - component: {fileID: 1946570190}
+  - component: {fileID: 1946570191}
   m_Layer: 6
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -807,6 +891,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ground: []
   crouch: []
+--- !u!208 &1946570190
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4268357316270209821}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 1, y: 0.5, z: 1}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 1, z: 0}
+  m_TimeToStationary: 0.5
+--- !u!114 &1946570191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4268357316270209821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834834d1ea0dc6d42b95baeeee09e8a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4268357316403562395
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,7 +931,7 @@ GameObject:
   - component: {fileID: 4268357316403562389}
   m_Layer: 6
   m_Name: MidBody
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -865,7 +977,7 @@ GameObject:
   - component: {fileID: 4268357316736717953}
   m_Layer: 6
   m_Name: WeaponCamera
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

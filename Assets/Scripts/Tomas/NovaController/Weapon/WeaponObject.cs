@@ -22,7 +22,7 @@ public class WeaponObject : ScriptableObject
     public int bulletsPerTap;
     public float timeBetweenShots;
     //public float reloadTime;
-    public int magazineSize;
+    //public int magazineSize;
     public bool fullAuto;
     public LayerMask whatCanIHit;
     public float reloadTime;

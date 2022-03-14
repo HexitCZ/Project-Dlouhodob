@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Inventory : ScriptableObject
 {
@@ -8,26 +7,27 @@ public class Inventory : ScriptableObject
     [Space]
     [Header("Inventory reference")]
     [SerializeField]
-    private UI_inventory ui_inv;
-
-    [Space]
-    [Header("Item assigner reference")]
-    [SerializeField]
-    private ItemAssigner item_assigner;
-
-    [Space]
-    [Header("Inventory reference")]
-    [SerializeField]
-    private List<Item> inventory_list;
+    private List<(Item, Color)> inventory_list;
     private int keyColorCount = 0;
     private int doorColorCount = 0;
     private Inventory inventory;
     public List<Color> Colors;
 
+    [Space]
+    [Header("UI inventory reference")]
+    [SerializeField]
+    private UI_inventory ui_Inventory;
+
+    [Space]
+    [Header("Item assigner reference")]
+    [SerializeField]
+    private ItemAssigner itemAssigner;
+
     public void Awake()
     {
-
-        inventory_list = new List<Item>();
+        ui_Inventory = GameObject.Find("inventory_container").GetComponent<UI_inventory>();
+        itemAssigner = (ItemAssigner)ScriptableObject.CreateInstance("ItemAssigner");
+        inventory_list = new List<(Item, Color)>();
         Colors = new List<Color> { Color.red, Color.green, Color.blue, Color.yellow, Color.magenta };
 
     }
@@ -37,26 +37,19 @@ public class Inventory : ScriptableObject
 
     }
 
-    public void AddItem(Item item)
+    public void AddItem(Item item, Color color)
     {
-        Image image = null;
-        Color item_color = new();
-
-        if (item.GetType() == Item.Type.keycard)
-        {
-            item_color = item.GetColor();
-        }
-
-        image = item_assigner.GetItemImage(item);
-        ui_inv.SetItemImage(item, image);
-        inventory_list.Add(item);
+        Sprite sprite = itemAssigner.GetItemImage(item);
+        Debug.Log(sprite.name);
+        ui_Inventory.SetItemImage(item, color, sprite);
+        inventory_list.Add((item, color));
 
     }
 
-    public void UseItemConsumable(Item item)
+    public void UseItemConsumable(Item item, Color color)
     {
 
-        inventory_list.Remove(item);
+        inventory_list.Remove((item, color));
 
     }
 
@@ -124,7 +117,7 @@ public class Inventory : ScriptableObject
     {
         if(index < inventory_list.Count)
         {
-            return inventory_list[index];
+            return inventory_list[index].Item1;
         }
         else
         {
@@ -134,12 +127,18 @@ public class Inventory : ScriptableObject
 
     public bool CheckForKey(Color color)
     {
-        
-        Debug.Log(inventory_list.Count);
 
-        int index = inventory_list.FindIndex(item => item.GetColor() == color);
+        int index = 0;
 
-        if (index > -1)
+        foreach((Item, Color) item in inventory_list)
+        {
+            if(item.Item1.GetType() == Item.Type.keycard && item.Item2 == color)
+            {
+                index++;
+            }
+        }
+
+        if (index > 0)
         {
 
             return true;

@@ -7,8 +7,8 @@ using UnityEngine.VFX;
 public class BulletObject : ScriptableObject
 {
     [Header("Visual properties")]
-    public VisualEffect projectileEffect;
-    public VisualEffect hitEffect;
+    public VisualEffectAsset projectileEffect;
+    public VisualEffectAsset hitEffect;
     public float speed;
     [Space]
     [Header("Gameplay properties")]
