@@ -38,8 +38,9 @@ public class Inventory : ScriptableObject
     public void AddItem(Item item, Color color)
     {
         Sprite sprite = itemAssigner.GetItemImage(item);
+        string name = itemAssigner.GetItemName(item);
         Debug.Log(sprite.name);
-        ui_Inventory.SetItemImage(item, color, sprite);
+        ui_Inventory.SetItemImage(item, color, name, sprite);
         inventory_list.Add((item, color));
 
     }

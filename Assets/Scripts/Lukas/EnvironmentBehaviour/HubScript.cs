@@ -16,17 +16,28 @@ public class HubScript : MonoBehaviour
     bool huh = true;
     private void OnTriggerStay(Collider other)
     {
-        if(other.name == "MidBody" || other.name == "Head" && huh)
+        if (other.name == "MidBody")
         {
+            huh = true;
             FPSInteractionManager.instance.DisableFPSWeapon();
-            huh = false;
+        }
+        else if (other.name == "Head")
+        {
+            huh = true;
+            FPSInteractionManager.instance.DisableFPSWeapon();
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.name == "MidBody" || other.name == "Head")
+        if (other.name == "MidBody")
         {
+            huh = false;
+            FPSInteractionManager.instance.EnableFPSWeapon();
+        } 
+        else if (other.name == "Head")
+        {
+            huh = false;
             FPSInteractionManager.instance.EnableFPSWeapon();
         }
     }

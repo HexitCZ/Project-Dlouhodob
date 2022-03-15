@@ -88,7 +88,7 @@ public class UI_inventory : MonoBehaviour
                 if (grandchild.GetComponent<Image>())
                 {
                     grandchild.GetComponent<Image>().enabled = !grandchild.GetComponent<Image>().enabled;
-
+                    
                 }
                 if (grandchild.GetComponent<TextMeshProUGUI>())
                 {
@@ -116,7 +116,13 @@ public class UI_inventory : MonoBehaviour
 
     }
 
-    public void SetItemImage(Item item, Color color, Sprite sprite)
+    private void SetItemName(Transform setObject, string name)
+    {
+        setObject.GetComponent<TextMeshPro>().text = name;
+    }
+
+    [System.Obsolete]
+    public void SetItemImage(Item item, Color color, string name, Sprite sprite)
     {
         bool isSet = false;
         bool isAvailable = false;
@@ -127,6 +133,7 @@ public class UI_inventory : MonoBehaviour
             isAvailable = false;
             Transform item_color = child.GetChild(0);
             Transform item_sprite = child.GetChild(1);
+            Transform item_text = child.GetChild(2);
             Debug.Log(item_color.name);
             Debug.Log(item_sprite.GetComponent<Image>().sprite.name);
             Debug.Log(item.GetType() == Item.Type.keycard);
@@ -147,6 +154,7 @@ public class UI_inventory : MonoBehaviour
                     {
                         SetColor(item_color, color);
                     }
+                    SetItemName(item_text, name);
                     SetItem(item_sprite, sprite);
                     isSet = true;
                 }
