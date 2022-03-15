@@ -103,6 +103,7 @@ public class WeaponController : MonoBehaviour
         meshRenderer.materials = currentWeapon.materials;
         muzzleFlashObject.visualEffectAsset = currentBullet.muzzleFlashEffect;
         ammoIndex = currentWeapon.ammoIndex;
+        meshRenderer.transform.localScale = newWO.scale;
         ammoPack = GetAmmoPack();
     }
 

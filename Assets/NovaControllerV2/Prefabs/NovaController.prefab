@@ -655,6 +655,7 @@ MonoBehaviour:
   - {fileID: 187186456}
   - {fileID: 4268357316164657252}
   - {fileID: 4268357316164657252}
+  weaponRender: {fileID: 4268357315631991373}
 --- !u!114 &5331213129978645332
 MonoBehaviour:
   m_ObjectHideFlags: 0
