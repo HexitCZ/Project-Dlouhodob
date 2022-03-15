@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -84,7 +85,15 @@ public class UI_inventory : MonoBehaviour
 
             foreach (Transform grandchild in child.transform)
             {
-                grandchild.GetComponent<Image>().enabled = !grandchild.GetComponent<Image>().enabled;
+                if (grandchild.GetComponent<Image>())
+                {
+                    grandchild.GetComponent<Image>().enabled = !grandchild.GetComponent<Image>().enabled;
+
+                }
+                if (grandchild.GetComponent<TextMeshProUGUI>())
+                {
+                    grandchild.GetComponent<TextMeshProUGUI>().enabled = !grandchild.GetComponent<TextMeshProUGUI>().enabled;
+                }
             }
         }
     }
