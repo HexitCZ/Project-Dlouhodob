@@ -89,7 +89,6 @@ public class WeaponController : MonoBehaviour
     {
         if (ammoIndex != currentWeapon.ammoIndex) //PLACEHOLDER, MUST CHANGE <------------------------------------------------------
         {
-            Debug.LogWarning(":O weapon has CHANGED");
             SetWeaponObject(currentWeapon);
 
         }

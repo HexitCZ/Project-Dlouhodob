@@ -17,13 +17,13 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0}
   scale: {x: 0.29, y: 0.29, z: 0.29}
-  ammoIndex: 2
+  ammoIndex: 3
   damage: 2
   range: 100
   bulletSpread: 0
   bulletsPerTap: 0
-  timeBetweenShots: 1
-  fullAuto: 0
+  timeBetweenShots: 0.5
+  fullAuto: 1
   whatCanIHit:
     serializedVersion: 2
     m_Bits: 23
