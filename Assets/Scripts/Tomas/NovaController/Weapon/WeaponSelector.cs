@@ -27,16 +27,16 @@ public class WeaponSelector : MonoBehaviour
 
     private void UpdateScrollIndex(bool add)
     {
-        maxScrollIndex = weaponController.weapons.Length;
-        //Debug.Log(maxScrollIndex + " " + scrollIndex + " " + add);
+        maxScrollIndex = weaponController.weapons.Length-1;
+        
         scrollIndex += add ? 1 : -1;
-        if (scrollIndex > maxScrollIndex-1)
+        if (scrollIndex > maxScrollIndex)
         {
             scrollIndex = 0;
         }
         else if(scrollIndex < 0)
         {
-            scrollIndex = maxScrollIndex-1;
+            scrollIndex = maxScrollIndex;
         }
         CheckWithProgress(add);
         changingWeapon = 1;
@@ -79,7 +79,7 @@ public class WeaponSelector : MonoBehaviour
                 Debug.Log("pistol");
                 return; ;
         }
-        //Debug.Log(scrollIndex + " AR " + ar + "   MG " + mg + "   SP " + sp);
+        
         UpdateScrollIndex(add);
     }
 
@@ -99,7 +99,7 @@ public class WeaponSelector : MonoBehaviour
         if (weaponHolder.transform.localRotation == changeRotation)
         {
             SelectWeapon(scrollIndex);
-            Debug.Log("badabum");
+            Debug.Log("badabum " + scrollIndex);
             changingWeapon = -1;
         }
         else if(weaponHolder.transform.localRotation == baseRotation)

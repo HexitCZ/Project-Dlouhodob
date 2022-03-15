@@ -23,7 +23,7 @@ MonoBehaviour:
   bulletSpread: 0
   bulletsPerTap: 0
   timeBetweenShots: 1
-  fullAuto: 0
+  fullAuto: 1
   whatCanIHit:
     serializedVersion: 2
     m_Bits: 23
