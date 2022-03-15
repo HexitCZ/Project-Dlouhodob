@@ -33,7 +33,7 @@ public class FPSInteractionManager : MonoBehaviour
 
     public void DisableFPSWeapon()
     {
-        for (int i = 0; i < interactionComponents.Length; i++)
+        for (int i = 0; i < weaponComponents.Length; i++)
         {
             weaponComponents[i].enabled = false;
         }
@@ -42,7 +42,7 @@ public class FPSInteractionManager : MonoBehaviour
 
     public void EnableFPSWeapon()
     {
-        for (int i = 0; i < interactionComponents.Length; i++)
+        for (int i = 0; i < weaponComponents.Length; i++)
         {
             weaponComponents[i].enabled = true;
         }

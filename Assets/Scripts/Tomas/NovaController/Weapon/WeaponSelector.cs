@@ -53,7 +53,7 @@ public class WeaponSelector : MonoBehaviour
             case 0:
                 if (ar)
                 {
-                  //  Debug.Log("ar true");
+                    Debug.Log("assaultrifle");
                     return;
                 }
                 //Debug.Log("ar false");
@@ -61,7 +61,7 @@ public class WeaponSelector : MonoBehaviour
             case 1:
                 if (mg)
                 {
-                  //  Debug.Log("mg true");
+                    Debug.Log("machinegun");
                     return;
                 }
                 //Debug.Log("mg false");
@@ -69,14 +69,15 @@ public class WeaponSelector : MonoBehaviour
             case 2:
                 if (sp)
                 {
-                  //  Debug.Log("sp true");
+                    
+                    Debug.Log("sniper");
                     return;
                 }
                 //Debug.Log("sp false");
                 break;
             case 3: //          pistol is always enabled
-
-                break;
+                Debug.Log("pistol");
+                return; ;
         }
         //Debug.Log(scrollIndex + " AR " + ar + "   MG " + mg + "   SP " + sp);
         UpdateScrollIndex(add);
@@ -98,6 +99,7 @@ public class WeaponSelector : MonoBehaviour
         if (weaponHolder.transform.localRotation == changeRotation)
         {
             SelectWeapon(scrollIndex);
+            Debug.Log("badabum");
             changingWeapon = -1;
         }
         else if(weaponHolder.transform.localRotation == baseRotation)

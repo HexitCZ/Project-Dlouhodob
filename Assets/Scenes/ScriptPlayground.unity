@@ -1275,10 +1275,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1726510189}
     m_Modifications:
-    - target: {fileID: 3850686933629851942, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: weaponRender
-      value: 
-      objectReference: {fileID: 771754604}
     - target: {fileID: 4268357316164657256, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2255,11 +2251,6 @@ RectTransform:
 --- !u!4 &755320492 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4268357316270209822, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-  m_PrefabInstance: {fileID: 427001097}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &771754604 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4268357315631991373, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
   m_PrefabInstance: {fileID: 427001097}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &773466619
