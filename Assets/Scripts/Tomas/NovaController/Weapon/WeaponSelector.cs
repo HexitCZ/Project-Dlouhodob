@@ -75,7 +75,8 @@ public class WeaponSelector : MonoBehaviour
                 //Debug.Log("sp false");
                 break;
             case 3: //          pistol is always enabled
-                return;
+
+                break;
         }
         //Debug.Log(scrollIndex + " AR " + ar + "   MG " + mg + "   SP " + sp);
         UpdateScrollIndex(add);
