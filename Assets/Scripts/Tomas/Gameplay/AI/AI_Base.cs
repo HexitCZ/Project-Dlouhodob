@@ -126,9 +126,13 @@ public class AI_Base : MonoBehaviour, IHittable
         throw new NotImplementedException();
     }
 
+    /// <summary>
+    /// Should end up with disabling this gameobject.
+    /// </summary>
+    /// <exception cref="NotImplementedException"></exception>
     protected virtual void Death()
     {
-        throw new NotImplementedException();
+        throw new NotImplementedException(); 
     }
 
 
