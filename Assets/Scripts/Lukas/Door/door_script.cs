@@ -63,7 +63,7 @@ public class door_script : MonoBehaviour
         if (broken)
         {
 
-            doorAnimator.SetBool("broken", true);
+            Break();
 
         }
 
@@ -71,7 +71,6 @@ public class door_script : MonoBehaviour
 
     public void Update()
     {
-
 
 
     }
@@ -85,13 +84,43 @@ public class door_script : MonoBehaviour
         }
 
     }
+    public void Break()
+    {
+        doorAnimator.SetBool("broken", true);
+    }
+
+    public void Open()
+    {
+        doorAnimator.SetBool("open", true);
+    }
+
+    public void Close()
+    {
+        doorAnimator.SetBool("open", false);
+    }
+
+    public void InvokeBroken()
+    {
+        brokenInvoker.Invoke();
+    }
+
+    public void InvokeOpen()
+    {
+        openInvoker.Invoke();
+    }
+
+    public void InvokeClose()
+    {
+        closeInvoker.Invoke();
+    }
+
     public void OnTriggerStay(Collider other)
     {
         open = ui_script.GetInput();
 
         if (automatic)
         {
-            doorAnimator.SetBool("open", true);
+            Open();
         }
         else
         {
@@ -100,11 +129,11 @@ public class door_script : MonoBehaviour
 
                 if (broken)
                 {
-                    brokenInvoker.Invoke();
+                    InvokeBroken();
                 }
                 else
                 {
-                    openInvoker.Invoke();
+                    InvokeOpen();
                 }
             }
 
@@ -116,7 +145,7 @@ public class door_script : MonoBehaviour
                 if (inventory.CheckForKey(displayColor))
                 {
 
-                    doorAnimator.SetBool("open", true);
+                    Open();
 
                 }
 
@@ -127,7 +156,7 @@ public class door_script : MonoBehaviour
                 if (open)
                 {
 
-                    doorAnimator.SetBool("open", true);
+                    Open();
 
                 }
 
@@ -140,10 +169,10 @@ public class door_script : MonoBehaviour
     public void OnTriggerExit(Collider other)
     {
 
-        doorAnimator.SetBool("open", false);
+        Close();
         ui_script.ResetOpen();
         open = ui_script.GetInput();
-        closeInvoker.Invoke();
+        InvokeClose();
 
     }
 }
