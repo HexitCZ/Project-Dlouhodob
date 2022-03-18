@@ -1961,7 +1961,9 @@ MonoBehaviour:
   <weapon>k__BackingField: {fileID: 0}
   <health>k__BackingField: 10
   <range>k__BackingField: 200
+  <startSpeed>k__BackingField: 0
   <targetDistance>k__BackingField: 0
+  <maximumDistance>k__BackingField: 0
   <targetDirection>k__BackingField: {x: 0, y: 0, z: 0}
   slowDownSpeed: 10
   slowDownLength: 1
@@ -7536,7 +7538,9 @@ MonoBehaviour:
   <weapon>k__BackingField: {fileID: 0}
   <health>k__BackingField: 100
   <range>k__BackingField: 200
+  <startSpeed>k__BackingField: 0
   <targetDistance>k__BackingField: 0
+  <maximumDistance>k__BackingField: 0
   <targetDirection>k__BackingField: {x: 0, y: 0, z: 0}
   slowDownSpeed: 10
   slowDownLength: 1
@@ -8025,7 +8029,9 @@ MonoBehaviour:
   <weapon>k__BackingField: {fileID: 941564740137712339}
   <health>k__BackingField: 20
   <range>k__BackingField: 200
+  <startSpeed>k__BackingField: 2
   <targetDistance>k__BackingField: 0
+  <maximumDistance>k__BackingField: 5
   <targetDirection>k__BackingField: {x: 0, y: 0, z: 0}
   slowDownSpeed: 10
   slowDownLength: 1

@@ -16,7 +16,9 @@ public class AI_Base : MonoBehaviour, IHittable
     
     [field: SerializeField] protected int health { get; set; }
     [field: SerializeField] protected int range { get; set; }
+    [field: SerializeField] protected int startSpeed { get; set; }
     [field: SerializeField] protected float targetDistance { get; set; }
+    [field: SerializeField] protected float maximumDistance { get; set; }
     [field: SerializeField] protected Vector3 targetDirection { get; set; }
 
     [field: SerializeField] protected Action preUpdateAction { get; set; }
@@ -29,6 +31,7 @@ public class AI_Base : MonoBehaviour, IHittable
     protected NavMeshAgent navmesh;
 
 
+    
 
     protected void Start()
     {
@@ -38,6 +41,7 @@ public class AI_Base : MonoBehaviour, IHittable
             if (navmesh == null)
             {
                 navmesh = gameObject.transform.GetChild(0).GetComponent<NavMeshAgent>();
+                navmesh.speed = startSpeed;
             }
         }
     }
@@ -48,13 +52,27 @@ public class AI_Base : MonoBehaviour, IHittable
 
         if (isAlive)
         {
+            targetDistance = Vector3.Distance(target.position, this.transform.position);
+            targetDirection = (target.position - this.transform.position).normalized;
+            
             if (dynamic)
             {
                 SetDestination(target);
+                
+                if(targetDistance < maximumDistance)
+                {
+                    navmesh.speed = Mathf.Lerp(navmesh.speed, 0, navmesh.acceleration / 10);
+                }
+                else
+                {
+                    navmesh.speed = Mathf.Lerp(navmesh.speed, startSpeed, navmesh.acceleration / 10);
+                }
+
             }
 
-            targetDistance = Vector3.Distance(target.position, this.transform.position);
-            targetDirection = (target.position - this.transform.position).normalized;
+
+
+
             if (isVisible)
             {
                 visibleAction?.Invoke();
