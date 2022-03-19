@@ -18,7 +18,7 @@ public class CameraController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         bodyData = transform.parent.GetComponent<BodyData>();
         cameraData = transform.parent.GetComponent<CameraData>();
-
+        cam_Rotation = transform.rotation.eulerAngles;
         
     }
 

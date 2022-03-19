@@ -654,7 +654,6 @@ MonoBehaviour:
   - {fileID: 4268357316164657253}
   - {fileID: 187186456}
   - {fileID: 4268357316164657252}
-  - {fileID: 4268357316164657252}
   weaponRender: {fileID: 4268357315631991373}
 --- !u!114 &5331213129978645332
 MonoBehaviour:
@@ -690,7 +689,7 @@ MonoBehaviour:
   sprintSpeed: 7
   accelerationSpeed: 40
   deaccelerationSpeed: 0.2
-  crouchDeaccelerationSpeed: 0.01
+  crouchDeaccelerationSpeed: 0.2
   deaccelerationSpeedInAir: 1000
   jumpForce: 400
   timeToFallAnim: 5
