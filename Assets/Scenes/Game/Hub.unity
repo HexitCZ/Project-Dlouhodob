@@ -440,7 +440,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 313647589}
-  m_LocalRotation: {x: 0.27059716, y: -0.6532807, z: 0.27059802, w: 0.65328276}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 2.292}
   m_LocalScale: {x: 0.04881246, y: 0.023818066, z: 0.054242}
   m_ConstrainProportionsScale: 0
@@ -448,7 +448,7 @@ RectTransform:
   - {fileID: 1155554282}
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 45, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -5.389, y: 2.297}
@@ -701,13 +701,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 359148757}
-  m_LocalRotation: {x: -0, y: -0, z: 0.38268274, w: 0.9238798}
-  m_LocalPosition: {x: 0.37576085, y: -1.9386542, z: 0.0017750277}
-  m_LocalScale: {x: 0.3612963, y: 1.6881577, z: 0.3952491}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.64, y: 0.8619, z: 2.3558}
+  m_LocalScale: {x: 0.4080721, y: 2.4638, z: 1.2915}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 561360645}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &561360641
 GameObject:
@@ -798,15 +798,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 561360641}
-  m_LocalRotation: {x: -0, y: -0, z: -0.38268274, w: 0.9238798}
-  m_LocalPosition: {x: -5.57, y: 2.1366868, z: 2.35}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -5.626, y: 2.352, z: 2.35}
   m_LocalScale: {x: 2.4672, y: 0.4517277, z: 3.2675595}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 359148761}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &619740145
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,7 +896,7 @@ GameObject:
   - component: {fileID: 727130225}
   - component: {fileID: 727130226}
   - component: {fileID: 727130227}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MainHull
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1129,7 +1128,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &860433369
 GameObject:
@@ -1288,8 +1287,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'TELEPORTER
 
-
-    Kdo se ptal'
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 05a98b711e2523b4eb5323d74cc489b4, type: 2}
   m_sharedMaterial: {fileID: 2399431720096826473, guid: 05a98b711e2523b4eb5323d74cc489b4, type: 2}
@@ -1897,7 +1895,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1457443501
 MonoBehaviour:
