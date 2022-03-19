@@ -50,7 +50,7 @@ public class door_script : MonoBehaviour
     public void Start()
     {
 
-        inventory = ui_inventory.GetInventory();
+        inventory = ui_inventory?.GetInventory();
 
         openInvoker = new UnityEvent();
         closeInvoker = new UnityEvent();

@@ -53,8 +53,8 @@ public class AI_Base : MonoBehaviour, IHittable
         if (isAlive)
         {
             targetDistance = Vector3.Distance(target.position, this.transform.position);
-            targetDirection = (target.position - this.transform.position).normalized;
-            
+            targetDirection = -(this.transform.position - target.position).normalized;
+            Debug.DrawRay(this.transform.position, targetDirection, Color.red,0.2f);
             if (dynamic)
             {
                 SetDestination(target);

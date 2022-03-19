@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour
     public AnimationCurve splashDamageFallOff;*/
     public void Setup(Vector3 dir)
     {
-        transform.rotation = Quaternion.LookRotation(dir);
+        transform.rotation = Quaternion.LookRotation(dir, transform.up);
         speed = bulletObject.speed;
         direction = dir;
         damage = bulletObject.damage;

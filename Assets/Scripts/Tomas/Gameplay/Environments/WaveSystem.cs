@@ -5,18 +5,51 @@ using UnityEngine.VFX;
 
 public class WaveSystem : MonoBehaviour
 {
+    public bool DEBUG_START;
     public door_script door;
     public GameObject spawnVFX;
     public float spawnSlowDown;
-    public Wave[] waves;
+    public GameObject[] waveObjects;
+    private List<Wave> waves;
     private int currentWave;
+
+    private void Update()
+    {
+        if (DEBUG_START)
+        {
+            StartWaves();
+            DEBUG_START = false;
+        }
+    }
+    private void Awake()
+    {
+        waves = new List<Wave>();
+
+        for (int i = 0; i < waveObjects.Length; i++)
+        {
+            waves.Add(new Wave());
+            waves[i].enemies = new List<GameObject>();
+
+            for (int j = 0; i < waveObjects[i].transform.childCount; j++)
+            {
+
+                waves[i].enemies.Add(waveObjects[i].transform.GetChild(j).gameObject);
+
+            }
+            
+        }
+    }
+
+
 
     /// <summary>
     /// Starting point of a wave system. Call it to start WaveSystem.
     /// </summary>
     public void StartWaves()
     {
-        InvokeRepeating("CheckStatus", 0.2f, 0.2f);
+        print("start");
+        NextWave();
+        InvokeRepeating("CheckAIStatus", 0.3f, 0.3f);
     }
 
     /// <summary>
@@ -24,14 +57,10 @@ public class WaveSystem : MonoBehaviour
     /// </summary>
     private void CheckAIStatus()
     {
-        if (currentWave == 0)
+        
+        for (int i = 0; i < waves.Count; i++)
         {
-            NextWave();
-        }
-
-        for (int i = 0; i < waves.Length; i++)
-        {
-            for (int j = 0; j < waves[i].enemies.Length; j++)
+            for (int j = 0; j < waves[i].enemies.Count; j++)
             {
                 if (waves[i].enemies[j].activeSelf)
                 {
@@ -48,25 +77,31 @@ public class WaveSystem : MonoBehaviour
     /// </summary>
     private void NextWave()
     {
-        if (currentWave > waves.Length)
+        print("nextwave");
+        if (currentWave >= waves.Count)
         {
-            // door.Open();
+            door.Open();
             Debug.Log("Door OPEN");
             EndWaves();
-            return ;
+            return;
         }
-        for (int i = 0; i < waves[currentWave].enemies.Length; i++)
+
+        for (int i = 0; i < waves[currentWave].enemies.Count; i++)
         {
-            SpawnEnemy(waves[currentWave].enemies[i]);
+            print("spawncall");
+            StartCoroutine(SpawnEnemy(waves[currentWave].enemies[i]));
+            //SpawnEnemy(waves[currentWave].enemies[i]);
         }
+
     }
 
     
 
     private IEnumerator SpawnEnemy(GameObject enemy)
     {
+        print("spawn");
         GameObject vfx = Instantiate(spawnVFX, enemy.transform.position, Quaternion.identity);
-        vfx.GetComponent<VisualEffect>().Play();
+        //vfx.GetComponent<VisualEffect>().Play();
         Destroy(vfx,5);
 
         yield return new WaitForSeconds(spawnSlowDown);
@@ -75,15 +110,16 @@ public class WaveSystem : MonoBehaviour
         //enemy.GetComponent<AI_Base>().enabled = true;
     }
 
+    
+
     private void EndWaves()
     {
-
         CancelInvoke();
     }
 
+    [System.Serializable]
     public class Wave
     {
-        public string name;
-        public GameObject[] enemies;
+        public List<GameObject> enemies;
     }
 }
