@@ -133,7 +133,7 @@ public class UI_inventory : MonoBehaviour
             isAvailable = false;
             Transform item_color = child.GetChild(0);
             Transform item_sprite = child.GetChild(1);
-            Transform item_text = child.GetChild(2);
+            Transform item_text = child.GetChild(3);
             Debug.Log(item_color.name);
             Debug.Log(item_sprite.GetComponent<Image>().sprite.name);
             Debug.Log(item.GetType() == Item.Type.keycard);
