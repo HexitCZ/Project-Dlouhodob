@@ -97,7 +97,7 @@ public class AI_Walker : AI_Base
 
     protected override void Attack()
     {
-        weapon.Shoot(targetDirection);
+        weapon.Shoot(target.position);
     }
 
     protected override void Death()

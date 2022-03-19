@@ -31,7 +31,7 @@ public class AI_Projectile_Weapon : MonoBehaviour
             GameObject bulletTemp = Instantiate(bulletPrefab, spawnPoint.transform.position, Quaternion.identity);
             Bullet bullet = bulletTemp.GetComponent<Bullet>();
             bullet.bulletObject = bulletObject;
-            bullet.Setup(direction);
+            bullet.Setup(-(spawnPoint.transform.position - direction).normalized);
             Destroy(bulletTemp, 5);
 
             Invoke("Cooldown", cooldown);

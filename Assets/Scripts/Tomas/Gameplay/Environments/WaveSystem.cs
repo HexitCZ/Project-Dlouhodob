@@ -28,6 +28,7 @@ public class WaveSystem : MonoBehaviour
     public void StartWaves()
     {
         print("start");
+        NextWave();
         InvokeRepeating("CheckAIStatus", 0.3f, 0.3f);
     }
 
@@ -36,13 +37,14 @@ public class WaveSystem : MonoBehaviour
     /// </summary>
     private void CheckAIStatus()
     {
+        /*
         if (currentWave == 0)
         {
             print("wavecall");
             NextWave();
             
             return;
-        }
+        }*/
 
         for (int i = 0; i < waves.Length; i++)
         {
@@ -54,8 +56,8 @@ public class WaveSystem : MonoBehaviour
                 }
             }
         }
-        NextWave();
         currentWave += 1;
+        NextWave();
     }
 
     /// <summary>
@@ -64,18 +66,21 @@ public class WaveSystem : MonoBehaviour
     private void NextWave()
     {
         print("nextwave");
-        if (currentWave > waves.Length)
+        if (currentWave >= waves.Length)
         {
             // door.Open();
             Debug.Log("Door OPEN");
             EndWaves();
             return;
         }
+
         for (int i = 0; i < waves[currentWave].enemies.Length; i++)
         {
             print("spawncall");
-            SpawnEnemy(waves[currentWave].enemies[i]);
+            StartCoroutine(SpawnEnemy(waves[currentWave].enemies[i]));
+            //SpawnEnemy(waves[currentWave].enemies[i]);
         }
+
     }
 
     
@@ -84,7 +89,7 @@ public class WaveSystem : MonoBehaviour
     {
         print("spawn");
         GameObject vfx = Instantiate(spawnVFX, enemy.transform.position, Quaternion.identity);
-        vfx.GetComponent<VisualEffect>().Play();
+        //vfx.GetComponent<VisualEffect>().Play();
         Destroy(vfx,5);
 
         yield return new WaitForSeconds(spawnSlowDown);
@@ -93,11 +98,13 @@ public class WaveSystem : MonoBehaviour
         //enemy.GetComponent<AI_Base>().enabled = true;
     }
 
+    
+
     private void EndWaves()
     {
-
         CancelInvoke();
     }
+
     [System.Serializable]
     public class Wave
     {
