@@ -118,7 +118,7 @@ public class UI_inventory : MonoBehaviour
 
     private void SetItemName(Transform setObject, string name)
     {
-        setObject.GetComponent<TextMeshPro>().text = name;
+        setObject.GetComponent<TextMeshProUGUI>().text = name;
     }
 
     [System.Obsolete]
