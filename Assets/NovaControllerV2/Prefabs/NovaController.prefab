@@ -684,13 +684,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yRotation: 0
-  speed: 7
-  crouchSpeed: 7
-  sprintSpeed: 7
+  speed: 5
+  crouchSpeed: 5
+  sprintSpeed: 5
   accelerationSpeed: 40
   deaccelerationSpeed: 0.2
   crouchDeaccelerationSpeed: 0.2
-  deaccelerationSpeedInAir: 1000
+  deaccelerationSpeedInAir: 4
   jumpForce: 400
   timeToFallAnim: 5
   ground:

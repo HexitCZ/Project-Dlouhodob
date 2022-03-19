@@ -37,15 +37,7 @@ public class WaveSystem : MonoBehaviour
     /// </summary>
     private void CheckAIStatus()
     {
-        /*
-        if (currentWave == 0)
-        {
-            print("wavecall");
-            NextWave();
-            
-            return;
-        }*/
-
+        
         for (int i = 0; i < waves.Length; i++)
         {
             for (int j = 0; j < waves[i].enemies.Length; j++)
@@ -68,7 +60,7 @@ public class WaveSystem : MonoBehaviour
         print("nextwave");
         if (currentWave >= waves.Length)
         {
-            // door.Open();
+            door.Open();
             Debug.Log("Door OPEN");
             EndWaves();
             return;
