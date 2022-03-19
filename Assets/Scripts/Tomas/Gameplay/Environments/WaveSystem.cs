@@ -5,18 +5,30 @@ using UnityEngine.VFX;
 
 public class WaveSystem : MonoBehaviour
 {
+    public bool DEBUG_START;
     public door_script door;
     public GameObject spawnVFX;
     public float spawnSlowDown;
     public Wave[] waves;
     private int currentWave;
 
+    private void Update()
+    {
+        if (DEBUG_START)
+        {
+            StartWaves();
+            DEBUG_START = false;
+        }
+    }
+
+
     /// <summary>
     /// Starting point of a wave system. Call it to start WaveSystem.
     /// </summary>
     public void StartWaves()
     {
-        InvokeRepeating("CheckStatus", 0.2f, 0.2f);
+        print("start");
+        InvokeRepeating("CheckAIStatus", 0.3f, 0.3f);
     }
 
     /// <summary>
@@ -26,7 +38,10 @@ public class WaveSystem : MonoBehaviour
     {
         if (currentWave == 0)
         {
+            print("wavecall");
             NextWave();
+            
+            return;
         }
 
         for (int i = 0; i < waves.Length; i++)
@@ -39,8 +54,8 @@ public class WaveSystem : MonoBehaviour
                 }
             }
         }
-        currentWave += 1;
         NextWave();
+        currentWave += 1;
     }
 
     /// <summary>
@@ -48,15 +63,17 @@ public class WaveSystem : MonoBehaviour
     /// </summary>
     private void NextWave()
     {
+        print("nextwave");
         if (currentWave > waves.Length)
         {
             // door.Open();
             Debug.Log("Door OPEN");
             EndWaves();
-            return ;
+            return;
         }
         for (int i = 0; i < waves[currentWave].enemies.Length; i++)
         {
+            print("spawncall");
             SpawnEnemy(waves[currentWave].enemies[i]);
         }
     }
@@ -65,6 +82,7 @@ public class WaveSystem : MonoBehaviour
 
     private IEnumerator SpawnEnemy(GameObject enemy)
     {
+        print("spawn");
         GameObject vfx = Instantiate(spawnVFX, enemy.transform.position, Quaternion.identity);
         vfx.GetComponent<VisualEffect>().Play();
         Destroy(vfx,5);
@@ -80,7 +98,7 @@ public class WaveSystem : MonoBehaviour
 
         CancelInvoke();
     }
-
+    [System.Serializable]
     public class Wave
     {
         public string name;
