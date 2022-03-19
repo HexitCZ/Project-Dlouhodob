@@ -9,7 +9,8 @@ public class WaveSystem : MonoBehaviour
     public door_script door;
     public GameObject spawnVFX;
     public float spawnSlowDown;
-    public Wave[] waves;
+    public GameObject[] waveObjects;
+    private List<Wave> waves;
     private int currentWave;
 
     private void Update()
@@ -20,6 +21,25 @@ public class WaveSystem : MonoBehaviour
             DEBUG_START = false;
         }
     }
+    private void Awake()
+    {
+        waves = new List<Wave>();
+
+        for (int i = 0; i < waveObjects.Length; i++)
+        {
+            waves.Add(new Wave());
+            waves[i].enemies = new List<GameObject>();
+
+            for (int j = 0; i < waveObjects[i].transform.childCount; j++)
+            {
+
+                waves[i].enemies.Add(waveObjects[i].transform.GetChild(j).gameObject);
+
+            }
+            
+        }
+    }
+
 
 
     /// <summary>
@@ -38,9 +58,9 @@ public class WaveSystem : MonoBehaviour
     private void CheckAIStatus()
     {
         
-        for (int i = 0; i < waves.Length; i++)
+        for (int i = 0; i < waves.Count; i++)
         {
-            for (int j = 0; j < waves[i].enemies.Length; j++)
+            for (int j = 0; j < waves[i].enemies.Count; j++)
             {
                 if (waves[i].enemies[j].activeSelf)
                 {
@@ -58,7 +78,7 @@ public class WaveSystem : MonoBehaviour
     private void NextWave()
     {
         print("nextwave");
-        if (currentWave >= waves.Length)
+        if (currentWave >= waves.Count)
         {
             door.Open();
             Debug.Log("Door OPEN");
@@ -66,7 +86,7 @@ public class WaveSystem : MonoBehaviour
             return;
         }
 
-        for (int i = 0; i < waves[currentWave].enemies.Length; i++)
+        for (int i = 0; i < waves[currentWave].enemies.Count; i++)
         {
             print("spawncall");
             StartCoroutine(SpawnEnemy(waves[currentWave].enemies[i]));
@@ -100,7 +120,6 @@ public class WaveSystem : MonoBehaviour
     [System.Serializable]
     public class Wave
     {
-        public string name;
-        public GameObject[] enemies;
+        public List<GameObject> enemies;
     }
 }
