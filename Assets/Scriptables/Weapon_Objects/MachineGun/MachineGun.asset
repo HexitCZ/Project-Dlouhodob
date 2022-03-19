@@ -31,7 +31,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 23
   reloadTime: 2
-  mesh: {fileID: 6947591015609394669, guid: b6ee760b60f979e4cb8b3f4d2c7570ef, type: 3}
+  mesh: {fileID: 7437628646312931682, guid: 9fb7310c8c9ecd443b56beb8e28f7991, type: 3}
   materials:
   - {fileID: -6652209265254514547, guid: 157fbc3311e27a34cadb4b82d12c6980, type: 3}
   - {fileID: 2100000, guid: 907978b2eb50e7c479d321eb31cc542c, type: 2}

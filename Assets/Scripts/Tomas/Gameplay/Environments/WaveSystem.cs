@@ -13,30 +13,32 @@ public class WaveSystem : MonoBehaviour
     private List<Wave> waves;
     private int currentWave;
 
-    private void Update()
-    {
-        if (DEBUG_START)
-        {
-            StartWaves();
-            DEBUG_START = false;
-        }
-    }
     private void Awake()
     {
+        
+
         waves = new List<Wave>();
 
         for (int i = 0; i < waveObjects.Length; i++)
         {
+            print("wave " + i + "  " + waveObjects[i].transform.childCount);
             waves.Add(new Wave());
             waves[i].enemies = new List<GameObject>();
 
-            for (int j = 0; i < waveObjects[i].transform.childCount; j++)
+            for (int j = 0; j < waveObjects[i].transform.childCount; j++)
             {
-
+                print("enemy " + j);
                 waves[i].enemies.Add(waveObjects[i].transform.GetChild(j).gameObject);
 
             }
             
+        }
+
+
+        if (DEBUG_START)
+        {
+            StartWaves();
+            DEBUG_START = false;
         }
     }
 

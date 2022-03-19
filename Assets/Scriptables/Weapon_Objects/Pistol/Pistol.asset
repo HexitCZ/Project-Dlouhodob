@@ -16,7 +16,7 @@ MonoBehaviour:
   description: rat
   position: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0}
-  scale: {x: 0.29, y: 0.29, z: 0.29}
+  scale: {x: 1, y: 1, z: 1}
   ammoIndex: 3
   damage: 2
   range: 100
@@ -28,10 +28,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 23
   reloadTime: 2
-  mesh: {fileID: 6947591015609394669, guid: b6ee760b60f979e4cb8b3f4d2c7570ef, type: 3}
+  mesh: {fileID: 8852717341014287422, guid: 55a87ec5d1bdbdd42859e4013dd3f960, type: 3}
   materials:
-  - {fileID: 2100000, guid: 2b9beef8cdd750343b016c6f39325bf5, type: 2}
-  - {fileID: 2100000, guid: 7d3ad312c3508904193bae73ee595c16, type: 2}
+  - {fileID: 2100000, guid: 9fc938d51ad8ec04bad3aadcd44247da, type: 2}
+  - {fileID: -1580535799172915004, guid: 157fbc3311e27a34cadb4b82d12c6980, type: 3}
+  - {fileID: -1580535799172915004, guid: 157fbc3311e27a34cadb4b82d12c6980, type: 3}
   weaponAnimator: {fileID: 22100000, guid: 0795d1d38d2d6a14cbd312d869f504e3, type: 2}
   muzzleFlash: {fileID: 8926484042661614526, guid: 879dc9ba0af0304468b8f6cdf6b0bce6, type: 3}
   hitParticle: {fileID: 3742677473019854988, guid: 8baeb5d3942908d4e9e6c11de925b890, type: 3}

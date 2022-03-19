@@ -28,7 +28,7 @@ public class WeaponObject : ScriptableObject
     public float reloadTime;
     [Space]
     [Header("Assets")]
-    public Mesh mesh;
+    public GameObject mesh;
     public Material[] materials;
     public AnimatorOverrideController weaponAnimator;
     public VisualEffectAsset muzzleFlash;

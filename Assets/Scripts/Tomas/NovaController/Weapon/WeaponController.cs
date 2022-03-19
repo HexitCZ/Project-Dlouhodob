@@ -11,6 +11,7 @@ public class WeaponController : MonoBehaviour
     public AmmoData ammoData;
 
     public GameObject weaponRenderer;
+    
 
     public WeaponObject currentWeapon;
     public PlayerProjectileObject currentBullet;
@@ -42,8 +43,9 @@ public class WeaponController : MonoBehaviour
     [Space]
     private AmmoData.AmmoPack ammoPack;
 
-    private MeshFilter meshFilter;
-    private MeshRenderer meshRenderer;
+
+    /*private MeshFilter meshFilter;
+    private MeshRenderer meshRenderer;*/
     private Animator animator;
     private AnimatorOverrideController animatorOverride;
     private AudioSource audioSource;
@@ -60,8 +62,8 @@ public class WeaponController : MonoBehaviour
         instance = this;
 
         animator = weaponRenderer.GetComponent<Animator>();
-        meshFilter = weaponRenderer.GetComponent<MeshFilter>();
-        meshRenderer = weaponRenderer.GetComponent<MeshRenderer>();
+        //meshFilter = weaponRenderer.GetComponent<MeshFilter>();
+        //meshRenderer = weaponRenderer.GetComponent<MeshRenderer>();
         audioSource = GetComponent<AudioSource>();
         source = weaponRenderer.transform.parent.transform;
 
@@ -72,6 +74,8 @@ public class WeaponController : MonoBehaviour
         {
             bodyData = GetComponent<BodyData>();
         }
+
+        
 
     }
 
@@ -96,13 +100,16 @@ public class WeaponController : MonoBehaviour
 
     public void SetWeaponObject(WeaponObject newWO)
     {
+        //meshFilter.mesh = currentWeapon.mesh;
+        //meshRenderer.materials = currentWeapon.materials;
+        //meshRenderer.transform.localScale = newWO.scale;
         currentWeapon = newWO;
-        meshFilter.mesh = currentWeapon.mesh;
         animator.runtimeAnimatorController = currentWeapon.weaponAnimator;
-        meshRenderer.materials = currentWeapon.materials;
         muzzleFlashObject.visualEffectAsset = currentBullet.muzzleFlashEffect;
         ammoIndex = currentWeapon.ammoIndex;
-        meshRenderer.transform.localScale = newWO.scale;
+        Destroy(weaponRenderer.transform.GetChild(1).gameObject);
+        GameObject t = Instantiate(newWO.mesh, weaponRenderer.transform);
+         
         ammoPack = GetAmmoPack();
     }
 
