@@ -442,8 +442,10 @@ GameObject:
   - component: {fileID: 4268357316164657258}
   - component: {fileID: 4268357316164657259}
   - component: {fileID: 4268357316164657253}
-  - component: {fileID: 4268357316164657252}
   - component: {fileID: 187186456}
+  - component: {fileID: 4268357316164657252}
+  - component: {fileID: 316915276}
+  - component: {fileID: 316915277}
   m_Layer: 6
   m_Name: NovaController
   m_TagString: Player
@@ -768,6 +770,20 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   muzzleFlashObject: {fileID: 1930470942}
+--- !u!114 &187186456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4268357316164657263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dcf05799156117418a51b6be7e8b3fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponChangeSpeed: 0.2
+  weaponHolder: {fileID: 3278468842605151046}
 --- !u!114 &4268357316164657252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -789,7 +805,7 @@ MonoBehaviour:
     bullets_left: 1000
   - weapon: Pistol
     bullets_left: 1000
---- !u!114 &187186456
+--- !u!114 &316915276
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -798,11 +814,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 4268357316164657263}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dcf05799156117418a51b6be7e8b3fb, type: 3}
+  m_Script: {fileID: 11500000, guid: 28a428459c96c8a4dbbcf9aef664882f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponChangeSpeed: 0.2
-  weaponHolder: {fileID: 3278468842605151046}
+  level: 0
+  xp: 0
+  xpPerLevel: 10
+--- !u!114 &316915277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4268357316164657263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0d833c46f50efa4eb774693ef72150f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 0
 --- !u!1 &4268357316270209821
 GameObject:
   m_ObjectHideFlags: 0
@@ -1087,6 +1117,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4268357315631991374}
     m_Modifications:
+    - target: {fileID: 6616853146876454013, guid: 05acd04e107f01945839b3efff18a37e, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 1773197216858952008, guid: 85fa23e1022d36a4eb4077f177b6a35c, type: 3}
     - target: {fileID: 7437628646312931682, guid: 05acd04e107f01945839b3efff18a37e, type: 3}
       propertyPath: m_Name
       value: hq_weapon 2
@@ -1135,6 +1169,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8950692778639085751, guid: 05acd04e107f01945839b3efff18a37e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 77860979993989e4fb07956d1d31e09c, type: 2}
+    - target: {fileID: 8950692778639085751, guid: 05acd04e107f01945839b3efff18a37e, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: -1580535799172915004, guid: 157fbc3311e27a34cadb4b82d12c6980, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05acd04e107f01945839b3efff18a37e, type: 3}
 --- !u!4 &7817144442253014540 stripped
