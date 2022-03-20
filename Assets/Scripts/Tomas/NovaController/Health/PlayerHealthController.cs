@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealthController : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class PlayerHealthController : MonoBehaviour
     #endregion
 
     private PlayerHealthData data;
+
+    private float hue;
 
     private void Start()
     {
@@ -22,7 +25,7 @@ public class PlayerHealthController : MonoBehaviour
         if (data.canBeDamaged)
         {
             data.actualHealth -= damage;
-            data.visibleHealth = (int)Mathf.Clamp(data.actualHealth, 0.0f, float.MaxValue);
+            data.visibleHealth = (int)Mathf.Clamp(data.actualHealth, 0.0f, data.maxHealth);
         }
         CheckHealth();
     }
@@ -32,6 +35,25 @@ public class PlayerHealthController : MonoBehaviour
         if (data.actualHealth <= 0.01f)
         {
             Debug.Log("Player died");
+            
         }
     }
+
+    private void Update()
+    {
+        SetUI();
+    }
+
+    public void SetUI()
+    {
+        hue = (data.actualHealth / data.maxHealth);
+
+        
+        float normal = Mathf.InverseLerp(0.0f, 1.0f, hue);
+        float outhue = Mathf.Lerp(0.0f, 0.28f, normal);
+
+        data.colorImage.color = Color.Lerp(data.colorImage.color, Color.HSVToRGB(outhue, 1, 0.8f), 0.05f);
+        data.healthText.text = data.visibleHealth.ToString();
+    }
+
 }

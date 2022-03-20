@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class AI_Walker : AI_Base
 {
@@ -11,6 +12,7 @@ public class AI_Walker : AI_Base
     private bool isSlowed;
     public float distanceTreshold;
     private WeaponController playerWeapon;
+    public GameObject explosionVFX;
     private new void Start()
     {
         playerWeapon = WeaponController.instance;
@@ -103,8 +105,17 @@ public class AI_Walker : AI_Base
     protected override void Death()
     {
 
-        Debug.Log("Death");
-        gameObject.SetActive(false);
+        //Debug.Log("Death");
+        navmesh.enabled = false;
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.isKinematic = false;
+        rb.AddForce(-targetDirection*10, ForceMode.Impulse);
+        //gameObject.SetActive(false);
+        GameObject vfx = Instantiate(explosionVFX, GetComponent<BoxCollider>().center,Quaternion.identity);
+        vfx.GetComponent<VisualEffect>().Play();
+        Destroy(vfx,2);
+
+        this.enabled = false;
 
 
     }
