@@ -1401,6 +1401,39 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 315185714}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &316915267 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4268357316164657263, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
+  m_PrefabInstance: {fileID: 427001097}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &316915276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316915267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28a428459c96c8a4dbbcf9aef664882f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  xp: 0
+  xpPerLevel: 10
+--- !u!114 &316915277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316915267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0d833c46f50efa4eb774693ef72150f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 0
 --- !u!4 &336196313 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2929754143629124613, guid: 0e838296fa976e747a26979bcf6f5aab, type: 3}
@@ -2859,6 +2892,8 @@ MonoBehaviour:
   slowDownLength: 1
   distanceTreshold: 0
   explosionVFX: {fileID: 0}
+  xpGain: 0
+  currencyGain: 0
 --- !u!65 &597349083
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9908,6 +9943,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1168682899}
     - target: {fileID: 755265367382587632, guid: f93ef974c3c1cbf46b3be475dd3cfe17, type: 3}
+      propertyPath: xpGain
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 755265367382587632, guid: f93ef974c3c1cbf46b3be475dd3cfe17, type: 3}
+      propertyPath: currencyGain
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 755265367382587632, guid: f93ef974c3c1cbf46b3be475dd3cfe17, type: 3}
       propertyPath: <target>k__BackingField
       value: 
       objectReference: {fileID: 755320492}
@@ -10042,6 +10085,8 @@ MonoBehaviour:
   slowDownLength: 1
   distanceTreshold: 0
   explosionVFX: {fileID: 0}
+  xpGain: 0
+  currencyGain: 0
 --- !u!195 &551319817882438975
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -10536,6 +10581,14 @@ PrefabInstance:
     - target: {fileID: 6587715478909533394, guid: d0826b6e868cdc04aab4e5cf34f5f4df, type: 3}
       propertyPath: m_Name
       value: ai_hover_heavy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6587715478909533395, guid: d0826b6e868cdc04aab4e5cf34f5f4df, type: 3}
+      propertyPath: xpGain
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6587715478909533395, guid: d0826b6e868cdc04aab4e5cf34f5f4df, type: 3}
+      propertyPath: currencyGain
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6587715478909533395, guid: d0826b6e868cdc04aab4e5cf34f5f4df, type: 3}
       propertyPath: <target>k__BackingField
@@ -11042,6 +11095,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 132819009}
     m_Modifications:
+    - target: {fileID: 6338468088513502620, guid: b72a87e376734284eb72e82b39966603, type: 3}
+      propertyPath: xpGain
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6338468088513502620, guid: b72a87e376734284eb72e82b39966603, type: 3}
+      propertyPath: currencyGain
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6338468088513502620, guid: b72a87e376734284eb72e82b39966603, type: 3}
       propertyPath: <target>k__BackingField
       value: 

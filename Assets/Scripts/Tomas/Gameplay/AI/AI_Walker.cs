@@ -8,11 +8,15 @@ public class AI_Walker : AI_Base
     
     public float slowDownSpeed;
     public float slowDownLength;
-    private float startSpeed;
+    private new float startSpeed;
     private bool isSlowed;
     public float distanceTreshold;
     private WeaponController playerWeapon;
     public GameObject explosionVFX;
+    [Space]
+    public int xpGain;
+    public int currencyGain;
+
     private new void Start()
     {
         playerWeapon = WeaponController.instance;
@@ -114,6 +118,9 @@ public class AI_Walker : AI_Base
         GameObject vfx = Instantiate(explosionVFX, GetComponent<BoxCollider>().center,Quaternion.identity);
         vfx.GetComponent<VisualEffect>().Play();
         Destroy(vfx,2);
+
+        ExperienceSystem.instance.Add(xpGain);
+        PlayerCurrency.instance.Add(currencyGain);
 
         this.enabled = false;
 
