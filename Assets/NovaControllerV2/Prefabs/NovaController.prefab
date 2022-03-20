@@ -203,7 +203,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 20000
-  field of view: 70
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -246,7 +246,7 @@ MonoBehaviour:
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
-  m_Antialiasing: 2
+  m_Antialiasing: 1
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -669,9 +669,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBeDamaged: 1
+  maxHealth: 10
   visibleHealth: 10
   actualHealth: 0
   regenerationSpeed: 0
+  colorImage: {fileID: 0}
+  healthText: {fileID: 0}
 --- !u!114 &4268357316164657258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -744,7 +747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoData: {fileID: 4268357316164657252}
   weaponRenderer: {fileID: 4268357315631991373}
-  currentWeapon: {fileID: 11400000, guid: 882aadd48cde4c149881571ebf02cda0, type: 2}
+  currentWeapon: {fileID: 11400000, guid: 58dff297fa43ee744a1017d665fd6481, type: 2}
   currentBullet: {fileID: 11400000, guid: f5f631b56a70ff24fbace672f02dad43, type: 2}
   weapons:
   - {fileID: 11400000, guid: 882aadd48cde4c149881571ebf02cda0, type: 2}

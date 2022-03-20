@@ -1941,38 +1941,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1726510189}
     m_Modifications:
-    - target: {fileID: 4268357315555254832, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_ClearFlags
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268357315555254832, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: field of view
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268357315555254832, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_NormalizedViewPortRect.width
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268357315555254839, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_StopNaN
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268357315555254839, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_Dithering
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268357315555254839, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_Antialiasing
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268357315555254839, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_RenderShadows
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268357315555254839, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_RenderPostProcessing
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4268357316164657256, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2021,14 +1989,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NovaController
       objectReference: {fileID: 0}
-    - target: {fileID: 4268357316736717952, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_NormalizedViewPortRect.width
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5331213129978645332, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: maxHealth
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 5331213129978645332, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
       propertyPath: colorImage
       value: 
@@ -2037,6 +1997,18 @@ PrefabInstance:
       propertyPath: healthText
       value: 
       objectReference: {fileID: 1859200402}
+    - target: {fileID: 6616853147311143337, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 1773197216858952008, guid: 85fa23e1022d36a4eb4077f177b6a35c, type: 3}
+    - target: {fileID: 8950692778069134691, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 77860979993989e4fb07956d1d31e09c, type: 2}
+    - target: {fileID: 8950692778069134691, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: -1580535799172915004, guid: 157fbc3311e27a34cadb4b82d12c6980, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
 --- !u!1 &454657347
@@ -8750,19 +8722,46 @@ MonoBehaviour:
       OnFinished:
         m_PersistentCalls:
           m_Calls: []
-  - name: ArmorUpgrades
+    - name: PistolUpgrade
+      finished: 0
+      OnFinished:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: ARUpgrade
+      finished: 0
+      OnFinished:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: MGUpgrade
+      finished: 0
+      OnFinished:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: SPUpgrade
+      finished: 0
+      OnFinished:
+        m_PersistentCalls:
+          m_Calls: []
+  - name: BulletUpgrades
     progressEvents:
-    - name: UnlockAR
+    - name: Laser
       finished: 0
       OnFinished:
         m_PersistentCalls:
           m_Calls: []
-    - name: UnlockMG
+    - name: Electro
       finished: 0
       OnFinished:
         m_PersistentCalls:
           m_Calls: []
-    - name: UnlockSP
+  - name: PowerUnlocks
+    progressEvents:
+    - name: EMPCharge
+      finished: 0
+      OnFinished:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: WeaponOvercharge
       finished: 0
       OnFinished:
         m_PersistentCalls:
