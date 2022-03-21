@@ -441,6 +441,7 @@ GameObject:
   - component: {fileID: 5331213129978645332}
   - component: {fileID: 4268357316164657258}
   - component: {fileID: 4268357316164657259}
+  - component: {fileID: 316915278}
   - component: {fileID: 4268357316164657253}
   - component: {fileID: 187186456}
   - component: {fileID: 4268357316164657252}
@@ -735,6 +736,23 @@ MonoBehaviour:
   sensitivity: 0.05
   effectAmount: 0
   cameraEffect: 0
+--- !u!114 &316915278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4268357316164657263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b9721a2580409f4abe9d8bda87d0204, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradedWeapons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &4268357316164657253
 MonoBehaviour:
   m_ObjectHideFlags: 0
