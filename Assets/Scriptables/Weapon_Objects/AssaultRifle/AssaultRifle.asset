@@ -22,7 +22,7 @@ MonoBehaviour:
   range: 100
   bulletSpread: 0
   bulletsPerTap: 0
-  timeBetweenShots: 0.2
+  timeBetweenShots: 0.1
   fullAuto: 1
   whatCanIHit:
     serializedVersion: 2
