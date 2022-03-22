@@ -33,20 +33,6 @@ public class AI_Walker : AI_Base
         base.SetDestination(destination);
     }
 
-    protected override bool CheckHealth()
-    {
-        
-
-        if (health > 0)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-
-    }
 
     public override void GetHit()
     {
@@ -122,8 +108,15 @@ public class AI_Walker : AI_Base
         ExperienceSystem.instance.Add(xpGain);
         PlayerCurrency.instance.Add(currencyGain);
 
+        Invoke("Disable", 5);
+
         this.enabled = false;
 
-
     }
+
+    private void Disable()
+    {
+        this.gameObject.SetActive(false);
+    }
+
 }
