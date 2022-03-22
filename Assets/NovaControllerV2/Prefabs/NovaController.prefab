@@ -672,8 +672,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBeDamaged: 1
-  maxHealth: 10
-  visibleHealth: 10
+  maxHealth: 100
+  visibleHealth: 100
   actualHealth: 0
   regenerationSpeed: 0
   colorImage: {fileID: 0}
@@ -732,7 +732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxX: 70
-  minX: -70
+  minX: -85
   sensitivity: 0.05
   effectAmount: 0
   cameraEffect: 0
@@ -749,10 +749,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradedWeapons:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 919132149155446097, guid: ab07b42ca6dbe3946906950d34244a2b, type: 3}
+  - {fileID: 919132149155446097, guid: d35818700b054bf438d7d1d8689440ab, type: 3}
+  - {fileID: 919132149155446097, guid: b6ee760b60f979e4cb8b3f4d2c7570ef, type: 3}
+  - {fileID: 8852717341014287422, guid: 55a87ec5d1bdbdd42859e4013dd3f960, type: 3}
 --- !u!114 &4268357316164657253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -836,6 +836,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
+  upgradePoints: 0
   xp: 0
   xpPerLevel: 10
 --- !u!114 &316915277

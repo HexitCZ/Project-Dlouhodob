@@ -15,7 +15,7 @@ MonoBehaviour:
   projectileEffect: {fileID: 8926484042661614526, guid: 13c988ff3f54e0248a3bd2d467405817, type: 3}
   hitEffect: {fileID: 8926484042661614526, guid: e2bb87597ffea28489b29ab57c640a79, type: 3}
   speed: 35
-  damage: 2
+  damage: 10
   splash: 0
   splashRange: 0
   splashDamage: 0

@@ -10,7 +10,11 @@ public class ExperienceSystem : MonoBehaviour
 
     [Range(0, 100)]
     public int level;
-    
+
+    public int upgradePoints;
+
+    [Space]
+
     public int xp;
     [Space]
     public int xpPerLevel;
@@ -36,8 +40,10 @@ public class ExperienceSystem : MonoBehaviour
     private void ResolveXPLevels()
     {
         level += (int) xp / xpPerLevel;
-        xp = xp % xpPerLevel;
 
+        upgradePoints += (int) xp / xpPerLevel;
+
+        xp = xp % xpPerLevel;
     }
 
 }
