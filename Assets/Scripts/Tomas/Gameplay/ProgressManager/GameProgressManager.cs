@@ -104,6 +104,18 @@ public class GameProgressManager : MonoBehaviour
 
     }
 
+    public int GetFullSize()
+    {
+        int size = 0; 
+        for (int i = 0; i < upgrades.Length; i++)
+        {
+            size += upgrades[i].progressEvents.Length;
+        }
+        return size;
+    }
+
+
+
     [System.Serializable]
     public class Category
     {

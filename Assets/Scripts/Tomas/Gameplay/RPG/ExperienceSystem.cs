@@ -37,6 +37,17 @@ public class ExperienceSystem : MonoBehaviour
         ResolveXPLevels();
     }
 
+    public bool TryPayLevelPoint()
+    {
+        if (upgradePoints > 0)
+        {
+            upgradePoints--;
+            return true;
+        }
+
+        return false;
+    }
+
     private void ResolveXPLevels()
     {
         level += (int) xp / xpPerLevel;
