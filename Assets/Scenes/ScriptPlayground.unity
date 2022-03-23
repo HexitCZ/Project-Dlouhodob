@@ -650,7 +650,7 @@ Transform:
   - {fileID: 5632903814060657273}
   - {fileID: 50554073332261447}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &141627416 stripped
 Transform:
@@ -1401,17 +1401,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 315185714}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &316915278 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 316915278, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-  m_PrefabInstance: {fileID: 427001097}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b9721a2580409f4abe9d8bda87d0204, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &336196313 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2929754143629124613, guid: 0e838296fa976e747a26979bcf6f5aab, type: 3}
@@ -3028,7 +3017,7 @@ Transform:
   m_Children:
   - {fileID: 971789751904033604}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &658131885 stripped
 Transform:
@@ -4324,7 +4313,7 @@ Transform:
   - {fileID: 911667851}
   - {fileID: 644274571}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &953483822
 GameObject:
@@ -4408,7 +4397,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &972706476 stripped
 Transform:
@@ -7601,7 +7590,7 @@ Transform:
   - {fileID: 187186442}
   - {fileID: 516289065}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1726980541
 GameObject:
@@ -8051,7 +8040,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 88bd8f90114941d4f8cfcfe0643576b5, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 88bd8f90114941d4f8cfcfe0643576b5, type: 3}
       propertyPath: m_LocalScale.x
@@ -8661,160 +8650,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1888383027}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1900625799
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1900625800}
-  - component: {fileID: 1900625801}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: GameController
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1900625800
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1900625799}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 109.35625, y: 5.35527, z: -10.936767}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1900625801
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1900625799}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc8ee25b1d7a7a642aceb4788056dab4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  categories:
-  - name: WeaponUnlocks
-    progressEvents:
-    - name: UnlockAR
-      finished: 1
-      OnFinished:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: UnlockMG
-      finished: 1
-      OnFinished:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: UnlockSP
-      finished: 1
-      OnFinished:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: PistolUpgrade
-      finished: 0
-      OnFinished:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 316915278}
-            m_TargetAssemblyTypeName: WeaponUpgrade, Assembly-CSharp
-            m_MethodName: UpgradePistol
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
-    - name: ARUpgrade
-      finished: 0
-      OnFinished:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 316915278}
-            m_TargetAssemblyTypeName: WeaponUpgrade, Assembly-CSharp
-            m_MethodName: UpgradeAR
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
-    - name: MGUpgrade
-      finished: 0
-      OnFinished:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 316915278}
-            m_TargetAssemblyTypeName: WeaponUpgrade, Assembly-CSharp
-            m_MethodName: UpgradeMG
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
-    - name: SPUpgrade
-      finished: 0
-      OnFinished:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 316915278}
-            m_TargetAssemblyTypeName: WeaponUpgrade, Assembly-CSharp
-            m_MethodName: UpgradeSP
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
-  - name: BulletUpgrades
-    progressEvents:
-    - name: Laser
-      finished: 0
-      OnFinished:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Electro
-      finished: 0
-      OnFinished:
-        m_PersistentCalls:
-          m_Calls: []
-  - name: PowerUnlocks
-    progressEvents:
-    - name: EMPCharge
-      finished: 0
-      OnFinished:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: WeaponOvercharge
-      finished: 0
-      OnFinished:
-        m_PersistentCalls:
-          m_Calls: []
 --- !u!1 &1901892345
 GameObject:
   m_ObjectHideFlags: 0
@@ -9749,6 +9584,115 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2076814838}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2120254278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2120254280}
+  - component: {fileID: 2120254279}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: GameController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2120254279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120254278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc8ee25b1d7a7a642aceb4788056dab4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progress:
+  - name: 
+    progressEvents: []
+  upgrades:
+  - name: WeaponUnlocks
+    progressEvents:
+    - name: UnlockAR
+      finished: 1
+      OnFinished:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: UnlockMG
+      finished: 1
+      OnFinished:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: UnlockSP
+      finished: 1
+      OnFinished:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: PistolUpgrade
+      finished: 0
+      OnFinished:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: ARUpgrade
+      finished: 0
+      OnFinished:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: MGUpgrade
+      finished: 0
+      OnFinished:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: SPUpgrade
+      finished: 0
+      OnFinished:
+        m_PersistentCalls:
+          m_Calls: []
+  - name: BulletUpgrades
+    progressEvents:
+    - name: Laser
+      finished: 0
+      OnFinished:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: Electro
+      finished: 0
+      OnFinished:
+        m_PersistentCalls:
+          m_Calls: []
+  - name: PowerUnlocks
+    progressEvents:
+    - name: EMPCharge
+      finished: 0
+      OnFinished:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: WeaponOvercharge
+      finished: 0
+      OnFinished:
+        m_PersistentCalls:
+          m_Calls: []
+--- !u!4 &2120254280
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120254278}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 109.35625, y: 5.35527, z: -10.936767}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2123896755
 GameObject:
   m_ObjectHideFlags: 0

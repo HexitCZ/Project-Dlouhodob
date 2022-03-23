@@ -11,7 +11,8 @@ public class GameProgressManager : MonoBehaviour
     public static GameProgressManager instance;
     #endregion
 
-    public Category[] categories;
+    public Category[] progress;
+    public Category[] upgrades;
 
     void Awake()
     {
@@ -38,7 +39,7 @@ public class GameProgressManager : MonoBehaviour
         int categoryIndex;
         int eventIndex;
         GetEventIndex(category, name, out categoryIndex, out eventIndex);
-        return categories[categoryIndex].progressEvents[eventIndex].finished;
+        return upgrades[categoryIndex].progressEvents[eventIndex].finished;
 
     }
 
@@ -53,7 +54,7 @@ public class GameProgressManager : MonoBehaviour
         int categoryIndex;
         int eventIndex;
         GetEventIndex(category, name, out categoryIndex, out eventIndex);
-        categories[categoryIndex].progressEvents[eventIndex].FinishEvent();
+        upgrades[categoryIndex].progressEvents[eventIndex].FinishEvent();
 
     }
 
@@ -65,9 +66,9 @@ public class GameProgressManager : MonoBehaviour
         try
         {
 
-            for (int i = 0; i < categories.Length; i++)
+            for (int i = 0; i < upgrades.Length; i++)
             {
-                if (categories[i].name == category)
+                if (upgrades[i].name == category)
                 {
                     categoryIndex = i;
                     
@@ -85,9 +86,9 @@ public class GameProgressManager : MonoBehaviour
         try
         {
 
-            for (int j = categoryIndex; j < categories[categoryIndex].progressEvents.Length; j++)
+            for (int j = categoryIndex; j < upgrades[categoryIndex].progressEvents.Length; j++)
             {
-                if (categories[categoryIndex].progressEvents[j].name == name)
+                if (upgrades[categoryIndex].progressEvents[j].name == name)
                 {
                     eventIndex = j;
                     return;
