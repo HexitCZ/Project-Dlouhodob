@@ -54,6 +54,7 @@ public class GameProgressManager : MonoBehaviour
         int categoryIndex;
         int eventIndex;
         GetEventIndex(category, name, out categoryIndex, out eventIndex);
+        print(category + " " + categoryIndex + name + " " + eventIndex);
         upgrades[categoryIndex].progressEvents[eventIndex].FinishEvent();
 
     }
@@ -61,8 +62,8 @@ public class GameProgressManager : MonoBehaviour
 
     private void GetEventIndex(string category, string name, out int categoryIndex, out int eventIndex)
     {
-        categoryIndex = -1;
-        eventIndex = -1;
+        categoryIndex = 0;
+        eventIndex = 0;
         try
         {
 
@@ -71,7 +72,7 @@ public class GameProgressManager : MonoBehaviour
                 if (upgrades[i].name == category)
                 {
                     categoryIndex = i;
-                    
+                    break;
 
                 }
 

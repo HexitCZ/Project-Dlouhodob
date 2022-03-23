@@ -1346,9 +1346,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 573435684}
     m_Modifications:
+    - target: {fileID: 506810861202803412, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861202803412, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861202803414, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861330881410, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 506810862905018465, guid: 7b630428042981946960e04a932459b5, type: 3}
       propertyPath: m_Name
       value: UpgradeField (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810862905018465, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 506810862905018470, guid: 7b630428042981946960e04a932459b5, type: 3}
       propertyPath: m_Pivot.x
@@ -1432,14 +1452,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 506810862905018470, guid: 7b630428042981946960e04a932459b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 506810862905018471, guid: 7b630428042981946960e04a932459b5, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6215446280659802260, guid: 7b630428042981946960e04a932459b5, type: 3}
-      propertyPath: bought
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2721,9 +2733,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 573435684}
     m_Modifications:
+    - target: {fileID: 506810861202803412, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861202803412, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861202803414, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861330881410, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 506810862905018465, guid: 7b630428042981946960e04a932459b5, type: 3}
       propertyPath: m_Name
       value: UpgradeField (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810862905018465, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 506810862905018470, guid: 7b630428042981946960e04a932459b5, type: 3}
       propertyPath: m_Pivot.x
@@ -2809,9 +2841,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 506810862905018471, guid: 7b630428042981946960e04a932459b5, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
+    - target: {fileID: 6215446280659802260, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: fieldName
+      value: Laser
+      objectReference: {fileID: 0}
+    - target: {fileID: 6215446280659802260, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: upgradeName
+      value: Laser
+      objectReference: {fileID: 0}
+    - target: {fileID: 6215446280659802260, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: upgradeCategoryName
+      value: BulletUpgrades
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b630428042981946960e04a932459b5, type: 3}
@@ -3315,9 +3355,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 573435684}
     m_Modifications:
+    - target: {fileID: 506810861202803412, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861202803412, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861202803414, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861330881410, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 506810862905018465, guid: 7b630428042981946960e04a932459b5, type: 3}
       propertyPath: m_Name
       value: UpgradeField (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810862905018465, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 506810862905018470, guid: 7b630428042981946960e04a932459b5, type: 3}
       propertyPath: m_Pivot.x
@@ -3403,9 +3463,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 506810862905018471, guid: 7b630428042981946960e04a932459b5, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
+    - target: {fileID: 6215446280659802260, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: fieldName
+      value: Electro
+      objectReference: {fileID: 0}
+    - target: {fileID: 6215446280659802260, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: upgradeName
+      value: Electro
+      objectReference: {fileID: 0}
+    - target: {fileID: 6215446280659802260, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: upgradeCategoryName
+      value: BulletUpgrades
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b630428042981946960e04a932459b5, type: 3}
@@ -5219,9 +5287,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 573435684}
     m_Modifications:
+    - target: {fileID: 506810861202803412, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861202803412, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861202803414, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861330881410, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 506810862905018465, guid: 7b630428042981946960e04a932459b5, type: 3}
       propertyPath: m_Name
       value: UpgradeField (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810862905018465, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 506810862905018470, guid: 7b630428042981946960e04a932459b5, type: 3}
       propertyPath: m_Pivot.x
@@ -5305,14 +5393,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 506810862905018470, guid: 7b630428042981946960e04a932459b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 506810862905018471, guid: 7b630428042981946960e04a932459b5, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6215446280659802260, guid: 7b630428042981946960e04a932459b5, type: 3}
-      propertyPath: bought
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5854,9 +5934,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 573435684}
     m_Modifications:
+    - target: {fileID: 506810861202803412, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861202803412, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861202803414, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861330881410, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 506810862905018465, guid: 7b630428042981946960e04a932459b5, type: 3}
       propertyPath: m_Name
       value: UpgradeField (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810862905018465, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 506810862905018470, guid: 7b630428042981946960e04a932459b5, type: 3}
       propertyPath: m_Pivot.x
@@ -5942,13 +6042,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 506810862905018471, guid: 7b630428042981946960e04a932459b5, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
+    - target: {fileID: 6215446280659802260, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: fieldName
+      value: EMPCharge
       objectReference: {fileID: 0}
     - target: {fileID: 6215446280659802260, guid: 7b630428042981946960e04a932459b5, type: 3}
-      propertyPath: bought
-      value: 0
+      propertyPath: upgradeName
+      value: EMPCharge
+      objectReference: {fileID: 0}
+    - target: {fileID: 6215446280659802260, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: upgradeCategoryName
+      value: PowerUnlocks
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b630428042981946960e04a932459b5, type: 3}
@@ -7862,9 +7966,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 573435684}
     m_Modifications:
+    - target: {fileID: 506810861202803412, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861202803412, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861202803414, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861330881410, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 506810862905018465, guid: 7b630428042981946960e04a932459b5, type: 3}
       propertyPath: m_Name
       value: UpgradeField (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810862905018465, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 506810862905018470, guid: 7b630428042981946960e04a932459b5, type: 3}
       propertyPath: m_Pivot.x
@@ -7950,9 +8074,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 506810862905018471, guid: 7b630428042981946960e04a932459b5, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
+    - target: {fileID: 6215446280659802260, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: fieldName
+      value: MGUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 6215446280659802260, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: upgradeName
+      value: MGUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 6215446280659802260, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: upgradeCategoryName
+      value: WeaponUnlocks
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b630428042981946960e04a932459b5, type: 3}
@@ -8571,9 +8703,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 573435684}
     m_Modifications:
+    - target: {fileID: 506810861202803412, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861202803412, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861202803414, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861330881410, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 506810862905018465, guid: 7b630428042981946960e04a932459b5, type: 3}
       propertyPath: m_Name
       value: UpgradeField (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810862905018465, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 506810862905018470, guid: 7b630428042981946960e04a932459b5, type: 3}
       propertyPath: m_Pivot.x
@@ -8659,13 +8811,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 506810862905018471, guid: 7b630428042981946960e04a932459b5, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6215446280659802260, guid: 7b630428042981946960e04a932459b5, type: 3}
-      propertyPath: bought
-      value: 0
+      propertyPath: upgradeCategoryName
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b630428042981946960e04a932459b5, type: 3}
@@ -9929,9 +10077,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 573435684}
     m_Modifications:
+    - target: {fileID: 506810861202803412, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861202803412, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861202803414, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861330881410, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 506810862905018465, guid: 7b630428042981946960e04a932459b5, type: 3}
       propertyPath: m_Name
       value: UpgradeField (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810862905018465, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 506810862905018470, guid: 7b630428042981946960e04a932459b5, type: 3}
       propertyPath: m_Pivot.x
@@ -10017,14 +10185,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 506810862905018471, guid: 7b630428042981946960e04a932459b5, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6215446280659802260, guid: 7b630428042981946960e04a932459b5, type: 3}
-      propertyPath: bought
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b630428042981946960e04a932459b5, type: 3}
 --- !u!224 &1026515058 stripped
@@ -10093,6 +10253,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 316915276, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
+      propertyPath: upgradePoints
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 4268357316164657256, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -17018,9 +17182,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 573435684}
     m_Modifications:
+    - target: {fileID: 506810861202803412, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861202803412, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861202803414, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861330881410, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 506810862905018465, guid: 7b630428042981946960e04a932459b5, type: 3}
       propertyPath: m_Name
       value: UpgradeField (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810862905018465, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 506810862905018470, guid: 7b630428042981946960e04a932459b5, type: 3}
       propertyPath: m_Pivot.x
@@ -17106,13 +17290,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 506810862905018471, guid: 7b630428042981946960e04a932459b5, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
+    - target: {fileID: 6215446280659802260, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: fieldName
+      value: SPUpgrade
       objectReference: {fileID: 0}
     - target: {fileID: 6215446280659802260, guid: 7b630428042981946960e04a932459b5, type: 3}
-      propertyPath: bought
-      value: 1
+      propertyPath: upgradeName
+      value: SPUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 6215446280659802260, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: upgradeCategoryName
+      value: WeaponUnlocks
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b630428042981946960e04a932459b5, type: 3}
@@ -17263,9 +17451,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 573435684}
     m_Modifications:
+    - target: {fileID: 506810861202803412, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861202803412, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861202803414, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861330881410, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 506810862905018465, guid: 7b630428042981946960e04a932459b5, type: 3}
       propertyPath: m_Name
       value: UpgradeField (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810862905018465, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 506810862905018470, guid: 7b630428042981946960e04a932459b5, type: 3}
       propertyPath: m_Pivot.x
@@ -17349,14 +17557,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 506810862905018470, guid: 7b630428042981946960e04a932459b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 506810862905018471, guid: 7b630428042981946960e04a932459b5, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6215446280659802260, guid: 7b630428042981946960e04a932459b5, type: 3}
-      propertyPath: bought
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -17604,17 +17804,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 573435684}
     m_Modifications:
+    - target: {fileID: 506810861202803412, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861202803412, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861202803414, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861330881410, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 506810862905018465, guid: 7b630428042981946960e04a932459b5, type: 3}
       propertyPath: m_Name
       value: UpgradeField (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 506810862905018469, guid: 7b630428042981946960e04a932459b5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1806923411}
-    - target: {fileID: 506810862905018469, guid: 7b630428042981946960e04a932459b5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TryUpgrade
       objectReference: {fileID: 0}
     - target: {fileID: 506810862905018470, guid: 7b630428042981946960e04a932459b5, type: 3}
       propertyPath: m_Pivot.x
@@ -17700,9 +17908,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 506810862905018471, guid: 7b630428042981946960e04a932459b5, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
+    - target: {fileID: 6215446280659802260, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: fieldName
+      value: ARUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 6215446280659802260, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: upgradeName
+      value: ARUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 6215446280659802260, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: upgradeCategoryName
+      value: WeaponUnlocks
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b630428042981946960e04a932459b5, type: 3}
@@ -17711,17 +17927,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 506810862905018470, guid: 7b630428042981946960e04a932459b5, type: 3}
   m_PrefabInstance: {fileID: 1806923408}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1806923411 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6215446280659802260, guid: 7b630428042981946960e04a932459b5, type: 3}
-  m_PrefabInstance: {fileID: 1806923408}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 589fe1c0cae37cc42aedbeeb900bae55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &1811881044 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 506810862905018470, guid: 7b630428042981946960e04a932459b5, type: 3}
@@ -18684,9 +18889,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 573435684}
     m_Modifications:
+    - target: {fileID: 506810861202803412, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861202803412, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861202803414, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861330881410, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 506810862905018465, guid: 7b630428042981946960e04a932459b5, type: 3}
       propertyPath: m_Name
       value: UpgradeField (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810862905018465, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 506810862905018470, guid: 7b630428042981946960e04a932459b5, type: 3}
       propertyPath: m_Pivot.x
@@ -18770,14 +18995,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 506810862905018470, guid: 7b630428042981946960e04a932459b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 506810862905018471, guid: 7b630428042981946960e04a932459b5, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6215446280659802260, guid: 7b630428042981946960e04a932459b5, type: 3}
-      propertyPath: bought
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -21294,9 +21511,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 573435684}
     m_Modifications:
+    - target: {fileID: 506810861202803412, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861202803412, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861202803414, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861330881410, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 506810862905018465, guid: 7b630428042981946960e04a932459b5, type: 3}
       propertyPath: m_Name
       value: UpgradeField (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810862905018465, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 506810862905018470, guid: 7b630428042981946960e04a932459b5, type: 3}
       propertyPath: m_Pivot.x
@@ -21382,13 +21619,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 506810862905018471, guid: 7b630428042981946960e04a932459b5, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
+    - target: {fileID: 6215446280659802260, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: fieldName
+      value: WeaponOvercharge
       objectReference: {fileID: 0}
     - target: {fileID: 6215446280659802260, guid: 7b630428042981946960e04a932459b5, type: 3}
-      propertyPath: bought
-      value: 0
+      propertyPath: upgradeName
+      value: WeaponOvercharge
+      objectReference: {fileID: 0}
+    - target: {fileID: 6215446280659802260, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: upgradeCategoryName
+      value: PowerUnlocks
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b630428042981946960e04a932459b5, type: 3}
@@ -22196,6 +22437,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 573435684}
     m_Modifications:
+    - target: {fileID: 506810861202803412, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861202803412, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861202803414, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 506810861330881410, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 506810862905018465, guid: 7b630428042981946960e04a932459b5, type: 3}
       propertyPath: m_Name
       value: UpgradeField
@@ -22283,6 +22540,18 @@ PrefabInstance:
     - target: {fileID: 506810862905018470, guid: 7b630428042981946960e04a932459b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6215446280659802260, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: fieldName
+      value: PistolUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 6215446280659802260, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: upgradeName
+      value: PistolUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 6215446280659802260, guid: 7b630428042981946960e04a932459b5, type: 3}
+      propertyPath: upgradeCategoryName
+      value: WeaponUnlocks
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b630428042981946960e04a932459b5, type: 3}
