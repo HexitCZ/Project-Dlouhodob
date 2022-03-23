@@ -21,13 +21,13 @@ public class WaveSystem : MonoBehaviour
 
         for (int i = 0; i < waveObjects.Length; i++)
         {
-            print("wave " + i + "  " + waveObjects[i].transform.childCount);
+            //print("wave " + i + "  " + waveObjects[i].transform.childCount);
             waves.Add(new Wave());
             waves[i].enemies = new List<GameObject>();
 
             for (int j = 0; j < waveObjects[i].transform.childCount; j++)
             {
-                print("enemy " + j);
+                //print("enemy " + j);
                 waves[i].enemies.Add(waveObjects[i].transform.GetChild(j).gameObject);
 
             }
@@ -49,7 +49,7 @@ public class WaveSystem : MonoBehaviour
     /// </summary>
     public void StartWaves()
     {
-        print("start");
+        //print("start");
         NextWave();
         InvokeRepeating("CheckAIStatus", 0.3f, 0.3f);
     }
@@ -79,18 +79,18 @@ public class WaveSystem : MonoBehaviour
     /// </summary>
     private void NextWave()
     {
-        print("nextwave");
+        //print("nextwave");
         if (currentWave >= waves.Count)
         {
             door.Open();
-            Debug.Log("Door OPEN");
+            //Debug.Log("Door OPEN");
             EndWaves();
             return;
         }
 
         for (int i = 0; i < waves[currentWave].enemies.Count; i++)
         {
-            print("spawncall");
+            //print("spawncall");
             StartCoroutine(SpawnEnemy(waves[currentWave].enemies[i]));
             //SpawnEnemy(waves[currentWave].enemies[i]);
         }
@@ -101,7 +101,7 @@ public class WaveSystem : MonoBehaviour
 
     private IEnumerator SpawnEnemy(GameObject enemy)
     {
-        print("spawn");
+        //print("spawn");
         GameObject vfx = Instantiate(spawnVFX, enemy.transform.position, Quaternion.identity);
         //vfx.GetComponent<VisualEffect>().Play();
         Destroy(vfx,5);

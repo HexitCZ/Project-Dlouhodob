@@ -219,6 +219,13 @@ public class WeaponController : MonoBehaviour
                     }
                 }
             }
+            Rigidbody rb = hit.collider.gameObject.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.AddForce(direction * 2, ForceMode.Impulse);
+            }
+
+
             GameObject hitEffect = Instantiate(currentBullet.hitEffect, hit.point, Quaternion.LookRotation(hit.normal, transform.up));
             hitEffect.GetComponent<VisualEffect>().Play();
             hitEffect.transform.SetParent(hit.collider.transform);

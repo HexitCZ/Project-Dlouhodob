@@ -10,7 +10,7 @@ public class AI_Base : MonoBehaviour, IHittable
     [field: SerializeField] protected bool dynamic { get; set; }
     [field: SerializeField] protected AI_Projectile_Weapon weapon { get; set; }
 
-    [SerializeField] protected bool isAlive { get { return CheckHealth(); } }
+    public bool isAlive { get { return CheckHealth(); } }
     [SerializeField] protected bool isVisible { get { return CheckVisibility(); } }
     [SerializeField] protected bool inRange { get { return CheckRange(); } }
     
@@ -107,7 +107,7 @@ public class AI_Base : MonoBehaviour, IHittable
 
     protected virtual bool CheckHealth()
     {
-        throw new NotImplementedException();
+        return health > 0;
     }
 
 
@@ -132,6 +132,7 @@ public class AI_Base : MonoBehaviour, IHittable
     /// <exception cref="NotImplementedException"></exception>
     protected virtual void Death()
     {
+
         throw new NotImplementedException(); 
     }
 

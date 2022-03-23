@@ -22,13 +22,13 @@ MonoBehaviour:
   range: 100
   bulletSpread: 0
   bulletsPerTap: 0
-  timeBetweenShots: 0.5
+  timeBetweenShots: 0.25
   fullAuto: 1
   whatCanIHit:
     serializedVersion: 2
     m_Bits: 23
   reloadTime: 2
-  mesh: {fileID: 8852717341014287422, guid: 55a87ec5d1bdbdd42859e4013dd3f960, type: 3}
+  mesh: {fileID: 7450042329512537854, guid: edeee3a44f0a40548bd3645af88d7046, type: 3}
   materials:
   - {fileID: 2100000, guid: 9fc938d51ad8ec04bad3aadcd44247da, type: 2}
   - {fileID: -1580535799172915004, guid: 157fbc3311e27a34cadb4b82d12c6980, type: 3}

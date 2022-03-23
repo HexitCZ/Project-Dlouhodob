@@ -1,16 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class AI_Walker : AI_Base
 {
     
     public float slowDownSpeed;
     public float slowDownLength;
-    private float startSpeed;
+    private new float startSpeed;
     private bool isSlowed;
     public float distanceTreshold;
     private WeaponController playerWeapon;
+    public GameObject explosionVFX;
+    [Space]
+    public int xpGain;
+    public int currencyGain;
+
     private new void Start()
     {
         playerWeapon = WeaponController.instance;
@@ -27,20 +33,6 @@ public class AI_Walker : AI_Base
         base.SetDestination(destination);
     }
 
-    protected override bool CheckHealth()
-    {
-        
-
-        if (health > 0)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-
-    }
 
     public override void GetHit()
     {
@@ -103,9 +95,28 @@ public class AI_Walker : AI_Base
     protected override void Death()
     {
 
-        Debug.Log("Death");
-        gameObject.SetActive(false);
+        //Debug.Log("Death");
+        navmesh.enabled = false;
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.isKinematic = false;
+        rb.AddForce(-targetDirection*10, ForceMode.Impulse);
+        //gameObject.SetActive(false);
+        GameObject vfx = Instantiate(explosionVFX, GetComponent<BoxCollider>().center,Quaternion.identity);
+        vfx.GetComponent<VisualEffect>().Play();
+        Destroy(vfx,2);
 
+        ExperienceSystem.instance.Add(xpGain);
+        PlayerCurrency.instance.Add(currencyGain);
+
+        Invoke("Disable", 5);
+
+        this.enabled = false;
 
     }
+
+    private void Disable()
+    {
+        this.gameObject.SetActive(false);
+    }
+
 }
