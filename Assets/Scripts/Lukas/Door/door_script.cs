@@ -80,7 +80,7 @@ public class door_script : MonoBehaviour
 
         if (automatic)
         {
-            doorAnimator.SetBool("open", true);
+            Open();
         }
 
     }
@@ -116,7 +116,15 @@ public class door_script : MonoBehaviour
 
     public void OnTriggerStay(Collider other)
     {
-        open = ui_script.GetInput();
+        if (!broken)
+        {
+            open = ui_script.GetInput();
+
+        }
+        else
+        {
+            Break();
+        }
 
         if (automatic)
         {

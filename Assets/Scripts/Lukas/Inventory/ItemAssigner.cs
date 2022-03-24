@@ -26,9 +26,14 @@ public class ItemAssigner : ScriptableObject
     private Sprite key_image;
 
     [Space]
+    [Header("Currency")]
+    [SerializeField]
+    private Sprite currency_sprite;
+
+
+    [Space]
     [Header("Ammunition")]
     [SerializeField]
-
     private string ammo_name;
 
     [Space]
@@ -45,12 +50,19 @@ public class ItemAssigner : ScriptableObject
     [Header("Keycard")]
     [SerializeField]
     private string key_name;
+
+    [Space]
+    [Header("Currency")]
+    [SerializeField]
+    private string currency_name;
+
     void Awake()
     {
         ammo_name = "Ammo";
         exp_name = "Experience";
         health_name = "Health";
         key_name = "Keycard";
+        currency_name = "Currency";
         key_image = Resources.Load<Sprite>("keycard_image_no_color");
     }
 
@@ -79,6 +91,10 @@ public class ItemAssigner : ScriptableObject
         {
             name = key_name;
         }
+        else if (item.GetType() == Item.Type.currency)
+        {
+            name = currency_name;
+        }
 
         return name;
     }
@@ -102,6 +118,10 @@ public class ItemAssigner : ScriptableObject
         else if (item.GetType() == Item.Type.keycard)
         {
             sprite = key_image;
+        }
+        else if (item.GetType() == Item.Type.currency)
+        {
+            sprite = currency_sprite;
         }
 
         return sprite;

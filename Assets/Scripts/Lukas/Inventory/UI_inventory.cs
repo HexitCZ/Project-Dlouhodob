@@ -38,7 +38,7 @@ public class UI_inventory : MonoBehaviour
     [Header("UI inventory item container")]
     [SerializeField]
     private Transform item_container;
-    
+
     [Space]
     [Header("Default image")]
     [SerializeField]
@@ -63,7 +63,7 @@ public class UI_inventory : MonoBehaviour
         SwitchInventory();
         GetComponent<Image>();
         itemImage = GetComponent<Image>();
-        
+
     }
 
 
@@ -71,7 +71,11 @@ public class UI_inventory : MonoBehaviour
     {
 
         mouse_position = Mouse.current.position.ReadValue();
-        
+
+    }
+    public bool GetImageStatus()
+    {
+        return image.enabled;
     }
 
     private void SwitchInventory()
@@ -88,7 +92,7 @@ public class UI_inventory : MonoBehaviour
                 if (grandchild.GetComponent<Image>())
                 {
                     grandchild.GetComponent<Image>().enabled = !grandchild.GetComponent<Image>().enabled;
-                    
+
                 }
                 if (grandchild.GetComponent<TextMeshProUGUI>())
                 {
@@ -111,7 +115,7 @@ public class UI_inventory : MonoBehaviour
     }
     private void SetItem(Transform setObject, Sprite sprite)
     {
-        
+
         setObject.GetComponent<Image>().sprite = sprite;
 
     }
@@ -130,33 +134,37 @@ public class UI_inventory : MonoBehaviour
 
         foreach (Transform child in transform)
         {
-            isAvailable = false;
-            Transform item_color = child.GetChild(0);
-            Transform item_sprite = child.GetChild(1);
-            Transform item_text = child.GetChild(3);
-            Debug.Log(item_color.name);
-            Debug.Log(item_sprite.GetComponent<Image>().sprite.name);
-            Debug.Log(item.GetType() == Item.Type.keycard);
-            
-        if (!isSet)
+            if (child.name.Contains("inventory_item_slot_"))
             {
 
-                if (item_sprite.GetComponent<Image>().sprite == default_image)
+                isAvailable = false;
+                Transform item_color = child.GetChild(0);
+                Transform item_sprite = child.GetChild(1);
+                Transform item_text = child.GetChild(3);
+                Debug.Log(item_color.name);
+                Debug.Log(item_sprite.GetComponent<Image>().sprite.name);
+                Debug.Log(item.GetType() == Item.Type.keycard);
+
+                if (!isSet)
                 {
 
-                    isAvailable = true;
-
-                }
-
-                if (isAvailable)
-                {
-                    if(item.GetType() == Item.Type.keycard)
+                    if (item_sprite.GetComponent<Image>().sprite == default_image)
                     {
-                        SetColor(item_color, color);
+
+                        isAvailable = true;
+
                     }
-                    SetItemName(item_text, name);
-                    SetItem(item_sprite, sprite);
-                    isSet = true;
+
+                    if (isAvailable)
+                    {
+                        if (item.GetType() == Item.Type.keycard)
+                        {
+                            SetColor(item_color, color);
+                        }
+                        SetItemName(item_text, name);
+                        SetItem(item_sprite, sprite);
+                        isSet = true;
+                    }
                 }
             }
 
@@ -170,16 +178,16 @@ public class UI_inventory : MonoBehaviour
         {
 
             SwitchInventory();
-            if(image.enabled)
+            if (image.enabled)
             {
                 Cursor.lockState = CursorLockMode.Confined;
-                
+
                 Time.timeScale = 0f;
-            } 
+            }
             else
             {
                 Time.timeScale = 1f;
-            
+
                 Cursor.lockState = CursorLockMode.Locked;
             }
 

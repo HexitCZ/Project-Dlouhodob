@@ -21,7 +21,8 @@ public class Item : ScriptableObject
         keycard = 0,
         ammo,
         health,
-        exp
+        exp,
+        currency
     }
     
     public GameObject model;
