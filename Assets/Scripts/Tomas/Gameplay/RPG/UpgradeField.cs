@@ -13,6 +13,7 @@ public class UpgradeField : MonoBehaviour
     public string upgradeName;
 
     private TMP_Text text; 
+    public TMP_Text descriptionText; 
 
     public bool bought;
 
@@ -24,12 +25,15 @@ public class UpgradeField : MonoBehaviour
 
     public void TryUpgrade()
     {
+        descriptionText.text = description;
+
         if (ExperienceSystem.instance.TryPayLevelPoint())
         {
             bought = true;
             GetComponent<Button>().interactable = false;
             print(upgradeCategoryName + "       " + upgradeName);
             GameProgressManager.instance.FinishEventProgress(upgradeCategoryName, upgradeName);
+            
         }
     }
 

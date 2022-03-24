@@ -35,7 +35,7 @@ public class UpgradeUI : MonoBehaviour
     {
         FPSInteractionManager.instance.DisableFPSInteraction();
 
-        print(fields.Count);
+        //print(fields.Count);
 
     }
 
@@ -47,6 +47,11 @@ public class UpgradeUI : MonoBehaviour
             g.GetComponent<Button>().interactable = ExperienceSystem.instance.upgradePoints > 0 && !g.GetComponent<UpgradeField>().bought  ? true : false;
 
         }
+    }
+    private void OnDisable()
+    {
+        FPSInteractionManager.instance.EnableFPSInteraction();
+
     }
 
 }

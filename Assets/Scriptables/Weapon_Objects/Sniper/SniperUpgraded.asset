@@ -10,29 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d77f9da4d39f9144fb5794810dc5a300, type: 3}
-  m_Name: Pistol
+  m_Name: SniperUpgraded
   m_EditorClassIdentifier: 
-  gunName: Pistol
-  description: rat
+  gunName: Sniper
+  description: 
   position: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0}
-  scale: {x: 1, y: 1, z: 1}
-  ammoIndex: 3
-  damage: 2
+  scale: {x: 0.4, y: 0.4, z: 0.59}
+  ammoIndex: 2
+  damage: 30
   range: 100
   bulletSpread: 0
   bulletsPerTap: 0
-  timeBetweenShots: 1.5
+  timeBetweenShots: 0.6
   fullAuto: 1
   whatCanIHit:
     serializedVersion: 2
     m_Bits: 23
   reloadTime: 2
-  mesh: {fileID: 7450042329512537854, guid: edeee3a44f0a40548bd3645af88d7046, type: 3}
+  mesh: {fileID: 919132149155446097, guid: 73e4bb132378f7240860716690337a49, type: 3}
   materials:
-  - {fileID: 2100000, guid: 9fc938d51ad8ec04bad3aadcd44247da, type: 2}
-  - {fileID: -1580535799172915004, guid: 157fbc3311e27a34cadb4b82d12c6980, type: 3}
-  - {fileID: -1580535799172915004, guid: 157fbc3311e27a34cadb4b82d12c6980, type: 3}
+  - {fileID: 2100000, guid: d8514cee82f9f1d439a2326550341dd6, type: 2}
+  - {fileID: 2100000, guid: 303dcf89f1789b3429f6ff2330029570, type: 2}
   weaponAnimator: {fileID: 22100000, guid: 0795d1d38d2d6a14cbd312d869f504e3, type: 2}
   muzzleFlash: {fileID: 8926484042661614526, guid: 879dc9ba0af0304468b8f6cdf6b0bce6, type: 3}
   hitParticle: {fileID: 3742677473019854988, guid: 8baeb5d3942908d4e9e6c11de925b890, type: 3}

@@ -10,29 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d77f9da4d39f9144fb5794810dc5a300, type: 3}
-  m_Name: Pistol
+  m_Name: AssaultRifleUpgraded
   m_EditorClassIdentifier: 
-  gunName: Pistol
-  description: rat
+  gunName: Pif
+  description: Pif jk zbran
   position: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0}
-  scale: {x: 1, y: 1, z: 1}
-  ammoIndex: 3
-  damage: 2
+  scale: {x: 0.49, y: 0.49, z: 0.49}
+  ammoIndex: 0
+  damage: 8
   range: 100
   bulletSpread: 0
   bulletsPerTap: 0
-  timeBetweenShots: 1.5
+  timeBetweenShots: 0.07
   fullAuto: 1
   whatCanIHit:
     serializedVersion: 2
     m_Bits: 23
   reloadTime: 2
-  mesh: {fileID: 7450042329512537854, guid: edeee3a44f0a40548bd3645af88d7046, type: 3}
+  mesh: {fileID: 7437628646312931682, guid: 6ef550be76d51c348ae2349ed0e5d278, type: 3}
   materials:
-  - {fileID: 2100000, guid: 9fc938d51ad8ec04bad3aadcd44247da, type: 2}
-  - {fileID: -1580535799172915004, guid: 157fbc3311e27a34cadb4b82d12c6980, type: 3}
-  - {fileID: -1580535799172915004, guid: 157fbc3311e27a34cadb4b82d12c6980, type: 3}
+  - {fileID: 2100000, guid: db45e92b76c2f8e4780896c5b048f888, type: 2}
+  - {fileID: 2100000, guid: 44def252cdba42248be8e6800b625ce6, type: 2}
   weaponAnimator: {fileID: 22100000, guid: 0795d1d38d2d6a14cbd312d869f504e3, type: 2}
-  muzzleFlash: {fileID: 8926484042661614526, guid: 879dc9ba0af0304468b8f6cdf6b0bce6, type: 3}
-  hitParticle: {fileID: 3742677473019854988, guid: 8baeb5d3942908d4e9e6c11de925b890, type: 3}
+  muzzleFlash: {fileID: 8926484042661614526, guid: 0bb95396babba54459589e5c4ef7d00d, type: 3}
+  hitParticle: {fileID: 3742677473019854988, guid: c66d13ef820e2164d869f46cd3071db3, type: 3}

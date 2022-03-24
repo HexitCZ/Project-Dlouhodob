@@ -69,7 +69,7 @@ public class GameProgressManager : MonoBehaviour
 
             for (int i = 0; i < upgrades.Length; i++)
             {
-                if (upgrades[i].name == category)
+                if (upgrades[i].name.Equals(category))
                 {
                     categoryIndex = i;
                     break;
@@ -87,9 +87,9 @@ public class GameProgressManager : MonoBehaviour
         try
         {
 
-            for (int j = categoryIndex; j < upgrades[categoryIndex].progressEvents.Length; j++)
+            for (int j = 0; j < upgrades[categoryIndex].progressEvents.Length; j++)
             {
-                if (upgrades[categoryIndex].progressEvents[j].name == name)
+                if (upgrades[categoryIndex].progressEvents[j].name.Equals(name))
                 {
                     eventIndex = j;
                     return;
