@@ -24,8 +24,13 @@ public class UpgradeField : MonoBehaviour
         text.text = fieldName;
     }
 
+    
+
+
     public void TryUpgrade()
     {
+        
+
         descriptionText.text = description;
 
         if (ExperienceSystem.instance.TryPayLevelPoint() && PlayerCurrency.instance.TryPay(price))
