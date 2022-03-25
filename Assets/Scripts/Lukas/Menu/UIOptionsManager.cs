@@ -24,10 +24,15 @@ public class UIOptionsManager : MonoBehaviour
     [Header("Game Audio level")]
     private float currentVolume;
 
+    [SerializeField]
+    [Space]
+    [Header("Fullscreen setting ui element reference")]
+    private Transform fullscreenButton;
+
     private float setVolume;
 
-    public Dropdown resolutionDropdown;
-    public Dropdown qualityDropdown;
+    public TMP_Dropdown resolutionDropdown;
+    public TMP_Dropdown qualityDropdown;   
 
     public Slider volumeSlider;
 
@@ -43,7 +48,7 @@ public class UIOptionsManager : MonoBehaviour
 
     void Update()
     {
-    
+        currentVolume = AudioListener.volume;
     }
 
     private float GetVolumeFromSlider()
@@ -60,11 +65,15 @@ public class UIOptionsManager : MonoBehaviour
         AudioListener.volume = setVolume;
     }
 
-    private void SetFullscreen(bool isFullscreen)
+    private void SetFullscreen()
     {
-        Screen.fullScreen = isFullscreen;
+        Screen.fullScreen = true;
     }
     
+    private void SetWindowed()
+    {
+        Screen.fullScreen = false;
+    }
     
 
     public void OnSliderDrag()
@@ -80,12 +89,13 @@ public class UIOptionsManager : MonoBehaviour
 
     public void OnFullscreenChange()
     {
+
         isFullscreen = !isFullscreen;
-        SetFullscreen(isFullscreen);
+
     }
 
     public void OnGraphicPresetChange()
     {
-
+        Debug.Log(QualitySettings.currentLevel);
     }
 }
