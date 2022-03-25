@@ -62,11 +62,11 @@ public class BodyController : MonoBehaviour
 
         if (bodyData.belowCeil)
         {
-
+            //keep crouching
         }
         else
         {
-
+            
         }
 
     }
