@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: FROSTBITE-Narrow SDF
+  m_Name: FROSTBITE-Narrow SDF 1
   m_EditorClassIdentifier: 
-  hashCode: 626084781
+  hashCode: -1093472452
   material: {fileID: 2399431720096826473}
-  materialHashCode: 354292333
+  materialHashCode: -1934972260
   m_Version: 1.1.0
   m_SourceFontFileGUID: 137218f07e4d0ed4397d9ed416c15add
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 137218f07e4d0ed4397d9ed416c15add, type: 3}
@@ -518,6 +518,20 @@ MonoBehaviour:
       m_Height: 53
     m_Scale: 1
     m_AtlasIndex: 0
+  - m_Index: 39
+    m_Metrics:
+      m_Width: 57.78125
+      m_Height: 63
+      m_HorizontalBearingX: 0
+      m_HorizontalBearingY: 63
+      m_HorizontalAdvance: 66.78125
+    m_GlyphRect:
+      m_X: 241
+      m_Y: 708
+      m_Width: 58
+      m_Height: 63
+    m_Scale: 1
+    m_AtlasIndex: 0
   - m_Index: 41
     m_Metrics:
       m_Width: 60.5625
@@ -598,6 +612,20 @@ MonoBehaviour:
     m_GlyphRect:
       m_X: 87
       m_Y: 226
+      m_Width: 58
+      m_Height: 63
+    m_Scale: 1
+    m_AtlasIndex: 0
+  - m_Index: 47
+    m_Metrics:
+      m_Width: 57.78125
+      m_Height: 63
+      m_HorizontalBearingX: 0
+      m_HorizontalBearingY: 63
+      m_HorizontalAdvance: 66.78125
+    m_GlyphRect:
+      m_X: 250
+      m_Y: 626
       m_Width: 58
       m_Height: 63
     m_Scale: 1
@@ -784,34 +812,6 @@ MonoBehaviour:
       m_Height: 0
     m_Scale: 1
     m_AtlasIndex: 0
-  - m_Index: 39
-    m_Metrics:
-      m_Width: 57.78125
-      m_Height: 63
-      m_HorizontalBearingX: 0
-      m_HorizontalBearingY: 63
-      m_HorizontalAdvance: 66.78125
-    m_GlyphRect:
-      m_X: 241
-      m_Y: 708
-      m_Width: 58
-      m_Height: 63
-    m_Scale: 1
-    m_AtlasIndex: 0
-  - m_Index: 47
-    m_Metrics:
-      m_Width: 57.78125
-      m_Height: 63
-      m_HorizontalBearingX: 0
-      m_HorizontalBearingY: 63
-      m_HorizontalAdvance: 66.78125
-    m_GlyphRect:
-      m_X: 250
-      m_Y: 626
-      m_Width: 58
-      m_Height: 63
-    m_Scale: 1
-    m_AtlasIndex: 0
   m_CharacterTable:
   - m_ElementType: 1
     m_Unicode: 32
@@ -898,6 +898,10 @@ MonoBehaviour:
     m_GlyphIndex: 37
     m_Scale: 1
   - m_ElementType: 1
+    m_Unicode: 81
+    m_GlyphIndex: 39
+    m_Scale: 1
+  - m_ElementType: 1
     m_Unicode: 82
     m_GlyphIndex: 41
     m_Scale: 1
@@ -908,6 +912,10 @@ MonoBehaviour:
   - m_ElementType: 1
     m_Unicode: 84
     m_GlyphIndex: 46
+    m_Scale: 1
+  - m_ElementType: 1
+    m_Unicode: 85
+    m_GlyphIndex: 47
     m_Scale: 1
   - m_ElementType: 1
     m_Unicode: 86
@@ -1024,14 +1032,6 @@ MonoBehaviour:
   - m_ElementType: 1
     m_Unicode: 8230
     m_GlyphIndex: 207
-    m_Scale: 1
-  - m_ElementType: 1
-    m_Unicode: 81
-    m_GlyphIndex: 39
-    m_Scale: 1
-  - m_ElementType: 1
-    m_Unicode: 85
-    m_GlyphIndex: 47
     m_Scale: 1
   m_AtlasTextures:
   - {fileID: 2005100887788403148}
@@ -1545,10 +1545,10 @@ Material:
     m_Colors:
     - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
     - _EnvMatrixRotation: {r: 0, g: 0, b: 0, a: 0}
-    - _FaceColor: {r: 8.609494, g: 0, b: 0, a: 1}
+    - _FaceColor: {r: 11.494351, g: 11.494351, b: 11.494351, a: 1}
     - _GlowColor: {r: 2, g: 2, b: 2, a: 0.5}
     - _MaskCoord: {r: 0, g: 0, b: 32767, a: 32767}
-    - _OutlineColor: {r: 1.076186, g: 0, b: 0, a: 1}
+    - _OutlineColor: {r: 1.4367927, g: 1.4367927, b: 1.4367927, a: 1}
     - _ReflectFaceColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecularColor: {r: 16, g: 16, b: 16, a: 1}
