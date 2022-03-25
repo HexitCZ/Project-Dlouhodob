@@ -15,7 +15,7 @@ public class FPSInteractionManager : MonoBehaviour
         instance = this;
     }
     
-    public void DisableFPSInteraction()
+    public void DisableFPSInteraction(bool stopTime = false)
     {
         for (int i = 0; i < interactionComponents.Length; i++)
         {
@@ -23,6 +23,12 @@ public class FPSInteractionManager : MonoBehaviour
         }
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+
+        if (stopTime)
+        {
+            Time.timeScale = 0;
+        }
+
     }
 
     public void EnableFPSInteraction()
@@ -33,6 +39,9 @@ public class FPSInteractionManager : MonoBehaviour
         }
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        Time.timeScale = 1;
+
     }
 
     public void DisableFPSWeapon()

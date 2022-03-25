@@ -31,16 +31,12 @@ public class UpgradeUI : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        FPSInteractionManager.instance.DisableFPSInteraction();
-
-        //print(fields.Count);
-
-    }
+    
 
     private void OnEnable()
     {
+        FPSInteractionManager.instance.DisableFPSInteraction(true);
+    
         foreach (GameObject g in fields)
         {
 
@@ -48,6 +44,7 @@ public class UpgradeUI : MonoBehaviour
 
         }
     }
+
     private void OnDisable()
     {
         FPSInteractionManager.instance.EnableFPSInteraction();
