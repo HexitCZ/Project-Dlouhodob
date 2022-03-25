@@ -17,7 +17,7 @@ public class PlayerCurrency : MonoBehaviour
 
     public bool TryPay(int price)
     {
-        if (price < amount)
+        if (price <= amount)
         {
             amount -= price;
             return true;

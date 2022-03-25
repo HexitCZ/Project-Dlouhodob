@@ -13,8 +13,9 @@ public class UpgradeField : MonoBehaviour
     public string upgradeName;
 
     private TMP_Text text; 
-    public TMP_Text descriptionText; 
+    public TMP_Text descriptionText;
 
+    public int price;
     public bool bought;
 
     private void Start()
@@ -27,7 +28,7 @@ public class UpgradeField : MonoBehaviour
     {
         descriptionText.text = description;
 
-        if (ExperienceSystem.instance.TryPayLevelPoint())
+        if (ExperienceSystem.instance.TryPayLevelPoint() && PlayerCurrency.instance.TryPay(price))
         {
             bought = true;
             GetComponent<Button>().interactable = false;
