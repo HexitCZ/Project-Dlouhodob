@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealthController : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class PlayerHealthController : MonoBehaviour
     public void AddHealth(float amount)
     {
         data.actualHealth += amount;
-        updateVisibleHealth();
+        UpdateVisibleHealth();
         CheckHealth();
     }
 
@@ -32,12 +33,12 @@ public class PlayerHealthController : MonoBehaviour
         if (data.canBeDamaged)
         {
             data.actualHealth -= damage;
-            updateVisibleHealth();
+            UpdateVisibleHealth();
         }
         CheckHealth();
     }
 
-    public void updateVisibleHealth()
+    public void UpdateVisibleHealth()
     {
         data.visibleHealth = (int)Mathf.Clamp(data.actualHealth, 0.0f, data.maxHealth);
     }
@@ -46,7 +47,7 @@ public class PlayerHealthController : MonoBehaviour
     {
         if (data.actualHealth <= 0.01f)
         {
-            Debug.Log("Player died");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             
         }
     }

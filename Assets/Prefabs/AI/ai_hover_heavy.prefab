@@ -560,7 +560,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5775748873067619944
 Transform:
   m_ObjectHideFlags: 0
@@ -617,8 +617,8 @@ MonoBehaviour:
   slowDownLength: 1
   distanceTreshold: 0
   explosionVFX: {fileID: 1689162061832578846, guid: 7c9486d60ce3cc34a9bd1f51a0887166, type: 3}
-  xpGain: 0
-  currencyGain: 0
+  xpGain: 20
+  currencyGain: 25
   heatCapacity: 20
 --- !u!114 &6587715478909533389
 MonoBehaviour:
