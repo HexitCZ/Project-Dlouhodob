@@ -20,14 +20,26 @@ public class PlayerHealthController : MonoBehaviour
         data.actualHealth = data.visibleHealth;
     }
 
+    public void AddHealth(float amount)
+    {
+        data.actualHealth += amount;
+        updateVisibleHealth();
+        CheckHealth();
+    }
+
     public void GetHit(float damage)
     {
         if (data.canBeDamaged)
         {
             data.actualHealth -= damage;
-            data.visibleHealth = (int)Mathf.Clamp(data.actualHealth, 0.0f, data.maxHealth);
+            updateVisibleHealth();
         }
         CheckHealth();
+    }
+
+    public void updateVisibleHealth()
+    {
+        data.visibleHealth = (int)Mathf.Clamp(data.actualHealth, 0.0f, data.maxHealth);
     }
 
     public void CheckHealth()
