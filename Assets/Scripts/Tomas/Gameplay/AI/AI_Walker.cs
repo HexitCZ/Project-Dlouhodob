@@ -17,6 +17,9 @@ public class AI_Walker : AI_Base
     public int xpGain;
     public int currencyGain;
 
+    public float heatCapacity;
+    private float currentHeat;
+
     private new void Start()
     {
         playerWeapon = WeaponController.instance;
@@ -37,7 +40,14 @@ public class AI_Walker : AI_Base
     public override void GetHit()
     {
         //Debug.Log("enemy hit " + gameObject.name);
-        health -= playerWeapon.currentWeapon.damage;
+        health -= playerWeapon.currentWeapon.damage * playerWeapon.currentBullet.physicalDamageMultiplier;
+        currentHeat += playerWeapon.currentWeapon.damage * playerWeapon.currentBullet.heatDamageMultiplier;
+
+        if (currentHeat >= heatCapacity)
+        {
+            Death();
+        }
+
         TrySlowDown();
     }
 

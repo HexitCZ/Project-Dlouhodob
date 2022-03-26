@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AI_Shield : MonoBehaviour
+public class AI_Shield : MonoBehaviour, IHittable
 {
-    // Start is called before the first frame update
-    void Start()
+    public float health;
+
+
+    public void GetHit()
     {
-        
+        health -= WeaponController.instance.currentWeapon.damage * WeaponController.instance.currentBullet.shieldDamageMultiplier;
+
+        if (health <= 0)
+        {
+            this.transform.parent.gameObject.SetActive(false);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
