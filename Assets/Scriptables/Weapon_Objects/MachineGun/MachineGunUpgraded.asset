@@ -29,7 +29,7 @@ MonoBehaviour:
   fullAuto: 1
   whatCanIHit:
     serializedVersion: 2
-    m_Bits: 19
+    m_Bits: 147
   reloadTime: 2
   mesh: {fileID: 1551174190589035920, guid: 36b6526c1006e2e48af6ef253253a596, type: 3}
   materials:
