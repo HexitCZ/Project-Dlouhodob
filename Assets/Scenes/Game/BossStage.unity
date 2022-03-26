@@ -202,6 +202,11 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 4268357315631991369, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
   m_PrefabInstance: {fileID: 279998823}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &279998826 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4268357316164657256, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
+  m_PrefabInstance: {fileID: 279998823}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &357115784
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -257,6 +262,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AI_Walker_big
       objectReference: {fileID: 0}
+    - target: {fileID: 8266438057663389186, guid: b4a786330c42b2842920f75224e3dac2, type: 3}
+      propertyPath: <target>k__BackingField
+      value: 
+      objectReference: {fileID: 279998826}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4a786330c42b2842920f75224e3dac2, type: 3}
 --- !u!1 &780911154
@@ -469,5 +478,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
