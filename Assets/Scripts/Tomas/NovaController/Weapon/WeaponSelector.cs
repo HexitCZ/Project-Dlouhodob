@@ -27,6 +27,8 @@ public class WeaponSelector : MonoBehaviour
 
     private void UpdateScrollIndex(bool add)
     {
+        
+
         maxScrollIndex = weaponController.weapons.Length-1;
         
         scrollIndex += add ? 1 : -1;

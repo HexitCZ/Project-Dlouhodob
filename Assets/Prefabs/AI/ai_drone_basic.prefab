@@ -77,6 +77,9 @@ MonoBehaviour:
   slowDownLength: 1
   distanceTreshold: 0
   explosionVFX: {fileID: 1689162061832578846, guid: 7c9486d60ce3cc34a9bd1f51a0887166, type: 3}
+  xpGain: 0
+  currencyGain: 0
+  heatCapacity: 25
 --- !u!114 &6338468088513502594
 MonoBehaviour:
   m_ObjectHideFlags: 0
