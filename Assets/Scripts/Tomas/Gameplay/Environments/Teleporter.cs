@@ -31,6 +31,7 @@ public class Teleporter : MonoBehaviour
 
     public void TeleportTo()
     {
+        SaveProgress.instance.Save();
         SceneManager.LoadScene(targetScene);
     }
 

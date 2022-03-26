@@ -1,0 +1,170 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8829250204290657727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8829250204290657725}
+  - component: {fileID: 8829250204290657726}
+  - component: {fileID: 8829250204290657724}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: GameController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8829250204290657725
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8829250204290657727}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8829250204290657726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8829250204290657727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc8ee25b1d7a7a642aceb4788056dab4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progress: []
+  upgrades:
+  - name: WeaponUnlocks
+    progressEvents:
+    - name: UnlockAR
+      finished: 1
+      OnFinished:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: UnlockMG
+      finished: 1
+      OnFinished:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: UnlockSP
+      finished: 1
+      OnFinished:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: PistolUpgrade
+      finished: 0
+      OnFinished:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: WeaponUpgrade, Assembly-CSharp
+            m_MethodName: UpgradePistol
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - name: ARUpgrade
+      finished: 0
+      OnFinished:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: WeaponUpgrade, Assembly-CSharp
+            m_MethodName: UpgradeAR
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - name: MGUpgrade
+      finished: 0
+      OnFinished:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: WeaponUpgrade, Assembly-CSharp
+            m_MethodName: UpgradeMG
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - name: SPUpgrade
+      finished: 0
+      OnFinished:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: WeaponUpgrade, Assembly-CSharp
+            m_MethodName: UpgradeSP
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  - name: BulletUpgrades
+    progressEvents:
+    - name: Laser
+      finished: 0
+      OnFinished:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: Electro
+      finished: 0
+      OnFinished:
+        m_PersistentCalls:
+          m_Calls: []
+  - name: PowerUnlocks
+    progressEvents:
+    - name: EMPCharge
+      finished: 0
+      OnFinished:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: WeaponOvercharge
+      finished: 0
+      OnFinished:
+        m_PersistentCalls:
+          m_Calls: []
+--- !u!114 &8829250204290657724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8829250204290657727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20fa6a8cb3efa2b4eb09421e267c8e06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

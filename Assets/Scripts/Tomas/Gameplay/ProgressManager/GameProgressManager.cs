@@ -27,6 +27,11 @@ public class GameProgressManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        SaveProgress.instance.Load();
+    }
+
 
     /// <summary>
     /// Returns status of event with argument <paramref name="name"/> from a <paramref name="category"/>.
@@ -59,6 +64,39 @@ public class GameProgressManager : MonoBehaviour
 
     }
 
+    public bool[] GetAllUpgrades()
+    {
+        bool[] all = new bool[GetFullSize()];
+
+        int curIndex = 0;
+
+        for (int i = 0; i < upgrades.Length; i++)
+        {
+            for (int j = 0; j < upgrades[i].progressEvents.Length ; j++)
+            {
+                all[curIndex] = upgrades[i].progressEvents[j].finished;
+                curIndex++;
+            }
+        }
+        
+        
+        return all;
+    }
+
+    public void SetAllUpgrades(bool[] all)
+    {
+        int curIndex = 0;
+
+        for (int i = 0; i < upgrades.Length; i++)
+        {
+            for (int j = 0; j < upgrades[i].progressEvents.Length; j++)
+            {
+                upgrades[i].progressEvents[j].finished = all[curIndex];
+                curIndex++;
+            }
+        }
+
+    }
 
     private void GetEventIndex(string category, string name, out int categoryIndex, out int eventIndex)
     {
