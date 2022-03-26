@@ -10731,10 +10731,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4268357315555254832, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_ClearFlags
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4268357316164657256, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -10780,61 +10776,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4268357316164657257, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_ActionEvents.Array.size
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268357316164657257, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_ActionEvents.Array.data[10].m_ActionId
-      value: aac71b2d-9990-4e27-b00d-a309ac7233af
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268357316164657257, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_ActionEvents.Array.data[10].m_ActionName
-      value: PlayerControls/UpgradeScreen[/Keyboard/u]
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268357316164657257, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_ActionEvents.Array.data[9].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268357316164657257, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268357316164657257, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_ActionEvents.Array.data[9].m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268357316164657257, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268357316164657257, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
       propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 585370487}
-    - target: {fileID: 4268357316164657257, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_ActionEvents.Array.data[9].m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268357316164657257, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268357316164657257, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnUpgradeClick
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268357316164657257, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_ActionEvents.Array.data[9].m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: WeaponSelector, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268357316164657257, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PlayerUI, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4268357316164657257, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 4268357316164657263, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
       propertyPath: m_Name
       value: NovaController
