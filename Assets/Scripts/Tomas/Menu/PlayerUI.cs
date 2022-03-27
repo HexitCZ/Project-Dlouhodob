@@ -18,6 +18,8 @@ public class PlayerUI : MonoBehaviour
 
     public TMP_Text upgradePoints_text;
 
+    public TMP_Text ammo_text;
+
     private void Start()
     {
         InvokeRepeating("UpdateFPS",0.0f , fpsUpdateCooldown);
@@ -30,6 +32,8 @@ public class PlayerUI : MonoBehaviour
         xp_text.text = "XP\n\r" + ExperienceSystem.instance.xp;
         bolts_text.text = "Bolts\n\r" + PlayerCurrency.instance.amount;
         upgradePoints_text.text = "Upgrade Points\n\r" + ExperienceSystem.instance.upgradePoints;
+
+        ammo_text.text = WeaponController.instance.ammoData.ammoList[WeaponController.instance.currentWeapon.ammoIndex].bullets_left.ToString();
     }
 
     private void UpdateFPS()
