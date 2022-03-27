@@ -22,6 +22,7 @@ public class Teleporter : MonoBehaviour
             triggered = true;
             Debug.LogWarning("saving");
             SaveProgress.instance.Save();
+            PlayerPrefs.SetInt("level2unlocked", 1);
             Invoke("TeleportTo", 0.2f);
         }
     }

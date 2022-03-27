@@ -116,71 +116,76 @@ public class Door_script : MonoBehaviour
 
     public void OnTriggerStay(Collider other)
     {
-        if (!broken && ui_script != null)
+        if (other.name == "Head" || other.name == "Body")
         {
-            open = ui_script.GetInput();
 
-        }
-        else
-        {
-            Break();
-        }
 
-        if (automatic)
-        {
-            Open();
-        }
-        else
-        {
-            if (GetComponent<Renderer>().isVisible)
+            if (!broken && ui_script != null)
             {
-
-                if (broken)
-                {
-                    InvokeBroken();
-                }
-                else
-                {
-                    InvokeOpen();
-                }
-            }
-
-
-            if (needsKey && open)
-            {
-                
-                
-                if (inventory.CheckForKey(displayColor))
-                {
-
-                    Open();
-
-                }
+                open = ui_script.GetInput();
 
             }
             else
             {
+                Break();
+            }
 
-                if (open)
+            if (automatic)
+            {
+                Open();
+            }
+            else
+            {
+                if (GetComponent<Renderer>().isVisible)
                 {
 
-                    Open();
+                    if (broken)
+                    {
+                        InvokeBroken();
+                    }
+                    else
+                    {
+                        InvokeOpen();
+                    }
+                }
+
+
+                if (needsKey && open)
+                {
+
+
+                    if (inventory.CheckForKey(displayColor))
+                    {
+
+                        Open();
+
+                    }
+
+                }
+                else
+                {
+
+                    if (open)
+                    {
+
+                        Open();
+
+                    }
 
                 }
 
             }
-
         }
-
     }
 
     public void OnTriggerExit(Collider other)
     {
-
-        Close();
-        ui_script.ResetOpen();
-        open = ui_script.GetInput();
-        InvokeClose();
-
+        if (other.name == "Head" || other.name == "Body")
+        {
+            Close();
+            ui_script.ResetOpen();
+            open = ui_script.GetInput();
+            InvokeClose();
+        }
     }
 }
