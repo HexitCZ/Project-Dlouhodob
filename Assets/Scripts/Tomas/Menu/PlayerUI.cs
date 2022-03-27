@@ -33,7 +33,7 @@ public class PlayerUI : MonoBehaviour
         bolts_text.text = "Bolts\n\r" + PlayerCurrency.instance.amount;
         upgradePoints_text.text = "Upgrade Points\n\r" + ExperienceSystem.instance.upgradePoints;
         int ammo = WeaponController.instance.ammoData.ammoList[WeaponController.instance.currentWeapon.ammoIndex].bullets_left;
-        ammo_text.text = ammo >= 10000 ? "" : ammo.ToString();
+        ammo_text.text = ammo >= 10000 ? "inf" : ammo.ToString();
     }
 
     private void UpdateFPS()

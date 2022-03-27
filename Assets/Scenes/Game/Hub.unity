@@ -882,22 +882,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3850686933629851942, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: weaponRender
-      value: 
-      objectReference: {fileID: 788312817}
-    - target: {fileID: 3850686933629851942, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: weaponComponents.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3850686933629851942, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: weaponComponents.Array.data[3]
-      value: 
-      objectReference: {fileID: 788312816}
-    - target: {fileID: 4268357316164657252, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: ammoList.Array.data[3].bullets_left
-      value: 100000
-      objectReference: {fileID: 0}
     - target: {fileID: 4268357316164657256, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -946,10 +930,6 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1105309894}
-    - target: {fileID: 4268357316164657257, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-      propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnUpgradeClick
-      objectReference: {fileID: 0}
     - target: {fileID: 4268357316164657263, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
       propertyPath: m_Name
       value: NovaController
@@ -964,16 +944,17 @@ PrefabInstance:
       objectReference: {fileID: 1105309892}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
---- !u!95 &788312816 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 4268357315631991369, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
+--- !u!114 &812421864 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 316915278, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
   m_PrefabInstance: {fileID: 788312815}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &788312817 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4268357315631991373, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
-  m_PrefabInstance: {fileID: 788312815}
-  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b9721a2580409f4abe9d8bda87d0204, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &828500859
 GameObject:
   m_ObjectHideFlags: 0
@@ -1970,6 +1951,38 @@ PrefabInstance:
     - target: {fileID: 8829250204290657725, guid: dec901367590f6c44b39de3c4e562e44, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8829250204290657726, guid: dec901367590f6c44b39de3c4e562e44, type: 3}
+      propertyPath: upgrades.Array.data[0].progressEvents.Array.data[3].OnFinished.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 812421864}
+    - target: {fileID: 8829250204290657726, guid: dec901367590f6c44b39de3c4e562e44, type: 3}
+      propertyPath: upgrades.Array.data[0].progressEvents.Array.data[4].OnFinished.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 812421864}
+    - target: {fileID: 8829250204290657726, guid: dec901367590f6c44b39de3c4e562e44, type: 3}
+      propertyPath: upgrades.Array.data[0].progressEvents.Array.data[5].OnFinished.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 812421864}
+    - target: {fileID: 8829250204290657726, guid: dec901367590f6c44b39de3c4e562e44, type: 3}
+      propertyPath: upgrades.Array.data[0].progressEvents.Array.data[6].OnFinished.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 812421864}
+    - target: {fileID: 8829250204290657726, guid: dec901367590f6c44b39de3c4e562e44, type: 3}
+      propertyPath: upgrades.Array.data[0].progressEvents.Array.data[3].OnFinished.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradePistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 8829250204290657726, guid: dec901367590f6c44b39de3c4e562e44, type: 3}
+      propertyPath: upgrades.Array.data[0].progressEvents.Array.data[4].OnFinished.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeAR
+      objectReference: {fileID: 0}
+    - target: {fileID: 8829250204290657726, guid: dec901367590f6c44b39de3c4e562e44, type: 3}
+      propertyPath: upgrades.Array.data[0].progressEvents.Array.data[5].OnFinished.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeMG
+      objectReference: {fileID: 0}
+    - target: {fileID: 8829250204290657726, guid: dec901367590f6c44b39de3c4e562e44, type: 3}
+      propertyPath: upgrades.Array.data[0].progressEvents.Array.data[6].OnFinished.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeSP
       objectReference: {fileID: 0}
     - target: {fileID: 8829250204290657727, guid: dec901367590f6c44b39de3c4e562e44, type: 3}
       propertyPath: m_Name

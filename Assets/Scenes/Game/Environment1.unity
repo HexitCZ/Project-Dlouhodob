@@ -9890,7 +9890,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2134285635349360880, guid: 78c22e3c33806a147953fc1b318d1ed7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -135.1
+      value: -135.5
       objectReference: {fileID: 0}
     - target: {fileID: 2134285635349360880, guid: 78c22e3c33806a147953fc1b318d1ed7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -16195,7 +16195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2193947738784238840, guid: cddd76414d01c6d46ba04cddffc6a792, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2193947738784238840, guid: cddd76414d01c6d46ba04cddffc6a792, type: 3}
       propertyPath: m_StaticEditorFlags

@@ -151,6 +151,7 @@ MonoBehaviour:
   lifetime: 0
   ammoAmount: 1000
   ammoIndex: 0
+  currentlyHeldWeaponAmmo: 1
 --- !u!1 &6854845795215027426
 GameObject:
   m_ObjectHideFlags: 0
