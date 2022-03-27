@@ -555,7 +555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   optionsButtonScene: Options
-  playButtonScene: Environment1
+  playButtonScene: Hub
 --- !u!1 &562206735
 GameObject:
   m_ObjectHideFlags: 0

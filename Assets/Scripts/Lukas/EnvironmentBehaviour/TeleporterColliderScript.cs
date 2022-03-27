@@ -44,7 +44,7 @@ public class TeleporterColliderScript : MonoBehaviour
         {
             location = "Environment1";
         }
-        else if(location_name == "Second level")
+        else if(location_name == "Second level" && PlayerPrefs.GetInt("level2unlocked") == 1)
         {
             location = "Environment2";
         }
