@@ -71,6 +71,9 @@ public class WeaponController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         source = weaponRenderer.transform.parent.transform;
 
+        PlayerPrefs.SetInt("level2unlocked", 1);
+
+        
 
         SetWeaponObject(weapons[3]);
 
