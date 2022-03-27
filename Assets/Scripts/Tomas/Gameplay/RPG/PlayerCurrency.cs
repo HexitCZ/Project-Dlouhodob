@@ -10,7 +10,7 @@ public class PlayerCurrency : MonoBehaviour
 
     public int amount;
 
-    private void Start()
+    private void Awake()
     {
         instance = this;
     }

@@ -102,26 +102,31 @@ public class AI_Walker : AI_Base
         weapon.Shoot(target.position);
     }
 
+    private bool died = false;
+
     protected override void Death()
     {
+        if (!died)
+        {
+            navmesh.enabled = false;
+            Rigidbody rb = GetComponent<Rigidbody>();
+            rb.isKinematic = false;
+            rb.AddForce(-targetDirection * 10, ForceMode.Impulse);
+            //gameObject.SetActive(false);
+            GameObject vfx = Instantiate(explosionVFX, GetComponent<BoxCollider>().center, Quaternion.identity);
+            vfx.GetComponent<VisualEffect>().Play();
+            Destroy(vfx, 2);
 
-        //Debug.Log("Death");
-        navmesh.enabled = false;
-        Rigidbody rb = GetComponent<Rigidbody>();
-        rb.isKinematic = false;
-        rb.AddForce(-targetDirection*10, ForceMode.Impulse);
-        //gameObject.SetActive(false);
-        GameObject vfx = Instantiate(explosionVFX, GetComponent<BoxCollider>().center,Quaternion.identity);
-        vfx.GetComponent<VisualEffect>().Play();
-        Destroy(vfx,2);
+            ExperienceSystem.instance.Add(xpGain);
+            PlayerCurrency.instance.Add(currencyGain);
 
-        ExperienceSystem.instance.Add(xpGain);
-        PlayerCurrency.instance.Add(currencyGain);
+            Invoke("Disable", 5);
 
-        Invoke("Disable", 5);
+            died = true;
 
-        this.enabled = false;
+            this.enabled = false;
 
+        }
     }
 
     private void Disable()

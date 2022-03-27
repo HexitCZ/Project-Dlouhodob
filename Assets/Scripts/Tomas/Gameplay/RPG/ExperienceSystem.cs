@@ -20,7 +20,7 @@ public class ExperienceSystem : MonoBehaviour
     public int xpPerLevel;
 
 
-    void Start()
+    void Awake()
     {
         instance = this;
 
