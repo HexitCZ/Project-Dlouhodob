@@ -45,6 +45,7 @@ public class WeaponOverchargeUpgrade : BaseUpgrade
     private void Cooldown()
     {
         canPerform = true;
+        icon.color = Color.white;
     }
 
     private void ResetColor()
@@ -63,7 +64,7 @@ public class WeaponOverchargeUpgrade : BaseUpgrade
 
     }
 
-    public void OnEMP(InputAction.CallbackContext inp)
+    public void OnOvercharge(InputAction.CallbackContext inp)
     {
         if (inp.performed && canPerform && GameProgressManager.instance.GetEventProgress("PowerUnlocks", "WeaponOvercharge"))
         {

@@ -46,6 +46,7 @@ public class EMPUpgrade : BaseUpgrade
     private void Cooldown()
     {
         canPerform = true;
+        icon.color = Color.white;
     }
 
     private void ResetGrain()
