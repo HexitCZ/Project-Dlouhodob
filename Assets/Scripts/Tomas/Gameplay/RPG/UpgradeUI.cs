@@ -2,19 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
+//using TMPro;
 
 public class UpgradeUI : MonoBehaviour
 {
     public GameObject fieldHolder;
 
-    public TMP_Text levelPointText;
+    //public TMP_Text levelPointText;
 
     private List<GameObject> fields;
 
-
-
-    private void OnEnable()
+    private void Start()
     {
         fields = new List<GameObject>();
 
@@ -30,21 +28,29 @@ public class UpgradeUI : MonoBehaviour
             }
         }
 
-
-        FPSInteractionManager.instance.DisableFPSInteraction(true);
-    
+        Debug.LogWarning(fields.Count);
+        
         foreach (GameObject g in fields)
         {
-
-            g.GetComponent<Button>().interactable = ExperienceSystem.instance.upgradePoints > 0 && !g.GetComponent<UpgradeField>().bought  ? true : false;
+            UpgradeField ug = g.GetComponent<UpgradeField>();
+            ug.bought = GameProgressManager.instance.GetEventProgress(ug.upgradeCategoryName, ug.upgradeName);
+            g.GetComponent<Button>().interactable = ExperienceSystem.instance.upgradePoints > 0 && !ug.bought ? true : false;
 
         }
     }
 
-    private void OnDisable()
+    public void Enable()
     {
-        FPSInteractionManager.instance.EnableFPSInteraction();
+        FPSInteractionManager.instance.DisableFPSInteraction(true);
+        
+        
+        
+    }
 
+    public void Disable()
+    {
+
+        FPSInteractionManager.instance.EnableFPSInteraction();
     }
 
 }

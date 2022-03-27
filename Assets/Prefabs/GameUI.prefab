@@ -1492,7 +1492,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1394687361306052373
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1535,7 +1535,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1394687361347389925
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1824,6 +1824,7 @@ GameObject:
   - component: {fileID: 1394687361556880465}
   - component: {fileID: 1394687361556880470}
   - component: {fileID: 1394687361556880466}
+  - component: {fileID: 585370492}
   m_Layer: 0
   m_Name: GameUI
   m_TagString: Untagged
@@ -1937,6 +1938,20 @@ MonoBehaviour:
   bolts_text: {fileID: 1833584648}
   upgradePoints_text: {fileID: 1207929992}
   ammo_text: {fileID: 507214280}
+--- !u!114 &585370492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394687361556880471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c5cd1368fc630641a79c4c9c7894efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fieldHolder: {fileID: 1394687361561589766}
+  levelPointText: {fileID: 0}
 --- !u!1 &1394687361561589766
 GameObject:
   m_ObjectHideFlags: 0
@@ -1948,7 +1963,6 @@ GameObject:
   - component: {fileID: 1394687361561589761}
   - component: {fileID: 1394687361561589763}
   - component: {fileID: 1394687361561589760}
-  - component: {fileID: 1394687361561589762}
   m_Layer: 0
   m_Name: Foreground
   m_TagString: Untagged
@@ -2020,20 +2034,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1394687361561589762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1394687361561589766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c5cd1368fc630641a79c4c9c7894efa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fieldHolder: {fileID: 1394687361561589766}
-  levelPointText: {fileID: 0}
 --- !u!1 &1394687362115572515
 GameObject:
   m_ObjectHideFlags: 0

@@ -48,6 +48,17 @@ public class PlayerUI : MonoBehaviour
         {
             upgrade.SetActive(!upgrade.activeSelf);
             hud.SetActive(!hud.activeSelf);
+
+            if (!upgrade.activeSelf)
+            {
+                gameObject.GetComponent<UpgradeUI>().Disable();
+            }
+            else
+            {
+                gameObject.GetComponent<UpgradeUI>().Enable();
+                gameObject.GetComponent<BulletChoose>().Check();
+
+            }
         }
     }
 
