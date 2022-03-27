@@ -82,6 +82,7 @@ public class UI_inventory : MonoBehaviour
     {
         image = gameObject.GetComponent<Image>();
         image.enabled = !image.enabled;
+        
 
         foreach (Transform child in transform)
         {
