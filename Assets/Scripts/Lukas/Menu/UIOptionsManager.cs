@@ -41,7 +41,8 @@ public class UIOptionsManager : MonoBehaviour
 
     public Slider volumeSlider;
 
-    Resolution[] resolutions;
+    Resolution resolution;
+
 
     void Start()
     {
@@ -50,6 +51,8 @@ public class UIOptionsManager : MonoBehaviour
         currentVolume = 0f;
         mainMenuScene = "Menu";
         
+        //Screen.SetResolution(640, 480, FullScreenMode.ExclusiveFullScreen, 60);
+
     }
     
 
@@ -118,7 +121,7 @@ public class UIOptionsManager : MonoBehaviour
         TextMeshProUGUI fullscreen_text = fullscreenButton.GetChild(0).GetComponent<TextMeshProUGUI>();
         fullscreen_text.text = "Windowed";
         fullscreen_text.fontSize = 45;
-        Debug.Log("fullscreen");
+        
     }
     
     private void SetWindowed()
@@ -128,7 +131,7 @@ public class UIOptionsManager : MonoBehaviour
         fullscreen_text.text = "Full\nscreen";
         fullscreen_text.fontSize = 52.7f;
         Screen.fullScreen = false;
-        Debug.Log("windowed");
+        
 
     }
 
