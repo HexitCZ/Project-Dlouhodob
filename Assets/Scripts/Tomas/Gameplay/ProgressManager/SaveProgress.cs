@@ -10,6 +10,7 @@ public class SaveProgress : MonoBehaviour
     private void Start()
     {
         instance = this;
+        
     }
 
     public void Save()
@@ -26,6 +27,11 @@ public class SaveProgress : MonoBehaviour
         PlayerPrefs.SetInt("xp", ExperienceSystem.instance.xp);
         PlayerPrefs.SetInt("bolts", PlayerCurrency.instance.amount);
         PlayerPrefs.SetInt("upgradePoints", ExperienceSystem.instance.upgradePoints);
+        
+        
+        PlayerPrefs.SetInt("ammo1", WeaponController.instance.ammoData.ammoList[0].bullets_left);
+        PlayerPrefs.SetInt("ammo2", WeaponController.instance.ammoData.ammoList[1].bullets_left);
+        PlayerPrefs.SetInt("ammo3", WeaponController.instance.ammoData.ammoList[2].bullets_left);
         
         PlayerPrefs.Save();
     }
@@ -46,6 +52,9 @@ public class SaveProgress : MonoBehaviour
         PlayerCurrency.instance.amount = PlayerPrefs.GetInt("bolts");
         ExperienceSystem.instance.upgradePoints = PlayerPrefs.GetInt("upgradePoints");
 
+        WeaponController.instance.ammoData.ammoList[0].bullets_left = PlayerPrefs.GetInt("ammo1");
+        WeaponController.instance.ammoData.ammoList[1].bullets_left = PlayerPrefs.GetInt("ammo2");
+        WeaponController.instance.ammoData.ammoList[2].bullets_left = PlayerPrefs.GetInt("ammo3");
 
     }
 
