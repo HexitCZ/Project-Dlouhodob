@@ -853,6 +853,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponChangeSpeed: 0.2
   weaponHolder: {fileID: 3278468842605151046}
+  scrollIndex: 0
 --- !u!114 &4268357316164657252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -867,11 +868,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoList:
   - weapon: Assault rifle
-    bullets_left: 1000
+    bullets_left: 200
   - weapon: Machine gun
-    bullets_left: 1000
+    bullets_left: 200
   - weapon: Sniper
-    bullets_left: 1000
+    bullets_left: 200
   - weapon: Pistol
     bullets_left: 100000
 --- !u!114 &316915276

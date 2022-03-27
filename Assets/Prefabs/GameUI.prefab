@@ -1263,7 +1263,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1426559884146331961}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 585370493}
+        m_TargetAssemblyTypeName: BulletChoose, Assembly-CSharp
+        m_MethodName: ARE
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &368663251738962362
 GameObject:
   m_ObjectHideFlags: 0
@@ -1825,6 +1837,7 @@ GameObject:
   - component: {fileID: 1394687361556880470}
   - component: {fileID: 1394687361556880466}
   - component: {fileID: 585370492}
+  - component: {fileID: 585370493}
   m_Layer: 0
   m_Name: GameUI
   m_TagString: Untagged
@@ -1929,8 +1942,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98bb683ac435dbf4a8d8c03103b2bc0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgrade: {fileID: 1394687361306052362}
-  hud: {fileID: 1394687361347389850}
+  upgrade: {fileID: 1394687361347389850}
+  hud: {fileID: 1394687361306052362}
   fpsUpdateCooldown: 0.5
   fps_text: {fileID: 1394687362227390134}
   level_text: {fileID: 438380351}
@@ -1950,8 +1963,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c5cd1368fc630641a79c4c9c7894efa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fieldHolder: {fileID: 1394687361561589766}
-  levelPointText: {fileID: 0}
+  fieldHolder: {fileID: 3079692514224924790}
+--- !u!114 &585370493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394687361556880471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88dc7c65540ff7645a2e77a0e842761f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chooseObject:
+  - {fileID: 8112287266590989849}
+  - {fileID: 5061616279107475397}
+  - {fileID: 4646040097703949099}
+  - {fileID: 3719501688071263502}
+  bullets:
+  - {fileID: 11400000, guid: f5f631b56a70ff24fbace672f02dad43, type: 2}
+  - {fileID: 11400000, guid: 7071a83f01651584989ad52e2f01d708, type: 2}
+  - {fileID: 11400000, guid: 8c0dd0ac8dd66624c9249e0b44a99d0d, type: 2}
 --- !u!1 &1394687361561589766
 GameObject:
   m_ObjectHideFlags: 0
@@ -3419,7 +3452,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5938512923887711331}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 585370493}
+        m_TargetAssemblyTypeName: BulletChoose, Assembly-CSharp
+        m_MethodName: SPL
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3079692514224924790
 GameObject:
   m_ObjectHideFlags: 0
@@ -3726,7 +3771,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1737107304003353650}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 585370493}
+        m_TargetAssemblyTypeName: BulletChoose, Assembly-CSharp
+        m_MethodName: SPP
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3719501688071263502
 GameObject:
   m_ObjectHideFlags: 0
@@ -3888,7 +3945,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5799781037733360954}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 585370493}
+        m_TargetAssemblyTypeName: BulletChoose, Assembly-CSharp
+        m_MethodName: PiL
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3964446042268338222
 GameObject:
   m_ObjectHideFlags: 0
@@ -4010,7 +4079,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 54754643143834526}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 585370493}
+        m_TargetAssemblyTypeName: BulletChoose, Assembly-CSharp
+        m_MethodName: PiE
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4124086374090657372
 GameObject:
   m_ObjectHideFlags: 0
@@ -4754,7 +4835,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2250950595824575817}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 585370493}
+        m_TargetAssemblyTypeName: BulletChoose, Assembly-CSharp
+        m_MethodName: SPE
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5485065523021637571
 GameObject:
   m_ObjectHideFlags: 0
@@ -5285,7 +5378,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8292869853316566509}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 585370493}
+        m_TargetAssemblyTypeName: BulletChoose, Assembly-CSharp
+        m_MethodName: ARL
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6215606687682376546
 GameObject:
   m_ObjectHideFlags: 0
@@ -5542,7 +5647,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7210018973610392328}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 585370493}
+        m_TargetAssemblyTypeName: BulletChoose, Assembly-CSharp
+        m_MethodName: ARP
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7097718302630154116
 GameObject:
   m_ObjectHideFlags: 0
@@ -5801,7 +5918,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3143731974916276856}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 585370493}
+        m_TargetAssemblyTypeName: BulletChoose, Assembly-CSharp
+        m_MethodName: MGE
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7694782985996921646
 GameObject:
   m_ObjectHideFlags: 0
@@ -6060,7 +6189,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8998399467820789296}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 585370493}
+        m_TargetAssemblyTypeName: BulletChoose, Assembly-CSharp
+        m_MethodName: MGP
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8112287266590989849
 GameObject:
   m_ObjectHideFlags: 0
@@ -6357,7 +6498,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3102652960176431607}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 585370493}
+        m_TargetAssemblyTypeName: BulletChoose, Assembly-CSharp
+        m_MethodName: PiP
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &9045615996266851649
 GameObject:
   m_ObjectHideFlags: 0
@@ -6479,7 +6632,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3692981237553629517}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 585370493}
+        m_TargetAssemblyTypeName: BulletChoose, Assembly-CSharp
+        m_MethodName: MGL
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &9141867090724517009
 GameObject:
   m_ObjectHideFlags: 0
