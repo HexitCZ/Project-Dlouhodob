@@ -14,10 +14,10 @@ public class UpgradeUI : MonoBehaviour
 
 
 
-    private void Awake()
+    private void OnEnable()
     {
         fields = new List<GameObject>();
-        
+
         GameObject temp;
 
         for (int i = 0; i < fieldHolder.transform.childCount; i++)
@@ -29,12 +29,8 @@ public class UpgradeUI : MonoBehaviour
                 fields.Add(temp);
             }
         }
-    }
 
-    
 
-    private void OnEnable()
-    {
         FPSInteractionManager.instance.DisableFPSInteraction(true);
     
         foreach (GameObject g in fields)
