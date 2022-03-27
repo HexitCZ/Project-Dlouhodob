@@ -85,18 +85,24 @@ public class UI_inventory : MonoBehaviour
 
         foreach (Transform child in transform)
         {
-            child.GetComponent<Image>().enabled = !child.GetComponent<Image>().enabled;
+            if (child.GetComponent<Image>())
+            {
+                child.GetComponent<Image>().enabled = !child.GetComponent<Image>().enabled;
+            }
 
             foreach (Transform grandchild in child.transform)
             {
                 if (grandchild.GetComponent<Image>())
                 {
                     grandchild.GetComponent<Image>().enabled = !grandchild.GetComponent<Image>().enabled;
-
                 }
                 if (grandchild.GetComponent<TextMeshProUGUI>())
                 {
                     grandchild.GetComponent<TextMeshProUGUI>().enabled = !grandchild.GetComponent<TextMeshProUGUI>().enabled;
+                } 
+                else if (grandchild.name.Contains("CurrecnyDisplay"))
+                {
+                    
                 }
             }
         }
@@ -166,6 +172,32 @@ public class UI_inventory : MonoBehaviour
                         isSet = true;
                     }
                 }
+            }
+            else if (child.name.Contains("CurrencyDisplay"))
+            {
+                bool isSetBefore = isSet;
+
+                if (!isSet)
+                {
+
+                    if (child.GetChild(0).name == "Border")
+                    {
+
+                        isAvailable = true;
+
+                    }
+
+                    if (isAvailable)
+                    {
+                        if (child.GetChild(1).name == "CurrencyDisplay")
+                        {
+                            isSet = false;
+                        }
+                    }
+                }
+
+                isSet = isSetBefore;
+
             }
 
         }
