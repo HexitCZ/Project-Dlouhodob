@@ -64,6 +64,11 @@ public class WaveSystem : MonoBehaviour
         {
             for (int j = 0; j < waves[i].enemies.Count; j++)
             {
+                if (waves[i].enemies[j] == null)
+                {
+                    continue;
+                }
+
                 if (waves[i].enemies[j].activeSelf)
                 {
                     return;

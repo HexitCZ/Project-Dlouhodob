@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class WeaponPickup : PickupBase
 {
-    public WeaponType WeaponType;
+    public WeaponType weaponType;
 
 
     protected override void Action()
     {
-        switch (WeaponType)
+        WeaponController.instance.ammoData.ammoList[(int)weaponType].bullets_left = 100;
+
+
+        switch (weaponType)
         {
             case WeaponType.AssaultRifle:
                 GameProgressManager.instance.FinishEventProgress("WeaponUnlocks", "UnlockAR");

@@ -9,7 +9,7 @@ public class WeaponSelector : MonoBehaviour
     public GameObject weaponHolder;
 
     private WeaponController weaponController;
-    private int scrollIndex;
+    public int scrollIndex;
     private int maxScrollIndex;
     private int changingWeapon;
     private int lastScrollFrame; 
@@ -18,6 +18,12 @@ public class WeaponSelector : MonoBehaviour
     private Quaternion baseRotation = Quaternion.Euler(0, 0, 0);
     private Quaternion changeRotation = Quaternion.Euler(30, -43, 1);
 
+    public static WeaponSelector instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {
@@ -101,7 +107,7 @@ public class WeaponSelector : MonoBehaviour
         if (weaponHolder.transform.localRotation == changeRotation)
         {
             SelectWeapon(scrollIndex);
-            Debug.Log("badabum " + scrollIndex);
+            //Debug.Log("badabum " + scrollIndex);
             changingWeapon = -1;
         }
         else if(weaponHolder.transform.localRotation == baseRotation)
@@ -126,7 +132,7 @@ public class WeaponSelector : MonoBehaviour
     public void OnScroll(InputAction.CallbackContext scroll)
     {
         float s = scroll.ReadValue<float>();
-        Debug.Log(s);
+        //Debug.Log(s);
         if (lastScrollFrame != Time.frameCount)
         {
             if (s > 0)

@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletChoose : MonoBehaviour
 {
     public GameObject[] chooseObject;
-
+    public PlayerProjectileObject[] bullets;
     private void Start()
     {
         Check();   
@@ -42,6 +42,65 @@ public class BulletChoose : MonoBehaviour
 
 
     }
-    
+    public void PiP()
+    {
+        WeaponController.instance.bullets[3] = bullets[0];
+    }
+    public void PiL()
+    {
+        WeaponController.instance.bullets[3] = bullets[1];
+
+    }
+    public void PiE()
+    {
+        WeaponController.instance.bullets[3] = bullets[2];
+
+    }
+
+
+    public void ARP()
+    {
+        WeaponController.instance.bullets[0] = bullets[0];
+
+    }
+    public void ARL()
+    {
+        WeaponController.instance.bullets[0] = bullets[1];
+
+    }
+    public void ARE()
+    {
+        WeaponController.instance.bullets[0] = bullets[2];
+
+    }
+
+    public void MGP()
+    {
+        WeaponController.instance.bullets[1] = bullets[0];
+
+    }
+    public void MGL()
+    {
+        WeaponController.instance.bullets[0] = bullets[1];
+    }
+    public void MGE()
+    {
+        WeaponController.instance.bullets[0] = bullets[2];
+    }
+
+    public void SPP()
+    {
+        WeaponController.instance.bullets[2] = bullets[0];
+
+    }
+    public void SPL()
+    {
+        WeaponController.instance.bullets[0] = bullets[1];
+    }
+    public void SPE()
+    {
+        WeaponController.instance.bullets[0] = bullets[2];
+    }
+
 
 }

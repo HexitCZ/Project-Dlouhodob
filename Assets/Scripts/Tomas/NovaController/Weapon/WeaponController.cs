@@ -61,6 +61,8 @@ public class WeaponController : MonoBehaviour
 
     private void Awake()
     {
+        overchargeMultiplier = 1.0f;
+
         instance = this;
 
         animator = weaponRenderer.GetComponent<Animator>();
@@ -70,7 +72,7 @@ public class WeaponController : MonoBehaviour
         source = weaponRenderer.transform.parent.transform;
 
 
-        SetWeaponObject(currentWeapon);
+        SetWeaponObject(weapons[3]);
 
         if (animate)
         {

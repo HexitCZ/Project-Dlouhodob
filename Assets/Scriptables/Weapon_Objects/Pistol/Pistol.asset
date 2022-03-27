@@ -18,11 +18,11 @@ MonoBehaviour:
   rotation: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   ammoIndex: 3
-  damage: 2
+  damage: 5
   range: 100
   bulletSpread: 0
   bulletsPerTap: 0
-  timeBetweenShots: 1.5
+  timeBetweenShots: 0.4
   fullAuto: 1
   whatCanIHit:
     serializedVersion: 2

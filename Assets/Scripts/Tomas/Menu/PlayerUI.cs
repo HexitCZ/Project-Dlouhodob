@@ -57,6 +57,7 @@ public class PlayerUI : MonoBehaviour
             {
                 gameObject.GetComponent<UpgradeUI>().Enable();
                 gameObject.GetComponent<BulletChoose>().Check();
+                WeaponController.instance.SetWeaponObject(WeaponController.instance.weapons[WeaponSelector.instance.scrollIndex]);
 
             }
         }
