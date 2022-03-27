@@ -40,7 +40,7 @@ public class AI_Walker : AI_Base
     public override void GetHit()
     {
         //Debug.Log("enemy hit " + gameObject.name);
-        health -= playerWeapon.currentWeapon.damage * playerWeapon.currentBullet.physicalDamageMultiplier;
+        health -= playerWeapon.currentWeapon.damage * playerWeapon.currentBullet.physicalDamageMultiplier * playerWeapon.overchargeMultiplier;
         currentHeat += playerWeapon.currentWeapon.damage * playerWeapon.currentBullet.heatDamageMultiplier;
 
         if (currentHeat >= heatCapacity)

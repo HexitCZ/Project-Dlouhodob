@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunName: Pif
   description: Pif jk zbran
-  position: {x: 0, y: 0, z: 0}
+  position: {x: 0, y: -0.8, z: -0.2}
   rotation: {x: 0, y: 0, z: 0}
   scale: {x: 0.49, y: 0.49, z: 0.49}
   ammoIndex: 0
@@ -28,7 +28,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 147
   reloadTime: 2
-  mesh: {fileID: 7437628646312931682, guid: 6ef550be76d51c348ae2349ed0e5d278, type: 3}
+  mesh: {fileID: 158047952557574582, guid: 26a9712f57e4d6a4c91e1fab8d3a6ca9, type: 3}
   materials:
   - {fileID: 2100000, guid: db45e92b76c2f8e4780896c5b048f888, type: 2}
   - {fileID: 2100000, guid: 44def252cdba42248be8e6800b625ce6, type: 2}

@@ -30,7 +30,7 @@ MonoBehaviour:
   reloadTime: 2
   mesh: {fileID: 7450042329512537854, guid: edeee3a44f0a40548bd3645af88d7046, type: 3}
   materials:
-  - {fileID: 2100000, guid: 9fc938d51ad8ec04bad3aadcd44247da, type: 2}
+  - {fileID: 2100000, guid: db45e92b76c2f8e4780896c5b048f888, type: 2}
   - {fileID: -1580535799172915004, guid: 157fbc3311e27a34cadb4b82d12c6980, type: 3}
   - {fileID: -1580535799172915004, guid: 157fbc3311e27a34cadb4b82d12c6980, type: 3}
   weaponAnimator: {fileID: 22100000, guid: 0795d1d38d2d6a14cbd312d869f504e3, type: 2}
