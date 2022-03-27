@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class TeleporterScript : MonoBehaviour
@@ -42,6 +43,11 @@ public class TeleporterScript : MonoBehaviour
     [Header("Teleporter collider script reference")]
     public TeleporterColliderScript tele_coll;
 
+    [SerializeField]
+    [Space]
+    [Header("Player is in range")]
+    private bool inRange;
+
     void Start()
     {
         currentLoadScene = "None";
@@ -59,6 +65,7 @@ public class TeleporterScript : MonoBehaviour
         tele_coll.setCurrentTeleportLocation(load_scene);
     }
 
+
     public void OnTeleportEnvOne()
     {
         currentLoadScene = "First level";
@@ -69,5 +76,46 @@ public class TeleporterScript : MonoBehaviour
     {
         currentLoadScene = "Second level";
         setTeleportLocation(currentLoadScene);
+    }
+    public void OnFirstInteract(InputAction.CallbackContext input)
+    {
+        if (input.started)
+        {
+            if (inRange)
+            {
+                OnTeleportEnvOne();
+            }
+
+        }
+
+    }
+
+    public void OnSecondInteract(InputAction.CallbackContext input)
+    {
+        if (input.started)
+        {
+            if (inRange)
+            {
+                OnTeleportEnvTwo();
+            }
+
+        }
+
+    }
+
+    public void OnTriggerStay(Collider other)
+    {
+        if(other.name == "NovaController")
+        {
+            inRange = true;
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.name == "NovaController")
+        {
+            inRange = false;
+        }
     }
 }
