@@ -14,13 +14,15 @@ public class Teleporter : MonoBehaviour
         instance = this;
     }
 
-
+    private bool triggered = false;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && !triggered)
         {
+            triggered = true;
+            Debug.LogWarning("saving");
             SaveProgress.instance.Save();
-            TeleportTo();
+            Invoke("TeleportTo", 0.2f);
         }
     }
 

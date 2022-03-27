@@ -894,6 +894,10 @@ PrefabInstance:
       propertyPath: weaponComponents.Array.data[3]
       value: 
       objectReference: {fileID: 788312816}
+    - target: {fileID: 4268357316164657252, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
+      propertyPath: ammoList.Array.data[3].bullets_left
+      value: 100000
+      objectReference: {fileID: 0}
     - target: {fileID: 4268357316164657256, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
       propertyPath: m_RootOrder
       value: 0

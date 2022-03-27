@@ -16194,6 +16194,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2193947738784238840, guid: cddd76414d01c6d46ba04cddffc6a792, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193947738784238840, guid: cddd76414d01c6d46ba04cddffc6a792, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -23757,10 +23761,6 @@ PrefabInstance:
     - target: {fileID: 1394687361556880471, guid: cb372f40e1290104e8642d60d5287f2f, type: 3}
       propertyPath: m_Name
       value: UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 1394687362556597906, guid: cb372f40e1290104e8642d60d5287f2f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb372f40e1290104e8642d60d5287f2f, type: 3}

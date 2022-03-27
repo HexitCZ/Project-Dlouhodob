@@ -838,7 +838,7 @@ MonoBehaviour:
   - weapon: Sniper
     bullets_left: 1000
   - weapon: Pistol
-    bullets_left: 1000
+    bullets_left: 100000
 --- !u!114 &316915276
 MonoBehaviour:
   m_ObjectHideFlags: 0

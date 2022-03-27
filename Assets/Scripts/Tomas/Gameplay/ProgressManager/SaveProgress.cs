@@ -10,6 +10,7 @@ public class SaveProgress : MonoBehaviour
     private void Start()
     {
         instance = this;
+        
     }
 
     public void Save()

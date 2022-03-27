@@ -27,10 +27,6 @@ public class GameProgressManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        SaveProgress.instance.Load();
-    }
 
 
     /// <summary>

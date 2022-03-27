@@ -23,7 +23,7 @@ public class PlayerUI : MonoBehaviour
     private void Start()
     {
         InvokeRepeating("UpdateFPS",0.0f , fpsUpdateCooldown);
-        
+        SaveProgress.instance.Load();
     }
 
     private void FixedUpdate()
@@ -32,8 +32,8 @@ public class PlayerUI : MonoBehaviour
         xp_text.text = "XP\n\r" + ExperienceSystem.instance.xp;
         bolts_text.text = "Bolts\n\r" + PlayerCurrency.instance.amount;
         upgradePoints_text.text = "Upgrade Points\n\r" + ExperienceSystem.instance.upgradePoints;
-
-        ammo_text.text = WeaponController.instance.ammoData.ammoList[WeaponController.instance.currentWeapon.ammoIndex].bullets_left.ToString();
+        int ammo = WeaponController.instance.ammoData.ammoList[WeaponController.instance.currentWeapon.ammoIndex].bullets_left;
+        ammo_text.text = ammo >= 10000 ? "" : ammo.ToString();
     }
 
     private void UpdateFPS()
