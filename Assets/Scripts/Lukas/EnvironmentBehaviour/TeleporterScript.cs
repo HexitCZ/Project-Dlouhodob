@@ -51,7 +51,7 @@ public class TeleporterScript : MonoBehaviour
     void Start()
     {
         currentLoadScene = "None";
-        
+        inRange = false;
     }
 
     
@@ -79,6 +79,8 @@ public class TeleporterScript : MonoBehaviour
     }
     public void OnFirstInteract(InputAction.CallbackContext input)
     {
+        
+
         if (input.started)
         {
             if (inRange)
@@ -105,7 +107,12 @@ public class TeleporterScript : MonoBehaviour
 
     public void OnTriggerStay(Collider other)
     {
-        if(other.name == "NovaController")
+
+        if (other.gameObject.name == "Head")
+        {
+            inRange = true;
+        }
+        else if (other.name == "Body")
         {
             inRange = true;
         }
@@ -113,7 +120,12 @@ public class TeleporterScript : MonoBehaviour
 
     public void OnTriggerExit(Collider other)
     {
-        if (other.name == "NovaController")
+        
+        if (other.gameObject.name == "Head")
+        {
+            inRange = false;
+        } 
+        else if(other.name == "Body")
         {
             inRange = false;
         }

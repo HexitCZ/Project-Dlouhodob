@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class door_script : MonoBehaviour
+public class Door_script : MonoBehaviour
 {
 
     [Space]
@@ -25,7 +25,7 @@ public class door_script : MonoBehaviour
     [Space]
     [Header("UI script")]
     [SerializeField]
-    private ui_script ui_script;
+    private UI_script ui_script;
 
     private Inventory inventory;
 

@@ -6,7 +6,7 @@ using UnityEngine.VFX;
 public class WaveSystem : MonoBehaviour
 {
     public bool DEBUG_START;
-    public door_script door;
+    public Door_script door;
     public GameObject spawnVFX;
     public float spawnSlowDown;
     public GameObject[] waveObjects;

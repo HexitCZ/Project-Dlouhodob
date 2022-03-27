@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class ui_script : MonoBehaviour
+public class UI_script : MonoBehaviour
 {
     [Space]
     [Header("Canvas")]
