@@ -263,6 +263,18 @@ PrefabInstance:
       value: AI_Walker_big
       objectReference: {fileID: 0}
     - target: {fileID: 8266438057663389186, guid: b4a786330c42b2842920f75224e3dac2, type: 3}
+      propertyPath: xpGain
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266438057663389186, guid: b4a786330c42b2842920f75224e3dac2, type: 3}
+      propertyPath: currencyGain
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266438057663389186, guid: b4a786330c42b2842920f75224e3dac2, type: 3}
+      propertyPath: explosionVFX
+      value: 
+      objectReference: {fileID: 1689162061832578846, guid: 7c9486d60ce3cc34a9bd1f51a0887166, type: 3}
+    - target: {fileID: 8266438057663389186, guid: b4a786330c42b2842920f75224e3dac2, type: 3}
       propertyPath: <target>k__BackingField
       value: 
       objectReference: {fileID: 279998826}

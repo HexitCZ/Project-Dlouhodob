@@ -25,6 +25,17 @@ public class CurrencyDisplayScript : MonoBehaviour
 
     [Space]
     [SerializeField]
+    [Header("Current experience")]
+    private int exp;
+
+    [Space]
+    [SerializeField]
+    [Header("Current upgrade points")]
+    private int upgrade_points;
+
+
+    [Space]
+    [SerializeField]
     [Header("Current currency")]
     private Transform currency_ui_holder;
     
@@ -52,6 +63,8 @@ public class CurrencyDisplayScript : MonoBehaviour
     void Update()
     {
         image_enabled = uI_Inventory.GetImageStatus();
+        exp = ExperienceSystem.instance.xp;
+        upgrade_points = ExperienceSystem.instance.upgradePoints;
 
         if (image_enabled)
         {
