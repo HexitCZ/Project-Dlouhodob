@@ -116,7 +116,7 @@ public class door_script : MonoBehaviour
 
     public void OnTriggerStay(Collider other)
     {
-        if (!broken)
+        if (!broken && ui_script != null)
         {
             open = ui_script.GetInput();
 

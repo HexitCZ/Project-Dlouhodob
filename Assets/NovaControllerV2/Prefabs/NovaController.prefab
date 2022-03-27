@@ -632,6 +632,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 37a15952-80f9-4b25-a9dc-223cdd52c003
     m_ActionName: PlayerControls/WeaponScroll[/Mouse/scroll/y]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PlayerUI, Assembly-CSharp
+        m_MethodName: OnUpgradeClick
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: aac71b2d-9990-4e27-b00d-a309ac7233af
+    m_ActionName: PlayerControls/UpgradeScreen[/Keyboard/u]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerControls

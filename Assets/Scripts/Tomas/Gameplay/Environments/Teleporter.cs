@@ -19,6 +19,7 @@ public class Teleporter : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            SaveProgress.instance.Save();
             TeleportTo();
         }
     }
@@ -31,6 +32,7 @@ public class Teleporter : MonoBehaviour
 
     public void TeleportTo()
     {
+        
         SceneManager.LoadScene(targetScene);
     }
 
