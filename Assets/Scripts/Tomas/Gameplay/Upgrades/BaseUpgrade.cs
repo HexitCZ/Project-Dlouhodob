@@ -24,10 +24,6 @@ public class BaseUpgrade : MonoBehaviour
         if (activated)
         {
             icon.color = Color.red;
-        }else
-        {
-            icon.color = new Color(Mathf.Lerp(1,0,0.5f), Mathf.Lerp(1, 0, 0.5f), 1);
-
         }
     }
 
