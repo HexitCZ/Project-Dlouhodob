@@ -447,6 +447,7 @@ GameObject:
   - component: {fileID: 4268357316164657252}
   - component: {fileID: 316915276}
   - component: {fileID: 316915277}
+  - component: {fileID: 1836840216}
   m_Layer: 6
   m_Name: NovaController
   m_TagString: Player
@@ -648,6 +649,26 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: aac71b2d-9990-4e27-b00d-a309ac7233af
     m_ActionName: PlayerControls/UpgradeScreen[/Keyboard/u]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1836840216}
+        m_TargetAssemblyTypeName: EMPUpgrade, Assembly-CSharp
+        m_MethodName: OnEMP
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: dbdba6eb-28dd-46c0-baf9-009f2a8ade60
+    m_ActionName: PlayerControls/Power1[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a6d7ed40-f8c3-4044-807b-a72fe75181f9
+    m_ActionName: PlayerControls/Power2[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerControls
@@ -868,6 +889,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 0
+--- !u!114 &1836840216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4268357316164657263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3a8ec00f99e8154e9aa5d487dc1adb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  post: {fileID: 0}
+  icon: {fileID: 0}
+  cooldown: 20
+  radius: 6
 --- !u!1 &4268357316270209821
 GameObject:
   m_ObjectHideFlags: 0
@@ -1100,7 +1137,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 448
+    m_Bits: 64
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0

@@ -23,6 +23,8 @@ public class WeaponController : MonoBehaviour
     public bool shootWhileRunning;
     public bool reloadWhileRunning;
 
+    public float overchargeMultiplier = 1.0f;
+
     private BodyData bodyData;
 
     public HitEvent[] hitEvents;

@@ -14,7 +14,7 @@ public class AI_Base : MonoBehaviour, IHittable
     [SerializeField] protected bool isVisible { get { return CheckVisibility(); } }
     [SerializeField] protected bool inRange { get { return CheckRange(); } }
     
-    [field: SerializeField] protected float health { get; set; }
+    [field: SerializeField] public float health { get; set; }
     [field: SerializeField] protected int range { get; set; }
     [field: SerializeField] protected int startSpeed { get; set; }
     [field: SerializeField] protected float targetDistance { get; set; }
