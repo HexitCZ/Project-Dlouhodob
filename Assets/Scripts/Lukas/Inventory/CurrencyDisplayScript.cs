@@ -125,7 +125,8 @@ public class CurrencyDisplayScript : MonoBehaviour
         if (image_enabled)
         {
             upgrade_points_text_holder.GetComponent<TextMeshProUGUI>().enabled = true;
-            DisplayCurrencyAmount();
+            DisplayExpAmount();
+            DisplayUpgradePointsAmount();
         }
         else
         {
