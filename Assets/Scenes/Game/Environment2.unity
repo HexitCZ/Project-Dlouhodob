@@ -10518,7 +10518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6587715478909533394, guid: d0826b6e868cdc04aab4e5cf34f5f4df, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6587715478909533395, guid: d0826b6e868cdc04aab4e5cf34f5f4df, type: 3}
       propertyPath: <target>k__BackingField
@@ -28713,6 +28713,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 316915276, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
+      propertyPath: level
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 316915276, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
+      propertyPath: xpPerLevel
+      value: 0
+      objectReference: {fileID: 0}
+      propertyPath: upgradePoints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1836840216, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
       propertyPath: icon
       value: 
