@@ -28713,6 +28713,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 316915276, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
+      propertyPath: level
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 316915276, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
+      propertyPath: xpPerLevel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 316915276, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
+      propertyPath: upgradePoints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1836840216, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
       propertyPath: icon
       value: 
