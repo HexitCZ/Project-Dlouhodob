@@ -449,6 +449,7 @@ GameObject:
   - component: {fileID: 316915277}
   - component: {fileID: 1836840216}
   - component: {fileID: 1836840217}
+  - component: {fileID: 1722282271}
   m_Layer: 6
   m_Name: NovaController
   m_TagString: Player
@@ -611,11 +612,35 @@ MonoBehaviour:
     m_ActionId: 25c2be88-4b9e-4d61-b5d1-73a63be837ec
     m_ActionName: PlayerControls/Reload[/Keyboard/r]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1722282271}
+        m_TargetAssemblyTypeName: UI_script, Assembly-CSharp
+        m_MethodName: OnInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 12c78e3a-12d6-4645-bf40-5e0df2e750b1
     m_ActionName: PlayerControls/Interact[/Keyboard/e]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UI_inventory, Assembly-CSharp
+        m_MethodName: OnInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: e11355ea-fc8c-46eb-8c56-e7bb9b3aa52a
     m_ActionName: PlayerControls/Inventory[/Keyboard/i]
   - m_PersistentCalls:
@@ -682,6 +707,14 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: a6d7ed40-f8c3-4044-807b-a72fe75181f9
     m_ActionName: PlayerControls/Power2[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 243223e0-ce0e-48aa-a728-5e3d8f3b7df5
+    m_ActionName: PlayerControls/SelectFirstEnvironment[/Keyboard/f1]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3f287404-73eb-49fe-9a32-7bb6c2586406
+    m_ActionName: PlayerControls/SelectSecondEnvironment[/Keyboard/f2]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerControls
@@ -888,7 +921,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
-  upgradePoints: 15
+  upgradePoints: 0
   xp: 0
   xpPerLevel: 10
 --- !u!114 &316915277
@@ -937,6 +970,19 @@ MonoBehaviour:
   cooldown: 10
   length: 3
   damageMultiplier: 2
+--- !u!114 &1722282271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4268357316164657263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a602c28eb6b9c604aa79cbbb4521ce1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressText: {fileID: 0}
 --- !u!1 &4268357316270209821
 GameObject:
   m_ObjectHideFlags: 0
