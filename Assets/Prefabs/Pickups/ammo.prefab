@@ -149,7 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTag: Player
   lifetime: 0
-  ammoAmount: 100
+  ammoAmount: 200
   ammoIndex: 0
   currentlyHeldWeaponAmmo: 1
 --- !u!1 &6854845795215027426

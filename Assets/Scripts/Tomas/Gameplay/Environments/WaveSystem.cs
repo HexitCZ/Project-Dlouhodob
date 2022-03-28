@@ -87,7 +87,7 @@ public class WaveSystem : MonoBehaviour
         //print("nextwave");
         if (currentWave >= waves.Count)
         {
-            door.Open();
+            //door.Open();
             PlayerPrefs.SetInt("level2unlocked", 1);
             PlayerPrefs.Save();
             //Debug.Log("Door OPEN");

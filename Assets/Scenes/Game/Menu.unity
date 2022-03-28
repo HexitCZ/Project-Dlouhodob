@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.14693628, g: 0.383124, b: 0.49798682, a: 1}
+  m_IndirectSpecularColor: {r: 0.14339949, g: 0.37256518, b: 0.48119736, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -295,8 +295,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -750, y: -164}
-  m_SizeDelta: {x: 300, y: 112}
+  m_AnchoredPosition: {x: 559.9997, y: -435}
+  m_SizeDelta: {x: 582.5681, y: 112}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &166679191
 MonoBehaviour:
@@ -469,14 +469,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 450674447}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!114 &450674451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -583,7 +583,7 @@ RectTransform:
   m_GameObject: {fileID: 562206735}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1032928421}
@@ -591,8 +591,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 450, y: -91}
-  m_SizeDelta: {x: 322.96997, y: 50}
+  m_AnchoredPosition: {x: 1508.2, y: -573}
+  m_SizeDelta: {x: 318.7, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &562206737
 MonoBehaviour:
@@ -614,17 +614,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Boom Endless
+  m_text: META MAYHEM
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e32db36d3f1d35748afb98c00566793e, type: 2}
-  m_sharedMaterial: {fileID: 2399431720096826473, guid: e32db36d3f1d35748afb98c00566793e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3d5b3e9adb3d2084c826abc3cf685de3, type: 2}
+  m_sharedMaterial: {fileID: 2399431720096826473, guid: 3d5b3e9adb3d2084c826abc3cf685de3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
@@ -632,11 +632,11 @@ MonoBehaviour:
     topRight: {r: 1, g: 1, b: 1, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 11400000, guid: ac73b2d6f5f03fa4f8f86444ca5ded69, type: 2}
+  m_fontColorGradientPreset: {fileID: 11400000, guid: 103a030bcf2c9bf4e8f5886c85fd5ba9, type: 2}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
+  m_TextStyleHashCode: 93368250
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -728,8 +728,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -750, y: -14}
-  m_SizeDelta: {x: 300, y: 112}
+  m_AnchoredPosition: {x: 560, y: -285}
+  m_SizeDelta: {x: 582.5681, y: 112}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &592614457
 MonoBehaviour:
@@ -930,14 +930,14 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0.5411765, g: 0.84108573, b: 1, a: 1}
+  m_Intensity: 10
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -988,14 +988,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 888890951}
-  m_LocalRotation: {x: 0.6241951, y: -0.755002, z: 0.03293315, w: 0.19816108}
+  m_LocalRotation: {x: 0.0041053616, y: -0.9909329, z: 0.03114129, w: 0.13063486}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 17.284, y: -164.317, z: -76.766}
+  m_LocalEulerAnglesHint: {x: 3.6, y: -164.98, z: 0}
 --- !u!114 &888890954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1221,8 +1221,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1355223947}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -746, y: -12.000011, z: 0}
-  m_LocalScale: {x: 1.7438693, y: 1.7438693, z: 1.7438693}
+  m_LocalPosition: {x: 567.76733, y: -283, z: 0}
+  m_LocalScale: {x: 3.3864198, y: 1.7438693, z: 1.7438693}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1773428599}
@@ -1402,8 +1402,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -750, y: 136}
-  m_SizeDelta: {x: 300, y: 112}
+  m_AnchoredPosition: {x: 559.9997, y: -134.99998}
+  m_SizeDelta: {x: 582.5681, y: 112}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1752230620
 MonoBehaviour:
