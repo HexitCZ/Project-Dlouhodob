@@ -30,6 +30,12 @@ public class UpgradeUI : MonoBehaviour
 
         Debug.LogWarning(fields.Count);
         
+        
+    }
+
+    public void Enable()
+    {
+        FPSInteractionManager.instance.DisableFPSInteraction(true);
         foreach (GameObject g in fields)
         {
             UpgradeField ug = g.GetComponent<UpgradeField>();
@@ -37,14 +43,8 @@ public class UpgradeUI : MonoBehaviour
             g.GetComponent<Button>().interactable = ExperienceSystem.instance.upgradePoints > 0 && !ug.bought ? true : false;
 
         }
-    }
 
-    public void Enable()
-    {
-        FPSInteractionManager.instance.DisableFPSInteraction(true);
-        
-        
-        
+
     }
 
     public void Disable()

@@ -24494,6 +24494,62 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 1394687362780892018, guid: cb372f40e1290104e8642d60d5287f2f, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1464339546504132502, guid: cb372f40e1290104e8642d60d5287f2f, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1464339546677626931, guid: cb372f40e1290104e8642d60d5287f2f, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1464339546786703824, guid: cb372f40e1290104e8642d60d5287f2f, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1464339546808343878, guid: cb372f40e1290104e8642d60d5287f2f, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1464339546826745764, guid: cb372f40e1290104e8642d60d5287f2f, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1464339547146074004, guid: cb372f40e1290104e8642d60d5287f2f, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1464339547240480756, guid: cb372f40e1290104e8642d60d5287f2f, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1464339547379610739, guid: cb372f40e1290104e8642d60d5287f2f, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1464339547551383345, guid: cb372f40e1290104e8642d60d5287f2f, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1464339547722327537, guid: cb372f40e1290104e8642d60d5287f2f, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1464339547754193530, guid: cb372f40e1290104e8642d60d5287f2f, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1464339547950221013, guid: cb372f40e1290104e8642d60d5287f2f, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1464339548043075286, guid: cb372f40e1290104e8642d60d5287f2f, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb372f40e1290104e8642d60d5287f2f, type: 3}
 --- !u!114 &1394687362066749223 stripped
