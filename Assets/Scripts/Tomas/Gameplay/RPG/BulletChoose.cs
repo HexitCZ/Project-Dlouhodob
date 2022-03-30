@@ -81,11 +81,11 @@ public class BulletChoose : MonoBehaviour
     }
     public void MGL()
     {
-        WeaponController.instance.bullets[0] = bullets[1];
+        WeaponController.instance.bullets[1] = bullets[1];
     }
     public void MGE()
     {
-        WeaponController.instance.bullets[0] = bullets[2];
+        WeaponController.instance.bullets[1] = bullets[2];
     }
 
     public void SPP()
@@ -95,11 +95,11 @@ public class BulletChoose : MonoBehaviour
     }
     public void SPL()
     {
-        WeaponController.instance.bullets[0] = bullets[1];
+        WeaponController.instance.bullets[2] = bullets[1];
     }
     public void SPE()
     {
-        WeaponController.instance.bullets[0] = bullets[2];
+        WeaponController.instance.bullets[2] = bullets[2];
     }
 
 

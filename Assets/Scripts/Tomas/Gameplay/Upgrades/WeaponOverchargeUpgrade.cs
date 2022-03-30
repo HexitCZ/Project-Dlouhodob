@@ -18,6 +18,8 @@ public class WeaponOverchargeUpgrade : BaseUpgrade
 
     public override void Activate()
     {
+        readySoundSource.clip = activateSound;
+        readySoundSource.Play();
         canPerform = false;
         Invoke("Cooldown", cooldown);
 
@@ -46,6 +48,8 @@ public class WeaponOverchargeUpgrade : BaseUpgrade
     {
         canPerform = true;
         icon.color = Color.white;
+        readySoundSource.clip = readySound;
+        readySoundSource.Play();
     }
 
     private void ResetColor()

@@ -17,6 +17,9 @@ public class EMPUpgrade : BaseUpgrade
 
     public override void Activate()
     {
+        readySoundSource.clip = activateSound;
+        readySoundSource.Play();
+
         canPerform = false;
         Invoke("Cooldown", cooldown);
         print(this.ToString() + " activated");
@@ -47,6 +50,8 @@ public class EMPUpgrade : BaseUpgrade
     {
         canPerform = true;
         icon.color = Color.white;
+        readySoundSource.clip = readySound;
+        readySoundSource.Play();
     }
 
     private void ResetGrain()

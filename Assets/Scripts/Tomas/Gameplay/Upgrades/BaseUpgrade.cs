@@ -12,6 +12,10 @@ public class BaseUpgrade : MonoBehaviour
     public Image icon;
     public int cooldown;
 
+    public AudioClip readySound;
+    public AudioClip activateSound;
+    public AudioSource readySoundSource;
+
     protected bool activated;
 
     public virtual void Activate()

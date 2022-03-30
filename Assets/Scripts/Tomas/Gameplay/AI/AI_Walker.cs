@@ -20,8 +20,12 @@ public class AI_Walker : AI_Base
     public float heatCapacity;
     private float currentHeat;
 
+    private AudioSource source;
+
     private new void Start()
     {
+        source = GetComponent<AudioSource>();
+
         playerWeapon = WeaponController.instance;
 
         base.Start();
@@ -108,6 +112,7 @@ public class AI_Walker : AI_Base
     {
         if (!died)
         {
+            source.Play();
             navmesh.enabled = false;
             Rigidbody rb = GetComponent<Rigidbody>();
             rb.isKinematic = false;

@@ -6,29 +6,29 @@ public class WeaponAudio : MonoBehaviour
 {
     public AudioClip[] clips;
 
-    private AudioSource source;
+    public AudioSource source;
 
     public static WeaponAudio instance;
     private void Start()
     {
         instance = this;
-        source = GetComponent<AudioSource>();
     }
 
-    public void Play(BulletType type)
+    public void Play()
     {
-        switch (type)
+
+        switch (WeaponController.instance.currentBullet.type)
         {
-            case BulletType.physic:
+            case "physical":
                 source.clip = clips[0];
                 source.Play();
 
                 break;
-            case BulletType.laser:
+            case "laser":
                 source.clip = clips[1];
                 source.Play();
                 break;
-            case BulletType.electro:
+            case "electro":
                 source.clip = clips[2];
                 source.Play();
                 break;
@@ -37,9 +37,4 @@ public class WeaponAudio : MonoBehaviour
     }
 
 
-}
-
-public enum BulletType
-{
-    physic, laser, electro
 }

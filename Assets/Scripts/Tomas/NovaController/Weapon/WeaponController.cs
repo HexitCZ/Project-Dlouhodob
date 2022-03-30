@@ -212,7 +212,7 @@ public class WeaponController : MonoBehaviour
         {
             IHittable ihit = hit.collider.gameObject.GetComponent<IHittable>();
 
-            //WeaponAudio.instance.Play();
+            WeaponAudio.instance.Play();
 
             if (ihit != null)
             {
