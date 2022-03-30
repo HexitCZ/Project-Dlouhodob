@@ -70,9 +70,6 @@ public class AI_Base : MonoBehaviour, IHittable
 
             }
 
-
-
-
             if (isVisible)
             {
                 visibleAction?.Invoke();

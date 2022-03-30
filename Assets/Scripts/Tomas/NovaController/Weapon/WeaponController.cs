@@ -200,7 +200,6 @@ public class WeaponController : MonoBehaviour
     {
         readyToShoot = false;
 
-        //Debug.Log("shoot");
 
         Vector3 direction = weaponRenderer.transform.forward;
 
@@ -212,17 +211,17 @@ public class WeaponController : MonoBehaviour
         if (Physics.Raycast(source.position, direction, out hit, currentWeapon.range, currentWeapon.whatCanIHit))
         {
             IHittable ihit = hit.collider.gameObject.GetComponent<IHittable>();
-            
+
+            //WeaponAudio.instance.Play();
+
             if (ihit != null)
             {
                 for (int i = 0; i < hitEvents.Length; i++)
                 {
                     if (hit.transform.gameObject.CompareTag(hitEvents[i].tag))
                     {
-                        print("trying to hit " + hit.collider.gameObject.name);
                         ihit.GetHit();
                         hitEvents[i].events.Invoke();
-
                     }
                 }
             }

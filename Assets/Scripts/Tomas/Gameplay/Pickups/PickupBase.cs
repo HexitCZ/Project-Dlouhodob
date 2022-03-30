@@ -11,9 +11,13 @@ public class PickupBase : MonoBehaviour
     [SerializeField]
     protected int lifetime;
 
+    private AudioSource pickupSound;
+
 
     private void Start()
     {
+        pickupSound = GetComponent<AudioSource>();    
+
         if (lifetime != 0)
         {
             Destroy(this.gameObject, lifetime);
@@ -39,8 +43,19 @@ public class PickupBase : MonoBehaviour
     {
         if (other.gameObject.CompareTag(playerTag))
         {
+            if (!pickupSound.isPlaying)
+            {
+                pickupSound.enabled = true;
+                pickupSound.Play();
+
+            }
+            if (pickupSound.clip == null)
+            {
+                Debug.LogWarning("NOSOUND");
+            }
             Action();
-            Destroy(this.gameObject);
+            transform.Translate(1000, 0, 0);
+            Destroy(this.gameObject, 5);
         }
     }
 }

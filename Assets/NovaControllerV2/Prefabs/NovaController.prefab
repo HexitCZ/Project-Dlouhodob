@@ -450,6 +450,7 @@ GameObject:
   - component: {fileID: 1836840216}
   - component: {fileID: 1836840217}
   - component: {fileID: 1722282271}
+  - component: {fileID: 2019779250}
   m_Layer: 6
   m_Name: NovaController
   m_TagString: Player
@@ -613,7 +614,7 @@ MonoBehaviour:
     m_ActionName: PlayerControls/Reload[/Keyboard/r]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1722282271}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UI_script, Assembly-CSharp
         m_MethodName: OnInteract
         m_Mode: 0
@@ -708,7 +709,19 @@ MonoBehaviour:
     m_ActionId: a6d7ed40-f8c3-4044-807b-a72fe75181f9
     m_ActionName: PlayerControls/Power2[/Keyboard/e]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 243223e0-ce0e-48aa-a728-5e3d8f3b7df5
     m_ActionName: PlayerControls/SelectFirstEnvironment[/Keyboard/f1]
   - m_PersistentCalls:
@@ -757,7 +770,7 @@ MonoBehaviour:
   canBeDamaged: 1
   maxHealth: 100
   visibleHealth: 100
-  actualHealth: 0
+  actualHealth: 100
   regenerationSpeed: 0
   colorImage: {fileID: 0}
   healthText: {fileID: 0}
@@ -859,8 +872,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 58dff297fa43ee744a1017d665fd6481, type: 2}
   bullets:
   - {fileID: 11400000, guid: f5f631b56a70ff24fbace672f02dad43, type: 2}
-  - {fileID: 11400000, guid: 7071a83f01651584989ad52e2f01d708, type: 2}
-  - {fileID: 11400000, guid: 8c0dd0ac8dd66624c9249e0b44a99d0d, type: 2}
+  - {fileID: 11400000, guid: f5f631b56a70ff24fbace672f02dad43, type: 2}
+  - {fileID: 11400000, guid: f5f631b56a70ff24fbace672f02dad43, type: 2}
   - {fileID: 11400000, guid: f5f631b56a70ff24fbace672f02dad43, type: 2}
   animate: 1
   shootWhileRunning: 1
@@ -983,6 +996,102 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pressText: {fileID: 0}
+--- !u!82 &2019779250
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4268357316164657263}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 2774bbca6d7df254c9787fb43d779629, type: 2}
+  m_audioClip: {fileID: 8300000, guid: edcd6e42c4d6513478a01586e2a3db4c, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &4268357316270209821
 GameObject:
   m_ObjectHideFlags: 0

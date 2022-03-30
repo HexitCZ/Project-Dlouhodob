@@ -18,4 +18,6 @@ public class PlayerProjectileObject : ScriptableObject
     [Tooltip("Damage that affects all enemies the same.")]
     public float physicalDamageMultiplier;
 
+    public string type;
+
 }

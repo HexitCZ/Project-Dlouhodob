@@ -7,7 +7,8 @@ public class HealthPickup : PickupBase
     public int lifeAmount;
     protected override void Action()
     {
+
         PlayerHealthController.instance.AddHealth(lifeAmount);
-        Destroy(gameObject);
+        
     }
 }

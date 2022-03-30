@@ -6,9 +6,11 @@ public class WeaponPickup : PickupBase
 {
     public WeaponType weaponType;
 
+   
 
     protected override void Action()
     {
+        
         WeaponController.instance.ammoData.ammoList[(int)weaponType].bullets_left = 100;
 
 

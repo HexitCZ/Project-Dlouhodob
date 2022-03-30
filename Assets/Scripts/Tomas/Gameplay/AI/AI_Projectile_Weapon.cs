@@ -11,9 +11,8 @@ public class AI_Projectile_Weapon : MonoBehaviour
     [Header("Projectile Properties")]
     public GameObject bulletPrefab;
     public BulletObject bulletObject;
-
-    
-    //[Header("Orientation Options")]
+    [Space]
+    [Header("Orientation Options")]
     private bool canShoot = true;
 
 

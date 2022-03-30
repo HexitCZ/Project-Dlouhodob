@@ -12,6 +12,7 @@ public class AmmoPickup : PickupBase
 
     protected override void Action()
     {
+
         if (currentlyHeldWeaponAmmo)
         {
             WeaponController.instance.ammoData.ammoList[WeaponController.instance.currentWeapon.ammoIndex].bullets_left += ammoAmount;
