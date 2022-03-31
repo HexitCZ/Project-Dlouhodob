@@ -120,7 +120,7 @@ public class Door_script : MonoBehaviour
         {
 
 
-            if (!broken && ui_script != null)
+            /*if (!broken && ui_script != null)
             {
                 open = ui_script.GetInput();
 
@@ -128,7 +128,7 @@ public class Door_script : MonoBehaviour
             else
             {
                 Break();
-            }
+            }*/
 
             if (automatic)
             {
