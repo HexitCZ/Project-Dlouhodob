@@ -415,7 +415,7 @@ MonoBehaviour:
   <target>k__BackingField: {fileID: 0}
   <dynamic>k__BackingField: 1
   <weapon>k__BackingField: {fileID: 755265367382587630}
-  <health>k__BackingField: 20
+  <health>k__BackingField: 25
   <range>k__BackingField: 200
   <startSpeed>k__BackingField: 2
   <targetDistance>k__BackingField: 0
@@ -427,7 +427,7 @@ MonoBehaviour:
   explosionVFX: {fileID: 1689162061832578846, guid: 7c9486d60ce3cc34a9bd1f51a0887166, type: 3}
   xpGain: 10
   currencyGain: 10
-  heatCapacity: 40
+  heatCapacity: 100
   engines:
   - {fileID: 6349972325604699939}
   - {fileID: 6349972324779542014}

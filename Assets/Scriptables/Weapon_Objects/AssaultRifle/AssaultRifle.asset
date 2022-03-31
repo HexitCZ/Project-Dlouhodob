@@ -18,7 +18,7 @@ MonoBehaviour:
   rotation: {x: 0, y: 0, z: 0}
   scale: {x: 0.49, y: 0.49, z: 0.49}
   ammoIndex: 0
-  damage: 5
+  damage: 3
   range: 100
   bulletSpread: 0
   bulletsPerTap: 0
