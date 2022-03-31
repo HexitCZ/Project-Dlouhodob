@@ -20,6 +20,8 @@ public class AI_Walker : AI_Base
     public float heatCapacity;
     private float currentHeat;
 
+    public GameObject[] engines;
+
     private AudioSource source;
 
     private new void Start()
@@ -124,6 +126,11 @@ public class AI_Walker : AI_Base
 
             ExperienceSystem.instance.Add(xpGain);
             PlayerCurrency.instance.Add(currencyGain);
+
+            for (int i = 0; i < engines.Length; i++)
+            {
+                engines[i].SetActive(false);
+            }
 
             Invoke("Disable", 5);
 

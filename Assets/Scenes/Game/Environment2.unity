@@ -276,6 +276,7 @@ GameObject:
   - component: {fileID: 6110134}
   - component: {fileID: 6110136}
   - component: {fileID: 6110135}
+  - component: {fileID: 6110137}
   m_Layer: 0
   m_Name: Mesh
   m_TagString: Untagged
@@ -348,6 +349,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6110133}
   m_Mesh: {fileID: -5523277661179574252, guid: 8c54f0c917f22a94ba8155382e52fd9b, type: 3}
+--- !u!65 &6110137
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6110133}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9999996, y: 0.07999998, z: 2}
+  m_Center: {x: 0, y: 0.0000019073486, z: 0.0000019073486}
 --- !u!1 &12725600
 GameObject:
   m_ObjectHideFlags: 0
@@ -7331,6 +7345,7 @@ GameObject:
   - component: {fileID: 341595062}
   - component: {fileID: 341595064}
   - component: {fileID: 341595063}
+  - component: {fileID: 341595065}
   m_Layer: 0
   m_Name: Vent
   m_TagString: Untagged
@@ -7403,6 +7418,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 341595061}
   m_Mesh: {fileID: 879393299063259478, guid: 8c54f0c917f22a94ba8155382e52fd9b, type: 3}
+--- !u!65 &341595065
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341595061}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9999998, y: 5.969167, z: 2}
+  m_Center: {x: -0.0000002384186, y: -2.9845836, z: 0}
 --- !u!1 &343403702
 GameObject:
   m_ObjectHideFlags: 0
@@ -9602,7 +9630,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 459322235}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.00000032782552}
-  m_LocalPosition: {x: -161.76254, y: 22.67577, z: -126.4324}
+  m_LocalPosition: {x: -161.848, y: 22.67577, z: -126.4324}
   m_LocalScale: {x: 7.6619596, y: 7.6619596, z: 7.6619596}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -10965,6 +10993,7 @@ GameObject:
   - component: {fileID: 509178140}
   - component: {fileID: 509178142}
   - component: {fileID: 509178141}
+  - component: {fileID: 509178143}
   m_Layer: 0
   m_Name: Mesh
   m_TagString: Untagged
@@ -11037,6 +11066,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 509178139}
   m_Mesh: {fileID: -5523277661179574252, guid: 8c54f0c917f22a94ba8155382e52fd9b, type: 3}
+--- !u!65 &509178143
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509178139}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9999996, y: 0.07999998, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &510864446
 GameObject:
   m_ObjectHideFlags: 0
@@ -14481,6 +14523,7 @@ GameObject:
   - component: {fileID: 681398388}
   - component: {fileID: 681398390}
   - component: {fileID: 681398389}
+  - component: {fileID: 681398391}
   m_Layer: 0
   m_Name: Vent
   m_TagString: Untagged
@@ -14553,6 +14596,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 681398387}
   m_Mesh: {fileID: 879393299063259478, guid: 8c54f0c917f22a94ba8155382e52fd9b, type: 3}
+--- !u!65 &681398391
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681398387}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9999998, y: 5.969167, z: 2}
+  m_Center: {x: -0.0000002384186, y: -2.9845836, z: 0}
 --- !u!1001 &691494809
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19346,7 +19402,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 989510374}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.00000032782552}
-  m_LocalPosition: {x: -161.7626, y: 22.67577, z: -36.932407}
+  m_LocalPosition: {x: -161.848, y: 22.67577, z: -36.932407}
   m_LocalScale: {x: 7.6619596, y: 7.6619596, z: 7.6619596}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -21874,6 +21930,7 @@ GameObject:
   - component: {fileID: 1164433363}
   - component: {fileID: 1164433365}
   - component: {fileID: 1164433364}
+  - component: {fileID: 1164433366}
   m_Layer: 0
   m_Name: Vent
   m_TagString: Untagged
@@ -21946,6 +22003,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1164433362}
   m_Mesh: {fileID: 879393299063259478, guid: 8c54f0c917f22a94ba8155382e52fd9b, type: 3}
+--- !u!65 &1164433366
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164433362}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9999998, y: 5.969167, z: 2}
+  m_Center: {x: -0.0000002384186, y: -2.9845836, z: 0}
 --- !u!1 &1167372863
 GameObject:
   m_ObjectHideFlags: 0
@@ -26741,6 +26811,7 @@ GameObject:
   - component: {fileID: 1524899323}
   - component: {fileID: 1524899325}
   - component: {fileID: 1524899324}
+  - component: {fileID: 1524899326}
   m_Layer: 0
   m_Name: Mesh
   m_TagString: Untagged
@@ -26813,6 +26884,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1524899322}
   m_Mesh: {fileID: -5523277661179574252, guid: 8c54f0c917f22a94ba8155382e52fd9b, type: 3}
+--- !u!65 &1524899326
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524899322}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9999996, y: 0.07999998, z: 2}
+  m_Center: {x: 0, y: 0, z: 0.00000047683716}
 --- !u!1001 &1531046390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31341,7 +31425,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1850870292}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.00000032782552}
-  m_LocalPosition: {x: -161.76259, y: 22.67577, z: -66.4324}
+  m_LocalPosition: {x: -161.848, y: 22.67577, z: -66.4324}
   m_LocalScale: {x: 7.6619596, y: 7.6619596, z: 7.6619596}
   m_ConstrainProportionsScale: 1
   m_Children:
