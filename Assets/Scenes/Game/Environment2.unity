@@ -12742,7 +12742,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1347453740974387797, guid: cddd76414d01c6d46ba04cddffc6a792, type: 3}
       propertyPath: needsKey
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1347453740974387797, guid: cddd76414d01c6d46ba04cddffc6a792, type: 3}
       propertyPath: ui_script
