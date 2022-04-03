@@ -12887,17 +12887,53 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1529437668091483714, guid: cddd76414d01c6d46ba04cddffc6a792, type: 3}
   m_PrefabInstance: {fileID: 584993370}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &584993372 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1347453740974387797, guid: cddd76414d01c6d46ba04cddffc6a792, type: 3}
+--- !u!1 &584993372 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2193947738784238840, guid: cddd76414d01c6d46ba04cddffc6a792, type: 3}
   m_PrefabInstance: {fileID: 584993370}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+--- !u!23 &584993374 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1347453740099816141, guid: cddd76414d01c6d46ba04cddffc6a792, type: 3}
+  m_PrefabInstance: {fileID: 584993370}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &584993375 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1347453740974387627, guid: cddd76414d01c6d46ba04cddffc6a792, type: 3}
+  m_PrefabInstance: {fileID: 584993370}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &584993380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584993372}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16449b51572dc2040bb299203b58c35a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  open: 0
+  automatic: 0
+  broken: 0
+  needsKey: 1
+  inRange: 0
+  ui_inventory: {fileID: 1998538110}
+  ui_script: {fileID: 1722282271}
+  openInvoker:
+    m_PersistentCalls:
+      m_Calls: []
+  closeInvoker:
+    m_PersistentCalls:
+      m_Calls: []
+  brokenInvoker:
+    m_PersistentCalls:
+      m_Calls: []
+  doorAnimator: {fileID: 584993375}
+  doorRenderer: {fileID: 0}
+  displayRenderer: {fileID: 584993374}
+  displayMats: []
 --- !u!1 &591593466
 GameObject:
   m_ObjectHideFlags: 0
@@ -19750,7 +19786,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DEBUG_START: 1
-  door: {fileID: 584993372}
+  door: {fileID: 0}
   spawnVFX: {fileID: 3390228663416687271, guid: 61befa7a3c33d414cba02556956f3ca6, type: 3}
   spawnSlowDown: 0.2
   waveObjects:
@@ -23822,7 +23858,7 @@ PrefabInstance:
       objectReference: {fileID: 1998538110}
     - target: {fileID: 8750385923808534336, guid: ebdebfc8126cd104ea4466bd5f49bbe4, type: 3}
       propertyPath: m_Name
-      value: keycard 1
+      value: keycard
       objectReference: {fileID: 0}
     - target: {fileID: 8750385923808534336, guid: ebdebfc8126cd104ea4466bd5f49bbe4, type: 3}
       propertyPath: m_IsActive
