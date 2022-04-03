@@ -142,7 +142,7 @@ public class UIOptionsManager : MonoBehaviour
         int height = Screen.currentResolution.height;
         int width = Screen.currentResolution.width;
         int refreshRate = Screen.currentResolution.refreshRate;
-        Screen.SetResolution(height, width, FullScreenMode.FullScreenWindow, refreshRate);
+        Screen.SetResolution(height, width, FullScreenMode.Windowed, refreshRate);
         TextMeshProUGUI fullscreen_text = fullscreenButton.GetChild(0).GetComponent<TextMeshProUGUI>();
         fullscreen_text.text = "Exclusive\nFullscreen";
         fullscreen_text.fontSize = 35f;
