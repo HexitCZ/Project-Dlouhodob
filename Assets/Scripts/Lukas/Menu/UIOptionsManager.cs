@@ -53,13 +53,13 @@ public class UIOptionsManager : MonoBehaviour
         currentVolume = 0f;
         mainMenuScene = "Menu";
         fullscreen_modes = new string[] {
-            "Windowed",
-            "Exclusive\nFullscreen",
             "Maximized\nWindow",
-            "Full\nScreen"
+            "Exclusive\nFullscreen",
+            "Windowed",
+            "Full\nscreen"
         };    
 
-        fullscreen_mode = "Full\nScreen";
+        fullscreen_mode = "Full\nscreen";
         //Screen.SetResolution(640, 480, FullScreenMode.ExclusiveFullScreen, 60);
         
     }
@@ -176,7 +176,7 @@ public class UIOptionsManager : MonoBehaviour
 
         TextMeshProUGUI fullscreen_text = fullscreenButton.GetChild(0).GetComponent<TextMeshProUGUI>();
         
-        fullscreen_text.text = "Full\nScreen";
+        fullscreen_text.text = "Full\nscreen";
         fullscreen_text.fontSize = 45f;
         fullscreen_mode = fullscreen_text.text;
 

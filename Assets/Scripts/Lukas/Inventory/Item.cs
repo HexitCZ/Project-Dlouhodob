@@ -16,6 +16,8 @@ public class Item : ScriptableObject
     [Header("Item color")]
     private Type type;
 
+    public GameObject model;
+
     public enum Type
     {
         keycard = 0,
@@ -25,7 +27,7 @@ public class Item : ScriptableObject
         currency
     }
     
-    public GameObject model;
+    
     
     public Item(Type type, Color color)
     {
