@@ -14,6 +14,7 @@ public class ResetProgress : MonoBehaviour
         PlayerPrefs.SetInt("upgradePoints", 0);
 
 
+
         PlayerPrefs.SetInt("ammo1", 0);
         PlayerPrefs.SetInt("ammo2", 0);
         PlayerPrefs.SetInt("ammo3", 0);
