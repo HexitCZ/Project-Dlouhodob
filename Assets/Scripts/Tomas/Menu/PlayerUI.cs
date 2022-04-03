@@ -20,8 +20,16 @@ public class PlayerUI : MonoBehaviour
 
     public TMP_Text ammo_text;
 
+    private void Awake()
+    {
+        Invoke("CycleUpgrade", 0.1f);
+        Invoke("CycleUpgrade", 0.101f);
+    }
+
     private void Start()
     {
+        
+        
         InvokeRepeating("UpdateFPS",0.0f , fpsUpdateCooldown);
         SaveProgress.instance.Load();
     }
@@ -46,20 +54,25 @@ public class PlayerUI : MonoBehaviour
     {
         if (inp.performed)
         {
-            upgrade.SetActive(!upgrade.activeSelf);
-            hud.SetActive(!hud.activeSelf);
+            CycleUpgrade();
+        }
+    }
 
-            if (!upgrade.activeSelf)
-            {
-                gameObject.GetComponent<UpgradeUI>().Disable();
-            }
-            else
-            {
-                gameObject.GetComponent<UpgradeUI>().Enable();
-                gameObject.GetComponent<BulletChoose>().Check();
-                WeaponController.instance.SetWeaponObject(WeaponController.instance.weapons[WeaponSelector.instance.scrollIndex]);
+    private void CycleUpgrade()
+    {
+        upgrade.SetActive(!upgrade.activeSelf);
+        hud.SetActive(!hud.activeSelf);
 
-            }
+        if (!upgrade.activeSelf)
+        {
+            gameObject.GetComponent<UpgradeUI>().Disable();
+        }
+        else
+        {
+            gameObject.GetComponent<UpgradeUI>().Enable();
+            gameObject.GetComponent<BulletChoose>().Check();
+            WeaponController.instance.SetWeaponObject(WeaponController.instance.weapons[WeaponSelector.instance.scrollIndex]);
+
         }
     }
 

@@ -90,7 +90,8 @@ public class WaveSystem : MonoBehaviour
             
             PlayerPrefs.SetInt("level2unlocked", 1);
             PlayerPrefs.Save();
-            //Debug.Log("Door OPEN");
+            door.automatic = true;
+            door.open = true;
             EndWaves();
             return;
         }

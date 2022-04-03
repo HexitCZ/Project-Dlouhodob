@@ -7,9 +7,9 @@ public class Door_script : MonoBehaviour
     [Space]
     [Header("Bools")]
     [SerializeField]
-    private bool open;
+    public bool open;
     [SerializeField]
-    private bool automatic;
+    public bool automatic;
     [SerializeField]
     private bool broken;
     [SerializeField]

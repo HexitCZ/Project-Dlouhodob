@@ -224,7 +224,7 @@ public class UIOptionsManager : MonoBehaviour
         } 
         else if(resolutionDropdown.value == 1)
         {
-            Screen.SetResolution(1600, 1200, Screen.fullScreenMode, 60);
+            Screen.SetResolution(1600, 900, Screen.fullScreenMode, 60);
         }
         else if (resolutionDropdown.value == 2)
         {

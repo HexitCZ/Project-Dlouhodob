@@ -17,7 +17,7 @@ MonoBehaviour:
 
     Than this piece of art
     is perfect for you!'
-  position: {x: 0, y: 0, z: 0}
+  muzzleFlashPosition: {x: 0, y: 0.45, z: 2.2}
   rotation: {x: 0, y: 0, z: 0}
   scale: {x: 0.59, y: 0.59, z: 0.59}
   ammoIndex: 1

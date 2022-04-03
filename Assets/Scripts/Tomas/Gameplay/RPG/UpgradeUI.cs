@@ -29,8 +29,11 @@ public class UpgradeUI : MonoBehaviour
         }
 
         Debug.LogWarning(fields.Count);
+
+        Enable();
+        Disable();
         
-        
+
     }
 
     public void Enable()

@@ -8,16 +8,16 @@ public class Endgame : MonoBehaviour
     public bool secretMessage;
     public GameObject secretMessageText;
     
-    private void Awake()
-    {
-        PlayerPrefs.SetInt("endgame", 0);
-    }
-
-
+    
 
     private void Start()
     {
-        if (PlayerPrefs.GetInt("endgame") != 0)
+        if (PlayerPrefs.HasKey("endgame"))
+        {
+            Debug.LogWarning(PlayerPrefs.GetInt("endgame"));
+        }
+
+        if (PlayerPrefs.GetInt("endgame") == 1)
         {
             if (secretMessage)
             {
@@ -32,6 +32,7 @@ public class Endgame : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             PlayerPrefs.SetInt("endgame", 1);
+            PlayerPrefs.Save();
         }
     }
 }

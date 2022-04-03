@@ -34,7 +34,7 @@ public class WeaponController : MonoBehaviour
     [Space]
     private bool shoot;
     private double shoot_charge;
-    private bool shooting;
+    //private bool shooting;
     private bool reloading;
     private RaycastHit hit;
     private Transform source;
@@ -116,6 +116,7 @@ public class WeaponController : MonoBehaviour
         ammoIndex = currentWeapon.ammoIndex;
         Destroy(weaponRenderer.transform.GetChild(1).gameObject);
         GameObject t = Instantiate(newWO.mesh, weaponRenderer.transform);
+        muzzleFlashObject.transform.localPosition = newWO.muzzleFlashPosition;
          
         ammoPack = GetAmmoPack();
     }
@@ -132,7 +133,7 @@ public class WeaponController : MonoBehaviour
         {
             if (shoot && readyToShoot && /*COMMENT FOR RELOADING > */ ammoPack.bullets_left > 0) //ammoPack.bullets_in_magazine > 0 && !reloading) RELOADING
             {
-                shooting = true;
+                //shooting = true;
                 if (currentWeapon.fullAuto)
                 {
                     Shoot();
@@ -249,7 +250,7 @@ public class WeaponController : MonoBehaviour
     private void ResetShot()
     {
         readyToShoot = true;
-        shooting = false;
+        //shooting = false;
         animator.SetBool("Shoot", false);
 
         UpdateAmmoData();

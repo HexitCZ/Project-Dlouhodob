@@ -1,44 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HubScript : MonoBehaviour
 {
+    
+    
+
     void Start()
     {
-               
+       
     }
 
     void Update()
     {
         
     }
-    bool huh = true;
+    //bool huh = true;
     private void OnTriggerStay(Collider other)
     {
-        if (other.name == "MidBody")
+        if (other.CompareTag("Player"))
         {
-            huh = true;
+            //huh = true;
             FPSInteractionManager.instance.DisableFPSWeapon();
         }
-        else if (other.name == "Head")
-        {
-            huh = true;
-            FPSInteractionManager.instance.DisableFPSWeapon();
-        }
+        
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.name == "MidBody")
+        if (other.CompareTag("Player"))
         {
-            huh = false;
+            //huh = false;
             FPSInteractionManager.instance.EnableFPSWeapon();
         } 
-        else if (other.name == "Head")
-        {
-            huh = false;
-            FPSInteractionManager.instance.EnableFPSWeapon();
-        }
+        
     }
 }

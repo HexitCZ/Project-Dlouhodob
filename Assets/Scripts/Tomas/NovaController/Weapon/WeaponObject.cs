@@ -10,7 +10,7 @@ public class WeaponObject : ScriptableObject
     public string gunName;
     [Multiline]
     public string description;
-    public Vector3 position;
+    public Vector3 muzzleFlashPosition;
     public Vector3 rotation;
     public Vector3 scale;
     public int ammoIndex;

@@ -2022,6 +2022,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1316212483, guid: cb372f40e1290104e8642d60d5287f2f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032317599, guid: cb372f40e1290104e8642d60d5287f2f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1394687361306052362, guid: cb372f40e1290104e8642d60d5287f2f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1394687361556880464, guid: cb372f40e1290104e8642d60d5287f2f, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 1394687361556880467, guid: cb372f40e1290104e8642d60d5287f2f, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -4277,6 +4293,10 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 725226033}
+    - target: {fileID: 4268357316164657258, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
+      propertyPath: showChecks
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4268357316164657263, guid: 9f108d0f21d7b8349a320e78e36092fd, type: 3}
       propertyPath: m_Name
       value: NovaController
@@ -4551,7 +4571,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'CONGRATULATIONS
 
-    WE HOPE THAT YOU LIKED THE GAME'
+    WE HOPE THAT YOU ENJOYED OUR GAME '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 05a98b711e2523b4eb5323d74cc489b4, type: 2}
   m_sharedMaterial: {fileID: 2399431720096826473, guid: 05a98b711e2523b4eb5323d74cc489b4, type: 2}

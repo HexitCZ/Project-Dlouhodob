@@ -1015,7 +1015,7 @@ MonoBehaviour:
   icon: {fileID: 0}
   cooldown: 10
   readySound: {fileID: 8300000, guid: c0733b4a3e340f44dab5a082d8b7f180, type: 3}
-  activateSound: {fileID: 8300000, guid: 7afc9c89a28d9434cb2aef90a5de56f7, type: 3}
+  activateSound: {fileID: 8300000, guid: ac571f535c44581489c79acb3f38c822, type: 3}
   readySoundSource: {fileID: 2019779252}
   length: 3
   damageMultiplier: 2
@@ -1141,7 +1141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: cbe2512c483db2a4fb286d247b188021, type: 3}
+  - {fileID: 8300000, guid: fd29a03aec3786e49a320b81b56ba48d, type: 3}
   - {fileID: 8300000, guid: e11fe90c5ef8ae0408238483420867b9, type: 3}
   - {fileID: 8300000, guid: 51aa0a4e993c6a94b8546b6a9030eb9e, type: 3}
   source: {fileID: 2019779250}

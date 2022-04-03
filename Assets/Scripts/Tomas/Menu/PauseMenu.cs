@@ -16,7 +16,8 @@ public class PauseMenu : MonoBehaviour
     {
         state = true;
         escapeMenu.SetActive(true);
-        FPSInteractionManager.instance.DisableFPSInteraction();
+        FPSInteractionManager.instance.DisableFPSInteraction(true);
+        
     }
 
     public void Hide()
@@ -30,6 +31,7 @@ public class PauseMenu : MonoBehaviour
     {
         exitMenu.SetActive(true);
     }
+
 
     public void OnConfirmExit()
     {

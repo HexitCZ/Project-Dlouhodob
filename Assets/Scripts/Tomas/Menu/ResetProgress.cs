@@ -6,6 +6,7 @@ public class ResetProgress : MonoBehaviour
 {
     public void OnResetProgress()
     {
+        PlayerPrefs.SetInt("upgrades", 0);
         PlayerPrefs.SetInt("progress", 0);
         PlayerPrefs.SetInt("level", 0);
         PlayerPrefs.SetInt("xp", 0);

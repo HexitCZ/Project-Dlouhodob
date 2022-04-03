@@ -7,7 +7,7 @@ public class AI_Test_Script : AI_Base
     public bool removeHealth;
     public float slowDownSpeed;
     public float slowDownLength;
-    private float startSpeed;
+    private new float startSpeed;
     private bool isSlowed;
 
     private new void Start()
@@ -46,7 +46,7 @@ public class AI_Test_Script : AI_Base
 
     }
 
-    public void GetHit()
+    public new void GetHit()
     {
         base.GetHit();
         TrySlowDown();
