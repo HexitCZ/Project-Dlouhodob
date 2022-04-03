@@ -6,7 +6,7 @@ using UnityEngine.VFX;
 public class WaveSystem : MonoBehaviour
 {
     public bool DEBUG_START;
-    public Door_script door;
+    public door_script door;
     public GameObject spawnVFX;
     public float spawnSlowDown;
     public GameObject[] waveObjects;
@@ -90,8 +90,8 @@ public class WaveSystem : MonoBehaviour
             
             PlayerPrefs.SetInt("level2unlocked", 1);
             PlayerPrefs.Save();
-            door.automatic = true;
-            door.open = true;
+            //door.automatic = true;
+            //door.open = true;
             EndWaves();
             return;
         }
