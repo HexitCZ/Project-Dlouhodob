@@ -220,7 +220,7 @@ public class UIOptionsManager : MonoBehaviour
     {
         if (resolutionDropdown.value == 0)
         {
-            Screen.SetResolution(1920, 1020, Screen.fullScreenMode, 60);
+            Screen.SetResolution(1920, 1080, Screen.fullScreenMode, 60);
         } 
         else if(resolutionDropdown.value == 1)
         {

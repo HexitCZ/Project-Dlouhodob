@@ -13,7 +13,7 @@ public class door_script : MonoBehaviour
     [SerializeField]
     private bool broken;
     [SerializeField]
-    private bool needsKey;
+    public bool needsKey;
     [SerializeField]
     private bool inRange;
 

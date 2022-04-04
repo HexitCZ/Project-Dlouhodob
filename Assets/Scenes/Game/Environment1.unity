@@ -15617,7 +15617,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DEBUG_START: 1
-  door: {fileID: 0}
+  door: {fileID: 1529437669056734390}
   spawnVFX: {fileID: 3390228663416687271, guid: 61befa7a3c33d414cba02556956f3ca6, type: 3}
   spawnSlowDown: 0.2
   waveObjects:
@@ -24653,6 +24653,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3728291565936079364, guid: e91ad648ac087154ab1a9f3f233124e3, type: 3}
   m_PrefabInstance: {fileID: 2775389561198352049}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1529437669056734390 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2775389560283440203, guid: e91ad648ac087154ab1a9f3f233124e3, type: 3}
+  m_PrefabInstance: {fileID: 2775389561198352049}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16449b51572dc2040bb299203b58c35a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &1595564288145192901
 MeshFilter:
   m_ObjectHideFlags: 0
