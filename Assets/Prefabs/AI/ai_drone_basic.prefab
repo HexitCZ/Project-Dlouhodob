@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7059576503648767861}
   m_Layer: 0
   m_Name: l_rotator
-  m_TagString: Untagged
+  m_TagString: AI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 3999702353708102561}
   m_Layer: 0
   m_Name: back_armor
-  m_TagString: Untagged
+  m_TagString: AI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 8894724110292795422}
   m_Layer: 0
   m_Name: l_engine_armor
-  m_TagString: Untagged
+  m_TagString: AI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 5814795548352297079}
   m_Layer: 0
   m_Name: r_engine_armor
-  m_TagString: Untagged
+  m_TagString: AI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 1513986506400873632}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: AI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -428,7 +428,7 @@ GameObject:
   - component: {fileID: 3871421355279556250}
   m_Layer: 0
   m_Name: weapon
-  m_TagString: Untagged
+  m_TagString: AI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -511,7 +511,7 @@ GameObject:
   - component: {fileID: 8349026303974228383}
   m_Layer: 0
   m_Name: weapon_axis
-  m_TagString: Untagged
+  m_TagString: AI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -594,7 +594,7 @@ GameObject:
   - component: {fileID: 1926382051507733260}
   m_Layer: 0
   m_Name: r_rotator
-  m_TagString: Untagged
+  m_TagString: AI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -677,7 +677,7 @@ GameObject:
   - component: {fileID: 1226882607960713991}
   m_Layer: 0
   m_Name: r_engine
-  m_TagString: Untagged
+  m_TagString: AI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -760,7 +760,7 @@ GameObject:
   - component: {fileID: 2219218537031416606}
   m_Layer: 0
   m_Name: front_armor
-  m_TagString: Untagged
+  m_TagString: AI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -841,7 +841,7 @@ GameObject:
   - component: {fileID: 4982378971164376625}
   m_Layer: 0
   m_Name: drone
-  m_TagString: Untagged
+  m_TagString: AI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -888,7 +888,7 @@ GameObject:
   - component: {fileID: 6235964004094410800}
   m_Layer: 0
   m_Name: l_engine
-  m_TagString: Untagged
+  m_TagString: AI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1031,7 +1031,7 @@ MonoBehaviour:
   heatCapacity: 25
   engines:
   - {fileID: 6349972324902762579}
-  - {fileID: 0}
+  - {fileID: 4667526444260440590}
 --- !u!114 &6338468088513502594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1213,8 +1213,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.3203034, y: 0.626738, z: 5.964582}
-  m_Center: {x: 0.008074624, y: 6.842609, z: 0.028180733}
+  m_Size: {x: 1.3203034, y: 0.7118614, z: 3.1882696}
+  m_Center: {x: 0.0080746235, y: 5.307921, z: 1.4163334}
 --- !u!65 &6338468088513502623
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1226,8 +1226,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.586534, y: 2.2940211, z: 2.203722}
-  m_Center: {x: 0.7507352, y: 6.8352404, z: 0.028180659}
+  m_Size: {x: 7.155005, y: 1.8694847, z: 2.3680778}
+  m_Center: {x: -1.8127892e-16, y: 6.83524, z: -0.08217899}
 --- !u!1 &6550449376576152002
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,7 +1239,7 @@ GameObject:
   - component: {fileID: 6550449376576152005}
   m_Layer: 0
   m_Name: ProjectileSpawnPoint
-  m_TagString: Untagged
+  m_TagString: AI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1272,7 +1272,7 @@ GameObject:
   - component: {fileID: 5814747998286805760}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: AI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1355,7 +1355,7 @@ GameObject:
   - component: {fileID: 8838060610569716007}
   m_Layer: 0
   m_Name: weapon_holder
-  m_TagString: Untagged
+  m_TagString: AI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1438,7 +1438,7 @@ GameObject:
   - component: {fileID: 4029072987069768550}
   m_Layer: 0
   m_Name: body
-  m_TagString: Untagged
+  m_TagString: AI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1575,6 +1575,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HoverEngine (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6349972324704557912, guid: b34b44787f9b23d4cae5e5a1beebfccd, type: 3}
+      propertyPath: m_TagString
+      value: AI
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b34b44787f9b23d4cae5e5a1beebfccd, type: 3}
 --- !u!4 &6004550110389969641 stripped
@@ -1654,8 +1658,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: HoverEngine (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6349972324704557912, guid: b34b44787f9b23d4cae5e5a1beebfccd, type: 3}
+      propertyPath: m_TagString
+      value: AI
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b34b44787f9b23d4cae5e5a1beebfccd, type: 3}
+--- !u!1 &4667526444260440590 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6349972324704557912, guid: b34b44787f9b23d4cae5e5a1beebfccd, type: 3}
+  m_PrefabInstance: {fileID: 1790674248100028758}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5444203507463938228 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6004550110445552098, guid: b34b44787f9b23d4cae5e5a1beebfccd, type: 3}
