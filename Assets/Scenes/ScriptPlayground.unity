@@ -2850,6 +2850,7 @@ MonoBehaviour:
   xpGain: 0
   currencyGain: 0
   heatCapacity: 0
+  engines: []
 --- !u!65 &597349083
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9898,6 +9899,7 @@ MonoBehaviour:
   xpGain: 0
   currencyGain: 0
   heatCapacity: 0
+  engines: []
 --- !u!195 &551319817882438975
 NavMeshAgent:
   m_ObjectHideFlags: 0
