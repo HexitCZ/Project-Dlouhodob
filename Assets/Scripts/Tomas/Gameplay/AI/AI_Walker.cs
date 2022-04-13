@@ -105,7 +105,7 @@ public class AI_Walker : AI_Base
 
     protected override void Attack()
     {
-        weapon.Shoot(target.position);
+        weapon?.Shoot(target.position);
     }
 
     private bool died = false;
