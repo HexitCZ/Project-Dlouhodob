@@ -46,6 +46,7 @@ public class BodyController : MonoBehaviour
 
     void FixedUpdate()
     {
+
         TranslateBody();
         JumpRB();
         MoveRB();
@@ -78,6 +79,7 @@ public class BodyController : MonoBehaviour
         bodyData.head.transform.position = bodyData.body.transform.position + headToBodyDistance;
     }
     #endregion
+
 
     #region Physics
     private void MoveRB()
