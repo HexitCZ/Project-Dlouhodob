@@ -35,7 +35,9 @@ public class CannonScript : MonoBehaviour
         
     }
 
-    void AddStartForce()
+
+
+    void AddForce()
     {
         orb_instance.GetComponent<Rigidbody>().AddForce(target.position - transform.position * speed);
     }
@@ -45,6 +47,6 @@ public class CannonScript : MonoBehaviour
         orb_instance = Instantiate(orb, original_orb.position, Quaternion.identity);
         orb_instance.gameObject.SetActive(true);
         orb_instance.GetComponent<Rigidbody>().useGravity = false;
-        AddStartForce();
+        AddForce();
     }
 }
