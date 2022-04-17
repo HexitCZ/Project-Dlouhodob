@@ -1,14 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
 
-public class PillarScript : MonoBehaviour
+public class PillarScript : MonoBehaviour, IHittable
 {
     [SerializeField]
     [Space]
     private Transform pillar_piece_1;
-    
+
     [SerializeField]
     [Space]
     private Transform pillar_piece_2;
@@ -47,13 +45,11 @@ public class PillarScript : MonoBehaviour
         p1_rb = pillar_piece_1.GetComponent<Rigidbody>();
         p2_rb = pillar_piece_1.GetComponent<Rigidbody>();
         p3_rb = pillar_piece_1.GetComponent<Rigidbody>();
-        orb_rb = pillar_piece_1.GetComponent<Rigidbody>();
         orbb_rb = pillar_piece_1.GetComponent<Rigidbody>();
 
         p1_rb.useGravity = false;
         p2_rb.useGravity = false;
         p3_rb.useGravity = false;
-        orb_rb.useGravity = false;
         orbb_rb.useGravity = false;
 
         pillar_orb_broken.GetComponent<MeshRenderer>().enabled = false;
@@ -61,31 +57,21 @@ public class PillarScript : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
-    public void OnCollisionEnter(Collision collision)
+    public virtual void GetHit()
     {
-        if (collision.transform.name == "shot")
-        {
-            pillar_orb_broken.GetComponent<MeshRenderer>().enabled = true;
+        pillar_orb_broken.GetComponent<MeshRenderer>().enabled = true;
+        pillar_orb.GetComponent<MeshRenderer>().enabled = false;
+        Destruct();
 
-            if (CheckAssignedExplodeEffect())
-            {
-
-            }
-            else
-            {
-                explode_effect.Play();
-            }
-
-            Destruct();
-        }
+        
     }
 
     private bool CheckAssignedExplodeEffect()
     {
-        if(explode_effect != null)
+        if (explode_effect != null)
         {
             return true;
         }
@@ -95,8 +81,16 @@ public class PillarScript : MonoBehaviour
         }
     }
 
-    private void Destruct()
+    public void Destruct()
     {
+        if (CheckAssignedExplodeEffect())
+        {
+            explode_effect.Play();           
+        }
+        else
+        {
+            explode_effect = null;
+        }
         sound_source.Play(0);
 
         EnableGravity();
@@ -107,7 +101,6 @@ public class PillarScript : MonoBehaviour
         p1_rb.useGravity = true;
         p2_rb.useGravity = true;
         p3_rb.useGravity = true;
-        orb_rb.useGravity = true;
         orbb_rb.useGravity = true;
     }
 }

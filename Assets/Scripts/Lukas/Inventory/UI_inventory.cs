@@ -137,7 +137,6 @@ public class UI_inventory : MonoBehaviour
     {
         bool isSet = false;
         bool isAvailable = false;
-        Transform setObject = null;
 
         foreach (Transform child in transform)
         {
@@ -168,6 +167,7 @@ public class UI_inventory : MonoBehaviour
                         {
                             SetColor(item_color, color);
                         }
+                        
                         SetItemName(item_text, name);
                         SetItem(item_sprite, sprite);
                         isSet = true;

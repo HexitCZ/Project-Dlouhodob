@@ -66,6 +66,7 @@ public class KeycardScript : MonoBehaviour
     
     }
 
+    [System.Obsolete]
     public void OnTriggerEnter(Collider other)
     {
 

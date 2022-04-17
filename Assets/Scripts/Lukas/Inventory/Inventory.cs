@@ -37,6 +37,7 @@ public class Inventory : ScriptableObject
 
     }
 
+    [System.Obsolete]
     public void AddItem(Item item, Color color)
     {
         Sprite sprite = itemAssigner.GetItemImage(item);
