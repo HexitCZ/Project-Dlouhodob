@@ -13,7 +13,9 @@ public class OrbScript : MonoBehaviour
     [SerializeField]
     [Space]
     [Range(0.0f, 100.0f)]
-    private float speed = 20.0f;
+    private float orb_speed = 10.0f;
+
+    //private float constant_orb_speed = 10.0f;
 #pragma warning disable IDE0052
     private int partIndex;
 #pragma warning restore IDE0052
@@ -30,7 +32,7 @@ public class OrbScript : MonoBehaviour
 
     void Update()
     {
-        
+         
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -95,10 +97,25 @@ public class OrbScript : MonoBehaviour
 
     void AddRandomForceToOrb()
     {
-        Vector3 forceToAdd = Random.onUnitSphere * speed;
-        while (rb.velocity.magnitude < 10)
+        float x_value = Random.Range(0, 100);
+        float y_value = Random.Range(0, 100);
+        float z_value = Random.Range(0, 100);
+
+        if (x_value < 5.0f)
         {
-            rb.AddRelativeForce(forceToAdd);
+            x_value *= orb_speed;
         }
+        else if (y_value < 5.0f)
+        {
+            y_value *= orb_speed;
+        }
+        else if (z_value < 5.0f)
+        {
+            z_value *= orb_speed;
+        }
+        Vector3 forceToAdd = new Vector3(x_value, y_value, z_value);
+
+        Debug.Log(forceToAdd);
+        rb.AddForce(Vector3.Reflect(transform.position, Vector3.right));
     }
 }

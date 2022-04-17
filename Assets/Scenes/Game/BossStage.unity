@@ -271,7 +271,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 630}
+  m_AnchoredPosition: {x: 0, y: 315}
   m_SizeDelta: {x: 1000, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &245854239
@@ -691,7 +691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 279998826}
-  speed: 40
+  orb_speed: 10
 --- !u!23 &381374823
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1413,7 +1413,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 685}
+  m_AnchoredPosition: {x: 0, y: 388}
   m_SizeDelta: {x: 360, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1021726674
@@ -6085,6 +6085,7 @@ GameObject:
   - component: {fileID: 6259472948441691404}
   - component: {fileID: 6259472948441691509}
   - component: {fileID: 6259472948441691510}
+  - component: {fileID: 6259472948441691516}
   m_Layer: 0
   m_Name: NEW_AI_Walker_BIG
   m_TagString: AI
@@ -6092,6 +6093,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6259472948441691516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6259472948441691515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fb037a6df3557949a04bf19cfc0a61a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ai_walker: {fileID: 6259472948441691506}
+  healthbar: {fileID: 245854239}
 --- !u!4 &6265081520371486811
 Transform:
   m_ObjectHideFlags: 0

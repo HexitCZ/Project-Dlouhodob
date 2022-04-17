@@ -15,6 +15,7 @@ public class SpiderHealthBarScript : MonoBehaviour
 
     void Start()
     {
+        healthbar.maxValue = ai_walker.health;
         //Debug.Log(ai_walker.health);
     }
 
