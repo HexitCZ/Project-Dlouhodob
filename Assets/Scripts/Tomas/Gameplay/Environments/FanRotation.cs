@@ -6,6 +6,7 @@ public class FanRotation : MonoBehaviour
 {
     public float rotationSpeed;
 
+    //Makes environments nicer with random fan rotation
 
     private void Update()
     {

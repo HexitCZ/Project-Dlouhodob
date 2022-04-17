@@ -35,6 +35,7 @@ public class AI_Base : MonoBehaviour, IHittable
 
     protected void Start()
     {
+        //Checks if this object is supposed to move or not.
         if (dynamic)
         {
             navmesh = gameObject?.GetComponent<NavMeshAgent>();
@@ -48,17 +49,20 @@ public class AI_Base : MonoBehaviour, IHittable
 
     protected void Update()
     {
+       
         preUpdateAction?.Invoke();
 
         if (isAlive)
         {
+            //Update movement variables
             targetDistance = Vector3.Distance(target.position, this.transform.position);
             targetDirection = -(this.transform.position - target.position).normalized;
             Debug.DrawRay(this.transform.position, targetDirection, Color.red,0.2f);
             if (dynamic)
             {
                 SetDestination(target);
-                
+
+                //Keeps ai from pushing player by setting how close it can move to player
                 if(targetDistance < maximumDistance)
                 {
                     navmesh.speed = Mathf.Lerp(navmesh.speed, 0, navmesh.acceleration / 10);
@@ -89,7 +93,6 @@ public class AI_Base : MonoBehaviour, IHittable
 
         postUpdateAction?.Invoke();
     }
-
 
     protected virtual void SetDestination(Transform destination)
     {
