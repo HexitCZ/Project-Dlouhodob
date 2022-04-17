@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class KillBox : MonoBehaviour
 {
+    //Keeps player from falling to infinity
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))

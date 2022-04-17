@@ -11,6 +11,10 @@ public class BulletChoose : MonoBehaviour
         Check();   
     }
 
+    //A really ugly way of doing this but it's working so. Yes.
+    //Method for all bullet types for all weapons.
+
+
     public void Check()
     {
         bool laser = GameProgressManager.instance.GetEventProgress("BulletUpgrades", "Laser");

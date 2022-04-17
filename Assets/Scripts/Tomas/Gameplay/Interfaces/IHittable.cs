@@ -4,5 +4,6 @@ using UnityEngine;
 
 public interface IHittable
 {
+    //Gets called when hit by a player
     void GetHit();
 }
