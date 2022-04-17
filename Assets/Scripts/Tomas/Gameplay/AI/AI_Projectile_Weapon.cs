@@ -24,8 +24,9 @@ public class AI_Projectile_Weapon : MonoBehaviour
 
     public void Shoot(Vector3 direction)
     {
-        //Instantiate
-        //Set bullet object
+        //Creates and sets a new bullet object
+        
+
         if (canShoot)
         {
             canShoot = false;

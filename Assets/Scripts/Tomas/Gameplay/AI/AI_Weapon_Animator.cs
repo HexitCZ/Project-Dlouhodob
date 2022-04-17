@@ -12,6 +12,10 @@ public class AI_Weapon_Animator : MonoBehaviour
     public Quaternion yRot;
     public Quaternion xRot;
 
+
+    /// <summary>
+    /// Math.
+    /// </summary>
     void Update()
     {
         Vector3 playerDirection = (X.transform.position - target.transform.position).normalized;

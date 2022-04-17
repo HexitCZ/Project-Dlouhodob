@@ -57,6 +57,9 @@ public class AI_Walker : AI_Base
         TrySlowDown();
     }
 
+    /// <summary>
+    /// If shot, slows down to slowDownSpeed and sets a timer for resetting the speed to normal speed
+    /// </summary>
     private void TrySlowDown()
     {
         
@@ -108,6 +111,7 @@ public class AI_Walker : AI_Base
         weapon?.Shoot(target.position);
     }
 
+    //Ugly way of keeping ai from dying multiple times
     private bool died = false;
 
     protected override void Death()

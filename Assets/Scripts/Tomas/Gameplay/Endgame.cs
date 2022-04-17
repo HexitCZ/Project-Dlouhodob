@@ -9,7 +9,9 @@ public class Endgame : MonoBehaviour
     public GameObject secretMessageText;
     
     
-
+    /// <summary>
+    /// Loads endgame variable for showing secretMessageText in hub scene
+    /// </summary>
     private void Start()
     {
         if (PlayerPrefs.HasKey("endgame"))
@@ -26,7 +28,10 @@ public class Endgame : MonoBehaviour
         }
     }
 
-
+    /// <summary>
+    ///  Saves endgame variable for showing secretMessageText in hub scene when player enters
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))

@@ -40,23 +40,13 @@ public class H_IK : MonoBehaviour
 
     void Init()
     {
-        //initial array
         Bones = new Transform[ChainLength + 1];
         Positions = new Vector3[ChainLength + 1];
         BonesLength = new float[ChainLength];
         StartDirectionSucc = new Vector3[ChainLength + 1];
         StartRotationBone = new Quaternion[ChainLength + 1];
 
-        /*//find root
-        Root = transform;
-        for (var i = 0; i <= ChainLength; i++)
-        {
-            if (Root == null)
-                throw new UnityException("The chain value is longer than the ancestor chain!");
-            Root = Root.parent;
-        }*/
-
-        //init target
+        
         if (Target == null)
         {
             Target = new GameObject(gameObject.name + " Target").transform;
@@ -93,7 +83,6 @@ public class H_IK : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void LateUpdate()
     {
         ResolveIK();
@@ -107,13 +96,7 @@ public class H_IK : MonoBehaviour
         if (BonesLength.Length != ChainLength)
             Init();
 
-        //Fabric
-
-        //  root
-        //  (bone0) (bonelen 0) (bone1) (bonelen 1) (bone2)...
-        //   x--------------------x--------------------x---...
-
-        //get position
+        
         for (int i = 0; i < Bones.Length; i++)
             Positions[i] = GetPositionRootSpace(Bones[i]);
 
@@ -155,7 +138,7 @@ public class H_IK : MonoBehaviour
             }
         }
 
-        //move towards pole
+        
         if (Pole != null)
         {
             var polePosition = GetPositionRootSpace(Pole);
@@ -169,7 +152,7 @@ public class H_IK : MonoBehaviour
             }
         }
 
-        //set position & rotation
+        
         for (int i = 0; i < Positions.Length; i++)
         {
             if (i == Positions.Length - 1)
@@ -198,7 +181,7 @@ public class H_IK : MonoBehaviour
 
     private Quaternion GetRotationRootSpace(Transform current)
     {
-        //inverse(after) * before => rot: before -> after
+        
         if (Root == null)
             return current.rotation;
         else
@@ -212,19 +195,5 @@ public class H_IK : MonoBehaviour
         else
             current.rotation = Root.rotation * rotation;
     }
-    /*
-    void OnDrawGizmos()
-    {
-        var current = this.transform;
-        for (int i = 0; i < ChainLength && current != null && current.parent != null; i++)
-        {
-            var scale = Vector3.Distance(current.position, current.parent.position) * 0.1f;
-            Handles.matrix = Matrix4x4.TRS(current.position, Quaternion.FromToRotation(Vector3.up, current.parent.position - current.position), new Vector3(scale, Vector3.Distance(current.parent.position, current.position), scale));
-            Handles.color = Color.green;
-            Handles.DrawWireCube(Vector3.up * 0.5f, Vector3.one);
-            current = current.parent;
-        }
-
-    }
-    */
+    
 }
