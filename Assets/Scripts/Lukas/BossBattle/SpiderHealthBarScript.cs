@@ -20,6 +20,6 @@ public class SpiderHealthBarScript : MonoBehaviour
 
     void Update()
     {
-        //healthbar.value = ai_walker.health;
+        healthbar.value = ai_walker.health;
     }
 }
