@@ -42,10 +42,10 @@ public class AI_Leg_Controller : MonoBehaviour
         stepUpAmount = ikdata.stepUpAmount;
 
         ikSolver = transform.GetChild(0).GetComponent<H_IK>();
-        ikSolver.Target = legTransform;
-        ikSolver.Pole = ikdata.legs[ikindex].pole;
-        ikSolver.ChainLength = ikdata.legs[ikindex].chainLength;
-        ikSolver.Iterations = ikdata.iterations;
+        ikSolver.target = legTransform;
+        ikSolver.rotationPoint = ikdata.legs[ikindex].pole;
+        ikSolver.legLength = ikdata.legs[ikindex].chainLength;
+        ikSolver.iterationsPerFrame = ikdata.iterations;
     }
 
     void Update()
