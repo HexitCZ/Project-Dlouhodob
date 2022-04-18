@@ -7,7 +7,7 @@ public class SaveProgress : MonoBehaviour
 {
     public static SaveProgress instance;
 
-    private void Start()
+    private void Awake()
     {
         instance = this;
         
