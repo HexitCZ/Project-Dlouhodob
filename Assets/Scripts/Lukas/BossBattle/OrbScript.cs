@@ -27,6 +27,11 @@ public class OrbScript : MonoBehaviour
 #pragma warning disable IDE0052
     private int partIndex;
 #pragma warning restore IDE0052
+
+    /// <summary>
+    /// Konstruktor tridy
+    /// </summary>
+    /// <param name="partIndex"></param>
     public OrbScript(int partIndex)
     {
         this.partIndex = partIndex;
@@ -43,7 +48,10 @@ public class OrbScript : MonoBehaviour
     {
          
     }
-
+    /// <summary>
+    /// Interakce s objekty podle toho, na ktery projektil narazil
+    /// </summary>
+    /// <param name="collision"></param>
     public void OnCollisionEnter(Collision collision)
     {   
         if(collision.transform.name == "Body")
@@ -99,6 +107,9 @@ public class OrbScript : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Zniceni projektilu potom, co uz neni uzitecny
+    /// </summary>
     private void DestroyOrb()
     {
         renderer = this.GetComponent<MeshRenderer>();
@@ -110,6 +121,9 @@ public class OrbScript : MonoBehaviour
         Destroy(this.gameObject);
     }
 
+    /// <summary>
+    /// Pridani sily k objektu pri odrazu od objektu
+    /// </summary>
     void AddRandomForceToOrb()
     {
         float x_value = Random.Range(0, 100);

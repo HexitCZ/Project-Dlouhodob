@@ -43,7 +43,18 @@ public class Item : ScriptableObject
 
     public new Type GetType()
     {
-        return this.type;
+        Type output;
+        
+        if(this.type != null)
+        {
+            output = this.type;
+        }
+        else
+        {
+            output = Type.keycard;
+        }
+
+        return output;
     }
 
     public void SetColor(Color color)

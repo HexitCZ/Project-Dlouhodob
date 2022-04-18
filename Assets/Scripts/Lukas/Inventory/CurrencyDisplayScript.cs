@@ -76,6 +76,8 @@ public class CurrencyDisplayScript : MonoBehaviour
 
     void Start()
     {
+        try 
+        {
         currency_text_holder = currency_ui_holder.GetChild(2).GetComponent<TextMeshProUGUI>();
         exp_text_holder = exp_ui_holder.GetChild(2).GetComponent<TextMeshProUGUI>();
         upgrade_points_text_holder = upgrade_points_ui_holder.GetChild(2).GetComponent<TextMeshProUGUI>();
@@ -83,6 +85,11 @@ public class CurrencyDisplayScript : MonoBehaviour
         currency_display_text = "Currency: ";
         exp_display_text = "Experience: ";
         upgrade_points_display_text = "Upgrade points: ";
+        }
+        catch (UnassignedReferenceException)
+        {
+
+        }
     }
 
     private void DisplayCurrencyAmount()

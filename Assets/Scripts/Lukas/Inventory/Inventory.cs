@@ -24,12 +24,20 @@ public class Inventory : ScriptableObject
 
     public void Awake()
     {
+        try 
+        {
+
         ui_Inventory = GameObject.Find("inventory_container").GetComponent<UI_inventory>();
         itemAssigner = (ItemAssigner)ScriptableObject.CreateInstance("ItemAssigner");
         inventory_list = new List<(Item, Color)>();
         Colors = new List<Color> { Color.red, Color.green, Color.blue, Color.yellow, Color.magenta };
-
         PlayerPrefs.SetInt("level2unlocked", 0);
+
+        }
+        catch (UnassignedReferenceException)
+        {
+           
+        }
     }
 
     public void Update()

@@ -157,7 +157,9 @@ public class SpiderMainScript : MonoBehaviour
         round = 1;
         pillar_broken_count = 0;
     }
-
+    /// <summary>
+    /// Hlavni misto pro logiku boje s pavoukem
+    /// </summary>
     void Update()
     {
         if (spawning)
@@ -244,6 +246,11 @@ public class SpiderMainScript : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Prohledani kolekce piliru pro potencialni nalezeni nove zniceneho sloupu
+    /// </summary>
+    /// <returns></returns>
+
     bool NewBrokenPillar()
     {
         int count = 0;
@@ -268,16 +275,29 @@ public class SpiderMainScript : MonoBehaviour
         return output;
     }
 
+    /// <summary>
+    /// Strili z kanonu
+    /// </summary>
+
     void ShootCannon()
     {
         cannonScript.Shoot();
     }
+
+    /// <summary>
+    /// Vraci hodnotu promenne round
+    /// </summary>
+    /// <returns></returns>
     public int GetRound()
     {
         Debug.Log(round);
         return round;
     }
 
+    /// <summary>
+    /// Vraci akci, kterou provadi pavouk
+    /// </summary>
+    /// <returns></returns>
     public string GetStatus()
     {
         string status = "";

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WaveChecker : MonoBehaviour
@@ -23,14 +21,16 @@ public class WaveChecker : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
-    
+
     void Update()
     {
-        
+
     }
+
+    //Skrze metody se ziska informace o tom, jestli hrac znicil vsechny nepratele prislusne vlny
 
     public bool Wave1Complete(Transform h1, Transform h2, Transform d1, Transform d2)
     {
@@ -38,31 +38,42 @@ public class WaveChecker : MonoBehaviour
         bool output = false;
         int destroyed_count = 0;
 
-        Rigidbody rb1 = h1.GetComponent<Rigidbody>();
-        Rigidbody rb2 = h2.GetComponent<Rigidbody>();
-        Rigidbody rb3 = d1.GetComponent<Rigidbody>();
-        Rigidbody rb4 = d2.GetComponent<Rigidbody>();
-
-
-        if (!rb1.isKinematic)
+        try
         {
-            destroyed_count++;
+
+
+            Rigidbody rb1 = h1.GetComponent<Rigidbody>();
+            Rigidbody rb2 = h2.GetComponent<Rigidbody>();
+            Rigidbody rb3 = d1.GetComponent<Rigidbody>();
+            Rigidbody rb4 = d2.GetComponent<Rigidbody>();
+
+            if (!rb1.isKinematic)
+            {
+                destroyed_count++;
+            }
+
+            if (!rb2.isKinematic)
+            {
+                destroyed_count++;
+            }
+
+            if (!rb3.isKinematic)
+            {
+                destroyed_count++;
+            }
+
+            if (!rb4.isKinematic)
+            {
+                destroyed_count++;
+            }
+
+        }
+        catch (UnassignedReferenceException)
+        {
+            output = false;
         }
 
-        if (!rb2.isKinematic)
-        {
-            destroyed_count++;
-        }
 
-        if (!rb3.isKinematic)
-        {
-            destroyed_count++;
-        }
-
-        if (!rb4.isKinematic)
-        {
-            destroyed_count++;
-        }
 
         if (destroyed_count == wave1_count)
         {
@@ -80,43 +91,50 @@ public class WaveChecker : MonoBehaviour
     {
         bool output = false;
         int destroyed_count = 0;
-
-        Rigidbody rb1 = h3.GetComponent<Rigidbody>();
-        Rigidbody rb2 = h4.GetComponent<Rigidbody>();
-        Rigidbody rb3 = h5.GetComponent<Rigidbody>();
-        Rigidbody rb4 = d3.GetComponent<Rigidbody>();
-        Rigidbody rb5 = d4.GetComponent<Rigidbody>();
-        Rigidbody rb6 = d5.GetComponent<Rigidbody>();
-
-
-        if (!rb1.isKinematic)
+        try
         {
-            destroyed_count++;
+
+            Rigidbody rb1 = h3.GetComponent<Rigidbody>();
+            Rigidbody rb2 = h4.GetComponent<Rigidbody>();
+            Rigidbody rb3 = h5.GetComponent<Rigidbody>();
+            Rigidbody rb4 = d3.GetComponent<Rigidbody>();
+            Rigidbody rb5 = d4.GetComponent<Rigidbody>();
+            Rigidbody rb6 = d5.GetComponent<Rigidbody>();
+
+            if (!rb1.isKinematic)
+            {
+                destroyed_count++;
+            }
+
+            if (!rb2.isKinematic)
+            {
+                destroyed_count++;
+            }
+
+            if (!rb3.isKinematic)
+            {
+                destroyed_count++;
+            }
+
+            if (!rb4.isKinematic)
+            {
+                destroyed_count++;
+            }
+
+            if (!rb5.isKinematic)
+            {
+                destroyed_count++;
+            }
+
+            if (!rb6.isKinematic)
+            {
+                destroyed_count++;
+            }
+
         }
-
-        if (!rb2.isKinematic)
+        catch (UnassignedReferenceException)
         {
-            destroyed_count++;
-        }
-
-        if (!rb3.isKinematic)
-        {
-            destroyed_count++;
-        }
-
-        if (!rb4.isKinematic)
-        {
-            destroyed_count++;
-        }
-
-        if (!rb5.isKinematic)
-        {
-            destroyed_count++;
-        }
-
-        if (!rb6.isKinematic)
-        {
-            destroyed_count++;
+            output = false;
         }
 
         if (destroyed_count == wave2_count)
@@ -136,54 +154,63 @@ public class WaveChecker : MonoBehaviour
         bool output = false;
         int destroyed_count = 0;
 
-        Rigidbody rb1 = h6.GetComponent<Rigidbody>();
-        Rigidbody rb2 = h7.GetComponent<Rigidbody>();
-        Rigidbody rb3 = h8.GetComponent<Rigidbody>();
-        Rigidbody rb4 = h9.GetComponent<Rigidbody>();
-        Rigidbody rb5 = d6.GetComponent<Rigidbody>();
-        Rigidbody rb6 = d7.GetComponent<Rigidbody>();
-        Rigidbody rb7 = d8.GetComponent<Rigidbody>();
-        Rigidbody rb8 = d9.GetComponent<Rigidbody>();
-
-
-        if (!rb1.isKinematic)
+        try
         {
-            destroyed_count++;
+
+            Rigidbody rb1 = h6.GetComponent<Rigidbody>();
+            Rigidbody rb2 = h7.GetComponent<Rigidbody>();
+            Rigidbody rb3 = h8.GetComponent<Rigidbody>();
+            Rigidbody rb4 = h9.GetComponent<Rigidbody>();
+            Rigidbody rb5 = d6.GetComponent<Rigidbody>();
+            Rigidbody rb6 = d7.GetComponent<Rigidbody>();
+            Rigidbody rb7 = d8.GetComponent<Rigidbody>();
+            Rigidbody rb8 = d9.GetComponent<Rigidbody>();
+
+
+            if (!rb1.isKinematic)
+            {
+                destroyed_count++;
+            }
+
+            if (!rb2.isKinematic)
+            {
+                destroyed_count++;
+            }
+
+            if (!rb3.isKinematic)
+            {
+                destroyed_count++;
+            }
+
+            if (!rb4.isKinematic)
+            {
+                destroyed_count++;
+            }
+
+            if (!rb5.isKinematic)
+            {
+                destroyed_count++;
+            }
+
+            if (!rb6.isKinematic)
+            {
+                destroyed_count++;
+            }
+
+            if (!rb7.isKinematic)
+            {
+                destroyed_count++;
+            }
+
+            if (!rb8.isKinematic)
+            {
+                destroyed_count++;
+            }
+
         }
-
-        if (!rb2.isKinematic)
+        catch (UnassignedReferenceException)
         {
-            destroyed_count++;
-        }
-
-        if (!rb3.isKinematic)
-        {
-            destroyed_count++;
-        }
-
-        if (!rb4.isKinematic)
-        {
-            destroyed_count++;
-        }
-
-        if (!rb5.isKinematic)
-        {
-            destroyed_count++;
-        }
-
-        if (!rb6.isKinematic)
-        {
-            destroyed_count++;
-        }
-
-        if (!rb7.isKinematic)
-        {
-            destroyed_count++;
-        }
-
-        if (!rb8.isKinematic)
-        {
-            destroyed_count++;
+            output = false;
         }
 
         if (destroyed_count == wave3_count)
@@ -202,73 +229,82 @@ public class WaveChecker : MonoBehaviour
     {
         bool output = false;
         int destroyed_count = 0;
-
-        Rigidbody rb1 = h10.GetComponent<Rigidbody>();
-        Rigidbody rb2 = h11.GetComponent<Rigidbody>();
-        Rigidbody rb3 = h12.GetComponent<Rigidbody>();
-        Rigidbody rb4 = h13.GetComponent<Rigidbody>();
-        Rigidbody rb5 = h14.GetComponent<Rigidbody>();
-        Rigidbody rb6 = hh.GetComponent<Rigidbody>();
-        Rigidbody rb7 = d10.GetComponent<Rigidbody>();
-        Rigidbody rb8 = d11.GetComponent<Rigidbody>();
-        Rigidbody rb9 = d12.GetComponent<Rigidbody>();
-        Rigidbody rb10 = d13.GetComponent<Rigidbody>();
-        Rigidbody rb11 = d14.GetComponent<Rigidbody>();
-
-
-        if (!rb1.isKinematic)
+        try
         {
-            destroyed_count++;
+
+
+            Rigidbody rb1 = h10.GetComponent<Rigidbody>();
+            Rigidbody rb2 = h11.GetComponent<Rigidbody>();
+            Rigidbody rb3 = h12.GetComponent<Rigidbody>();
+            Rigidbody rb4 = h13.GetComponent<Rigidbody>();
+            Rigidbody rb5 = h14.GetComponent<Rigidbody>();
+            Rigidbody rb6 = hh.GetComponent<Rigidbody>();
+            Rigidbody rb7 = d10.GetComponent<Rigidbody>();
+            Rigidbody rb8 = d11.GetComponent<Rigidbody>();
+            Rigidbody rb9 = d12.GetComponent<Rigidbody>();
+            Rigidbody rb10 = d13.GetComponent<Rigidbody>();
+            Rigidbody rb11 = d14.GetComponent<Rigidbody>();
+
+
+            if (!rb1.isKinematic)
+            {
+                destroyed_count++;
+            }
+
+            if (!rb2.isKinematic)
+            {
+                destroyed_count++;
+            }
+
+            if (!rb3.isKinematic)
+            {
+                destroyed_count++;
+            }
+
+            if (!rb4.isKinematic)
+            {
+                destroyed_count++;
+            }
+
+            if (!rb5.isKinematic)
+            {
+                destroyed_count++;
+            }
+
+            if (!rb6.isKinematic)
+            {
+                destroyed_count++;
+            }
+
+            if (!rb7.isKinematic)
+            {
+                destroyed_count++;
+            }
+
+            if (!rb8.isKinematic)
+            {
+                destroyed_count++;
+            }
+
+            if (!rb9.isKinematic)
+            {
+                destroyed_count++;
+            }
+
+            if (!rb10.isKinematic)
+            {
+                destroyed_count++;
+            }
+
+            if (!rb11.isKinematic)
+            {
+                destroyed_count++;
+            }
+
         }
-
-        if (!rb2.isKinematic)
+        catch (UnassignedReferenceException)
         {
-            destroyed_count++;
-        }
-
-        if (!rb3.isKinematic)
-        {
-            destroyed_count++;
-        }
-
-        if (!rb4.isKinematic)
-        {
-            destroyed_count++;
-        }
-
-        if (!rb5.isKinematic)
-        {
-            destroyed_count++;
-        }
-
-        if (!rb6.isKinematic)
-        {
-            destroyed_count++;
-        }
-
-        if (!rb7.isKinematic)
-        {
-            destroyed_count++;
-        }
-
-        if (!rb8.isKinematic)
-        {
-            destroyed_count++;
-        }
-
-        if (!rb9.isKinematic)
-        {
-            destroyed_count++;
-        }
-
-        if (!rb10.isKinematic)
-        {
-            destroyed_count++;
-        }
-
-        if (!rb11.isKinematic)
-        {
-            destroyed_count++;
+            output = false;
         }
 
         if (destroyed_count == wave3_count)

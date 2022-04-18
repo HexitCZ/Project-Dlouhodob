@@ -18,6 +18,11 @@ public class HubScript : MonoBehaviour
         
     }
     //bool huh = true;
+
+    /// <summary>
+    /// Vypne zbrane hraci v zone, kde k nim nema mit pristup
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -27,7 +32,11 @@ public class HubScript : MonoBehaviour
         }
         
     }
-
+    
+    /// <summary>
+    /// Opetovne dostava hrac sve zbrane
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))

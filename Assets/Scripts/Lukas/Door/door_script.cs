@@ -49,17 +49,22 @@ public class door_script : MonoBehaviour
 
     public void Start()
     {
+        try
+        {
+            inventory = ui_inventory?.GetInventory();
 
-        inventory = ui_inventory?.GetInventory();
+            openInvoker = new UnityEvent();
+            closeInvoker = new UnityEvent();
 
-        openInvoker = new UnityEvent();
-        closeInvoker = new UnityEvent();
+            doorRenderer = GetComponent<Renderer>();
+            displayMats = displayRenderer.materials;
+            displayColor = displayMats[0].color;
 
-        doorRenderer = GetComponent<Renderer>();
-        displayMats = displayRenderer.materials;
-        displayColor = displayMats[0].color;
+        }
+        catch (UnassignedReferenceException)
+        {
 
-
+        }
         if (broken)
         {
 
@@ -116,76 +121,92 @@ public class door_script : MonoBehaviour
 
     public void OnTriggerStay(Collider other)
     {
-        if (other.name == "Head" || other.name == "Body")
+        try
         {
 
 
-            if (!broken && ui_script != null)
+            if (other.name == "Head" || other.name == "Body")
             {
-                open = ui_script.GetInput();
 
-            }
-            else
-            {
-                Break();
-            }
 
-            if (automatic)
-            {
-                Open();
-            }
-            else
-            {
-                if (GetComponent<Renderer>().isVisible)
+                if (!broken && ui_script != null)
                 {
-
-                    if (broken)
-                    {
-                        InvokeBroken();
-                    }
-                    else
-                    {
-                        InvokeOpen();
-                    }
-                }
-
-
-                if (needsKey && open)
-                {
-
-
-                    if (inventory.CheckForKey(displayColor))
-                    {
-
-                        Open();
-
-                    }
+                    open = ui_script.GetInput();
 
                 }
                 else
                 {
+                    Break();
+                }
 
-                    if (open)
+                if (automatic)
+                {
+                    Open();
+                }
+                else
+                {
+                    if (GetComponent<Renderer>().isVisible)
                     {
 
-                        Open();
+                        if (broken)
+                        {
+                            InvokeBroken();
+                        }
+                        else
+                        {
+                            InvokeOpen();
+                        }
+                    }
+
+
+                    if (needsKey && open)
+                    {
+
+
+                        if (inventory.CheckForKey(displayColor))
+                        {
+
+                            Open();
+
+                        }
+
+                    }
+                    else
+                    {
+
+                        if (open)
+                        {
+
+                            Open();
+
+                        }
 
                     }
 
                 }
-
             }
+        }
+        catch (UnassignedReferenceException)
+        {
+
         }
     }
 
     public void OnTriggerExit(Collider other)
     {
-        if (other.name == "Head" || other.name == "Body")
+        try
         {
-            Close();
-            ui_script.ResetOpen();
-            open = ui_script.GetInput();
-            InvokeClose();
+            if (other.name == "Head" || other.name == "Body")
+            {
+                Close();
+                ui_script.ResetOpen();
+                open = ui_script.GetInput();
+                InvokeClose();
+            }
+        }
+        catch (UnassignedReferenceException)
+        {
+
         }
     }
 }

@@ -1,8 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -18,7 +16,7 @@ public class UIOptionsManager : MonoBehaviour
     [Space]
     [Header("Game fullscreen mode")]
     private string fullscreen_mode;
-    
+
     [SerializeField]
     [Space]
     [Header("Game Audio level")]
@@ -37,7 +35,7 @@ public class UIOptionsManager : MonoBehaviour
     private Transform background;
 
     public TMP_Dropdown resolutionDropdown;
-    public TMP_Dropdown qualityDropdown;   
+    public TMP_Dropdown qualityDropdown;
 
     public Slider volumeSlider;
 
@@ -49,21 +47,27 @@ public class UIOptionsManager : MonoBehaviour
 
     void Start()
     {
+        try
+        {
 
-        currentVolume = 0f;
-        mainMenuScene = "Menu";
-        fullscreen_modes = new string[] {
+            currentVolume = 0f;
+            mainMenuScene = "Menu";
+            fullscreen_modes = new string[] {
             "Maximized\nWindow",
             "Exclusive\nFullscreen",
             "Windowed",
             "Full\nscreen"
-        };    
+        };
+        }
+        catch (UnassignedReferenceException)
+        {
 
+        }
         fullscreen_mode = "Full\nscreen";
         //Screen.SetResolution(640, 480, FullScreenMode.ExclusiveFullScreen, 60);
-        
+
     }
-    
+
 
     IEnumerator Wait()
     {
@@ -80,7 +84,7 @@ public class UIOptionsManager : MonoBehaviour
 
     public void OnDestroy()
     {
-        
+
         /*CoverGradient();
         StartCoroutine(Wait());*/
 
@@ -125,62 +129,85 @@ public class UIOptionsManager : MonoBehaviour
 
     private void SetFullscreen()
     {
-        
-        int height = Screen.currentResolution.height;
-        int width = Screen.currentResolution.width;
-        int refreshRate = Screen.currentResolution.refreshRate;
-        Screen.SetResolution(height, width, FullScreenMode.FullScreenWindow, refreshRate);
-        TextMeshProUGUI fullscreen_text = fullscreenButton.GetChild(0).GetComponent<TextMeshProUGUI>();
-        fullscreen_text.text = "Windowed";
-        fullscreen_text.fontSize = 45;
-        fullscreen_mode = fullscreen_text.text;
+        try
+        {
+            int height = Screen.currentResolution.height;
+            int width = Screen.currentResolution.width;
+            int refreshRate = Screen.currentResolution.refreshRate;
+            Screen.SetResolution(height, width, FullScreenMode.FullScreenWindow, refreshRate);
+            TextMeshProUGUI fullscreen_text = fullscreenButton.GetChild(0).GetComponent<TextMeshProUGUI>();
+            fullscreen_text.text = "Windowed";
+            fullscreen_text.fontSize = 45;
+            fullscreen_mode = fullscreen_text.text;
+        }
+        catch (UnassignedReferenceException)
+        {
 
+        }
     }
 
     private void SetWindowed()
     {
-        int height = Screen.currentResolution.height;
-        int width = Screen.currentResolution.width;
-        int refreshRate = Screen.currentResolution.refreshRate;
-        Screen.SetResolution(height, width, FullScreenMode.Windowed, refreshRate);
-        TextMeshProUGUI fullscreen_text = fullscreenButton.GetChild(0).GetComponent<TextMeshProUGUI>();
-        fullscreen_text.text = "Exclusive\nFullscreen";
-        fullscreen_text.fontSize = 35f;
-        fullscreen_mode = fullscreen_text.text;
+        try
+        {
+            int height = Screen.currentResolution.height;
+            int width = Screen.currentResolution.width;
+            int refreshRate = Screen.currentResolution.refreshRate;
+            Screen.SetResolution(height, width, FullScreenMode.Windowed, refreshRate);
+            TextMeshProUGUI fullscreen_text = fullscreenButton.GetChild(0).GetComponent<TextMeshProUGUI>();
+            fullscreen_text.text = "Exclusive\nFullscreen";
+            fullscreen_text.fontSize = 35f;
+            fullscreen_mode = fullscreen_text.text;
+        }
+        catch (UnassignedReferenceException)
+        {
 
+        }
     }
 
     private void SetExclusiveFullscreen()
     {
-        int height = Screen.currentResolution.height;
-        int width = Screen.currentResolution.width;
-        int refreshRate = Screen.currentResolution.refreshRate;
+        try
+        {
+            int height = Screen.currentResolution.height;
+            int width = Screen.currentResolution.width;
+            int refreshRate = Screen.currentResolution.refreshRate;
 
-        Screen.SetResolution(height, width, FullScreenMode.FullScreenWindow, refreshRate);
+            Screen.SetResolution(height, width, FullScreenMode.FullScreenWindow, refreshRate);
 
-        TextMeshProUGUI fullscreen_text = fullscreenButton.GetChild(0).GetComponent<TextMeshProUGUI>();
-        
-        fullscreen_text.text = "Maximized\nWindow";
-        fullscreen_text.fontSize = 35f;
-        fullscreen_mode = fullscreen_text.text;
+            TextMeshProUGUI fullscreen_text = fullscreenButton.GetChild(0).GetComponent<TextMeshProUGUI>();
 
+            fullscreen_text.text = "Maximized\nWindow";
+            fullscreen_text.fontSize = 35f;
+            fullscreen_mode = fullscreen_text.text;
+        }
+        catch (UnassignedReferenceException)
+        {
+
+        }
     }
 
     private void SetMaximizedWindow()
     {
-        int height = Screen.currentResolution.height;
-        int width = Screen.currentResolution.width;
-        int refreshRate = Screen.currentResolution.refreshRate;
+        try
+        {
+            int height = Screen.currentResolution.height;
+            int width = Screen.currentResolution.width;
+            int refreshRate = Screen.currentResolution.refreshRate;
 
-        Screen.SetResolution(height, width, FullScreenMode.FullScreenWindow, refreshRate);
+            Screen.SetResolution(height, width, FullScreenMode.FullScreenWindow, refreshRate);
 
-        TextMeshProUGUI fullscreen_text = fullscreenButton.GetChild(0).GetComponent<TextMeshProUGUI>();
-        
-        fullscreen_text.text = "Full\nscreen";
-        fullscreen_text.fontSize = 45f;
-        fullscreen_mode = fullscreen_text.text;
+            TextMeshProUGUI fullscreen_text = fullscreenButton.GetChild(0).GetComponent<TextMeshProUGUI>();
 
+            fullscreen_text.text = "Full\nscreen";
+            fullscreen_text.fontSize = 45f;
+            fullscreen_mode = fullscreen_text.text;
 
+        }
+        catch (UnassignedReferenceException)
+        {
+
+        }
     }
 
     public void OnSliderDrag()
@@ -196,41 +223,55 @@ public class UIOptionsManager : MonoBehaviour
 
     public void OnFullscreenChange()
     {
+        try
+        {
 
+            if (fullscreen_mode == fullscreen_modes[3])
+            {
+                SetFullscreen();
+            }
+            else if (fullscreen_mode == fullscreen_modes[2])
+            {
+                SetWindowed();
+            }
+            else if (fullscreen_mode == fullscreen_modes[1])
+            {
+                SetExclusiveFullscreen();
+            }
+            else if (fullscreen_mode == fullscreen_modes[0])
+            {
+                SetMaximizedWindow();
+            }
+        }
+        catch (UnassignedReferenceException)
+        {
 
-        if (fullscreen_mode == fullscreen_modes[3])
-        {
-            SetFullscreen();
-        }
-        else if (fullscreen_mode == fullscreen_modes[2])
-        {
-            SetWindowed();
-        }
-        else if (fullscreen_mode == fullscreen_modes[1])
-        {
-            SetExclusiveFullscreen();
-        }
-        else if (fullscreen_mode == fullscreen_modes[0])
-        {
-            SetMaximizedWindow();
         }
     }
 
     public void OnResolutionChange()
     {
-        if (resolutionDropdown.value == 0)
+        try
         {
-            Screen.SetResolution(1920, 1080, Screen.fullScreenMode, 60);
-        } 
-        else if(resolutionDropdown.value == 1)
-        {
-            Screen.SetResolution(1600, 900, Screen.fullScreenMode, 60);
+
+
+            if (resolutionDropdown.value == 0)
+            {
+                Screen.SetResolution(1920, 1080, Screen.fullScreenMode, 60);
+            }
+            else if (resolutionDropdown.value == 1)
+            {
+                Screen.SetResolution(1600, 900, Screen.fullScreenMode, 60);
+            }
+            else if (resolutionDropdown.value == 2)
+            {
+                Screen.SetResolution(1280, 720, Screen.fullScreenMode, 60);
+            }
         }
-        else if (resolutionDropdown.value == 2)
+        catch (UnassignedReferenceException)
         {
-            Screen.SetResolution(1280, 720, Screen.fullScreenMode, 60);
+
         }
-        
     }
 
     public void OnGraphicPresetChange()

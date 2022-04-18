@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class UIMenuManager : MonoBehaviour
@@ -10,7 +7,7 @@ public class UIMenuManager : MonoBehaviour
     [Space]
     [Header("Name of OnClick options scene")]
     public string optionsButtonScene;
-    
+
     [SerializeField]
     [Space]
     [Header("Name of OnClick play scene")]
@@ -18,12 +15,28 @@ public class UIMenuManager : MonoBehaviour
 
     public void OnPLAYButtonClick()
     {
-        SceneManager.LoadScene(playButtonScene);
+        if (optionsButtonScene == "Hub")
+        {
+            SceneManager.LoadScene(playButtonScene);
+        }
+        else
+        {
+            playButtonScene = "Hub";
+            SceneManager.LoadScene(playButtonScene);
+        }
     }
 
     public void OnOPTIONSClick()
     {
-        SceneManager.LoadScene(optionsButtonScene);
+        if (optionsButtonScene == "Options")
+        {
+            SceneManager.LoadScene(optionsButtonScene);
+        }
+        else
+        {
+            optionsButtonScene = "Options";
+            SceneManager.LoadScene(optionsButtonScene);
+        }
     }
 
     public void OnQUIT()

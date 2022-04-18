@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class KeycardScript : MonoBehaviour
@@ -8,7 +6,7 @@ public class KeycardScript : MonoBehaviour
     [Header("Type")]
     [SerializeField]
     private Item.Type type;
-    
+
     [Space]
     [Header("UI inventory")]
     [SerializeField]
@@ -42,28 +40,38 @@ public class KeycardScript : MonoBehaviour
     [Header("Keycard")]
     [SerializeField]
     private Item keycard;
-    
+
     public void Start()
     {
-        keyRenderer = GetComponent<Renderer>();
-        keyMats = keyRenderer.materials;
-        keyColor = keyMats[1].color;
+        try
+        {
 
-        keycard = (Item)ScriptableObject.CreateInstance("Item");
-        keycard.SetType(Item.Type.keycard);
-        inventory = ui_inventory.GetInventory();
-        //keycard.SetColor(inventory.GetKeyColor());
-        
-        keyRenderer = GetComponent<Renderer>();
-        type = Item.Type.keycard;
-        item_id = (int)type;     
+            keyRenderer = GetComponent<Renderer>();
+            keyMats = keyRenderer.materials;
+            keyColor = keyMats[1].color;
+
+            keycard = (Item)ScriptableObject.CreateInstance("Item");
+            keycard.SetType(Item.Type.keycard);
+            inventory = ui_inventory.GetInventory();
+            //keycard.SetColor(inventory.GetKeyColor());
+
+            keyRenderer = GetComponent<Renderer>();
+            type = Item.Type.keycard;
+            item_id = (int)type;
+
+
+        }
+        catch (UnassignedReferenceException)
+        {
+
+        }
     }
 
     public void Update()
     {
 
         transform.Rotate(0, 0, rotationSpeed);
-    
+
     }
 
     [System.Obsolete]

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -19,17 +17,24 @@ public class BossTeleporter : MonoBehaviour
 
     void Start()
     {
-        meshCollider = this.GetComponent<MeshCollider>();
-        meshCollider.enabled = false;
-        aiW_rb = aiWalker.GetComponent<Rigidbody>();
-
-        if(sceneName != "Hub")
+        try
         {
-            sceneName = "Hub";
-        } 
+            meshCollider = this.GetComponent<MeshCollider>();
+            meshCollider.enabled = false;
+            aiW_rb = aiWalker.GetComponent<Rigidbody>();
+
+            if (sceneName != "Hub")
+            {
+                sceneName = "Hub";
+            }
+        }
+        catch (UnassignedReferenceException)
+        {
+
+        }
     }
 
-    
+
     void Update()
     {
         if (!aiWalker.gameObject.activeSelf)
@@ -38,29 +43,36 @@ public class BossTeleporter : MonoBehaviour
         }
     }
 
-    //Metoda nacte finalni scenu, coz je hub(hlavni mistnost)
+    //Metoda nacte finalni scenu co kontaktu s hracem, coz je hub(hlavni mistnost)
 
     public void OnCollisionEnter(Collision collision)
     {
-        string coll_name = collision.transform.name;
-        bool isPlayer = false;
+        try
+        {
+            string coll_name = collision.transform.name;
+            bool isPlayer = false;
 
-        if(coll_name == "Body")
-        {
-            isPlayer = true;
-        }
-        else if (coll_name == "MidBody")
-        {
-            isPlayer = true;
-        }
-        else if (coll_name == "Head")
-        {
-            isPlayer = true;
-        }
+            if (coll_name == "Body")
+            {
+                isPlayer = true;
+            }
+            else if (coll_name == "MidBody")
+            {
+                isPlayer = true;
+            }
+            else if (coll_name == "Head")
+            {
+                isPlayer = true;
+            }
 
-        if (isPlayer)
+            if (isPlayer)
+            {
+                SceneManager.LoadScene(sceneName);
+            }
+        }
+        catch (UnassignedReferenceException)
         {
-            SceneManager.LoadScene(sceneName);           
+
         }
     }
 }

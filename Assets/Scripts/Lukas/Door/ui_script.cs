@@ -35,8 +35,18 @@ public class UI_script : MonoBehaviour
 
     public void view_broken()
     {
+        try
+        {
+
+        
         pressText.text = "The door is broken";
         pressText.color = Color.red;
+
+        }
+        catch (UnassignedReferenceException)
+        {
+
+        }
     }
 
     public bool GetInput()

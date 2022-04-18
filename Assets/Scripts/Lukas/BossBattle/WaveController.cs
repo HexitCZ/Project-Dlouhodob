@@ -31,6 +31,8 @@ public class WaveController : MonoBehaviour
         
     }
 
+    //Vsechny ctyri metody zapinaji nepratele pro urcitou vlnu
+
     public int SpawnPhase1(Transform h1, Transform h2, Transform d1, Transform d2)
     {
         int output = 1;

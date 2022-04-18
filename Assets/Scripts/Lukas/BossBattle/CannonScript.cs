@@ -45,7 +45,9 @@ public class CannonScript : MonoBehaviour
             }
         }
     }
-
+    /// <summary>
+    /// Zbavi se orbu
+    /// </summary>
     void CleanOrbs()
     {
         foreach(Transform orb in orbs)
@@ -54,12 +56,17 @@ public class CannonScript : MonoBehaviour
         }
         
     }
-
+    /// <summary>
+    /// Prida force pro pohyb telesa
+    /// </summary>
     void AddForce()
     {
         orb_instance.GetComponent<Rigidbody>().AddForce(target.position - transform.position * speed);
     }
 
+    /// <summary>
+    /// Kanon vystreli orb(projektil)
+    /// </summary>
     public void Shoot()
     {
         try

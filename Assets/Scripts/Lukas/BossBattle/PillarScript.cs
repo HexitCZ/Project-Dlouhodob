@@ -63,7 +63,10 @@ public class PillarScript : MonoBehaviour
     {
 
     }
-
+    /// <summary>
+    /// Zjisti jestli prisel do kontaktu s orbem(projektilem pavouka) a podle toho se zachova
+    /// </summary>
+    /// <param name="collision"></param>
     public void OnCollisionEnter(Collision collision)
     {
         string coll_name = collision.transform.name;
@@ -78,7 +81,10 @@ public class PillarScript : MonoBehaviour
             hasExploded = false;
         }
     }
-
+    /// <summary>
+    /// Zjistuje, zda je efekt exploze nastaveny
+    /// </summary>
+    /// <returns></returns>
     private bool CheckAssignedExplodeEffect()
     {
         bool isAssigned = false;
@@ -94,6 +100,10 @@ public class PillarScript : MonoBehaviour
         return isAssigned;
     }
 
+    /// <summary>
+    /// Kontrola, jestli je pilir rozbity
+    /// </summary>
+    /// <returns></returns>
     public bool IsBroken()
     {
         bool output = false;
@@ -108,7 +118,9 @@ public class PillarScript : MonoBehaviour
         }
         return output;
     }
-
+    /// <summary>
+    /// Znici pilir spolecne s vyuzitim efektu
+    /// </summary>
     public void Destruct()
     {
         if (CheckAssignedExplodeEffect())
@@ -127,11 +139,16 @@ public class PillarScript : MonoBehaviour
         Invoke("DisableCollision", 3);
     }
 
+    /// <summary>
+    /// Vypne kolize objektu
+    /// </summary>
     private void DisableCollision()
     {
         this.GetComponent<BoxCollider>().enabled = false;
     }
-
+    /// <summary>
+    /// Zapina fyziku pro objekt a podobjekty
+    /// </summary>
     private void EnableGravity()
     {
         p1_rb.useGravity = true;

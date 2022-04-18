@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpiderShieldScript : MonoBehaviour
@@ -20,27 +18,45 @@ public class SpiderShieldScript : MonoBehaviour
     [SerializeField]
     [Space]
     private AI_Walker aiWalker;
-    
+
     private int round;
+
+    [SerializeField]
+    [Space]
+    private bool spiderMeshIsAssignable;
 
     void Start()
     {
         isActive = true;
         round = 1;
+        spiderMeshIsAssignable = true;
     }
-
+    /// <summary>
+    /// Kontrola stavu stitu a mozne blokovani poskozeni od hrace v pripade, ze je stit zapnuty
+    /// </summary>
     void Update()
     {
         round = spiderMainScript.GetRound();
-
-        if (spiderMainScript.attacking)
+        if (spiderMeshIsAssignable)
         {
-            this.GetComponent<MeshCollider>().enabled = false;
+
+            try
+            {
+
+                if (spiderMainScript.attacking)
+                {
+                    this.GetComponent<MeshCollider>().enabled = false;
+                }
+            }
+            catch (UnassignedReferenceException)
+            {
+                spiderMeshIsAssignable = false;
+            }
         }
 
         if (isActive && !spiderMainScript.attackable)
-        {   
-            if(round == 1)
+        {
+            if (round == 1)
             {
                 aiWalker.health = 100.0f;
             }
@@ -58,18 +74,21 @@ public class SpiderShieldScript : MonoBehaviour
             }
             aiWalker.health = 100.0f;
         }
-    
+
         try
         {
             status = spiderMainScript.GetStatus();
             CheckStatus(status);
         }
-        catch(UnityException)
+        catch (UnityException)
         {
             isActive = false;
         }
     }
-
+    /// <summary>
+    /// Kontroluje nynejsi akci pavouka a podle toho nastavuje animator
+    /// </summary>
+    /// <param name="status"></param>
     void CheckStatus(string status)
     {
         if (status == "spawning")
