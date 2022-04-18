@@ -9,7 +9,7 @@ public class SpiderMainScript : MonoBehaviour
 
     [SerializeField]
     [Space]
-    private bool attacking = false;
+    public bool attacking = false;
 
     [SerializeField]
     [Space]
@@ -229,12 +229,16 @@ public class SpiderMainScript : MonoBehaviour
         }
         else if (attackable)
         {
-            Debug.Log("spawning");
+            Debug.Log("attackable");
 
             if (firstTime)
             {
                 round++;
                 firstTime = false;
+            }
+            if ()
+            {
+
             }
         }
     }

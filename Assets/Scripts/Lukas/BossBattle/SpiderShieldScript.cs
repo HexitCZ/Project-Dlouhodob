@@ -34,6 +34,11 @@ public class SpiderShieldScript : MonoBehaviour
     {
         round = spiderMainScript.GetRound();
 
+        if (spiderMainScript.attacking)
+        {
+            this.GetComponent<MeshCollider>().enabled = false;
+        }
+
         if (isActive && !spiderMainScript.attackable)
         {   
             if(round == 1)
@@ -54,7 +59,7 @@ public class SpiderShieldScript : MonoBehaviour
             }
             aiWalker.health = 100.0f;
         }
-
+    
         try
         {
             status = spiderMainScript.GetStatus();

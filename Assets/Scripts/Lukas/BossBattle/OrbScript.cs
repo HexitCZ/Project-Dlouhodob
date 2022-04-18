@@ -36,7 +36,7 @@ public class OrbScript : MonoBehaviour
     {
         rb = this.GetComponent<Rigidbody>();
         AddRandomForceToOrb();
-        Invoke("DestroyOrb", 7);
+        Invoke("DestroyOrb", 100000);
     }
 
     void Update()
@@ -106,6 +106,8 @@ public class OrbScript : MonoBehaviour
 
         collider = this.GetComponent<MeshCollider>();
         collider.enabled = false;
+
+        Destroy(this.gameObject);
     }
 
     void AddRandomForceToOrb()
