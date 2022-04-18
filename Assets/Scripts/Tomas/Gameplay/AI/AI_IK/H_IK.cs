@@ -1,8 +1,13 @@
 using UnityEngine;
 
+/// <summary>
+/// Kod napsan podle tutorialu: https://youtu.be/qqOAzn05fvk
+/// </summary>
 
 public class H_IK : MonoBehaviour
 {
+    #region Variables
+
     [Header("Automatically assigned")]
     
     public int legLength;
@@ -23,8 +28,7 @@ public class H_IK : MonoBehaviour
     public float precision = 0.001f;
 
     [Range(0, 1)]
-    public float returnStrength = 1f;
-
+    public float returnStrengthNormalized = 1f;
 
 
     protected float[] boneLengths;
@@ -34,13 +38,25 @@ public class H_IK : MonoBehaviour
     protected Vector3[] startDirections;
     protected Quaternion[] startRotations;
     protected Quaternion startRotationTarget;
+    #endregion
 
 
+
+    #region UnityMethods
     void Start()
     {
         Setup();
     }
 
+    void LateUpdate()
+    {
+        IKStep();
+    }
+    #endregion
+
+
+
+    #region CustomMethods
     void Setup()
     {
         bones = new Transform[legLength + 1];
@@ -57,8 +73,6 @@ public class H_IK : MonoBehaviour
         }
         startRotationTarget = GetRotationStart(target);
 
-
-        
         Transform current = End.transform;
         length = 0;
         for (int i = bones.Length - 1; i >= 0; i--)
@@ -82,16 +96,10 @@ public class H_IK : MonoBehaviour
             current = current.parent;
         }
 
-
-
     }
 
-    void LateUpdate()
-    {
-        ResolveIK();
-    }
-
-    private void ResolveIK()
+    
+    private void IKStep()
     {
         if (target == null)
         {
@@ -112,19 +120,18 @@ public class H_IK : MonoBehaviour
             joints[i] = GetPoisitionStart(bones[i]);
         }
 
-        Vector3 targetPosition = GetPoisitionStart(target);
-        Quaternion targetRotation = GetRotationStart(target);
-
+        Vector3 targetPos = GetPoisitionStart(target);
+        Quaternion targerRot = GetRotationStart(target);
         
-        if ((targetPosition - GetPoisitionStart(bones[0])).sqrMagnitude >= length * length)
+        if ((targetPos - GetPoisitionStart(bones[0])).sqrMagnitude >= length * length)
         {
         
-            Vector3 direction = (targetPosition - joints[0]).normalized;
+            Vector3 dir = (targetPos - joints[0]).normalized;
             
             for (int i = 1; i < joints.Length; i++)
             {
 
-                joints[i] = joints[i - 1] + direction * boneLengths[i - 1];
+                joints[i] = joints[i - 1] + dir * boneLengths[i - 1];
             }
         }
         else
@@ -132,16 +139,16 @@ public class H_IK : MonoBehaviour
             for (int i = 0; i < joints.Length - 1; i++)
             {
 
-                joints[i + 1] = Vector3.Lerp(joints[i + 1], joints[i] + startDirections[i], returnStrength);
+                joints[i + 1] = Vector3.Lerp(joints[i + 1], joints[i] + startDirections[i], returnStrengthNormalized);
             }
 
-            for (int iteration = 0; iteration < iterationsPerFrame; iteration++)
+            for (int iter = 0; iter < iterationsPerFrame; iter++)
             {
                 
                 for (int i = joints.Length - 1; i > 0; i--)
                 {
                     if (i == joints.Length - 1)
-                        joints[i] = targetPosition; 
+                        joints[i] = targetPos; 
                     else
                         joints[i] = joints[i + 1] + (joints[i] - joints[i + 1]).normalized * boneLengths[i];
                 }
@@ -154,22 +161,21 @@ public class H_IK : MonoBehaviour
                 }
 
                 
-                if ((joints[joints.Length - 1] - targetPosition).sqrMagnitude < precision * precision)
+                if ((joints[joints.Length - 1] - targetPos).sqrMagnitude < precision * precision)
                 {
 
                     break;
                 }
             }
         }
-
         
         if (rotationPoint != null)
         {
-            Vector3 polePosition = GetPoisitionStart(rotationPoint);
+            Vector3 rotationPointPos = GetPoisitionStart(rotationPoint);
             for (int i = 1; i < joints.Length - 1; i++)
             {
                 Plane ikPlane = new Plane(joints[i + 1] - joints[i - 1], joints[i - 1]);
-                Vector3 closestPoint = ikPlane.ClosestPointOnPlane(polePosition);
+                Vector3 closestPoint = ikPlane.ClosestPointOnPlane(rotationPointPos);
                 Vector3 closestCurrentPoint = ikPlane.ClosestPointOnPlane(joints[i]);
                 float angle = Vector3.SignedAngle(closestCurrentPoint - joints[i - 1], closestPoint - joints[i - 1], ikPlane.normal);
                 joints[i] = Quaternion.AngleAxis(angle, ikPlane.normal) * (joints[i] - joints[i - 1]) + joints[i - 1];
@@ -179,75 +185,79 @@ public class H_IK : MonoBehaviour
         
         for (int i = 0; i < joints.Length; i++)
         {
+            Quaternion finalRotation;
             if (i == joints.Length - 1)
             {
-
-                SetRotationStart(bones[i], Quaternion.Inverse(targetRotation) * startRotationTarget * Quaternion.Inverse(startRotations[i]));
+                finalRotation = Quaternion.Inverse(targerRot) * startRotationTarget * Quaternion.Inverse(startRotations[i]);
+                SetRotationStart(bones[i], finalRotation);
             }
             else
             {
-
-                SetRotationStart(bones[i], Quaternion.FromToRotation(startDirections[i], joints[i + 1] - joints[i]) * Quaternion.Inverse(startRotations[i]));
+                finalRotation = Quaternion.FromToRotation(startDirections[i], joints[i + 1] - joints[i]) * Quaternion.Inverse(startRotations[i]);
+                SetRotationStart(bones[i], finalRotation);
             }
             SetPositionStart(bones[i], joints[i]);
         }
     }
 
-    private Vector3 GetPoisitionStart(Transform current)
+    private Quaternion GetRotationStart(Transform cur)
     {
+
         if (Root == null)
         {
 
-            return current.position;
+            return cur.rotation;
         }
         else
         {
 
-            return Quaternion.Inverse(Root.rotation) * (current.position - Root.position);
+            return Quaternion.Inverse(cur.rotation) * Root.rotation;
         }
     }
 
-    private void SetPositionStart(Transform current, Vector3 position)
+    private Vector3 GetPoisitionStart(Transform cur)
     {
         if (Root == null)
         {
 
-            current.position = position;
+            return cur.position;
         }
         else
         {
 
-            current.position = Root.rotation * position + Root.position;
+            return Quaternion.Inverse(Root.rotation) * (cur.position - Root.position);
         }
     }
 
-    private Quaternion GetRotationStart(Transform current)
-    {
-        
-        if (Root == null)
-        {
-
-            return current.rotation;
-        }
-        else
-        {
-
-            return Quaternion.Inverse(current.rotation) * Root.rotation;
-        }
-    }
-
-    private void SetRotationStart(Transform current, Quaternion rotation)
+    private void SetPositionStart(Transform cur, Vector3 pos)
     {
         if (Root == null)
         {
 
-            current.rotation = rotation;
+            cur.position = pos;
         }
         else
         {
 
-            current.rotation = Root.rotation * rotation;
+            cur.position = Root.rotation * pos + Root.position;
         }
     }
+
     
+
+    private void SetRotationStart(Transform cur, Quaternion rot)
+    {
+        if (Root == null)
+        {
+
+            cur.rotation = rot;
+        }
+        else
+        {
+
+            cur.rotation = Root.rotation * rot;
+        }
+    }
+
+    #endregion
 }

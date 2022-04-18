@@ -10092,7 +10092,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 755265367382587633, guid: f93ef974c3c1cbf46b3be475dd3cfe17, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f93ef974c3c1cbf46b3be475dd3cfe17, type: 3}
@@ -24709,6 +24709,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ai_hover_basic
       objectReference: {fileID: 0}
+    - target: {fileID: 3005793917644425543, guid: ec4c7c8b087b659428035696ce54e9e2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec4c7c8b087b659428035696ce54e9e2, type: 3}
 --- !u!1001 &2647260869422087795
@@ -24900,6 +24904,10 @@ PrefabInstance:
     - target: {fileID: 7159674685326986688, guid: 5dc151001bbdf7141b4deb13f950dcc9, type: 3}
       propertyPath: m_Name
       value: ai_drone_basic
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159674685326986688, guid: 5dc151001bbdf7141b4deb13f950dcc9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7159674685326986689, guid: 5dc151001bbdf7141b4deb13f950dcc9, type: 3}
       propertyPath: <target>k__BackingField

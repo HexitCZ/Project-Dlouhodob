@@ -35833,5 +35833,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: ai_hover_heavy
       objectReference: {fileID: 0}
+    - target: {fileID: 666164697385081533, guid: 818de17fbfa07614993d66f13d688c0a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 818de17fbfa07614993d66f13d688c0a, type: 3}
