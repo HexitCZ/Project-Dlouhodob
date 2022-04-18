@@ -3,25 +3,28 @@ using UnityEngine;
 
 public class H_IK : MonoBehaviour
 {
-    [HideInInspector]
+    [Header("Automatically assigned")]
+    
     public int legLength;
-    [HideInInspector]
+    
     public Transform target;
-    [HideInInspector]
+    
     public Transform rotationPoint;
-    [HideInInspector]
+    
     public Transform Root;
     
+    [Space]
+    [Header("Manually assigned")]
+    
     public Transform End;
-
-    [HideInInspector]
+    
     public int iterationsPerFrame = 10;
-    [HideInInspector]
+    
     public float precision = 0.001f;
 
-    [HideInInspector]
     [Range(0, 1)]
     public float returnStrength = 1f;
+
 
 
     protected float[] boneLengths;
