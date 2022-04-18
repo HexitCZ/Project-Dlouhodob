@@ -27,7 +27,10 @@ public class SpiderHeadScript : MonoBehaviour
         startRotation = this.transform.rotation.x;
         walker_rb = walker.GetComponent<Rigidbody>();
     }
-
+    /// <summary>
+    /// Zjisti zda je pavouk zivy 
+    /// </summary>
+    /// <returns></returns>
     private bool CheckIsAlive()
     {
         bool isAlive = false;
@@ -58,6 +61,10 @@ public class SpiderHeadScript : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Otaceni hlavy pavouka za hracem 
+    /// Otaceni hlavy pavouka za hracem 
+    /// </summary>
     private void PanToPlayer()
     {
         
@@ -65,6 +72,6 @@ public class SpiderHeadScript : MonoBehaviour
         float singleStep = speed * Time.deltaTime;
         Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, singleStep, 0.0f);
         transform.rotation = Quaternion.LookRotation(newDirection);
-    
+        
     }
 }
