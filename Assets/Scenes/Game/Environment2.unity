@@ -11296,6 +11296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 20
+  maxFluctuation: 5
 --- !u!23 &515423153
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17918,6 +17919,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 20
+  maxFluctuation: 3
 --- !u!23 &891724237
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28430,6 +28432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 20
+  maxFluctuation: 8
 --- !u!23 &1613093489
 MeshRenderer:
   m_ObjectHideFlags: 0
