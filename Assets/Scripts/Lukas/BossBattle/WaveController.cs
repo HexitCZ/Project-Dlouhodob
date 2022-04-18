@@ -5,6 +5,21 @@ using UnityEngine;
 public class WaveController : MonoBehaviour
 {
 
+    [SerializeField]
+    [Space]
+    private Transform health;
+
+    [SerializeField]
+    [Space]
+    private Transform health2;
+
+    [SerializeField]
+    [Space]
+    private Transform ammo1;
+
+    [SerializeField]
+    [Space]
+    private Transform ammo2;
     void Start()
     {
         
