@@ -30,14 +30,17 @@ public class SpiderHeadScript : MonoBehaviour
 
     private bool CheckIsAlive()
     {
+        bool isAlive = false;
+
         if (walker_rb.isKinematic)
         {
-            return true;
+            isAlive = true;
         }
         else
         {
-            return false;
+            isAlive = false;
         }
+        return isAlive;
     }
 
     void Update()

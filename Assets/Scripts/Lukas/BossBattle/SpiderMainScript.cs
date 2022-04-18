@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpiderMainScript : MonoBehaviour
@@ -17,73 +16,137 @@ public class SpiderMainScript : MonoBehaviour
     [Space]
     private bool attackable = false;
 
+    [Space]
+
     //first wave
 
+    [SerializeField]
     private Transform hover1;
-    
+
+    [SerializeField]
     private Transform hover2;
 
+    [SerializeField]
     private Transform drone1;
 
+    [SerializeField]
     private Transform drone2;
+
+    [Space]
 
     //second wave
 
+    [SerializeField]
+
     private Transform hover3;
-    
+
+    [SerializeField]
     private Transform hover4;
-    
+
+    [SerializeField]
     private Transform hover5;
 
+    [SerializeField]
     private Transform drone3;
 
-    private Transform drone4; 
+    [SerializeField]
+    private Transform drone4;
 
+    [SerializeField]
     private Transform drone5;
+
+    [Space]
 
     //third wave
 
+    [SerializeField]
+
     private Transform hover6;
+    [SerializeField]
 
     private Transform hover7;
+    [SerializeField]
 
     private Transform hover8;
+    [SerializeField]
 
     private Transform hover9;
+    [SerializeField]
 
     private Transform drone6;
+    [SerializeField]
 
     private Transform drone7;
+    [SerializeField]
 
     private Transform drone8;
+    [SerializeField]
 
     private Transform drone9;
 
+    [Space]
+
     //fourth wave
 
+    [SerializeField]
     private Transform hover10;
+    [SerializeField]
 
     private Transform hover11;
+    [SerializeField]
 
     private Transform hover12;
+    [SerializeField]
 
     private Transform hover13;
+    [SerializeField]
 
     private Transform hover14;
+    [SerializeField]
 
     private Transform hover_heavy;
+    [SerializeField]
 
     private Transform drone10;
 
+    [SerializeField]
     private Transform drone11;
+    [SerializeField]
 
     private Transform drone12;
+    [SerializeField]
 
     private Transform drone13;
+    [SerializeField]
 
     private Transform drone14;
+    [SerializeField]
 
     private int spawnPhase_counter;
+
+    [SerializeField]
+    [Space]
+    private CannonScript cannonScript;
+
+    [SerializeField]
+    [Space]
+    private int round;
+
+    [SerializeField]
+    [Space]
+    private WaveController waveController;
+
+    [SerializeField]
+    [Space]
+    private WaveChecker waveChecker;
+
+    [SerializeField]
+    [Space]
+    private PillarScript[] pillars;
+
+    private bool firstTime;
+
+    private int pillar_broken_count;
 
     void Start()
     {
@@ -91,93 +154,140 @@ public class SpiderMainScript : MonoBehaviour
         attacking = false;
         attackable = false;
         spawnPhase_counter = 1;
+        round = 1;
+        pillar_broken_count = 0;
     }
 
     void Update()
     {
+        bool new_broken_pillar = NewBrokenPillar();
+
+        if (new_broken_pillar)
+        {
+            attackable = true;
+        }
+
         if (spawning)
         {
-            if(spawnPhase_counter == 1)
+            firstTime = true;
+            Debug.Log("spawning");
+            if (spawnPhase_counter == 1 && round == 1)
             {
-                SpawnPhase1();
+                waveController.SpawnPhase1(hover1, hover2, drone1, drone2);
+
+                if (waveChecker.Wave1Complete(hover1, hover2, drone1, drone2))
+                {
+                    attacking = true;
+                }
             }
-            else if(spawnPhase_counter == 2)
+            else if (spawnPhase_counter == 2 && round == 2)
             {
-                SpawnPhase2();
+                waveController.SpawnPhase2(hover3, hover4, hover5, drone3, drone4, drone5);
+
+                if (waveChecker.Wave2Complete(hover3, hover4, hover5, drone3, drone4, drone5))
+                {
+                    attacking = true;
+                }
             }
-            else if(spawnPhase_counter == 3)
+            else if (spawnPhase_counter == 3 && round == 3)
             {
-                SpawnPhase3();
+                waveController.SpawnPhase3(hover6, hover7, hover8, hover9, drone6, drone7, drone8, drone9);
+
+                if (waveChecker.Wave3Complete(hover6, hover7, hover8, hover9, drone6, drone7, drone8, drone9))
+                {
+                    attacking = true;
+                }
             }
-            else if(spawnPhase_counter == 4)
+            else if (spawnPhase_counter == 4 && round == 4)
             {
-                SpawnPhase4();
+                waveController.SpawnPhase4(hover10, hover11, hover12, hover13, hover14, hover_heavy, drone10, drone11, drone12, drone13, drone14);
+
+                if (waveChecker.Wave4Complete(hover10, hover11, hover12, hover13, hover14, hover_heavy, drone10, drone11, drone12, drone13, drone14))
+                {
+                    attacking = true;
+                }
             }
         }
         else if (attacking)
         {
+            Debug.Log("attacking");
+            StartCoroutine(ShootCoroutine());
+            ShootCannon();
 
+        }
+        else if (attackable && firstTime)
+        {
+            Debug.Log("spawning");
+
+            if (round == 1)
+            {
+                round = 2;
+                firstTime = false;
+            }
+            else if (round == 2)
+            {
+                round = 3;
+                firstTime = false;
+            }
+            else if (round == 3)
+            {
+                round = 4;
+                firstTime = false;
+            }
+        }
+    }
+
+    bool NewBrokenPillar()
+    {
+        int count = 0;
+        bool output;
+
+        foreach (PillarScript pillar in pillars)
+        {
+            if (pillar.IsBroken() == true)
+            {
+                count++;
+            }
+        }
+
+        if (count > pillar_broken_count)
+        {
+            pillar_broken_count = count;
+            output = true;
+        }
+        else
+        {
+            output = false;
+        }
+        return output;
+    }
+
+    IEnumerator ShootCoroutine()
+    {
+        yield return new WaitForSeconds(3);
+    }
+
+    void ShootCannon()
+    {
+        cannonScript.Shoot();
+    }
+
+    public string GetStatus()
+    {
+        string status = "";
+
+        if (spawning)
+        {
+            status = "spawning";
+        }
+        else if (attacking)
+        {
+            status = "attacking";
         }
         else if (attackable)
         {
-
+            status = "attackable";
         }
-    }
-
-    void SpawnPhase1()
-    {
-        hover1.gameObject.SetActive(true);
-        hover2.gameObject.SetActive(true);
-        
-        drone1.gameObject.SetActive(true);
-        drone2.gameObject.SetActive(true);
-
-        spawnPhase_counter = 2;
-    }
-
-    void SpawnPhase2()
-    {
-        hover3.gameObject.SetActive(true);
-        hover4.gameObject.SetActive(true);
-        hover5.gameObject.SetActive(true);
-
-        drone3.gameObject.SetActive(true);
-        drone4.gameObject.SetActive(true);
-        drone5.gameObject.SetActive(true);
-
-        spawnPhase_counter = 3;
-
-    }
-
-    void SpawnPhase3()
-    {
-        hover6.gameObject.SetActive(true);
-        hover7.gameObject.SetActive(true);
-        hover8.gameObject.SetActive(true);
-        hover9.gameObject.SetActive(true);
-
-        drone6.gameObject.SetActive(true);
-        drone7.gameObject.SetActive(true);
-        drone8.gameObject.SetActive(true);
-        drone9.gameObject.SetActive(true);
-    
-        spawnPhase_counter = 4;
-    }
-
-    void SpawnPhase4()
-    {
-        hover10.gameObject.SetActive(true);
-        hover11.gameObject.SetActive(true);
-        hover12.gameObject.SetActive(true);
-        hover13.gameObject.SetActive(true);
-        hover14.gameObject.SetActive(true);
-
-        hover_heavy.gameObject.SetActive(true);
-
-        drone10.gameObject.SetActive(true);
-        drone11.gameObject.SetActive(true);
-        drone12.gameObject.SetActive(true);
-        drone13.gameObject.SetActive(true);
-        drone14.gameObject.SetActive(true);
+        return status;
     }
 }

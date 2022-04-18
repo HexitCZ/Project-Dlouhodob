@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.VFX;
 
-public class PillarScript : MonoBehaviour, IHittable
+public class PillarScript : MonoBehaviour
 {
     [SerializeField]
     [Space]
@@ -33,6 +33,8 @@ public class PillarScript : MonoBehaviour, IHittable
     [Space]
     private VisualEffect explode_effect;
 
+    private bool hasExploded;
+
     Rigidbody p1_rb;
     Rigidbody p2_rb;
     Rigidbody p3_rb;
@@ -53,6 +55,8 @@ public class PillarScript : MonoBehaviour, IHittable
         orbb_rb.useGravity = false;
 
         pillar_orb_broken.GetComponent<MeshRenderer>().enabled = false;
+
+        hasExploded = false;
     }
 
     void Update()
@@ -60,25 +64,49 @@ public class PillarScript : MonoBehaviour, IHittable
 
     }
 
-    public virtual void GetHit()
+    public void OnCollisionEnter(Collision collision)
     {
-        pillar_orb_broken.GetComponent<MeshRenderer>().enabled = true;
-        pillar_orb.GetComponent<MeshRenderer>().enabled = false;
-        Destruct();
+        string coll_name = collision.transform.name;
 
-        
+        if(coll_name.Contains("orb_"))
+        {
+            hasExploded = true;
+            Destruct();
+        }
+        else
+        {
+            hasExploded = false;
+        }
     }
 
     private bool CheckAssignedExplodeEffect()
     {
+        bool isAssigned = false;
+
         if (explode_effect != null)
         {
-            return true;
+            isAssigned = true;
         }
         else
         {
-            return false;
+            isAssigned = false;
         }
+        return isAssigned;
+    }
+
+    public bool IsBroken()
+    {
+        bool output = false;
+
+        if (hasExploded)
+        {
+            output = true;
+        }
+        else
+        {
+            output = false;
+        }
+        return output;
     }
 
     public void Destruct()
@@ -92,8 +120,16 @@ public class PillarScript : MonoBehaviour, IHittable
             explode_effect = null;
         }
         sound_source.Play(0);
+        hasExploded = true;
 
         EnableGravity();
+
+        Invoke("DisableCollision", 3);
+    }
+
+    private void DisableCollision()
+    {
+        this.GetComponent<BoxCollider>().enabled = false;
     }
 
     private void EnableGravity()
