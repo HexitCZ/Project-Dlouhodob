@@ -29,7 +29,6 @@ public class SpiderShieldScript : MonoBehaviour
         round = 1;
     }
 
-    
     void Update()
     {
         round = spiderMainScript.GetRound();
@@ -93,6 +92,10 @@ public class SpiderShieldScript : MonoBehaviour
             shield_animator.SetBool("attacking", false);
             shield_animator.SetBool("attackable", true);
             isActive = false;
+        }
+        else
+        {
+            isActive = true;
         }
     }
 }

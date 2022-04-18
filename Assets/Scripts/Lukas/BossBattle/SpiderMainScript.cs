@@ -14,10 +14,8 @@ public class SpiderMainScript : MonoBehaviour
     [SerializeField]
     [Space]
     public bool attackable = false;
-
     [Space]
-
-    //first wave
+    //objekty v prvni vlne
 
     [SerializeField]
     private Transform hover1;
@@ -33,7 +31,7 @@ public class SpiderMainScript : MonoBehaviour
 
     [Space]
 
-    //second wave
+    //objekty ve druhe vlne
 
     [SerializeField]
 
@@ -56,7 +54,7 @@ public class SpiderMainScript : MonoBehaviour
 
     [Space]
 
-    //third wave
+    //objekty ve treti vlne
 
     [SerializeField]
 
@@ -84,9 +82,7 @@ public class SpiderMainScript : MonoBehaviour
     private Transform drone9;
 
     [Space]
-
-    //fourth wave
-
+    //objekty ve ctvrte vlne
     [SerializeField]
     private Transform hover10;
     [SerializeField]
@@ -143,12 +139,15 @@ public class SpiderMainScript : MonoBehaviour
     [Space]
     private PillarScript[] pillars;
 
+    public SpiderHealthBarScript spiderHealthBarScript;
+
     private bool firstTime;
 
     private bool firstTimeInvoke;
 
-    private int pillar_broken_count;
+    private float health;
 
+    private int pillar_broken_count;
     void Start()
     {
         spawning = true;
@@ -160,7 +159,7 @@ public class SpiderMainScript : MonoBehaviour
     }
 
     void Update()
-    {        
+    {
         if (spawning)
         {
             firstTime = true;
@@ -226,6 +225,7 @@ public class SpiderMainScript : MonoBehaviour
                 attackable = true;
                 attacking = false;
             }
+            health = spiderHealthBarScript.GetHealth();
         }
         else if (attackable)
         {
@@ -236,9 +236,10 @@ public class SpiderMainScript : MonoBehaviour
                 round++;
                 firstTime = false;
             }
-            if ()
+            if (health - 25 < spiderHealthBarScript.GetHealth())
             {
-
+                attackable = false;
+                spawning = true;
             }
         }
     }
@@ -271,7 +272,6 @@ public class SpiderMainScript : MonoBehaviour
     {
         cannonScript.Shoot();
     }
-
     public int GetRound()
     {
         Debug.Log(round);

@@ -27,7 +27,7 @@ public class SpiderHealthBarScript : MonoBehaviour
         healthbar.value = ai_walker.health;
     }
 
-    float GetHealth()
+    public float GetHealth()
     {
         float output = 0;
 
