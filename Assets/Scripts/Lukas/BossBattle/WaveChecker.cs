@@ -34,6 +34,7 @@ public class WaveChecker : MonoBehaviour
 
     public bool Wave1Complete(Transform h1, Transform h2, Transform d1, Transform d2)
     {
+
         bool output = false;
         int destroyed_count = 0;
 
