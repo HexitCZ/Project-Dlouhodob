@@ -24,6 +24,7 @@ public class CannonScript : MonoBehaviour
     [Range(0.0f, 100.0f)]
     private float speed = 20.0f;
 
+    private List<Transform> orbs;
     void Start()
     {
         
@@ -32,6 +33,19 @@ public class CannonScript : MonoBehaviour
     
     void Update()
     {
+        if (orbs.Count > 10)
+        {
+
+        }
+    }
+
+    void CleanOrbs()
+    {
+        
+        foreach(Transform orb in orbs)
+        {
+            Destroy(orb);
+        }
         
     }
 

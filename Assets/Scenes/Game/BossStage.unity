@@ -11678,7 +11678,7 @@ MonoBehaviour:
   - {fileID: 230037550}
   - {fileID: 2081968686}
   - {fileID: 2119031626}
-  spiderHealthBarScript: {fileID: 0}
+  spiderHealthBarScript: {fileID: 6259472948441691516}
 --- !u!4 &6265081520371486811
 Transform:
   m_ObjectHideFlags: 0
