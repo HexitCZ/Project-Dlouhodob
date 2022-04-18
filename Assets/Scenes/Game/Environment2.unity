@@ -24254,6 +24254,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2134285635349360883, guid: 78c22e3c33806a147953fc1b318d1ed7, type: 3}
+      propertyPath: targetScene
+      value: BossStage
+      objectReference: {fileID: 0}
     - target: {fileID: 2134285635349360884, guid: 78c22e3c33806a147953fc1b318d1ed7, type: 3}
       propertyPath: m_Name
       value: Teleporter

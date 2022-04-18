@@ -20,5 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game/Options.unity
     guid: 4c01a70d25869ac40bd6381222cf4534
+  - enabled: 1
+    path: Assets/Scenes/Game/BossStage.unity
+    guid: 5e508c5b0270a0344b20b893a38df53a
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 94038fc193d5696499b1b2aa7df71ade, type: 2}

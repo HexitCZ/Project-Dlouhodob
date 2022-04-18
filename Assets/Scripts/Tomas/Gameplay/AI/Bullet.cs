@@ -15,13 +15,12 @@ public class Bullet : MonoBehaviour
     [Header("Gameplay properties")]
     public float damage;
 
-    //There was a plan for splash damage.
-    /*[Space]
+    [Space]
     [Header("Splash damage")]
     public bool splash;
     public float splashRange;
     public float splashDamage;
-    public AnimationCurve splashDamageFallOff;*/
+    public AnimationCurve splashDamageFallOff;
 
     /// <summary>
     /// Sets up a new bullet by setting needed settings.

@@ -61,7 +61,7 @@ public class WeaponSelector : MonoBehaviour
             case 0:
                 if (ar)
                 {
-                    Debug.Log("assaultrifle");
+                    //Debug.Log("assaultrifle");
                     return;
                 }
                 //Debug.Log("ar false");
@@ -69,7 +69,7 @@ public class WeaponSelector : MonoBehaviour
             case 1:
                 if (mg)
                 {
-                    Debug.Log("machinegun");
+                    //Debug.Log("machinegun");
                     return;
                 }
                 //Debug.Log("mg false");
@@ -78,7 +78,7 @@ public class WeaponSelector : MonoBehaviour
                 if (sp)
                 {
                     
-                    Debug.Log("sniper");
+                    //Debug.Log("sniper");
                     return;
                 }
                 //Debug.Log("sp false");
