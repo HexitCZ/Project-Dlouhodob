@@ -34,7 +34,7 @@ public class SpiderShieldScript : MonoBehaviour
     {
         round = spiderMainScript.GetRound();
 
-        if (isActive)
+        if (isActive && !spiderMainScript.attackable)
         {   
             if(round == 1)
             {
