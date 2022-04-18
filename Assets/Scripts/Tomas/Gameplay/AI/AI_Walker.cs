@@ -108,7 +108,11 @@ public class AI_Walker : AI_Base
 
     protected override void Attack()
     {
-        weapon?.Shoot(target.position);
+        if (weapon != null)
+        {
+
+        weapon.Shoot(target.position);
+        }
     }
 
     //Ugly way of keeping ai from dying multiple times

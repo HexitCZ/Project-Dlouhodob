@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-/// Kod napsan podle tutorialu: https://youtu.be/qqOAzn05fvk
+/// Kod napsan podle tutorialu: https://youtu.be/qqOAzn05fvk, proto jsem ho radsi dal do slozky mimo
 /// </summary>
 
 public class H_IK : MonoBehaviour

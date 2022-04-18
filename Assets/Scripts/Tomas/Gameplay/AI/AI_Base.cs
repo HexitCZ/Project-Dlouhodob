@@ -138,7 +138,6 @@ public class AI_Base : MonoBehaviour, IHittable
         return health > 0;
     }
 
-
     protected virtual bool CheckVisibility()
     {
         throw new NotImplementedException();

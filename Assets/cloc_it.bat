@@ -1,6 +1,8 @@
 @ECHO OFF
 echo -------------------------------------------------------------------------------Tomas Krejcik
 cloc G:\Programs\Unity\UnityProjects\Project-Dlouhodob-again\Project-Dlouhodob\Assets\Scripts\Tomas
+echo -
+echo -
 echo -------------------------------------------------------------------------------Lukas Gubala
 cloc G:\Programs\Unity\UnityProjects\Project-Dlouhodob-again\Project-Dlouhodob\Assets\Scripts\Lukas
 
