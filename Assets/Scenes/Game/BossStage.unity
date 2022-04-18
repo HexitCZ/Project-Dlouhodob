@@ -1307,6 +1307,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &301474768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301474764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 035c3d47e10b93c45bb8903cda6bc807, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shield_animator: {fileID: 301474765}
+  spiderMainScript: {fileID: 6259472948441691517}
+  aiWalker: {fileID: 6259472948441691506}
 --- !u!1 &301552252
 GameObject:
   m_ObjectHideFlags: 0
@@ -4758,6 +4773,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7948107964017717656, guid: 5dc151001bbdf7141b4deb13f950dcc9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.26
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dc151001bbdf7141b4deb13f950dcc9, type: 3}
 --- !u!4 &1320150403 stripped
@@ -5453,6 +5472,10 @@ PrefabInstance:
     - target: {fileID: 7500629308901545850, guid: 5dc151001bbdf7141b4deb13f950dcc9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948107964017717656, guid: 5dc151001bbdf7141b4deb13f950dcc9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.26
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dc151001bbdf7141b4deb13f950dcc9, type: 3}
@@ -9115,7 +9138,7 @@ MonoBehaviour:
   End: {fileID: 5870638994563491210}
   iterationsPerFrame: 10
   precision: 0.001
-  returnStrength: 1
+  returnStrengthNormalized: 1
 --- !u!137 &5870638993660679944
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -9765,7 +9788,7 @@ MonoBehaviour:
   End: {fileID: 5870638994492520958}
   iterationsPerFrame: 10
   precision: 0.001
-  returnStrength: 1
+  returnStrengthNormalized: 1
 --- !u!1 &5870638994250931335
 GameObject:
   m_ObjectHideFlags: 0
@@ -10405,7 +10428,7 @@ MonoBehaviour:
   End: {fileID: 5870638994771312028}
   iterationsPerFrame: 10
   precision: 0.001
-  returnStrength: 1
+  returnStrengthNormalized: 1
 --- !u!4 &5870638994696066352
 Transform:
   m_ObjectHideFlags: 0
@@ -11576,7 +11599,7 @@ MonoBehaviour:
   End: {fileID: 1506482214013933771}
   iterationsPerFrame: 10
   precision: 0.001
-  returnStrength: 1
+  returnStrengthNormalized: 1
 --- !u!23 &7006931446876254059
 MeshRenderer:
   m_ObjectHideFlags: 0

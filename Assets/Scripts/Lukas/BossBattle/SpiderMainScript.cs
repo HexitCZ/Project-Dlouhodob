@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class SpiderMainScript : MonoBehaviour
@@ -146,6 +145,8 @@ public class SpiderMainScript : MonoBehaviour
 
     private bool firstTime;
 
+    private bool firstTimeInvoke;
+
     private int pillar_broken_count;
 
     void Start()
@@ -159,14 +160,7 @@ public class SpiderMainScript : MonoBehaviour
     }
 
     void Update()
-    {
-        bool new_broken_pillar = NewBrokenPillar();
-
-        if (new_broken_pillar)
-        {
-            attackable = true;
-        }
-
+    {        
         if (spawning)
         {
             firstTime = true;
@@ -178,6 +172,8 @@ public class SpiderMainScript : MonoBehaviour
                 if (waveChecker.Wave1Complete(hover1, hover2, drone1, drone2))
                 {
                     attacking = true;
+                    spawning = false;
+                    firstTimeInvoke = true;
                 }
             }
             else if (spawnPhase_counter == 2 && round == 2)
@@ -187,6 +183,8 @@ public class SpiderMainScript : MonoBehaviour
                 if (waveChecker.Wave2Complete(hover3, hover4, hover5, drone3, drone4, drone5))
                 {
                     attacking = true;
+                    spawning = false;
+                    firstTimeInvoke = true;
                 }
             }
             else if (spawnPhase_counter == 3 && round == 3)
@@ -196,6 +194,8 @@ public class SpiderMainScript : MonoBehaviour
                 if (waveChecker.Wave3Complete(hover6, hover7, hover8, hover9, drone6, drone7, drone8, drone9))
                 {
                     attacking = true;
+                    spawning = false;
+                    firstTimeInvoke = true;
                 }
             }
             else if (spawnPhase_counter == 4 && round == 4)
@@ -205,33 +205,35 @@ public class SpiderMainScript : MonoBehaviour
                 if (waveChecker.Wave4Complete(hover10, hover11, hover12, hover13, hover14, hover_heavy, drone10, drone11, drone12, drone13, drone14))
                 {
                     attacking = true;
+                    spawning = false;
+                    firstTimeInvoke = true;
                 }
             }
         }
         else if (attacking)
         {
             Debug.Log("attacking");
-            StartCoroutine(ShootCoroutine());
-            ShootCannon();
 
+            if (firstTimeInvoke)
+            {
+                InvokeRepeating("ShootCannon", 3, 3);
+                firstTimeInvoke = false;
+            }
+            bool new_broken_pillar = NewBrokenPillar();
+
+            if (new_broken_pillar)
+            {
+                attackable = true;
+                attacking = false;
+            }
         }
-        else if (attackable && firstTime)
+        else if (attackable)
         {
             Debug.Log("spawning");
 
-            if (round == 1)
+            if (firstTime)
             {
-                round = 2;
-                firstTime = false;
-            }
-            else if (round == 2)
-            {
-                round = 3;
-                firstTime = false;
-            }
-            else if (round == 3)
-            {
-                round = 4;
+                round++;
                 firstTime = false;
             }
         }
@@ -249,7 +251,6 @@ public class SpiderMainScript : MonoBehaviour
                 count++;
             }
         }
-
         if (count > pillar_broken_count)
         {
             pillar_broken_count = count;
@@ -262,14 +263,15 @@ public class SpiderMainScript : MonoBehaviour
         return output;
     }
 
-    IEnumerator ShootCoroutine()
-    {
-        yield return new WaitForSeconds(3);
-    }
-
     void ShootCannon()
     {
         cannonScript.Shoot();
+    }
+
+    public int GetRound()
+    {
+        Debug.Log(round);
+        return round;
     }
 
     public string GetStatus()

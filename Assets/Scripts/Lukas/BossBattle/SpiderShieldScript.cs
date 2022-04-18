@@ -13,19 +13,47 @@ public class SpiderShieldScript : MonoBehaviour
 
     private string status;
 
+    [SerializeField]
+    [Space]
     private SpiderMainScript spiderMainScript;
 
-    //private AI_Walker aiWalker;
+    [SerializeField]
+    [Space]
+    private AI_Walker aiWalker;
+    
+    private int round;
 
     void Start()
     {
         isActive = true;
+        round = 1;
     }
 
     
     void Update()
     {
+        round = spiderMainScript.GetRound();
 
+        if (isActive)
+        {   
+            if(round == 1)
+            {
+                aiWalker.health = 100.0f;
+            }
+            else if (round == 2)
+            {
+                aiWalker.health = 75.0f;
+            }
+            else if (round == 3)
+            {
+                aiWalker.health = 50.0f;
+            }
+            else if (round == 4)
+            {
+                aiWalker.health = 25.0f;
+            }
+            aiWalker.health = 100.0f;
+        }
 
         try
         {
