@@ -4593,8 +4593,28 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1599550115565543163, guid: f9c17faf3b493864593ad4597b53043e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f9c17faf3b493864593ad4597b53043e, type: 3}
+--- !u!1 &1213111631 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2317633993320917286, guid: f9c17faf3b493864593ad4597b53043e, type: 3}
+  m_PrefabInstance: {fileID: 1213111630}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1213111632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213111631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 881261bc39d9fd44a93844d10b0d4aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Hub
+  aiWalker: {fileID: 6259472948441691506}
 --- !u!114 &1240295290 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1316212485, guid: cb372f40e1290104e8642d60d5287f2f, type: 3}
@@ -11658,6 +11678,7 @@ MonoBehaviour:
   - {fileID: 230037550}
   - {fileID: 2081968686}
   - {fileID: 2119031626}
+  spiderHealthBarScript: {fileID: 0}
 --- !u!4 &6265081520371486811
 Transform:
   m_ObjectHideFlags: 0
