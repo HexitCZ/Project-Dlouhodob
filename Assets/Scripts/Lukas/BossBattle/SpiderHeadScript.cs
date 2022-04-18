@@ -31,15 +31,22 @@ public class SpiderHeadScript : MonoBehaviour
     private bool CheckIsAlive()
     {
         bool isAlive = false;
-
-        if (walker_rb.isKinematic)
+        try 
         {
-            isAlive = true;
+            if (walker_rb.isKinematic)
+            {
+                isAlive = true;
+            }
+            else
+            {
+                isAlive = false;
+            }
         }
-        else
+        catch (UnassignedReferenceException)
         {
             isAlive = false;
         }
+
         return isAlive;
     }
 
