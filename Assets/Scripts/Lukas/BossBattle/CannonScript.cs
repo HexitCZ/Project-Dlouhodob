@@ -42,9 +42,16 @@ public class CannonScript : MonoBehaviour
 
     public void Shoot()
     {
-        orb_instance = Instantiate(orb, original_orb.position, Quaternion.identity);
-        orb_instance.gameObject.SetActive(true);
-        orb_instance.GetComponent<Rigidbody>().useGravity = false;
-        AddForce();
+        try
+        {
+            orb_instance = Instantiate(orb, original_orb.position, Quaternion.identity);
+            orb_instance.gameObject.SetActive(true);
+            orb_instance.GetComponent<Rigidbody>().useGravity = false;
+            AddForce();
+        }
+        catch (UnassignedReferenceException)
+        {
+            speed = 0.0f;
+        }
     }
 }

@@ -116,7 +116,6 @@ public class OrbScript : MonoBehaviour
         }
         Vector3 forceToAdd = new Vector3(x_value, y_value, z_value);
 
-        Debug.Log(forceToAdd);
         rb.AddForce(Vector3.Reflect(transform.position, Vector3.right));
     }
 }
