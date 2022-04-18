@@ -4581,6 +4581,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1599550115565543165, guid: f9c17faf3b493864593ad4597b53043e, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1942132856641102753, guid: f9c17faf3b493864593ad4597b53043e, type: 3}
       propertyPath: m_Name
       value: TeleporterGate
