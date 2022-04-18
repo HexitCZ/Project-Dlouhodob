@@ -125,8 +125,10 @@ public class WaveSystem : MonoBehaviour
 
         yield return new WaitForSeconds(spawnSlowDown);
         enemy.SetActive(true);
-        
-        enemy.GetComponent<AI_Base>().enabled = true;
+        if (enemy.GetComponent<AI_Base>() != null)
+        {
+            enemy.GetComponent<AI_Base>().enabled = true;
+        }
     }
 
     
