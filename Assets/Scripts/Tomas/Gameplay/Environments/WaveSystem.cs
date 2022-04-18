@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -49,7 +50,7 @@ public class WaveSystem : MonoBehaviour
     /// </summary>
     public void StartWaves()
     {
-        //print("start");
+        print("start");
         NextWave();
         InvokeRepeating("CheckAIStatus", 0.3f, 0.3f);
     }
@@ -59,24 +60,31 @@ public class WaveSystem : MonoBehaviour
     /// </summary>
     private void CheckAIStatus()
     {
-        
-        for (int i = 0; i < waves.Count; i++)
+        try
         {
-            for (int j = 0; j < waves[i].enemies.Count; j++)
-            {
-                if (waves[i].enemies[j] == null)
-                {
-                    continue;
-                }
 
-                if (waves[i].enemies[j].activeSelf)
+            for (int i = 0; i < waves.Count; i++)
+            {
+                for (int j = 0; j < waves[i].enemies.Count; j++)
                 {
-                    return;
+                    if (waves[i].enemies[j] == null)
+                    {
+                        continue;
+                    }
+
+                    if (waves[i].enemies[j].activeSelf)
+                    {
+                        return;
+                    }
                 }
             }
+            currentWave += 1;
+            NextWave();
         }
-        currentWave += 1;
-        NextWave();
+        catch (IndexOutOfRangeException)
+        {
+            Debug.LogWarning("Index out of range! CheckAIStatus()");
+        }
     }
 
     /// <summary>
@@ -84,7 +92,7 @@ public class WaveSystem : MonoBehaviour
     /// </summary>
     private void NextWave()
     {
-        //print("nextwave");
+        print("nextwave");
         if (currentWave >= waves.Count)
         {
             
@@ -99,7 +107,7 @@ public class WaveSystem : MonoBehaviour
 
         for (int i = 0; i < waves[currentWave].enemies.Count; i++)
         {
-            //print("spawncall");
+            print("spawncall");
             StartCoroutine(SpawnEnemy(waves[currentWave].enemies[i]));
             //SpawnEnemy(waves[currentWave].enemies[i]);
         }
@@ -110,7 +118,7 @@ public class WaveSystem : MonoBehaviour
 
     private IEnumerator SpawnEnemy(GameObject enemy)
     {
-        //print("spawn");
+        print("spawn");
         GameObject vfx = Instantiate(spawnVFX, enemy.transform.position, Quaternion.identity);
         //vfx.GetComponent<VisualEffect>().Play();
         Destroy(vfx,5);
@@ -118,7 +126,7 @@ public class WaveSystem : MonoBehaviour
         yield return new WaitForSeconds(spawnSlowDown);
         enemy.SetActive(true);
         
-        //enemy.GetComponent<AI_Base>().enabled = true;
+        enemy.GetComponent<AI_Base>().enabled = true;
     }
 
     
