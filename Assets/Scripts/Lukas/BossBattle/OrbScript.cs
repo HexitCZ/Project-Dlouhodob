@@ -15,6 +15,14 @@ public class OrbScript : MonoBehaviour
     [Range(0.0f, 100.0f)]
     private float orb_speed = 10.0f;
 
+    [SerializeField]
+    [Space]
+    private MeshRenderer renderer;
+
+    [SerializeField]
+    [Space]
+    private MeshCollider collider;
+
     //private float constant_orb_speed = 10.0f;
 #pragma warning disable IDE0052
     private int partIndex;
@@ -93,7 +101,11 @@ public class OrbScript : MonoBehaviour
 
     private void DestroyOrb()
     {
-        Destroy(this);
+        renderer = this.GetComponent<MeshRenderer>();
+        renderer.enabled = false;
+
+        collider = this.GetComponent<MeshCollider>();
+        collider.enabled = false;
     }
 
     void AddRandomForceToOrb()

@@ -13,7 +13,7 @@ public class SpiderMainScript : MonoBehaviour
 
     [SerializeField]
     [Space]
-    private bool attackable = false;
+    public bool attackable = false;
 
     [Space]
 
