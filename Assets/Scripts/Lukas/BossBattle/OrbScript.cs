@@ -28,7 +28,7 @@ public class OrbScript : MonoBehaviour
     {
         rb = this.GetComponent<Rigidbody>();
         AddRandomForceToOrb();
-        Invoke("DestroyOrb", 10);
+        Invoke("DestroyOrb", 7);
     }
 
     void Update()

@@ -26,7 +26,7 @@ public class CannonScript : MonoBehaviour
 
     void Start()
     {
-        Shoot();
+        
     }
 
     
@@ -34,8 +34,6 @@ public class CannonScript : MonoBehaviour
     {
         
     }
-
-
 
     void AddForce()
     {
