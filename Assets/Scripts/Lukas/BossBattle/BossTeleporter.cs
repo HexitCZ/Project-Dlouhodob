@@ -32,7 +32,7 @@ public class BossTeleporter : MonoBehaviour
     
     void Update()
     {
-        if (!aiWalker.enabled)
+        if (!aiWalker.gameObject)
         {
             meshCollider.enabled = true;
         }
