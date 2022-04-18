@@ -6,25 +6,53 @@ using UnityEngine.AI;
 
 public class AI_Base : MonoBehaviour, IHittable
 {
-    [field: SerializeField] protected Transform target { get; set; }
-    [field: SerializeField] protected bool dynamic { get; set; }
-    [field: SerializeField] protected AI_Projectile_Weapon weapon { get; set; }
+    [field: SerializeField] 
+    protected Transform target { get; set; }
+    
+    [field: SerializeField] 
+    protected bool dynamic { get; set; }
+    
+    [field: SerializeField] 
+    protected AI_Projectile_Weapon weapon { get; set; }
 
     public bool isAlive { get { return CheckHealth(); } }
-    [SerializeField] protected bool isVisible { get { return CheckVisibility(); } }
-    [SerializeField] protected bool inRange { get { return CheckRange(); } }
     
-    [field: SerializeField] public float health { get; set; }
-    [field: SerializeField] protected int range { get; set; }
-    [field: SerializeField] protected int startSpeed { get; set; }
-    [field: SerializeField] protected float targetDistance { get; set; }
-    [field: SerializeField] protected float maximumDistance { get; set; }
-    [field: SerializeField] protected Vector3 targetDirection { get; set; }
+    [SerializeField] 
+    protected bool isVisible { get { return CheckVisibility(); } }
+    
+    [SerializeField] 
+    protected bool inRange { get { return CheckRange(); } }
+    
+    [field: SerializeField] 
+    public float health { get; set; }
 
-    [field: SerializeField] protected Action preUpdateAction { get; set; }
-    [field: SerializeField] protected Action postUpdateAction { get; set; }
-    [field: SerializeField] protected Action visibleAction { get; set; }
-    [field: SerializeField] protected Action inRangeAction { get; set; }
+    [field: SerializeField] 
+    protected int range { get; set; }
+
+    [field: SerializeField] 
+    protected int startSpeed { get; set; }
+
+    [field: SerializeField] 
+    protected float targetDistance { get; set; }
+
+    [field: SerializeField] 
+    protected float maximumDistance { get; set; }
+
+    [field: SerializeField] 
+    protected Vector3 targetDirection { get; set; }
+
+
+    [field: SerializeField] 
+    protected Action preUpdateAction { get; set; }
+
+    [field: SerializeField] 
+    protected Action postUpdateAction { get; set; }
+
+    [field: SerializeField] 
+    protected Action visibleAction { get; set; }
+
+    [field: SerializeField] 
+    protected Action inRangeAction { get; set; }
 
 
 

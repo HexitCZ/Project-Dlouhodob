@@ -19069,6 +19069,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 20
+  maxFluctuation: 3
 --- !u!1 &1767379334
 GameObject:
   m_ObjectHideFlags: 0
