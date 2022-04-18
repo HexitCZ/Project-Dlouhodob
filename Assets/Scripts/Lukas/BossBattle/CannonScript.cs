@@ -24,24 +24,30 @@ public class CannonScript : MonoBehaviour
     [Range(0.0f, 100.0f)]
     private float speed = 20.0f;
 
+    private int numberOfOrbs;
+
     private List<Transform> orbs;
     void Start()
     {
         
     }
-
     
     void Update()
     {
-        if (orbs.Count > 10)
-        {
+        int numberOfOrbs = orbs.Count;
 
+        if (numberOfOrbs > 0)
+        {
+            if (numberOfOrbs > 10)
+            {
+                CleanOrbs();
+                numberOfOrbs = 0;
+            }
         }
     }
 
     void CleanOrbs()
     {
-        
         foreach(Transform orb in orbs)
         {
             Destroy(orb);
@@ -61,6 +67,8 @@ public class CannonScript : MonoBehaviour
             orb_instance = Instantiate(orb, original_orb.position, Quaternion.identity);
             orb_instance.gameObject.SetActive(true);
             orb_instance.GetComponent<Rigidbody>().useGravity = false;
+            orbs.Add(orb_instance);
+
             AddForce();
         }
         catch (UnassignedReferenceException)

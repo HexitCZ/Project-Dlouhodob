@@ -32,13 +32,13 @@ public class BossTeleporter : MonoBehaviour
     
     void Update()
     {
-        if (!aiW_rb.isKinematic)
+        if (!aiWalker.enabled)
         {
             meshCollider.enabled = true;
         }
     }
 
-    //Metoda nacte finalni scena, coz je hub(hlavni mistnost)
+    //Metoda nacte finalni scenu, coz je hub(hlavni mistnost)
 
     public void OnCollisionEnter(Collision collision)
     {
