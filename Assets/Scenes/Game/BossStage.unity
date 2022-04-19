@@ -1355,8 +1355,9 @@ MonoBehaviour:
   shield_animator: {fileID: 301474765}
   spiderMainScript: {fileID: 6259472948441691517}
   aiWalker: {fileID: 6259472948441691506}
---- !u!64 &301474769
-MeshCollider:
+  spiderMeshIsAssignable: 0
+--- !u!65 &301474772
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1365,10 +1366,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 289301614986012343, guid: 975f8f997af971247a4650e44625d50b, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.01702117, y: 0.017, z: 0.005}
+  m_Center: {x: 8.940699e-10, y: 0.0000000014156107, z: 0.0027}
 --- !u!1 &301552252
 GameObject:
   m_ObjectHideFlags: 0
@@ -7660,6 +7660,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed21fa737fe9b0d43a62116d90385871, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: {fileID: 0}
+  health2: {fileID: 0}
+  ammo1: {fileID: 0}
+  ammo2: {fileID: 0}
 --- !u!114 &2070819149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8273,7 +8277,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2137227946
 Transform:
   m_ObjectHideFlags: 0
@@ -8282,7 +8286,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137227945}
   m_LocalRotation: {x: -0.5000001, y: 0.49999988, z: 0.49999994, w: 0.50000006}
-  m_LocalPosition: {x: 0, y: 0.0276, z: -0.0028}
+  m_LocalPosition: {x: 0, y: 0.0335, z: -0.0028}
   m_LocalScale: {x: 0.5555556, y: 0.55555636, z: 0.5555563}
   m_ConstrainProportionsScale: 0
   m_Children: []

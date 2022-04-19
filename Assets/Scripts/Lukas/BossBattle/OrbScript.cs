@@ -17,31 +17,22 @@ public class OrbScript : MonoBehaviour
 
     [SerializeField]
     [Space]
-    private MeshRenderer renderer;
+    private MeshRenderer m_renderer;
 
     [SerializeField]
     [Space]
-    private MeshCollider collider;
+    private MeshCollider m_collider;
 
     //private float constant_orb_speed = 10.0f;
 #pragma warning disable IDE0052
     private int partIndex;
 #pragma warning restore IDE0052
 
-    /// <summary>
-    /// Konstruktor tridy
-    /// </summary>
-    /// <param name="partIndex"></param>
-    public OrbScript(int partIndex)
-    {
-        this.partIndex = partIndex;
-    }
-
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
-        AddRandomForceToOrb();
-        Invoke("DestroyOrb", 100000);
+        //AddRandomForceToOrb();
+        //Invoke("DestroyOrb", 10000);
     }
 
     void Update()
@@ -89,7 +80,7 @@ public class OrbScript : MonoBehaviour
             collision.transform.parent.GetComponent<PillarScript>().Destruct();
             partIndex = 2;
         }
-        else if (collision.transform.name == "orb")
+        else if (collision.transform.name == "orbbab")
         {
             DestroyOrb();
             collision.transform.parent.GetComponent<PillarScript>().Destruct();
@@ -112,11 +103,11 @@ public class OrbScript : MonoBehaviour
     /// </summary>
     private void DestroyOrb()
     {
-        renderer = this.GetComponent<MeshRenderer>();
-        renderer.enabled = false;
+        m_renderer = this.GetComponent<MeshRenderer>();
+        m_renderer.enabled = false;
 
-        collider = this.GetComponent<MeshCollider>();
-        collider.enabled = false;
+        m_collider = this.GetComponent<MeshCollider>();
+        m_collider.enabled = false;
 
         Destroy(this.gameObject);
     }
@@ -143,7 +134,7 @@ public class OrbScript : MonoBehaviour
             z_value *= orb_speed;
         }
         Vector3 forceToAdd = new Vector3(x_value, y_value, z_value);
-
-        rb.AddForce(Vector3.Reflect(transform.position, Vector3.right));
+        Vector3 reflectedVector = Vector3.Reflect(transform.position, Vector3.right);
+        rb.AddForce(reflectedVector);
     }
 }

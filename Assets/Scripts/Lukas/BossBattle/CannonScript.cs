@@ -29,12 +29,15 @@ public class CannonScript : MonoBehaviour
     private List<Transform> orbs;
     void Start()
     {
-        
+        orbs = new List<Transform>();
     }
     
     void Update()
     {
-        int numberOfOrbs = orbs.Count;
+        if (orbs != null)
+        {
+            int numberOfOrbs = orbs.Count;
+        }
 
         if (numberOfOrbs > 0)
         {
@@ -61,7 +64,7 @@ public class CannonScript : MonoBehaviour
     /// </summary>
     void AddForce()
     {
-        orb_instance.GetComponent<Rigidbody>().AddForce(target.position - transform.position * speed);
+        orb_instance.GetComponent<Rigidbody>().AddForce((target.position - transform.position) * speed);
     }
 
     /// <summary>
@@ -74,9 +77,10 @@ public class CannonScript : MonoBehaviour
             orb_instance = Instantiate(orb, original_orb.position, Quaternion.identity);
             orb_instance.gameObject.SetActive(true);
             orb_instance.GetComponent<Rigidbody>().useGravity = false;
+            AddForce();
+
             orbs.Add(orb_instance);
 
-            AddForce();
         }
         catch (UnassignedReferenceException)
         {

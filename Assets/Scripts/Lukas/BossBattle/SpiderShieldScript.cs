@@ -45,7 +45,7 @@ public class SpiderShieldScript : MonoBehaviour
 
                 if (spiderMainScript.attacking)
                 {
-                    this.GetComponent<MeshCollider>().enabled = false;
+                    this.GetComponent<BoxCollider>().enabled = false;
                 }
             }
             catch (UnassignedReferenceException)
@@ -59,20 +59,37 @@ public class SpiderShieldScript : MonoBehaviour
             if (round == 1)
             {
                 aiWalker.health = 100.0f;
+                aiWalker.heatCapacity = 1000f;
             }
             else if (round == 2)
             {
                 aiWalker.health = 75.0f;
+                aiWalker.heatCapacity = 1000f;
             }
             else if (round == 3)
             {
                 aiWalker.health = 50.0f;
+                aiWalker.heatCapacity = 1000f;
             }
             else if (round == 4)
             {
                 aiWalker.health = 25.0f;
+                aiWalker.heatCapacity = 1000f;
             }
-            aiWalker.health = 100.0f;
+            else if (round == 5)
+            {
+                aiWalker.health = 0.0f;
+                aiWalker.heatCapacity = 0f;
+            }
+
+            
+        }
+        else
+        {
+            if (spiderMainScript.attackable)
+            {
+                this.GetComponent<BoxCollider>().enabled = false;
+            }
         }
 
         try
@@ -93,9 +110,9 @@ public class SpiderShieldScript : MonoBehaviour
     {
         if (status == "spawning")
         {
-            shield_animator.SetBool("spawning", true);
+            shield_animator.SetBool("spawning", false);
             shield_animator.SetBool("attacking", false);
-            shield_animator.SetBool("attackable", false);
+            shield_animator.SetBool("attackable", true);
             isActive = true;
         }
         else if (status == "attacking")

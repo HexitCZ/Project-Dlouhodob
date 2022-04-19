@@ -149,6 +149,8 @@ public class PillarScript : MonoBehaviour
     /// <summary>
     /// Zapina fyziku pro objekt a podobjekty
     /// </summary>
+    /// 
+
     private void EnableGravity()
     {
         p1_rb.useGravity = true;

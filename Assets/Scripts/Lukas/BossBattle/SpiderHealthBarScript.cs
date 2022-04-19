@@ -36,7 +36,27 @@ public class SpiderHealthBarScript : MonoBehaviour
 
         if (ai_walker.health >= 0)
         {
-            output = ai_walker.health;
+            if(ai_walker.health >= 75f)
+            {
+                output = 75f;
+            }
+            else if (ai_walker.health >= 50f)
+            {
+                output = 50f;
+            }
+            else if (ai_walker.health >= 25f)
+            {
+                output = 25f;
+            }
+
+            else if (ai_walker.health >= 0f)
+            {
+                output = 0f;
+            }
+            else
+            {
+                output = ai_walker.health;
+            }
         }
         else
         {

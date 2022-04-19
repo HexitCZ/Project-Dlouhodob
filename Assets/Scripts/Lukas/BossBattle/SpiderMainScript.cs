@@ -232,17 +232,21 @@ public class SpiderMainScript : MonoBehaviour
         else if (attackable)
         {
             Debug.Log("attackable");
-
+            CancelInvoke();
+            
             if (firstTime)
             {
                 round++;
                 firstTime = false;
+                spawnPhase_counter++;
             }
-            if (health - 25 < spiderHealthBarScript.GetHealth())
-            {
+
+
+            /*if (Mathf.Ceil(spiderHealthBarScript.GetHealth()) == Mathf.Ceil(100f - ((round - 1)  * 25f)))
+            {*/
                 attackable = false;
                 spawning = true;
-            }
+            //}
         }
     }
 
