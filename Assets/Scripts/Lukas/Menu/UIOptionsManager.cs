@@ -139,6 +139,8 @@ public class UIOptionsManager : MonoBehaviour
             fullscreen_text.text = "Windowed";
             fullscreen_text.fontSize = 45;
             fullscreen_mode = fullscreen_text.text;
+
+            OnResolutionChange(FullScreenMode.FullScreenWindow);
         }
         catch (UnassignedReferenceException)
         {
@@ -158,6 +160,8 @@ public class UIOptionsManager : MonoBehaviour
             fullscreen_text.text = "Exclusive\nFullscreen";
             fullscreen_text.fontSize = 35f;
             fullscreen_mode = fullscreen_text.text;
+
+            OnResolutionChange(FullScreenMode.Windowed);
         }
         catch (UnassignedReferenceException)
         {
@@ -173,13 +177,15 @@ public class UIOptionsManager : MonoBehaviour
             int width = Screen.currentResolution.width;
             int refreshRate = Screen.currentResolution.refreshRate;
 
-            Screen.SetResolution(height, width, FullScreenMode.FullScreenWindow, refreshRate);
+            Screen.SetResolution(height, width, FullScreenMode.ExclusiveFullScreen, refreshRate);
 
             TextMeshProUGUI fullscreen_text = fullscreenButton.GetChild(0).GetComponent<TextMeshProUGUI>();
 
             fullscreen_text.text = "Maximized\nWindow";
             fullscreen_text.fontSize = 35f;
             fullscreen_mode = fullscreen_text.text;
+
+            OnResolutionChange(FullScreenMode.ExclusiveFullScreen);
         }
         catch (UnassignedReferenceException)
         {
@@ -195,13 +201,15 @@ public class UIOptionsManager : MonoBehaviour
             int width = Screen.currentResolution.width;
             int refreshRate = Screen.currentResolution.refreshRate;
 
-            Screen.SetResolution(height, width, FullScreenMode.FullScreenWindow, refreshRate);
+            Screen.SetResolution(height, width, FullScreenMode.MaximizedWindow, refreshRate);
 
             TextMeshProUGUI fullscreen_text = fullscreenButton.GetChild(0).GetComponent<TextMeshProUGUI>();
 
             fullscreen_text.text = "Full\nscreen";
             fullscreen_text.fontSize = 45f;
             fullscreen_mode = fullscreen_text.text;
+
+            OnResolutionChange(FullScreenMode.MaximizedWindow);
 
         }
         catch (UnassignedReferenceException)
@@ -249,7 +257,7 @@ public class UIOptionsManager : MonoBehaviour
         }
     }
 
-    public void OnResolutionChange()
+    public void OnResolutionChange(FullScreenMode f_mode)
     {
         try
         {
@@ -257,15 +265,15 @@ public class UIOptionsManager : MonoBehaviour
 
             if (resolutionDropdown.value == 0)
             {
-                Screen.SetResolution(1920, 1080, Screen.fullScreenMode, 60);
+                Screen.SetResolution(1920, 1080, f_mode, 60);
             }
             else if (resolutionDropdown.value == 1)
             {
-                Screen.SetResolution(1600, 900, Screen.fullScreenMode, 60);
+                Screen.SetResolution(1600, 900, f_mode, 60);
             }
             else if (resolutionDropdown.value == 2)
             {
-                Screen.SetResolution(1280, 720, Screen.fullScreenMode, 60);
+                Screen.SetResolution(1280, 720, f_mode, 60);
             }
         }
         catch (UnassignedReferenceException)
