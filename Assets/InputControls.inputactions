@@ -141,6 +141,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "SelectLastEnvironment",
+                    "type": "Button",
+                    "id": "6a00a0ff-c773-4de3-9d2b-193862d83af7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Escape",
                     "type": "Button",
                     "id": "bcc30a74-f50f-4d68-87c5-d142c9c927a5",
@@ -368,6 +377,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Escape",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1734c20b-033e-47b3-ae1c-172fc4fa0422",
+                    "path": "<Keyboard>/f3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SelectLastEnvironment",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

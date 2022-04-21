@@ -32,6 +32,10 @@ public class TeleporterColliderScript : MonoBehaviour
         {
             SceneManager.LoadScene(location);
         }
+        else if (location == "BossStage")
+        {
+            SceneManager.LoadScene(location);
+        }
         else
         {
             location = "None";
@@ -47,6 +51,10 @@ public class TeleporterColliderScript : MonoBehaviour
         else if(location_name == "Second level" /*&& (int)PlayerPrefs.GetInt("level2unlocked") == 1*/)
         {
             location = "Environment2";
+        }
+        else if (location_name == "Last level" /*&& (int)PlayerPrefs.GetInt("level2unlocked") == 1*/)
+        {
+            location = "BossStage";
         }
         else
         {
@@ -66,5 +74,12 @@ public class TeleporterColliderScript : MonoBehaviour
         
         SceneManager.LoadScene(location);
     
+    }
+
+    public void OnTeleportEnvLast()
+    {
+
+        SceneManager.LoadScene(location);
+
     }
 }

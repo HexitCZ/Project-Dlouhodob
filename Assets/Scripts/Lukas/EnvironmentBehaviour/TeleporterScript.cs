@@ -8,16 +8,23 @@ using UnityEngine.SceneManagement;
 public class TeleporterScript : MonoBehaviour
 {
 
-    [SerializeField]
-    [Space]
-    [Header("Name of second environment scene")]
-    public string firstEnvScene;
+
 
     [SerializeField]
     [Space]
     [Header("Name of first environment scene")]
+    public string firstEnvScene;
+
+    [SerializeField]
+    [Space]
+    [Header("Name of second environment scene")]
     public string secondEnvScene;
-    
+
+    [SerializeField]
+    [Space]
+    [Header("Name of last environment scene")]
+    public string lastEnvScene;
+
     [SerializeField]
     [Space]
     [Header("Name of OnClick first environment scene")]
@@ -37,7 +44,12 @@ public class TeleporterScript : MonoBehaviour
     [Space]
     [Header("Set location to second environment")]
     public Transform tele_second_button;
-    
+
+    [SerializeField]
+    [Space]
+    [Header("Set location to second environment")]
+    public Transform tele_last_button;
+
     [SerializeField]
     [Space]
     [Header("Teleporter collider script reference")]
@@ -77,6 +89,13 @@ public class TeleporterScript : MonoBehaviour
         currentLoadScene = "Second level";
         setTeleportLocation(currentLoadScene);
     }
+
+    public void OnTeleportEnvLast()
+    {
+        currentLoadScene = "Last level";
+        setTeleportLocation(currentLoadScene);
+    }
+
     public void OnFirstInteract(InputAction.CallbackContext input)
     {
         
@@ -99,6 +118,19 @@ public class TeleporterScript : MonoBehaviour
             if (inRange)
             {
                 OnTeleportEnvTwo();
+            }
+
+        }
+
+    }
+
+    public void OnLastInteract(InputAction.CallbackContext input)
+    {
+        if (input.started)
+        {
+            if (inRange)
+            {
+                OnTeleportEnvLast();
             }
 
         }
