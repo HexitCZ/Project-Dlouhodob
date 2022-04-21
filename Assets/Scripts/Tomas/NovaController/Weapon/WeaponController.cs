@@ -75,7 +75,7 @@ public class WeaponController : MonoBehaviour
 
         
 
-        SetWeaponObject(weapons[3]);
+        //SetWeaponObject(weapons[3]);
 
         if (animate)
         {

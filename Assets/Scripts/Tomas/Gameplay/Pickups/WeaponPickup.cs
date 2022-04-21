@@ -11,7 +11,7 @@ public class WeaponPickup : PickupBase
     protected override void Action()
     {
         
-        WeaponController.instance.ammoData.ammoList[(int)weaponType].bullets_left = 100;
+        WeaponController.instance.ammoData.ammoList[(int)weaponType].bullets_left += 100;
 
 
         switch (weaponType)
