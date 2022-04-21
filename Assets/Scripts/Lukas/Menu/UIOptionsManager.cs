@@ -139,6 +139,8 @@ public class UIOptionsManager : MonoBehaviour
             fullscreen_text.text = "Windowed";
             fullscreen_text.fontSize = 45;
             fullscreen_mode = fullscreen_text.text;
+
+            OnResolutionChange();
         }
         catch (UnassignedReferenceException)
         {
@@ -158,6 +160,8 @@ public class UIOptionsManager : MonoBehaviour
             fullscreen_text.text = "Exclusive\nFullscreen";
             fullscreen_text.fontSize = 35f;
             fullscreen_mode = fullscreen_text.text;
+
+            OnResolutionChange();
         }
         catch (UnassignedReferenceException)
         {
@@ -180,6 +184,8 @@ public class UIOptionsManager : MonoBehaviour
             fullscreen_text.text = "Maximized\nWindow";
             fullscreen_text.fontSize = 35f;
             fullscreen_mode = fullscreen_text.text;
+
+            OnResolutionChange();
         }
         catch (UnassignedReferenceException)
         {
@@ -202,6 +208,8 @@ public class UIOptionsManager : MonoBehaviour
             fullscreen_text.text = "Full\nscreen";
             fullscreen_text.fontSize = 45f;
             fullscreen_mode = fullscreen_text.text;
+
+            OnResolutionChange();
 
         }
         catch (UnassignedReferenceException)
