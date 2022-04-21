@@ -1973,10 +1973,20 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Pick up health and ammo packs by walking to them.
+  m_text: 'Goal of the game is to destroy all robots.
 
-    Pick up keycards
-    to be able to go through doors.'
+
+
+
+
+
+
+
+    Pick up health
+    and ammo packs by walking to them.
+
+    Pick up keycards to be able to go through
+    doors.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2039,7 +2049,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: -254.5581, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2146,7 +2156,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1178306420
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2249,7 +2259,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 600, y: 0}
+  m_AnchoredPosition: {x: 600, y: -45}
   m_SizeDelta: {x: 600, y: 180.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1251601451
@@ -2280,7 +2290,15 @@ MonoBehaviour:
     Laser (L): deals most damage to heavy (black) enemies.
 
     Electrical
-    (E): deals most damage to shields.'
+    (E): deals most damage to shields.
+
+
+
+
+    Final boss guide: In the last battle
+    you will fight enemies in 4 intervals, after each you will need to get the spider
+    to shoot the special projectile into four pillars around the room, which will
+    then damage the spider, because it cannot be attacked directly with firearms.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2343,7 +2361,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: -244.13843}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
