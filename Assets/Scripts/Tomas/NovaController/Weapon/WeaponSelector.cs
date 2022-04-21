@@ -23,6 +23,7 @@ public class WeaponSelector : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        scrollIndex = 3;
     }
 
     void Start()
@@ -49,6 +50,7 @@ public class WeaponSelector : MonoBehaviour
         CheckWithProgress(add);
         changingWeapon = 1;
     }
+
     private void CheckWithProgress(bool add)
     {
         bool ar = GameProgressManager.instance.GetEventProgress("WeaponUnlocks", "UnlockAR");
